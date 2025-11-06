@@ -1,0 +1,31 @@
+/* assets/css/pages/home.css */
+.banner {
+    min-height: 280px;
+    background: #14213d;
+    color: #fff;
+    text-align: center;
+}
+.uk-section { padding: 48px 0; }
+.uk-heading-large { font-weight: 700; }
+
+/* assets/css/components/cards.css */
+.car-card {
+    border-radius: 16px;
+    background: #1e2139;
+    color: #fff;
+    margin-bottom: 1em;
+    transition: box-shadow .2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,.13);
+}
+.car-card img {
+    border-radius: 10px 10px 0 0;
+}
+.price-band {
+    background: #ffd700;
+    color: #1e2139;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: .3em .7em;
+    margin-top: .5em;
+    display: inline-block;
+}

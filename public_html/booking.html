@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervare - VEIRONAUTO</title>
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/booking.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index-ro.html" class="logo-link">
+                    <span class="logo-text">VEIRON AUTO</span>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index-ro.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Acasă</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#cars" class="nav-link">
+                            <i class="fas fa-car"></i>
+                            <span>Mașini</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="booking.html" class="nav-link active">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Rezervare</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Despre</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <a href="booking.html" class="lang-btn active">
+                    <i class="fas fa-flag"></i>
+                    <span>RO</span>
+                </a>
+                <a href="booking-en.html" class="lang-btn">
+                    <i class="fas fa-flag"></i>
+                    <span>EN</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Progress Indicator -->
+        <div class="progress-bar">
+          <div class="progress-step active">
+            <span class="progress-circle">
+              <i class="fas fa-home"></i>
+            </span>
+            <span class="progress-label">START</span>
+          </div>
+          <div class="progress-line-segment"></div>
+          <div class="progress-step">
+            <span class="progress-circle">1</span>
+            <span class="progress-label">ALEGE MAȘINA</span>
+          </div>
+          <div class="progress-line-segment"></div>
+          <div class="progress-step">
+            <span class="progress-circle">2</span>
+            <span class="progress-label">SERVICII ADIȚIONALE</span>
+          </div>
+          <div class="progress-line-segment"></div>
+          <div class="progress-step">
+            <span class="progress-circle">3</span>
+            <span class="progress-label">FINALIZEAZĂ</span>
+          </div>
+        </div>
+
+        <!-- Booking Content -->
+        <div class="booking-container">
+            <!-- Step 1: Visit Details -->
+            <div class="booking-step" id="step-1">
+                <div class="step-content">
+                    <h2 class="step-title">Detalii Vizită</h2>
+                    <div class="visit-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pickup-location">Locația de ridicare</label>
+                                <select id="pickup-location" class="form-control">
+                                    <option value="">Selectează locația</option>
+                                    <option value="satu-mare">Satu Mare</option>
+                                    <option value="baia-mare">Baia Mare</option>
+                                    <option value="oradea">Oradea</option>
+                                    <option value="cluj-napoca">Cluj-Napoca</option>
+                                    <option value="cluj-napoca-airport">Aeroportul Cluj-Napoca</option>
+                                    <option value="debrecen">Debrecen</option>
+                                    <option value="debrecen-airport">Aeroportul Debrecen</option>
+                                    <option value="budapest">Budapesta</option>
+                                    <option value="budapest-airport">Aeroportul Budapesta</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dropoff-location">Locația de returnare</label>
+                                <select id="dropoff-location" class="form-control">
+                                    <option value="">Selectează locația</option>
+                                    <option value="satu-mare">Satu Mare</option>
+                                    <option value="baia-mare">Baia Mare</option>
+                                    <option value="oradea">Oradea</option>
+                                    <option value="cluj-napoca">Cluj-Napoca</option>
+                                    <option value="cluj-napoca-airport">Aeroportul Cluj-Napoca</option>
+                                    <option value="debrecen">Debrecen</option>
+                                    <option value="debrecen-airport">Aeroportul Debrecen</option>
+                                    <option value="budapest">Budapesta</option>
+                                    <option value="budapest-airport">Aeroportul Budapesta</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pickup-date">Data ridicării</label>
+                                <input type="date" id="pickup-date" class="form-control" 
+                                       data-placeholder="zz/ll/aaaa" 
+                                       lang="ro">
+                            </div>
+                            <div class="form-group">
+                                <label for="pickup-time">Ora ridicării</label>
+                                <select id="pickup-time" class="form-control">
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="dropoff-date">Data returnării</label>
+                                <input type="date" id="dropoff-date" class="form-control" 
+                                       data-placeholder="zz/ll/aaaa" 
+                                       lang="ro">
+                            </div>
+                            <div class="form-group">
+                                <label for="dropoff-time">Ora returnării</label>
+                                <select id="dropoff-time" class="form-control">
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary" onclick="nextStep()">Continuă</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Car Selection -->
+            <div class="booking-step hidden" id="step-2">
+                <div class="step-content">
+                    <div class="car-selection-layout">
+                        <!-- Filter Sidebar -->
+                        <div class="filter-sidebar">
+                            <h3 class="filter-title">Filtre</h3>
+                            
+                            <div class="filter-group">
+                                <h4 class="filter-group-title">Transmisie</h4>
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" value="automatic" checked>
+                                        <span class="checkmark"></span>
+                                        Automată
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" value="manual" checked>
+                                        <span class="checkmark"></span>
+                                        Manuală
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h4 class="filter-group-title">Clasă</h4>
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" value="economy" checked>
+                                        <span class="checkmark"></span>
+                                        Economy
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" value="compact" checked>
+                                        <span class="checkmark"></span>
+                                        Compact
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" value="sedan" checked>
+                                        <span class="checkmark"></span>
+                                        Sedan
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" value="suv" checked>
+                                        <span class="checkmark"></span>
+                                        SUV
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" value="premium" checked>
+                                        <span class="checkmark"></span>
+                                        Premium
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" value="van" checked>
+                                        <span class="checkmark"></span>
+                                        Van
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Car Grid -->
+                        <div class="car-grid-container">
+                            <h2 class="step-title">Alege Mașina</h2>
+                            <div class="car-grid" id="car-grid">
+                                <!-- Cars will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Additional Services -->
+            <div class="booking-step hidden" id="step-3">
+                <div class="step-content">
+                    <h2 class="step-title">Servicii Adiționale</h2>
+                    
+                    <!-- Insurance Plans -->
+                    <div class="insurance-section">
+                        <h3 class="section-subtitle">Planuri de Asigurare</h3>
+                        <div class="insurance-grid">
+                            <div class="insurance-card" data-plan="premium">
+                                <div class="insurance-header">
+                                    <h4 class="insurance-title">Premium</h4>
+                                    <div class="insurance-price">15€/zi</div>
+                                </div>
+                                <div class="insurance-features">
+                                    <ul>
+                                        <li><i class="fas fa-check"></i> Franciză redusă la 100€</li>
+                                        <li><i class="fas fa-check"></i> Protecție pentru parbriz</li>
+                                        <li><i class="fas fa-check"></i> Protecție pentru anvelope</li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="btn btn-outline insurance-select">Selectează</button>
+                            </div>
+                            
+                            <div class="insurance-card" data-plan="full">
+                                <div class="insurance-header">
+                                    <h4 class="insurance-title">Full</h4>
+                                    <div class="insurance-price">25€/zi</div>
+                                </div>
+                                <div class="insurance-features">
+                                    <ul>
+                                        <li><i class="fas fa-check"></i> Fără franciză</li>
+                                        <li><i class="fas fa-check"></i> Protecție completă</li>
+                                        <li><i class="fas fa-check"></i> Asistență rutieră 24/7</li>
+                                        <li><i class="fas fa-check"></i> Mașină de rezervă</li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="btn btn-outline insurance-select">Selectează</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Equipment -->
+                    <div class="equipment-section">
+                        <h3 class="section-subtitle">Echipamente Adiționale</h3>
+                        <div class="equipment-grid">
+                            <label class="equipment-item">
+                                <input type="checkbox" value="gps">
+                                <div class="equipment-card">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <h4>GPS</h4>
+                                    <p class="equipment-price">5€/zi</p>
+                                </div>
+                            </label>
+                            
+                            <label class="equipment-item">
+                                <input type="checkbox" value="baby-seat">
+                                <div class="equipment-card">
+                                    <i class="fas fa-baby"></i>
+                                    <h4>Scaun Bebe</h4>
+                                    <p class="equipment-price">3€/zi</p>
+                                </div>
+                            </label>
+                            
+                            <label class="equipment-item">
+                                <input type="checkbox" value="child-seat">
+                                <div class="equipment-card">
+                                    <i class="fas fa-child"></i>
+                                    <h4>Scaun Copil</h4>
+                                    <p class="equipment-price">3€/zi</p>
+                                </div>
+                            </label>
+                            
+                            <label class="equipment-item">
+                                <input type="checkbox" value="additional-driver">
+                                <div class="equipment-card">
+                                    <i class="fas fa-user-plus"></i>
+                                    <h4>Șofer Adițional</h4>
+                                    <p class="equipment-price">10€/zi</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">Înapoi</button>
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">Continuă</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Personal Details & Finalization -->
+            <div class="booking-step hidden" id="step-4">
+                <div class="step-content">
+                    <h2 class="step-title">Finalizare Rezervare</h2>
+                    
+                    <div class="finalization-layout">
+                        <!-- Personal Details Form -->
+                        <div class="personal-details">
+                            <h3 class="section-subtitle">Detalii Personale</h3>
+                            <form class="personal-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first-name">Prenume *</label>
+                                        <input type="text" id="first-name" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Nume *</label>
+                                        <input type="text" id="last-name" class="form-control" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" id="email" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Telefon *</label>
+                                        <div class="phone-input">
+                                            <select class="country-code" id="country-code">
+                                                <option value="+40" data-flag="🇷🇴">🇷🇴 +40</option>
+                                                <option value="+49" data-flag="🇩🇪">🇩🇪 +49</option>
+                                                <option value="+33" data-flag="🇫🇷">🇫🇷 +33</option>
+                                                <option value="+39" data-flag="🇮🇹">🇮🇹 +39</option>
+                                                <option value="+34" data-flag="🇪🇸">🇪🇸 +34</option>
+                                            </select>
+                                            <input type="tel" id="phone" class="form-control" placeholder="123 456 789" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="birth-date">Data nașterii *</label>
+                                    <input type="date" id="birth-date" class="form-control" required 
+                                           data-placeholder="zz/ll/aaaa" 
+                                           lang="ro">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="license-number">Numărul permisului de conducere *</label>
+                                    <input type="text" id="license-number" class="form-control" required>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" id="privacy-policy" required>
+                                        <span class="checkmark"></span>
+                                        Sunt de acord cu <a href="politica-de-confidentialitate.html" target="_blank">Politica de Confidențialitate</a>
+                                    </label>
+                                    
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" id="commercial-info">
+                                        <span class="checkmark"></span>
+                                        Doresc să primesc informații comerciale
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Reservation Summary -->
+                        <div class="reservation-summary">
+                            <h3 class="section-subtitle">Rezumatul Rezervării</h3>
+                            <div class="summary-card" id="final-summary">
+                                <!-- Summary will be populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="prevStep()">Înapoi</button>
+                        <button type="button" class="btn btn-primary complete-btn" onclick="completeBooking()">Finalizează Rezervarea</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reservation Summary Bar -->
+        <div class="reservation-bar" id="reservation-bar">
+            <div class="reservation-content">
+                <div class="reservation-info">
+                    <div class="selected-car-info" id="selected-car-info">
+                        <span class="no-selection">Selectează o mașină pentru a continua</span>
+                    </div>
+                    <div class="reservation-dates" id="reservation-dates"></div>
+                    <div class="reservation-total" id="reservation-total"></div>
+                </div>
+                <button class="expand-btn" id="expand-btn" onclick="toggleReservationDetails()">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+            
+            <div class="reservation-details" id="reservation-details">
+                <div class="details-content">
+                    <h4>Detalii Rezervare</h4>
+                    <div class="booking-breakdown" id="booking-breakdown">
+                        <!-- Breakdown will be populated dynamically -->
+                    </div>
+                    <div class="details-actions">
+                        <button class="btn btn-primary next-step-btn" onclick="nextStep()" disabled>URMĂTORUL PAS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>VEIRON AUTO</h3>
+                    <p>Servicii de închiriere auto de încredere în România și Europa.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Link-uri Rapide</h4>
+                    <ul>
+                        <li><a href="index-ro.html">Acasă</a></li>
+                        <li><a href="booking.html">Rezervare</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="termeni-si-conditii.html">Termeni și Condiții</a></li>
+                        <li><a href="politica-de-confidentialitate.html">Politica de Confidențialitate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +40 123 456 789</p>
+                    <p><i class="fas fa-envelope"></i> info@veironauto.ro</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 VEIRON AUTO. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/booking.js"></script>
+</body>
+</html>

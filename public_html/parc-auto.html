@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parc Auto - VEIRONAUTO</title>
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/parc-auto.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index-ro.html" class="logo-link">
+                    <span class="logo-text">VEIRON AUTO</span>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index-ro.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Acasă</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="parc-auto.html" class="nav-link active">
+                            <i class="fas fa-car"></i>
+                            <span>Parc Auto</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="booking.html" class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Rezervare</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Despre</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="ro" onclick="window.location.href='parc-auto.html'">
+                    <i class="fas fa-flag"></i>
+                    <span>RO</span>
+                </button>
+                <button class="lang-btn" data-lang="en" onclick="window.location.href='parc-auto-en.html'">
+                    <i class="fas fa-flag"></i>
+                    <span>EN</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Parcul Nostru Auto</h1>
+                <p class="hero-subtitle">Descoperă întreaga noastră flotă de vehicule moderne și sigure pentru orice călătorie.</p>
+            </div>
+        </section>
+
+        <!-- Main Content with Sidebar -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-layout">
+                    <!-- Sidebar Filters -->
+                    <aside class="sidebar-filters">
+                        <div class="sidebar-header">
+                            <h3>Filtrează mașinile</h3>
+                        </div>
+                        
+                        <div class="filter-groups">
+                            <div class="filter-group">
+                                <label for="category-filter">Categorie:</label>
+                                <select id="category-filter" class="filter-select">
+                                    <option value="">Toate categoriile</option>
+                                    <option value="economic">Economic</option>
+                                    <option value="sedan">Sedan</option>
+                                    <option value="suv">SUV</option>
+                                    <option value="van">Van</option>
+                                    <option value="compact">Compact</option>
+                                    <option value="luxury">Luxury</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label for="passengers-filter">Pasageri:</label>
+                                <select id="passengers-filter" class="filter-select">
+                                    <option value="">Numar Pasageri</option>
+                                    <option value="4">Până la 4 persoane</option>
+                                    <option value="5">Până la 5 persoane</option>
+                                    <option value="7">Până la 7 persoane</option>
+                                    <option value="8+">8+ persoane</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label for="transmission-filter">Transmisie:</label>
+                                <select id="transmission-filter" class="filter-select">
+                                    <option value="">Tip  transmisie</option>
+                                    <option value="manual">Manuală</option>
+                                    <option value="automatic">Automată</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label for="sort-filter">Sortare:</label>
+                                <select id="sort-filter" class="filter-select">
+                                    <option value="name">Nume A-Z</option>
+                                    <option value="name-desc">Nume Z-A</option>
+                                    <option value="price-asc">Preț crescător</option>
+                                    <option value="price-desc">Preț descrescător</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-actions">
+                                <button class="clear-filters-btn" id="clear-filters">
+                                    <i class="fas fa-times"></i> Șterge filtrele
+                                </button>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Main Content Area -->
+                    <main class="main-cars-area">
+                <div class="cars-grid" id="cars-grid">
+                    <!-- Car Card 1 -->
+                    <div class="car-card" data-category="van" data-passengers="8" data-transmission="automatic" data-price="405" data-model="renault-traffic-8plus1">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/renault-traffic-8plus1/gallery/renault-traffic-8plus1-van-inchiriere-satu-mare.jpg" alt="Renault Traffic 8+1" class="main-image" id="main-img-1">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/renault-traffic-8plus1/gallery/renault-traffic-8plus1-van-inchiriere-satu-mare.jpg" alt="Vedere frontală" class="thumb-image active" onclick="changeMainImage(1, this)">
+                                <img src="assets/images/cars/renault-traffic-8plus1/gallery/renault-traffic-lateral-van-spatios.jpg" alt="Vedere laterală" class="thumb-image" onclick="changeMainImage(1, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Interior" class="thumb-image" onclick="changeMainImage(1, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Spațiu bagaje" class="thumb-image" onclick="changeMainImage(1, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Renault Traffic 8+1</h3>
+                            <p class="car-similar-text">sau asemănător</p>
+                            <p class="car-description">Van 8+1 locuri</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>8 pasageri</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>4 bagaje mari</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automată</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Diesel</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometri incluși</span>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">405</span>
+                                <span class="price-currency">lei / zi</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('renault-traffic')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Rezervă acum
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 2 -->
+                    <div class="car-card" data-category="sedan" data-passengers="5" data-transmission="automatic" data-price="285" data-model="audi-a6">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/audi-a6/gallery/audi-a6-sedan-inchiriere-lux-satu-mare.jpg" alt="Audi A6" class="main-image" id="main-img-2">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/audi-a6/gallery/audi-a6-sedan-inchiriere-lux-satu-mare.jpg" alt="Vedere frontală" class="thumb-image active" onclick="changeMainImage(2, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Interior premium" class="thumb-image" onclick="changeMainImage(2, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Vedere laterală" class="thumb-image" onclick="changeMainImage(2, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Portbagaj" class="thumb-image" onclick="changeMainImage(2, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Audi A6</h3>
+                            <p class="car-similar-text">sau asemănător</p>
+                            <p class="car-description">Sedan Automatic DSG - Interior piele și dotări full extra</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 pasageri</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>3 bagaje mari</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automată DSG</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Benzină</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometri incluși</span>
+                            </div>
+                            <div class="car-amenities">
+                                <div class="amenity">
+                                    <i class="fas fa-chair"></i>
+                                    <span>Interior piele</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>Transmisie DSG</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-star"></i>
+                                    <span>Dotări full extra</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Siguranță avansată</span>
+                                </div>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">285</span>
+                                <span class="price-currency">lei / zi</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('audi-a6')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Rezervă acum
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 3 -->
+                    <div class="car-card" data-category="economic" data-passengers="5" data-transmission="automatic" data-price="200" data-model="audi-a3-tfsi">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/audi-a3-tfsi/gallery/main.jpg" alt="Audi A3 TFSI" class="main-image" id="main-img-3">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/audi-a3-tfsi/gallery/main.jpg" alt="Vedere principală" class="thumb-image active" onclick="changeMainImage(3, this)">
+                                <img src="assets/images/cars/audi-a3-tfsi/gallery/inchiriere_masina_de_oras_satu_mare.jpg" alt="Mașină de oraș" class="thumb-image" onclick="changeMainImage(3, this)">
+                                <img src="assets/images/cars/audi-a3-tfsi/gallery/inchirieri_auto_ieftin_satu_mare.jpg" alt="Închirieri auto ieftin" class="thumb-image" onclick="changeMainImage(3, this)">
+                                <img src="assets/images/cars/audi-a3-tfsi/gallery/inchirieri_masini_satu_mare.jpg" alt="Închirieri mașini" class="thumb-image" onclick="changeMainImage(3, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Audi A3 TFSI</h3>
+                            <p class="car-similar-text">sau asemănător</p>
+                            <p class="car-description">Compact Automatic TFSI - Motor benzină cu tehnologie avansată</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 pasageri</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>3 bagaje mari</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>DSG Automată</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>TFSI Benzină</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometri incluși</span>
+                            </div>
+                            <div class="car-amenities">
+                                <div class="amenity">
+                                    <i class="fas fa-music"></i>
+                                    <span>Radio CD/MP3/Multimedia</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climatizare manuală</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Pilot automat</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-steering-wheel"></i>
+                                    <span>Comenzi pe volan</span>
+                                </div>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">200</span>
+                                <span class="price-currency">lei / zi</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('audi-a3-tfsi')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Rezervă acum
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 4 -->
+                    <div class="car-card" data-category="economic" data-passengers="5" data-transmission="automatic" data-price="500" data-model="bmw-x1-2025">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/bmw-x1-2025/gallery/bmw-x1-2025-suv-compact-inchiriere-satu-mare.jpg" alt="BMW X1 2025" class="main-image" id="main-img-4">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/bmw-x1-2025/gallery/bmw-x1-2025-suv-compact-inchiriere-satu-mare.jpg" alt="Vedere frontală SUV" class="thumb-image active" onclick="changeMainImage(4, this)">
+                                <img src="assets/images/cars/bmw-x1-2025/gallery/bmw-x1-2025-interior-premium-technology.jpg" alt="Interior premium" class="thumb-image" onclick="changeMainImage(4, this)">
+                                <img src="assets/images/cars/bmw-x1-2025/gallery/bmw-x1-2025-lateral-suv-modern.jpg" alt="Vedere laterală" class="thumb-image" onclick="changeMainImage(4, this)">
+                                <img src="assets/images/cars/bmw-x1-2025/gallery/bmw-x1-2025-bagaje-portbagaj-suv.jpg" alt="Portbagaj SUV" class="thumb-image" onclick="changeMainImage(4, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">BMW X1 2025</h3>
+                            <p class="car-similar-text">sau asemănător</p>
+                            <p class="car-description">SUV Compact Premium - Tehnologie BMW de ultimă generație</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 pasageri</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>4 bagaje mari</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automată</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Benzină</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometri incluși</span>
+                            </div>
+                            <div class="car-amenities">
+                                <div class="amenity">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>BMW Connected</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Climatizare automată</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Sistem siguranță BMW</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-car"></i>
+                                    <span>Asistent parcare</span>
+                                </div>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">500</span>
+                                <span class="price-currency">lei / zi</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('bmw-x1-2025')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Rezervă acum
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 5 -->
+                    <div class="car-card" data-category="suv" data-passengers="5" data-transmission="automatic" data-price="315" data-model="toyota-rav4">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/toyota-rav4/gallery/toyota-rav4-suv-inchiriere-4x4-satu-mare.jpg" alt="Toyota RAV4" class="main-image" id="main-img-5">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/toyota-rav4/gallery/toyota-rav4-suv-inchiriere-4x4-satu-mare.jpg" alt="Vedere frontală SUV" class="thumb-image active" onclick="changeMainImage(5, this)">
+                                <img src="assets/images/cars/toyota-rav4/gallery/toyota-rav4-suv-inchiriere-4x4-satu-mare-2.jpg" alt="Vedere laterală" class="thumb-image" onclick="changeMainImage(5, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Interior" class="thumb-image" onclick="changeMainImage(5, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Portbagaj" class="thumb-image" onclick="changeMainImage(5, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Toyota RAV4</h3>
+                            <p class="car-similar-text">sau asemănător</p>
+                            <p class="car-description">SUV Automatic - Perfect pentru aventuri și călătorii în familie</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 pasageri</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>4 bagaje mari</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automată</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Benzină</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometri incluși</span>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">315</span>
+                                <span class="price-currency">lei / zi</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('toyota-rav4')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Rezervă acum
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 6 -->
+                    <div class="car-card" data-category="luxury" data-passengers="5" data-transmission="automatic" data-price="395" data-model="mercedes-e-class">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/mercedes-e-class/gallery/mercedes-e-class-sedan-premium-inchiriere-satu-mare.jpg" alt="Mercedes E-Class" class="main-image" id="main-img-6">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/mercedes-e-class/gallery/mercedes-e-class-sedan-premium-inchiriere-satu-mare.jpg" alt="Vedere frontală sedan" class="thumb-image active" onclick="changeMainImage(6, this)">
+                                <img src="assets/images/cars/mercedes-e-class/gallery/mercedes-e-class-interior-luxury-executive.jpg" alt="Interior luxury" class="thumb-image" onclick="changeMainImage(6, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Vedere laterală" class="thumb-image" onclick="changeMainImage(6, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Portbagaj executive" class="thumb-image" onclick="changeMainImage(6, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Mercedes E-Class</h3>
+                            <p class="car-similar-text">sau asemănător</p>
+                            <p class="car-description">Luxury Sedan - Eleganță și performanță premium</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 pasageri</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>3 bagaje mari</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automată</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Benzină</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometri incluși</span>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">395</span>
+                                <span class="price-currency">lei / zi</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('mercedes-e-class')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Rezervă acum
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 7 -->
+                    <div class="car-card" data-category="suv" data-passengers="5" data-transmission="automatic" data-price="295" data-model="renault-koleos">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/renault-koleos/gallery/renault-koleos-suv-inchiriere-family-satu-mare.jpg" alt="Renault Koleos" class="main-image" id="main-img-7">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/renault-koleos/gallery/renault-koleos-suv-inchiriere-family-satu-mare.jpg" alt="Vedere frontală SUV" class="thumb-image active" onclick="changeMainImage(7, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Interior confort" class="thumb-image" onclick="changeMainImage(7, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Vedere laterală" class="thumb-image" onclick="changeMainImage(7, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Portbagaj family" class="thumb-image" onclick="changeMainImage(7, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Renault Koleos</h3>
+                            <p class="car-similar-text">sau asemănător</p>
+                            <p class="car-description">SUV Automatic - Confort și versatilitate pentru orice teren</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 pasageri</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>4 bagaje mari</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automată</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Diesel</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometri incluși</span>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">295</span>
+                                <span class="price-currency">lei / zi</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('renault-koleos')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Rezervă acum
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 8 -->
+                    <div class="car-card" data-category="luxury" data-passengers="5" data-transmission="automatic" data-price="385">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/bmw-530-gt/gallery/bmw-530-gt-gran-turismo-inchiriere-satu-mare.jpg" alt="BMW 530 GT" class="main-image" id="main-img-8">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/bmw-530-gt/gallery/bmw-530-gt-gran-turismo-inchiriere-satu-mare.jpg" alt="Vedere frontală Gran Turismo" class="thumb-image active" onclick="changeMainImage(8, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Interior luxury sport" class="thumb-image" onclick="changeMainImage(8, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Vedere laterală GT" class="thumb-image" onclick="changeMainImage(8, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Portbagaj mare" class="thumb-image" onclick="changeMainImage(8, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">BMW 530 GT</h3>
+                            <p class="car-similar-text">sau asemănător</p>
+                            <p class="car-description">Gran Turismo - Performanță și confort de top</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 pasageri</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>3 bagaje mari</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automată</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Benzină</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometri incluși</span>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">385</span>
+                                <span class="price-currency">lei / zi</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('bmw-530-gt')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Rezervă acum
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                        <!-- No Results Message -->
+                        <div class="no-results" id="no-results" style="display: none;">
+                            <div class="no-results-content">
+                                <i class="fas fa-search"></i>
+                                <h3>Nu am găsit mașini</h3>
+                                <p>Încercați să modificați filtrele sau să navigați înapoi la toate mașinile.</p>
+                                <button class="btn-clear-all" onclick="clearAllFilters()">Afișează toate mașinile</button>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <!-- Stânga: Logo și date contact -->
+          <div class="footer-logo-contact">
+            <a href="index-ro.html" class="logo-link">
+              <span class="logo-text">VEIRON AUTO</span>
+            </a>
+            <div class="footer-contact">
+              <p>Adresa: Sat Botiz, Str. Sirul Mare, nr.110, Jud. Satu Mare, Romania</p>
+              <p>Telefon: +40 755 622 858</p>
+              <p>Email: veironauto@gmail.com</p>
+            </div>
+          </div>
+          <!-- Centru: Link-uri rapide în două coloane -->
+          <div class="footer-links-columns">
+            <div class="footer-links-col">
+              <h3>Link-uri rapide</h3>
+              <ul>
+                <li><a href="index-ro.html#home">Acasă</a></li>
+                <li><a href="parc-auto.html">Parc Auto</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index-ro.html#rezervare">Rezervare</a></li>
+              </ul>
+            </div>
+            <div class="footer-links-col">
+              <h3>Legal &amp; ANPC</h3>
+              <ul>
+                <li><a href="politica-de-confidentialitate.html">Politica de Confidențialitate</a></li>
+                <li><a href="termeni-si-conditii.html">Termeni și Condiții</a></li>
+                <li><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">ANPC - Soluționare Litigii</a></li>
+                <li><a href="https://veirondaune.ro" target="_blank" rel="noopener">Veiron Daune</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Dreapta: Date fiscale -->
+          <div class="footer-fiscal">
+            <h3>Date Fiscale</h3>
+            <ul>
+              <li>Nume firmă: VEIRON AUTO SRL</li>
+              <li>CUI: 29943648</li>
+              <li>Nr. Înmatriculare: J2012000193305</li>
+              <li>EUID: ROONRC.J2012000193305</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; currentyear VEIRON AUTO. Toate drepturile rezervate.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Image Zoom Modal -->
+    <div id="image-zoom-modal" class="zoom-modal" style="display: none;">
+        <div class="zoom-overlay" onclick="closeImageZoom()"></div>
+        <div class="zoom-container">
+            <button class="zoom-close" onclick="closeImageZoom()" aria-label="Închide zoom">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="zoom-content">
+                <img id="zoom-image" src="" alt="" class="zoom-img">
+                <div class="zoom-controls">
+                    <button class="zoom-btn prev-btn" onclick="previousImage()" aria-label="Imaginea anterioară">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="zoom-btn next-btn" onclick="nextImage()" aria-label="Imaginea următoare">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="zoom-info">
+                    <h4 id="zoom-car-title">Numele mașinii</h4>
+                    <p id="zoom-image-alt">Descrierea imaginii</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/car-enhancements.js"></script>
+    <script src="assets/js/parc-auto.js"></script>
+</body>
+</html>

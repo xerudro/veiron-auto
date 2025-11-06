@@ -1,0 +1,132 @@
+# Cursor Rules Location
+
+How to add new cursor rules to the project
+
+1. Always place rule files in PROJECT_ROOT/.cursor/rules/:
+    ```
+    .cursor/rules/
+    ├── your-rule-name.mdc
+    ├── another-rule.mdc
+    └── ...
+    ```
+
+2. Follow the naming convention:
+    - Use kebab-case for filenames
+    - Always use .mdc extension
+    - Make names descriptive of the rule's purpose
+
+3. Directory structure:
+    ```
+    PROJECT_ROOT/
+    ├── .cursor/
+    │   └── rules/
+    │       ├── your-rule-name.mdc
+    │       └── ...
+    └── ...
+    ```
+
+4. Never place rule files:
+    - In the project root
+    - In subdirectories outside .cursor/rules
+    - In any other location
+
+5. Cursor rules have the following structure:
+
+```
+---
+description: Short description of the rule's purpose
+globs: optional/path/pattern/**/*
+alwaysApply: false
+---
+# Rule Title
+
+Main content explaining the rule with markdown formatting.
+
+1. Step-by-step instructions
+2. Code examples
+3. Guidelines
+
+Example:
+
+```typescript
+// Good example
+function goodExample() {
+  // Implementation following guidelines
+}
+
+// Bad example
+function badExample() {
+  // Implementation not following guidelines
+}
+```
+
+# Cursor Rule: Project Directory Structure
+
+## Root Structure
+
+- **memory-bank/** – Sistemul de context și progres (tasks, progres, context activ, arhivă, reflecție, creative)
+  - tasks.md, progress.md, activeContext.md, projectbrief.md, productContext.md, systemPatterns.md, techContext.md
+  - creative/, reflection/, archive/
+- **public_html/** – Frontend-ul aplicației (HTML, assets, admin)
+  - index-ro.html, index-en.html, contact.html
+  - assets/ (css, js, images, libs, json)
+  - admin/
+- **app/** – Backend logic (config, api, includes, admin)
+- **assets/** – Imagini, grafice, resurse vizuale pentru documentație și UI
+- **database/** – Scripturi, migrații, seed data pentru baza de date
+- **custom_modes/** – Instrucțiuni și reguli pentru moduri custom (van, plan, creative, implement, reflect)
+- **docs/** – Documentație tehnică, PRD, release notes
+  - prd.txt, RELEASE_NOTES.md
+- **optimization-journey/** – Documente despre optimizări, lecții, metodologii
+- **old-memory-bank/** – Backup vechi pentru memory-bank
+- **update-progress.ps1** – Script PowerShell pentru actualizarea progresului automat
+- **VEIRONAUTO_TODO_LIST.md** – Lista completă de taskuri cu dependențe
+- **README.md** – Documentație principală proiect
+
+## Notă
+- Structura este modulară, separă clar contextul (memory-bank), frontend-ul (public_html), backend-ul (app), resursele (assets), documentația (docs) și regulile de lucru (custom_modes).
+- Toate taskurile și progresul se gestionează în memory-bank.
+- Pentru orice modificare majoră, actualizează această regulă pentru a reflecta structura reală a proiectului.
+
+
+  // Implementation not following guidelines
+
+# Cursor Rule: Application Stack & Best Practices
+
+## Stack Overview
+
+- **HTML5**
+  - Versiune: Standard actual (2024)
+  - Best practices: Folosește semantic tags (`<header>`, `<main>`, `<section>`, `<footer>`), meta tags pentru SEO și accesibilitate, validează markup-ul cu validatorul W3C.
+
+- **CSS3**
+  - Versiune: Standard actual (2024)
+  - Best practices: Folosește variabile CSS pentru temă, media queries pentru responsive, Flexbox/Grid pentru layout, evită !important, folosește BEM sau utility classes pentru consistență.
+
+- **JavaScript (Vanilla JS)**
+  - Versiune: ES2020+ recomandat (browsere moderne)
+  - Best practices: Module pattern (ES6 imports/exports dacă e posibil), folosește const/let, arrow functions, evită global scope, folosește event delegation, validează inputul pe client, minimizează dependențele externe.
+
+- **JSON**
+  - Versiune: Standard RFC 8259
+  - Best practices: Structură clară, folosește camelCase pentru chei, validează schema (ex: cu ajv), documentează structura datelor, folosește JSON pentru schimb de date între front și back.
+
+- **MariaDB**
+  - Versiune recomandată: 10.5+
+  - Best practices: Folosește prepared statements pentru securitate, indexează coloanele folosite în WHERE/ORDER BY, normalizează datele, folosește tranzacții pentru operațiuni critice, backup regulat, charset utf8mb4.
+
+- **API**
+  - Tip: REST (sau JSON-RPC dacă e cazul)
+  - Best practices: Folosește rute RESTful (`/api/cars`, `/api/bookings`), validează și sanitizează toate datele, răspunde cu coduri HTTP corecte, documentează API-ul (OpenAPI/Swagger), implementează CORS, rate limiting și autentificare dacă e nevoie.
+
+## Observații generale
+- Stack-ul este modern, fără framework JS major, ceea ce reduce complexitatea și dependențele.
+- Recomand să folosești un linter pentru JS și CSS (ex: ESLint, Stylelint) și să validezi HTML-ul periodic.
+- Pentru API, documentația și validarea inputului sunt critice pentru mentenanță și securitate.
+- Pentru MariaDB, folosește un tool de administrare (ex: Adminer, DBeaver) și monitorizează performanța interogărilor.
+
+## Actualizare
+- Actualizează această regulă dacă adaugi framework-uri noi sau modifici stack-ul tehnologic.
+
+```
+

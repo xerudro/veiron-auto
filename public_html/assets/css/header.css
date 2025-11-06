@@ -1,0 +1,255 @@
+/* ===== CSS VARIABLES ===== */
+:root {
+    --primary-color: orangered;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --white: #ffffff;
+    --gray-light: #ecf0f1;
+    --gray-dark: #34495e;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--white);
+}
+
+/* ===== HEADER ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    height: 70px;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* ===== LOGO ===== */
+.logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ===== NAVIGATION ===== */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.nav-link i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.nav-link span {
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background: var(--gray-light);
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.nav-link:hover i {
+    color: var(--primary-color);
+}
+
+/* ===== LANGUAGE SWITCHER ===== */
+.lang-switcher {
+    display: flex;
+    gap: 8px;
+}
+
+.lang-btn {
+    background: var(--gray-light);
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.lang-btn i {
+    font-size: 0.8rem;
+}
+
+.lang-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.lang-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* ===== MOBILE MENU TOGGLE ===== */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 8px;
+}
+
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .nav {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--white);
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+    }
+
+    .nav.active {
+        left: 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 15px 20px;
+        border-radius: 0;
+        border-bottom: 1px solid var(--gray-light);
+    }
+
+    .nav-link i {
+        font-size: 1.2rem;
+        margin-right: 15px;
+    }
+
+    .nav-link span {
+        font-size: 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .lang-switcher {
+        gap: 4px;
+    }
+
+    .lang-btn {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+
+    .lang-btn span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 15px;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .lang-switcher {
+        gap: 2px;
+    }
+
+    .lang-btn {
+        padding: 6px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Show language text on small screens */
+@media (max-width: 768px) {
+  .lang-switcher .lang-btn span {
+    display: inline !important;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-left: 4px;
+  }
+  .lang-switcher .lang-btn i {
+    display: none;
+  }
+}
+
+/* Hide hero slider on screens < 1280px */
+@media (max-width: 1279px) {
+  .hero-slider {
+    display: none !important;
+  }
+}

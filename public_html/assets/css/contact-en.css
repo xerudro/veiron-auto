@@ -1,0 +1,272 @@
+/* Contact Page - VEIRON AUTO - polished, responsive, orangered accent (EN) */
+:root {
+  --va-orange: #ff4500;
+  --va-orange-dark: #e03e00;
+  --va-bg-light: #fafafa;
+  --va-bg-card: #f5f5f5;
+  --va-text-main: #232526;
+  --va-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+}
+body {
+  background: #fff;
+  color: var(--va-text-main);
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.contact-main {
+  background: #fff;
+  min-height: 100vh;
+}
+.contact-content {
+  padding: 48px 0 32px 0;
+  padding-top: 2.5rem;
+}
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
+  margin-top: 4.5rem;
+}
+.contact-left {
+  flex: 1 1 0;
+  min-width: 320px;
+  max-width: 42%;
+}
+.contact-right {
+  flex: 1 1 0;
+  min-width: 320px;
+  max-width: 58%;
+}
+.contact-right .contact-align-spacer {
+  height: 170px;
+  display: block;
+}
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 98vw;
+    padding: 0 1rem;
+  }
+  .contact-left, .contact-right {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .contact-info-card {
+    margin-bottom: 1.2rem;
+  }
+  .contact-right .contact-align-spacer {
+    height: 0;
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .contact-content {
+    padding: 24px 0 16px 0;
+    padding-top: 1.2rem;
+  }
+  .contact-form {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+  .contact-title {
+    font-size: 1.1rem;
+  }
+  .info-title {
+    font-size: 1rem;
+  }
+}
+/* Operator image, titles, form, info cards, etc. (copiat identic din contact-ro.css) */
+.contact-operator-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.contact-operator-img {
+  max-width: 110px;
+  width: 35vw;
+  min-width: 80px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #fff;
+  object-fit: cover;
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  .contact-operator-img-wrap {
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .contact-operator-img {
+    max-width: 90px;
+    width: 28vw;
+    min-width: 70px;
+  }
+}
+@media (max-width: 400px) {
+  .contact-operator-img-wrap {
+    margin-top: 3.2rem;
+  }
+  .contact-operator-img {
+    max-width: 70px;
+    width: 22vw;
+    min-width: 55px;
+  }
+}
+.contact-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--va-orange);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+}
+.contact-form-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--va-text-main);
+  margin-bottom: 1.2rem;
+  background: var(--va-bg-card);
+  padding: 0.5rem 0;
+  border-radius: 8px;
+}
+.contact-form {
+  background: #f7f7f9;
+  border: 2px solid #e9ecef;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1.1rem 0.7rem 0.7rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.contact-form-row {
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 600px) {
+  .contact-form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .form-group {
+    width: 100%;
+  }
+}
+.form-group {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.contact-form input,
+.contact-form textarea {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.97rem;
+  background: #fafafa;
+  transition: border 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--va-orange);
+  outline: none;
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 40px;
+}
+.checkbox-group, .recaptcha-group {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.93rem;
+}
+.recaptcha-group {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.recaptcha-dummy {
+  display: inline-block;
+  background: var(--va-bg-card);
+  border: 1.5px solid #bdbdbd;
+  border-radius: 6px;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.95rem;
+  color: #888;
+  margin-left: 0.5rem;
+}
+.btn.btn-primary {
+  background: var(--va-orange);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 0;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(255,69,0,0.08);
+}
+.btn.btn-primary:hover {
+  background: var(--va-orange-dark);
+}
+.contact-info-card {
+  background: var(--va-bg-light);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.03);
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+}
+.info-title {
+  color: var(--va-orange);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--va-text-main);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.info-list i {
+  color: var(--va-orange);
+  margin-right: 0.5rem;
+  font-size: 1.05em;
+}
+.info-link {
+  color: var(--va-orange);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.info-link:hover {
+  color: var(--va-orange-dark);
+}
+.info-link.whatsapp {
+  color: #25d366;
+} 
+
+@media (min-width: 900px) {
+  .contact-right {
+    margin-top: 2.2rem;
+  }
+} 

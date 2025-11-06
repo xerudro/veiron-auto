@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Fleet - VEIRONAUTO</title>
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/parc-auto.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index-en.html" class="logo-link">
+                    <span class="logo-text">VEIRON AUTO</span>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index-en.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="parc-auto-en.html" class="nav-link active">
+                            <i class="fas fa-car"></i>
+                            <span>Car Fleet</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="booking-en.html" class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Booking</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact-en.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="ro" onclick="window.location.href='parc-auto.html'">
+                    <i class="fas fa-flag"></i>
+                    <span>RO</span>
+                </button>
+                <button class="lang-btn active" data-lang="en" onclick="window.location.href='parc-auto-en.html'">
+                    <i class="fas fa-flag"></i>
+                    <span>EN</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Our Car Fleet</h1>
+                <p class="hero-subtitle">Discover our complete fleet of modern and safe vehicles for any journey.</p>
+            </div>
+        </section>
+
+        <!-- Main Content with Sidebar -->
+        <section class="content-section">
+            <div class="container">
+                <div class="content-layout">
+                    <!-- Sidebar Filters -->
+                    <aside class="sidebar-filters">
+                        <div class="sidebar-header">
+                            <h3>Filter Cars</h3>
+                        </div>
+                        
+                        <div class="filter-groups">
+                            <div class="filter-group">
+                                <label for="category-filter">Category:</label>
+                                <select id="category-filter" class="filter-select">
+                                    <option value="">All Categories</option>
+                                    <option value="economic">Economy</option>
+                                    <option value="sedan">Sedan</option>
+                                    <option value="suv">SUV</option>
+                                    <option value="van">Van</option>
+                                    <option value="compact">Compact</option>
+                                    <option value="luxury">Luxury</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label for="passengers-filter">Passengers:</label>
+                                <select id="passengers-filter" class="filter-select">
+                                    <option value="">Number of Passengers</option>
+                                    <option value="4">Up to 4 people</option>
+                                    <option value="5">Up to 5 people</option>
+                                    <option value="7">Up to 7 people</option>
+                                    <option value="8+">8+ people</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label for="transmission-filter">Transmission:</label>
+                                <select id="transmission-filter" class="filter-select">
+                                    <option value="">Transmission Type</option>
+                                    <option value="manual">Manual</option>
+                                    <option value="automatic">Automatic</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <label for="sort-filter">Sort:</label>
+                                <select id="sort-filter" class="filter-select">
+                                    <option value="name">Name A-Z</option>
+                                    <option value="name-desc">Name Z-A</option>
+                                    <option value="price-asc">Price Ascending</option>
+                                    <option value="price-desc">Price Descending</option>
+                                </select>
+                            </div>
+                            
+                            <div class="filter-actions">
+                                <button class="clear-filters-btn" id="clear-filters">
+                                    <i class="fas fa-times"></i> Clear Filters
+                                </button>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Main Content Area -->
+                    <main class="main-cars-area">
+                <div class="cars-grid" id="cars-grid">
+                    <!-- Car Card 1 -->
+                    <div class="car-card" data-category="van" data-passengers="8" data-transmission="automatic" data-price="405" data-model="renault-traffic-8plus1">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/renault-traffic-8plus1/gallery/renault-traffic-8plus1-van-inchiriere-satu-mare.jpg" alt="Renault Traffic 8+1" class="main-image" id="main-img-1">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/renault-traffic-8plus1/gallery/renault-traffic-8plus1-van-inchiriere-satu-mare.jpg" alt="Front view" class="thumb-image active" onclick="changeMainImage(1, this)">
+                                <img src="assets/images/cars/renault-traffic-8plus1/gallery/renault-traffic-lateral-van-spatios.jpg" alt="Side view" class="thumb-image" onclick="changeMainImage(1, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Interior" class="thumb-image" onclick="changeMainImage(1, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Luggage space" class="thumb-image" onclick="changeMainImage(1, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Renault Traffic 8+1</h3>
+                            <p class="car-similar-text">or similar</p>
+                            <p class="car-description">8+1 seater van</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>8 passengers</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>4 large bags</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Diesel</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometers included</span>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">80</span>
+                                <span class="price-currency">€ / day</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('renault-traffic')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 2 -->
+                    <div class="car-card" data-category="sedan" data-passengers="5" data-transmission="automatic" data-price="285" data-model="audi-a6">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/audi-a6/gallery/audi-a6-sedan-inchiriere-lux-satu-mare.jpg" alt="Audi A6" class="main-image" id="main-img-2">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/audi-a6/gallery/audi-a6-sedan-inchiriere-lux-satu-mare.jpg" alt="Front view" class="thumb-image active" onclick="changeMainImage(2, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Premium interior" class="thumb-image" onclick="changeMainImage(2, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Side view" class="thumb-image" onclick="changeMainImage(2, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Trunk" class="thumb-image" onclick="changeMainImage(2, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Audi A6</h3>
+                            <p class="car-similar-text">or similar</p>
+                            <p class="car-description">Automatic DSG Sedan - Leather interior and full premium features</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 passengers</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>3 large bags</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>DSG Automatic</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Petrol</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometers included</span>
+                            </div>
+                            <div class="car-amenities">
+                                <div class="amenity">
+                                    <i class="fas fa-chair"></i>
+                                    <span>Leather interior</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>DSG transmission</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-star"></i>
+                                    <span>Full premium features</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Advanced safety</span>
+                                </div>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">56</span>
+                                <span class="price-currency">€ / day</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('audi-a6')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 3 -->
+                    <div class="car-card" data-category="economic" data-passengers="5" data-transmission="automatic" data-price="200" data-model="audi-a3-tfsi">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/audi-a3-tfsi/gallery/main.jpg" alt="Audi A3 TFSI" class="main-image" id="main-img-3">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/audi-a3-tfsi/gallery/main.jpg" alt="Main view" class="thumb-image active" onclick="changeMainImage(3, this)">
+                                <img src="assets/images/cars/audi-a3-tfsi/gallery/inchiriere_masina_de_oras_satu_mare.jpg" alt="City car rental" class="thumb-image" onclick="changeMainImage(3, this)">
+                                <img src="assets/images/cars/audi-a3-tfsi/gallery/inchirieri_auto_ieftin_satu_mare.jpg" alt="Affordable car rental" class="thumb-image" onclick="changeMainImage(3, this)">
+                                <img src="assets/images/cars/audi-a3-tfsi/gallery/inchirieri_masini_satu_mare.jpg" alt="Car rentals" class="thumb-image" onclick="changeMainImage(3, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Audi A3 TFSI</h3>
+                            <p class="car-similar-text">or similar</p>
+                            <p class="car-description">Compact Automatic TFSI - Advanced petrol engine technology</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 passengers</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>3 large bags</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>DSG Automatic</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>TFSI Petrol</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometers included</span>
+                            </div>
+                            <div class="car-amenities">
+                                <div class="amenity">
+                                    <i class="fas fa-music"></i>
+                                    <span>CD/MP3/Multimedia system</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Manual air conditioning</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Cruise control</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-steering-wheel"></i>
+                                    <span>Steering wheel controls</span>
+                                </div>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">39</span>
+                                <span class="price-currency">€ / day</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('audi-a3-tfsi')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 4 -->
+                    <div class="car-card" data-category="economic" data-passengers="5" data-transmission="automatic" data-price="500" data-model="bmw-x1-2025">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/bmw-x1-2025/gallery/bmw-x1-2025-suv-compact-inchiriere-satu-mare.jpg" alt="BMW X1 2025" class="main-image" id="main-img-4">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/bmw-x1-2025/gallery/bmw-x1-2025-suv-compact-inchiriere-satu-mare.jpg" alt="Front SUV view" class="thumb-image active" onclick="changeMainImage(4, this)">
+                                <img src="assets/images/cars/bmw-x1-2025/gallery/bmw-x1-2025-interior-premium-technology.jpg" alt="Premium interior" class="thumb-image" onclick="changeMainImage(4, this)">
+                                <img src="assets/images/cars/bmw-x1-2025/gallery/bmw-x1-2025-lateral-suv-modern.jpg" alt="Side view" class="thumb-image" onclick="changeMainImage(4, this)">
+                                <img src="assets/images/cars/bmw-x1-2025/gallery/bmw-x1-2025-bagaje-portbagaj-suv.jpg" alt="SUV trunk" class="thumb-image" onclick="changeMainImage(4, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">BMW X1 2025</h3>
+                            <p class="car-similar-text">or similar</p>
+                            <p class="car-description">Premium Compact SUV - Latest generation BMW technology</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 passengers</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>4 large bags</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Petrol</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometers included</span>
+                            </div>
+                            <div class="car-amenities">
+                                <div class="amenity">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>BMW Connected</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Automatic air conditioning</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>BMW safety system</span>
+                                </div>
+                                <div class="amenity">
+                                    <i class="fas fa-car"></i>
+                                    <span>Parking assistant</span>
+                                </div>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">99</span>
+                                <span class="price-currency">€ / day</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('bmw-x1-2025')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 5 -->
+                    <div class="car-card" data-category="suv" data-passengers="5" data-transmission="automatic" data-price="315" data-model="toyota-rav4">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/toyota-rav4/gallery/toyota-rav4-suv-inchiriere-4x4-satu-mare.jpg" alt="Toyota RAV4" class="main-image" id="main-img-5">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/toyota-rav4/gallery/toyota-rav4-suv-inchiriere-4x4-satu-mare.jpg" alt="Front SUV view" class="thumb-image active" onclick="changeMainImage(5, this)">
+                                <img src="assets/images/cars/toyota-rav4/gallery/toyota-rav4-suv-inchiriere-4x4-satu-mare-2.jpg" alt="Side view" class="thumb-image" onclick="changeMainImage(5, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Interior" class="thumb-image" onclick="changeMainImage(5, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Trunk" class="thumb-image" onclick="changeMainImage(5, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Toyota RAV4</h3>
+                            <p class="car-similar-text">or similar</p>
+                            <p class="car-description">Automatic SUV - Perfect for adventures and family trips</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 passengers</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>4 large bags</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Petrol</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometers included</span>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">62</span>
+                                <span class="price-currency">€ / day</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('toyota-rav4')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 6 -->
+                    <div class="car-card" data-category="luxury" data-passengers="5" data-transmission="automatic" data-price="395" data-model="mercedes-e-class">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/mercedes-e-class/gallery/mercedes-e-class-sedan-premium-inchiriere-satu-mare.jpg" alt="Mercedes E-Class" class="main-image" id="main-img-6">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/mercedes-e-class/gallery/mercedes-e-class-sedan-premium-inchiriere-satu-mare.jpg" alt="Front sedan view" class="thumb-image active" onclick="changeMainImage(6, this)">
+                                <img src="assets/images/cars/mercedes-e-class/gallery/mercedes-e-class-interior-luxury-executive.jpg" alt="Luxury interior" class="thumb-image" onclick="changeMainImage(6, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Side view" class="thumb-image" onclick="changeMainImage(6, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Executive trunk" class="thumb-image" onclick="changeMainImage(6, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Mercedes E-Class</h3>
+                            <p class="car-similar-text">or similar</p>
+                            <p class="car-description">Luxury Sedan - Elegance and premium performance</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 passengers</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>3 large bags</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Petrol</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometers included</span>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">78</span>
+                                <span class="price-currency">€ / day</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('mercedes-e-class')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 7 -->
+                    <div class="car-card" data-category="suv" data-passengers="5" data-transmission="automatic" data-price="295" data-model="renault-koleos">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/renault-koleos/gallery/renault-koleos-suv-inchiriere-family-satu-mare.jpg" alt="Renault Koleos" class="main-image" id="main-img-7">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/renault-koleos/gallery/renault-koleos-suv-inchiriere-family-satu-mare.jpg" alt="Front SUV view" class="thumb-image active" onclick="changeMainImage(7, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Comfort interior" class="thumb-image" onclick="changeMainImage(7, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Side view" class="thumb-image" onclick="changeMainImage(7, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Family trunk" class="thumb-image" onclick="changeMainImage(7, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">Renault Koleos</h3>
+                            <p class="car-similar-text">or similar</p>
+                            <p class="car-description">Automatic SUV - Comfort and versatility for any terrain</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 passengers</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>4 large bags</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Diesel</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometers included</span>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">58</span>
+                                <span class="price-currency">€ / day</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('renault-koleos')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 8 -->
+                    <div class="car-card" data-category="luxury" data-passengers="5" data-transmission="automatic" data-price="385">
+                        <div class="car-gallery">
+                            <div class="gallery-main">
+                                <img src="assets/images/cars/bmw-530-gt/gallery/bmw-530-gt-gran-turismo-inchiriere-satu-mare.jpg" alt="BMW 530 GT" class="main-image" id="main-img-8">
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="assets/images/cars/bmw-530-gt/gallery/bmw-530-gt-gran-turismo-inchiriere-satu-mare.jpg" alt="Front Gran Turismo view" class="thumb-image active" onclick="changeMainImage(8, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Luxury sport interior" class="thumb-image" onclick="changeMainImage(8, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="GT side view" class="thumb-image" onclick="changeMainImage(8, this)">
+                                <img src="assets/images/cars/placeholder.jpg" alt="Large trunk" class="thumb-image" onclick="changeMainImage(8, this)">
+                            </div>
+                        </div>
+                        <div class="car-info">
+                            <h3 class="car-title">BMW 530 GT</h3>
+                            <p class="car-similar-text">or similar</p>
+                            <p class="car-description">Gran Turismo - Top performance and comfort</p>
+                            <div class="description-spacer"></div>
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>5 passengers</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-suitcase"></i>
+                                    <span>3 large bags</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gauge"></i>
+                                    <span>Automatic</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <span>Petrol</span>
+                                </div>
+                            </div>
+                            <div class="car-included">
+                                <i class="fas fa-check"></i>
+                                <span>300 kilometers included</span>
+                            </div>
+                            <div class="car-price">
+                                <span class="price-amount">76</span>
+                                <span class="price-currency">€ / day</span>
+                            </div>
+                            <button class="btn-reserve" onclick="selectCar('bmw-530-gt')">
+                                <i class="fas fa-calendar-alt"></i>
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                        <!-- No Results Message -->
+                        <div class="no-results" id="no-results" style="display: none;">
+                            <div class="no-results-content">
+                                <i class="fas fa-search"></i>
+                                <h3>No Cars Found</h3>
+                                <p>Try modifying the filters or navigate back to all cars.</p>
+                                <button class="btn-clear-all" onclick="clearAllFilters()">Show All Cars</button>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <!-- Left: Logo and contact info -->
+          <div class="footer-logo-contact">
+            <a href="index-en.html" class="logo-link">
+              <span class="logo-text">VEIRON AUTO</span>
+            </a>
+            <div class="footer-contact">
+              <p>Address: Sat Botiz, Str. Sirul Mare, no.110, Satu Mare County, Romania</p>
+              <p>Phone: +40 755 622 858</p>
+              <p>Email: veironauto@gmail.com</p>
+            </div>
+          </div>
+          <!-- Center: Quick links in two columns -->
+          <div class="footer-links-columns">
+            <div class="footer-links-col">
+              <h3>Quick Links</h3>
+              <ul>
+                <li><a href="index-en.html#home">Home</a></li>
+                <li><a href="parc-auto-en.html">Car Fleet</a></li>
+                <li><a href="contact-en.html">Contact</a></li>
+                <li><a href="index-en.html#booking">Booking</a></li>
+              </ul>
+            </div>
+            <div class="footer-links-col">
+              <h3>Legal &amp; ANPC</h3>
+              <ul>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="termeni-si-conditii.html">Terms and Conditions</a></li>
+                <li><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">ANPC - Dispute Resolution</a></li>
+                <li><a href="https://veirondaune.ro" target="_blank" rel="noopener">Veiron Daune</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Right: Company details -->
+          <div class="footer-fiscal">
+            <h3>Company Details</h3>
+            <ul>
+              <li>Company Name: VEIRON AUTO SRL</li>
+              <li>Tax ID: 29943648</li>
+              <li>Registration No: J2012000193305</li>
+              <li>EUID: ROONRC.J2012000193305</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 VEIRON AUTO. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Image Zoom Modal -->
+    <div id="image-zoom-modal" class="zoom-modal" style="display: none;">
+        <div class="zoom-overlay" onclick="closeImageZoom()"></div>
+        <div class="zoom-container">
+            <button class="zoom-close" onclick="closeImageZoom()" aria-label="Close zoom">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="zoom-content">
+                <img id="zoom-image" src="" alt="" class="zoom-img">
+                <div class="zoom-controls">
+                    <button class="zoom-btn prev-btn" onclick="previousImage()" aria-label="Previous image">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="zoom-btn next-btn" onclick="nextImage()" aria-label="Next image">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="zoom-info">
+                    <h4 id="zoom-car-title">Car name</h4>
+                    <p id="zoom-image-alt">Image description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/car-enhancements-en.js"></script>
+    <script src="assets/js/parc-auto-en.js"></script>
+</body>
+</html>

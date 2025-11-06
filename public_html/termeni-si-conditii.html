@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termeni și Condiții - VEIRON AUTO</title>
+  <meta name="description" content="Termeni și condiții pentru închirierea auto la VEIRON AUTO.">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/contact-ro.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <a href="index-ro.html" class="logo-link">
+        <span class="logo-text">VEIRON AUTO</span>
+      </a>
+      <nav class="nav">
+        <a href="index-ro.html" class="nav-link">Acasă</a>
+        <a href="#cars" class="nav-link">Mașini</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="politica-de-confidentialitate.html" class="nav-link">Politica de Confidențialitate</a>
+        <a href="termeni-si-conditii.html" class="nav-link active">Termeni și Condiții</a>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ro">
+          <i class="fas fa-flag"></i>
+          <span>RO</span>
+        </button>
+        <button class="lang-btn" data-lang="en" onclick="window.location.href='terms-and-conditions.html'">
+          <i class="fas fa-flag"></i>
+          <span>EN</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="contact-main">
+    <h1 class="privacy-title" style="margin-bottom: 0.5em;">Conditii de Inchiriere Auto</h1>
+    <h2 style="text-align:center; font-size:2.2rem; font-weight:800; font-style:italic; color:#232526; margin-bottom:2.5em;">SIMPU - RAPID - AVANTAJOS</h2>
+    <div class="privacy-content">
+      <h2 style="color:#ff4c00; font-size:1.5rem; margin-top:0;">Rezervare - Predare/Primire - Plata</h2>
+      <p style="font-weight:700; background:#fafafa; border:1px solid #ddd; padding:0.5em 1em; margin-bottom:1.2em;">
+        Rezervarea autoturismelor în vederea închirierii se efectuează în următoarele moduri:
+      </p>
+      <ol style="margin-left:2em; margin-bottom:1.2em;">
+        <li>
+          Telefonic în orele de program (08.00 - 23.00): 
+          <span style="color:#ff4c00; font-weight:700;">+4.0740.202.156</span>
+        </li>
+        <li>
+          Textual - SMS, Viber, <span style="color:#ff9900; font-weight:700;">WhatsApp</span>, Messenger, Facebook, Instagram, e-mail.
+        </li>
+        <li>
+          Online - completând formularul de rezervare de pe site-ul nostru.
+        </li>
+      </ol>
+      <p style="margin-bottom:1.2em;">
+        Predarea și primirea autoturismului se face la locația stabilită de comun acord, la ora convenită, cu prezentarea actelor necesare.
+      </p>
+      <p style="margin-bottom:1.2em;">
+        Plata se efectuează la predarea autoturismului, în numerar sau prin transfer bancar.
+      </p>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-logo-contact">
+          <a href="index-ro.html" class="logo-link">
+            <span class="logo-text">VEIRON AUTO</span>
+          </a>
+          <div class="footer-contact">
+            <p>Adresă: Sat Botiz, Str. Sirul Mare, nr.110, jud. Satu Mare, România</p>
+            <p>Telefon: +40 755 622 858</p>
+            <p>Email: veironauto@gmail.com</p>
+          </div>
+        </div>
+        <div class="footer-links-columns">
+          <div class="footer-links-col">
+            <h3>Link-uri rapide</h3>
+            <ul>
+              <li><a href="index-ro.html">Acasă</a></li>
+              <li><a href="#cars">Mașini</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="rezervare.html">Rezervare</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h3>Legal & ANPC</h3>
+            <ul>
+              <li><a href="politica-de-confidentialitate.html">Politica de Confidențialitate</a></li>
+              <li><a href="termeni-si-conditii.html">Termeni și Condiții</a></li>
+              <li><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">ANPC - Soluționare Litigii</a></li>
+              <li><a href="https://veirondaune.ro" target="_blank" rel="noopener"><span id="veiron-daune-link-text">Veiron Daune</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-fiscal">
+          <h3>Date Fiscale</h3>
+          <ul>
+            <li>Nume firmă: VEIRON AUTO SRL</li>
+            <li>CUI: 29943648</li>
+            <li>Nr. Înmatriculare: J2012000193305</li>
+            <li>EUID: ROONRC.J2012000193305</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 VEIRON AUTO. Toate drepturile rezervate.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const lang = document.documentElement.lang;
+    const el = document.getElementById('veiron-daune-link-text');
+    if (el) {
+      el.textContent = (lang === 'en') ? 'Veiron Assessments' : 'Veiron Daune';
+    }
+  </script>
+</body>
+</html> 

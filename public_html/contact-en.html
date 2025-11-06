@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact VEIRONAUTO - Car Rental</title>
+    <meta name="description" content="Contact VEIRON AUTO for fast and secure car rentals. Fill in the contact form or use the contact and company details for collaboration.">
+    <link rel="stylesheet" href="assets/css/contact-en.css">
+    <link rel="stylesheet" href="assets/css/contact-ro.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+      .contact-container {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: flex-start;
+      }
+      .contact-left, .contact-right {
+        flex: 1 1 0;
+      }
+      @media (max-width: 900px) {
+        .contact-container {
+          flex-direction: column;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index-en.html" class="logo-link">
+                    <span class="logo-text">VEIRON AUTO</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index-en.html#home" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+                    <li class="nav-item"><a href="index-en.html#cars" class="nav-link"><i class="fas fa-car"></i><span>Cars</span></a></li>
+                    <li class="nav-item"><a href="index-en.html#about" class="nav-link"><i class="fas fa-info-circle"></i><span>About</span></a></li>
+                    <li class="nav-item"><a href="booking-en.html" class="nav-link"><i class="fas fa-calendar-alt"></i><span>Booking</span></a></li>
+                    <li class="nav-item"><a href="contact-en.html" class="nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+                </ul>
+            </nav>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="ro" onclick="window.location.href='contact.html'">
+                    <i class="fas fa-flag"></i>
+                    <span>RO</span>
+                </button>
+                <button class="lang-btn active" data-lang="en">
+                    <i class="fas fa-flag"></i>
+                    <span>EN</span>
+                </button>
+            </div>
+            <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+    <main class="contact-main">
+        <section class="contact-content">
+            <div class="contact-container">
+                <div class="contact-left">
+                    <div class="contact-operator-img-wrap">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="VEIRON AUTO Operator" class="contact-operator-img" loading="lazy">
+                    </div>
+                    <h1 class="contact-title">24/7 Contact for Car Rentals</h1>
+                    <form class="contact-form" autocomplete="on">
+                        <h2 class="contact-form-title">Send us a message</h2>
+                        <div class="contact-form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="first-name" required autocomplete="given-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="last-name" required autocomplete="family-name">
+                            </div>
+                        </div>
+                        <div class="contact-form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone *</label>
+                                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="e.g. +40 712 345 678">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required autocomplete="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Other Notes</label>
+                            <textarea id="notes" name="notes" rows="3"></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="gdpr" name="gdpr" required>
+                            <label for="gdpr">I have read and accept the <a href="#" target="_blank" rel="noopener">Privacy Policy</a> *</label>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">I agree to receive offers and information from VEIRON AUTO</label>
+                        </div>
+                        <div class="form-group recaptcha-group">
+                            <input type="checkbox" id="not-robot" name="not-robot" required>
+                            <label for="not-robot">I'm not a robot</label>
+                            <div class="recaptcha-dummy">reCAPTCHA dummy</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+                    </form>
+                </div>
+                <div class="contact-right">
+                    <div class="contact-align-spacer"></div>
+                    <div class="contact-info-card">
+                        <h2 class="info-title"><i class="fas fa-address-book"></i> Contact Details</h2>
+                        <ul class="info-list">
+                            <li><i class="fas fa-phone"></i> <a href="tel:+40755622858" class="info-link">+40 755 622 858</a></li>
+                            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/40755622858" class="info-link whatsapp">WhatsApp</a></li>
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:veironauto@gmail.com" class="info-link">veironauto@gmail.com</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> Address 1: B-dul Traian nr.12, Satu Mare, Romania</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Address 2: Sat Botiz, Str. Sirul Mare, nr.110, Satu Mare, Romania</li>
+                        </ul>
+                    </div>
+                    <div class="contact-info-card">
+                        <h2 class="info-title"><i class="fas fa-file-invoice"></i> Company Details</h2>
+                        <ul class="info-list">
+                            <li><strong>Company Name:</strong> VEIRON AUTO SRL</li>
+                            <li><strong>VAT ID:</strong> 29943648</li>
+                            <li><strong>Registration No.:</strong> J2012000193305</li>
+                            <li><strong>EUID:</strong> ROONRC.J2012000193305</li>
+                            <li><strong>IBAN RON:</strong> RO00XXXX0000000000000000</li>
+                            <li><strong>IBAN EUR:</strong> RO00XXXX0000000000000001</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Left: Logo and contact info -->
+      <div class="footer-logo-contact">
+        <a href="index-en.html" class="logo-link">
+          <span class="logo-text">VEIRON AUTO</span>
+        </a>
+        <div class="footer-contact">
+          <p>Address: Sat Botiz, Str. Sirul Mare, nr.110, Satu Mare, Romania</p>
+          <p>Phone: +40 755 622 858</p>
+          <p>Email: veironauto@gmail.com</p>
+        </div>
+      </div>
+      <!-- Center: Quick links in two columns -->
+      <div class="footer-links-columns">
+        <div class="footer-links-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index-en.html#home">Home</a></li>
+            <li><a href="index-en.html#cars">Cars</a></li>
+            <li><a href="contact-en.html">Contact</a></li>
+            <li><a href="#booking">Booking</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h3>Legal &amp; ANPC</h3>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="#terms-conditions">Terms and Conditions</a></li>
+            <li><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">ANPC - Dispute Resolution</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right: Fiscal data -->
+      <div class="footer-fiscal">
+        <h3>Fiscal Data</h3>
+        <ul>
+          <li>Company: VEIRON AUTO SRL</li>
+          <li>VAT: 29943648</li>
+          <li>Reg. No.: J2012000193305</li>
+          <li>EUID: ROONRC.J2012000193305</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 VEIRON AUTO. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+    <script src="assets/js/contact-form-en.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

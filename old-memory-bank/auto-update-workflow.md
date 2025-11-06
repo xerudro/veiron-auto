@@ -1,0 +1,321 @@
+# VEIRONAUTO - Auto-Update Workflow
+
+## Overview
+Acest document explică cum să utilizezi sistemul de actualizare automată pentru fișierele din memory-bank.
+
+## Fișierele Sistemului de Auto-Update
+
+### 1. `auto-update-rules.md`
+- **Scop**: Conține toate regulile pentru actualizarea automată
+- **Conținut**: Reguli detaliate pentru fiecare tip de fișier și acțiuni
+- **Utilizare**: Referință pentru dezvoltatori și sistemul automat
+
+### 2. `auto-update-script.js`
+- **Scop**: Script JavaScript pentru actualizarea automată
+- **Conținut**: Clasa `MemoryBankAutoUpdater` cu toate funcționalitățile
+- **Utilizare**: Rulează automat sau manual pentru actualizări
+
+### 3. `auto-update-workflow.md` (acest fișier)
+- **Scop**: Ghid de utilizare pentru dezvoltatori
+- **Conținut**: Instrucțiuni pas cu pas pentru utilizarea sistemului
+- **Utilizare**: Documentație pentru echipa de dezvoltare
+
+## Cum să Utilizezi Sistemul
+
+### Pentru Dezvoltatori
+
+#### 1. Când creezi un fișier nou
+
+**Pasul 1**: Creează fișierul în locația corectă
+```bash
+# Exemplu: Creezi un fișier CSS
+touch public_html/assets/css/common/base.css
+```
+
+**Pasul 2**: Rulează actualizarea automată
+```bash
+# Pentru un fișier specific
+node memory-bank/auto-update-script.js public_html/assets/css/common/base.css
+
+# Sau pentru monitorizarea completă
+node memory-bank/auto-update-script.js
+```
+
+**Pasul 3**: Verifică actualizările
+- Deschide `memory-bank/todo.md` - task-ul ar trebui să fie marcat ca completat
+- Deschide `memory-bank/progress.md` - progresul ar trebui să fie actualizat
+- Verifică daily progress log pentru detalii
+
+#### 2. Când modifici un fișier existent
+
+**Pasul 1**: Modifică fișierul
+```bash
+# Exemplu: Adaugi funcționalități noi în booking.js
+nano public_html/assets/js/components/booking.js
+```
+
+**Pasul 2**: Rulează actualizarea pentru a verifica dependențele
+```bash
+node memory-bank/auto-update-script.js public_html/assets/js/components/booking.js
+```
+
+**Pasul 3**: Verifică dacă task-ul este completat sau blocat
+- Dacă este blocat, verifică dependențele lipsă
+- Dacă este completat, verifică actualizările în memory-bank
+
+#### 3. Când creezi mai multe fișiere simultan
+
+**Pasul 1**: Creează toate fișierele
+```bash
+# Exemplu: Creezi toate fișierele CSS de bază
+touch public_html/assets/css/common/base.css
+touch public_html/assets/css/common/layout.css
+touch public_html/assets/css/common/typography.css
+touch public_html/assets/css/common/utilities.css
+```
+
+**Pasul 2**: Rulează monitorizarea completă
+```bash
+node memory-bank/auto-update-script.js
+```
+
+**Pasul 3**: Verifică toate actualizările
+- Toate task-urile ar trebui să fie marcate ca completate
+- Progresul pentru ETAPA 2 ar trebui să fie actualizat
+- Daily progress log ar trebui să conțină toate task-urile
+
+### Pentru Project Managers
+
+#### 1. Monitorizarea progresului zilnic
+
+**Pasul 1**: Verifică daily progress log
+```bash
+# Deschide progress.md și caută secțiunea "Daily Progress Log"
+grep -A 10 "Daily Progress Log" memory-bank/progress.md
+```
+
+**Pasul 2**: Verifică milestone-urile
+```bash
+# Caută milestone-urile în progress.md
+grep -A 5 "Milestone" memory-bank/progress.md
+```
+
+**Pasul 3**: Verifică blocajele
+```bash
+# Caută task-urile blocate în todo.md
+grep "BLOCKED" memory-bank/todo.md
+```
+
+#### 2. Actualizarea manuală a progresului
+
+**Pasul 1**: Rulează actualizarea completă
+```bash
+node memory-bank/auto-update-script.js
+```
+
+**Pasul 2**: Verifică raportul de progres
+```bash
+# Verifică progresul general
+grep "Total Tasks:" memory-bank/progress.md
+```
+
+**Pasul 3**: Actualizează milestone-urile dacă este necesar
+- Deschide `memory-bank/progress.md`
+- Actualizează status-ul milestone-urilor completate
+- Adaugă date de completare
+
+## Reguli Importante
+
+### 1. Ordinea Task-urilor
+- **Nu încerca să completezi task-uri înainte de dependențele lor**
+- **Exemplu**: Nu poți completa "Create booking.js" înainte de "Create app.js"
+- **Sistemul va marca automat task-urile ca "BLOCKED" dacă dependențele lipsesc**
+
+### 2. Validarea Fișierelor
+- **Fișierul trebuie să existe fizic**
+- **Fișierul nu trebuie să fie gol**
+- **Fișierul trebuie să fie în locația corectă conform structurii proiectului**
+
+### 3. Actualizări Automate
+- **Sistemul actualizează automat:**
+  - `todo.md` - marchează task-urile ca completate
+  - `progress.md` - actualizează progresul și daily log
+  - `notes.md` - adaugă note tehnice dacă este necesar
+
+### 4. Backup și Siguranță
+- **Sistemul creează backup automat înainte de actualizări majore**
+- **Toate schimbările sunt documentate în daily progress log**
+- **Poți reveni la versiunea anterioară dacă este necesar**
+
+## Exemple de Utilizare
+
+### Exemplu 1: Creezi o pagină HTML
+
+```bash
+# 1. Creezi fișierul
+touch public_html/index.html
+
+# 2. Adaugi conținut
+echo "<!DOCTYPE html><html><head><title>VEIRONAUTO</title></head><body><h1>Welcome</h1></body></html>" > public_html/index.html
+
+# 3. Rulezi actualizarea
+node memory-bank/auto-update-script.js public_html/index.html
+
+# 4. Verifici rezultatul
+# - Task-ul "Create index.html" este marcat ca completat în todo.md
+# - Progresul ETAPA 2 este actualizat în progress.md
+# - Daily progress log conține intrarea pentru task
+```
+
+### Exemplu 2: Creezi toate fișierele CSS de bază
+
+```bash
+# 1. Creezi toate fișierele
+mkdir -p public_html/assets/css/common
+touch public_html/assets/css/common/base.css
+touch public_html/assets/css/common/layout.css
+touch public_html/assets/css/common/typography.css
+touch public_html/assets/css/common/utilities.css
+
+# 2. Adaugi conținut de bază în fiecare
+echo "/* Base styles */" > public_html/assets/css/common/base.css
+echo "/* Layout styles */" > public_html/assets/css/common/layout.css
+echo "/* Typography styles */" > public_html/assets/css/common/typography.css
+echo "/* Utility styles */" > public_html/assets/css/common/utilities.css
+
+# 3. Rulezi monitorizarea completă
+node memory-bank/auto-update-script.js
+
+# 4. Verifici rezultatul
+# - Toate cele 4 task-uri CSS sunt marcate ca completate
+# - Progresul ETAPA 2 crește cu 4 task-uri
+# - Daily progress log conține toate cele 4 task-uri
+```
+
+### Exemplu 3: Creezi un fișier cu dependențe
+
+```bash
+# 1. Încerci să creezi booking.js înainte de app.js
+touch public_html/assets/js/components/booking.js
+node memory-bank/auto-update-script.js public_html/assets/js/components/booking.js
+
+# 2. Rezultatul: Task-ul este marcat ca "BLOCKED"
+# - În todo.md apare: "- [ ] **BLOCKED** Create booking.js for multi-step booking wizard"
+# - În daily progress log apare motivul blocajului: "Missing: Create app.js with main application logic"
+
+# 3. Creezi app.js (dependența)
+touch public_html/assets/js/core/app.js
+node memory-bank/auto-update-script.js public_html/assets/js/core/app.js
+
+# 4. Acum poți completa booking.js
+node memory-bank/auto-update-script.js public_html/assets/js/components/booking.js
+
+# 5. Rezultatul: Ambele task-uri sunt marcate ca completate
+```
+
+## Troubleshooting
+
+### Problema: Task-ul nu este marcat ca completat
+
+**Cauze posibile:**
+1. Fișierul nu există fizic
+2. Fișierul este gol
+3. Fișierul nu este în locația corectă
+4. Nu există mapare pentru acest fișier
+
+**Soluții:**
+1. Verifică dacă fișierul există: `ls -la path/to/file`
+2. Verifică dacă fișierul are conținut: `cat path/to/file`
+3. Verifică dacă calea este corectă conform structurii proiectului
+4. Adaugă maparea în `auto-update-script.js` dacă este necesar
+
+### Problema: Task-ul este marcat ca "BLOCKED"
+
+**Cauze posibile:**
+1. Lipsesc dependențele
+2. Dependențele nu sunt completate
+
+**Soluții:**
+1. Verifică dependențele în `auto-update-script.js`
+2. Completează mai întâi dependențele
+3. Rulează din nou actualizarea
+
+### Problema: Progresul nu se actualizează corect
+
+**Cauze posibile:**
+1. Eroare în calculul progresului
+2. Fișierele memory-bank sunt corupte
+3. Permisiuni insuficiente
+
+**Soluții:**
+1. Verifică log-urile de eroare
+2. Restaurează backup-ul fișierelor memory-bank
+3. Verifică permisiunile: `chmod 644 memory-bank/*.md`
+
+## Integrare cu IDE/Editor
+
+### Pentru VS Code
+
+**Adaugă în settings.json:**
+```json
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    }
+}
+```
+
+**Creează un task în .vscode/tasks.json:**
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Update Memory Bank",
+            "type": "shell",
+            "command": "node",
+            "args": ["memory-bank/auto-update-script.js"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ]
+}
+```
+
+### Pentru alte editore
+
+**Creează un script de build:**
+```bash
+#!/bin/bash
+# build.sh
+echo "Building project..."
+# ... comenzi de build ...
+echo "Updating memory bank..."
+node memory-bank/auto-update-script.js
+echo "Build completed!"
+```
+
+## Concluzie
+
+Sistemul de auto-update pentru memory-bank oferă:
+
+1. **Actualizare automată** a progresului când creezi fișiere
+2. **Verificarea dependențelor** pentru a evita blocajele
+3. **Documentație automată** a tuturor schimbărilor
+4. **Backup și siguranță** pentru toate actualizările
+5. **Flexibilitate** pentru utilizare manuală sau automată
+
+**Regula de aur**: Rulează actualizarea după fiecare fișier pe care îl creezi pentru a menține memory-bank-ul sincronizat cu progresul real al proiectului.
+
+---
+
+**Ultima actualizare**: [Data curentă]
+**Versiune**: 1.0
+**Status**: Activ 

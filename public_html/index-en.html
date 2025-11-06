@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEIRONAUTO - Car Rental</title>
+    <meta name="description" content="Find the perfect car for your trip. Competitive prices, quality services. Rent a car in Satu Mare, Baia Mare, Oradea, Cluj, Debrecen, Budapest.">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/hero-section.css">
+    <link rel="stylesheet" href="assets/css/formular-rezervare.css">
+    <link rel="stylesheet" href="assets/css/quick-booking.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index-en.html" class="logo-link">
+                    <span class="logo-text">VEIRON AUTO</span>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="parc-auto-en.html" class="nav-link">
+                            <i class="fas fa-car"></i>
+                            <span>Car Fleet</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="booking-en.html" class="nav-link">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Booking</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact-en.html" class="nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Language Switcher -->
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="ro" onclick="window.location.href='index-ro.html'">
+                    <i class="fas fa-flag"></i>
+                    <span>RO</span>
+                </button>
+                <button class="lang-btn active" data-lang="en" onclick="window.location.href='index-en.html'">
+                    <i class="fas fa-flag"></i>
+                    <span>EN</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-container">
+            <h1 class="hero-title">Simple and Fast</h1>
+            <p class="hero-subtitle">Find the perfect car for your journey. Competitive prices and quality services.</p>
+            <div class="hero-slider">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="slide active">
+                            <div class="car-grid">
+                                <div class="car-card">
+                                    <img src="assets/images/cars/renault_traffic_8+1_van.jpg" alt="Renault Traffic Van" class="hero-car-image">
+                                    <div class="car-name">Renault Traffic Van</div>
+                                    <div class="car-similar-text">or Similar</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/audi-a6.jpg" alt="Audi A6" class="hero-car-image">
+                                    <div class="car-name">Audi A6</div>
+                                    <div class="car-similar-text">or Similar</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/toyota-rav4.jpg" alt="Toyota Rav4" class="hero-car-image">
+                                    <div class="car-name">Toyota Rav4</div>
+                                    <div class="car-similar-text">or Similar</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/mercedes-e-class.jpg" alt="Mercedes Benz E Class" class="hero-car-image">
+                                    <div class="car-name">Mercedes E-Class</div>
+                                    <div class="car-similar-text">or Similar</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="car-grid">
+                                <div class="car-card">
+                                    <img src="assets/images/cars/bmw_gt_530.jpg" alt="BMW GT 530" class="hero-car-image">
+                                    <div class="car-name">BMW GT 530</div>
+                                    <div class="car-similar-text">or Similar</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/Mazda_6.jpg" alt="Mazda 6" class="hero-car-image">
+                                    <div class="car-name">Mazda 6</div>
+                                    <div class="car-similar-text">or Similar</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/Audi-Q3.jpg" alt="Audi Q3" class="hero-car-image">
+                                    <div class="car-name">Audi Q3</div>
+                                    <div class="car-similar-text">or Similar</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/renault_koleos.jpg" alt="Renault Koleos" class="hero-car-image">
+                                    <div class="car-name">Renault Koleos</div>
+                                    <div class="car-similar-text">or Similar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                    </div>
+                    <button class="slider-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#cars" class="btn btn-primary">
+                    <i class="fas fa-car"></i>
+                    View Cars
+                </a>
+                <a href="contact-en.html" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Booking Section (EN, EUR) -->
+    <section class="quick-booking-section">
+        <div class="container">
+            <h2 class="section-title">Quick Booking</h2>
+            <div class="quick-booking-grid">
+                <!-- Card 1 -->
+                <div class="quick-card">
+                    <div class="car-title">Renault Traffic 8+1</div>
+                    <div class="car-similar-text">or Similar</div>
+                    <div class="car-desc">8+1 Van Automatic</div>
+                    <div class="car-tags">
+                        <span><i class="fas fa-user"></i>8</span>
+                        <span><i class="fas fa-suitcase"></i>4</span>
+                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                    </div>
+                    <img src="assets/images/cars/renault_traffic_8+1_van.jpg" alt="Renault Traffic 8+1" class="car-image" />
+                    <div class="car-included"><i class="fas fa-check"></i>300 kilometers included</div>
+                    <div class="car-price">80<span class="car-currency"> EUR / day (approx.)</span></div>
+                    <a href="booking-en.html?quick=1&carId=RenaultTraffic8+1" class="btn btn-primary book-btn">Book now</a>
+                </div>
+                <!-- Card 2 -->
+                <div class="quick-card">
+                    <div class="car-title">Audi A6</div>
+                    <div class="car-similar-text">or Similar</div>
+                    <div class="car-desc">Sedan Automatic</div>
+                    <div class="car-tags">
+                        <span><i class="fas fa-user"></i>5</span>
+                        <span><i class="fas fa-suitcase"></i>3</span>
+                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                    </div>
+                    <img src="assets/images/cars/audi-a6.jpg" alt="Audi A6" class="car-image" />
+                    <div class="car-included"><i class="fas fa-check"></i>300 kilometers included</div>
+                    <div class="car-price">70<span class="car-currency"> EUR / day (approx.)</span></div>
+                    <a href="booking-en.html?quick=1&carId=AudiA6" class="btn btn-primary book-btn">Book now</a>
+                </div>
+                <!-- Card 3 -->
+                <div class="quick-card">
+                    <div class="car-title">Toyota Rav4</div>
+                    <div class="car-similar-text">or Similar</div>
+                    <div class="car-desc">SUV Automatic</div>
+                    <div class="car-tags">
+                        <span><i class="fas fa-user"></i>5</span>
+                        <span><i class="fas fa-suitcase"></i>4</span>
+                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                    </div>
+                    <img src="assets/images/cars/toyota-rav4.jpg" alt="Toyota Rav4" class="car-image" />
+                    <div class="car-included"><i class="fas fa-check"></i>300 kilometers included</div>
+                    <div class="car-price">100<span class="car-currency"> EUR / day (approx.)</span></div>
+                    <a href="booking-en.html?quick=1&carId=ToyotaRav4" class="btn btn-primary book-btn">Book now</a>
+                </div>
+                <!-- Card 4 -->
+                <div class="quick-card">
+                    <div class="car-title">Mercedes E-Class</div>
+                    <div class="car-similar-text">or Similar</div>
+                    <div class="car-desc">Sedan Automatic</div>
+                    <div class="car-tags">
+                        <span><i class="fas fa-user"></i>5</span>
+                        <span><i class="fas fa-suitcase"></i>4</span>
+                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                    </div>
+                    <img src="assets/images/cars/mercedes-e-class.jpg" alt="Mercedes E-Class" class="car-image" />
+                    <div class="car-included"><i class="fas fa-check"></i>300 kilometers included</div>
+                    <div class="car-price">65<span class="car-currency"> EUR / day (approx.)</span></div>
+                    <a href="booking-en.html?quick=1&carId=MercedesEClass" class="btn btn-primary book-btn">Book now</a>
+                </div>
+                <!-- Card 5 -->
+                <div class="quick-card">
+                    <div class="car-title">BMW GT 530</div>
+                    <div class="car-similar-text">or Similar</div>
+                    <div class="car-desc">SUV Automatic</div>
+                    <div class="car-tags">
+                        <span><i class="fas fa-user"></i>5</span>
+                        <span><i class="fas fa-suitcase"></i>4</span>
+                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                    </div>
+                    <img src="assets/images/cars/bmw_gt_530.jpg" alt="BMW GT 530" class="car-image" />
+                    <div class="car-included"><i class="fas fa-check"></i>300 kilometers included</div>
+                    <div class="car-price">80<span class="car-currency"> EUR / day (approx.)</span></div>
+                    <a href="booking-en.html?quick=1&carId=BMWGT530" class="btn btn-primary book-btn">Book now</a>
+                </div>
+                <!-- Card 6 -->
+                <div class="quick-card">
+                    <div class="car-title">Mazda 6</div>
+                    <div class="car-similar-text">or Similar</div>
+                    <div class="car-desc">Sedan Manual</div>
+                    <div class="car-tags">
+                        <span><i class="fas fa-user"></i>5</span>
+                        <span><i class="fas fa-suitcase"></i>3</span>
+                        <span><i class="fas fa-gauge"></i>Manual</span>
+                    </div>
+                    <img src="assets/images/cars/Mazda_6.jpg" alt="Mazda 6" class="car-image" />
+                    <div class="car-included"><i class="fas fa-check"></i>300 kilometers included</div>
+                    <div class="car-price">40<span class="car-currency"> EUR / day (approx.)</span></div>
+                    <a href="booking-en.html?quick=1&carId=Mazda6" class="btn btn-primary book-btn">Book now</a>
+                </div>
+                <!-- Card 7 -->
+                <div class="quick-card">
+                    <div class="car-title">Audi Q3</div>
+                    <div class="car-similar-text">or Similar</div>
+                    <div class="car-desc">SUV Automatic</div>
+                    <div class="car-tags">
+                        <span><i class="fas fa-user"></i>5</span>
+                        <span><i class="fas fa-suitcase"></i>3</span>
+                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                    </div>
+                    <img src="assets/images/cars/Audi-Q3.jpg" alt="Audi Q3" class="car-image" />
+                    <div class="car-included"><i class="fas fa-check"></i>300 kilometers included</div>
+                    <div class="car-price">80<span class="car-currency"> EUR / day (approx.)</span></div>
+                    <a href="booking-en.html?quick=1&carId=AudiQ3" class="btn btn-primary book-btn">Book now</a>
+                </div>
+                <!-- Card 8 -->
+                <div class="quick-card">
+                    <div class="car-title">Renault Koleos</div>
+                    <div class="car-similar-text">or Similar</div>
+                    <div class="car-desc">SUV Automatic</div>
+                    <div class="car-tags">
+                        <span><i class="fas fa-user"></i>5</span>
+                        <span><i class="fas fa-suitcase"></i>4</span>
+                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                    </div>
+                    <img src="assets/images/cars/renault_koleos.jpg" alt="Renault Koleos" class="car-image" />
+                    <div class="car-included"><i class="fas fa-check"></i>300 kilometers included</div>
+                    <div class="car-price">60<span class="car-currency"> EUR / day (approx.)</span></div>
+                    <a href="booking-en.html?quick=1&carId=RenaultKoleos" class="btn btn-primary book-btn">Book now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-form-wrapper">
+                <h2 class="section-title">Booking Form</h2>
+                <p class="section-subtitle">Fill in the form below to reserve your desired car</p>
+                
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupLocation">Pick-up Location</label>
+                            <select id="pickupLocation" name="pickupLocation" required>
+                                <option value="">Select location</option>
+                                <option value="satu-mare">Satu Mare</option>
+                                <option value="baia-mare">Baia Mare</option>
+                                <option value="oradea">Oradea</option>
+                                <option value="cluj-napoca">Cluj-Napoca</option>
+                                <option value="cluj-napoca-airport">Cluj-Napoca Airport</option>
+                                <option value="debrecen">Debrecen</option>
+                                <option value="debrecen-airport">Debrecen Airport</option>
+                                <option value="budapest">Budapest</option>
+                                <option value="budapest-airport">Budapest Airport</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dropoffLocation">Drop-off Location</label>
+                            <select id="dropoffLocation" name="dropoffLocation" required>
+                                <option value="">Select location</option>
+                                <option value="satu-mare">Satu Mare</option>
+                                <option value="baia-mare">Baia Mare</option>
+                                <option value="oradea">Oradea</option>
+                                <option value="cluj-napoca">Cluj-Napoca</option>
+                                <option value="cluj-napoca-airport">Cluj-Napoca Airport</option>
+                                <option value="debrecen">Debrecen</option>
+                                <option value="debrecen-airport">Debrecen Airport</option>
+                                <option value="budapest">Budapest</option>
+                                <option value="budapest-airport">Budapest Airport</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupDate">Pick-up Date</label>
+                            <input type="date" id="pickupDate" name="pickupDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pickupTime">Pick-up Time</label>
+                            <input type="time" id="pickupTime" name="pickupTime" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dropoffDate">Drop-off Date</label>
+                            <input type="date" id="dropoffDate" name="dropoffDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dropoffTime">Drop-off Time</label>
+                            <input type="time" id="dropoffTime" name="dropoffTime" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carType">Car Type</label>
+                            <select id="carType" name="carType" required>
+                                <option value="">Select type</option>
+                                <option value="economy">Economy</option>
+                                <option value="compact">Compact</option>
+                                <option value="midsize">Midsize</option>
+                                <option value="suv">SUV</option>
+                                <option value="luxury">Luxury</option>
+                                <option value="van">Van</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="driverAge">Driver Age</label>
+                            <select id="driverAge" name="driverAge" required>
+                                <option value="">Select age</option>
+                                <option value="21-24">21-24 years</option>
+                                <option value="25-29">25-29 years</option>
+                                <option value="30-34">30-34 years</option>
+                                <option value="35-39">35-39 years</option>
+                                <option value="40-44">40-44 years</option>
+                                <option value="45-49">45-49 years</option>
+                                <option value="50-54">50-54 years</option>
+                                <option value="55-59">55-59 years</option>
+                                <option value="60+">60+ years</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                            Check Availability
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Cars Section -->
+
+
+    <!-- Booking Data Management Scripts -->
+    <script src="assets/js/components/booking-data-manager.js"></script>
+    <script src="assets/js/components/booking-form-handler.js"></script>
+    <script src="assets/js/components/email-service.js"></script>
+    <script src="assets/js/components/booking-init.js"></script>
+    
+    <!-- Existing Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/pages/slider.js"></script>
+    <script src="assets/js/pages/formular-rezervare.js"></script>
+    <script src="assets/js/quick-booking.js"></script>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Left: Logo and contact details -->
+      <div class="footer-logo-contact">
+        <a href="index-en.html" class="logo-link">
+          <span class="logo-text">VEIRON AUTO</span>
+        </a>
+        <div class="footer-contact">
+          <p>Address: Sat Botiz, Str. Sirul Mare, nr.110, Satu Mare County, Romania</p>
+          <p>Phone: +40 755 622 858</p>
+          <p>Email: veironauto@gmail.com</p>
+        </div>
+      </div>
+      <!-- Center: Quick links in two columns -->
+      <div class="footer-links-columns">
+        <div class="footer-links-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index-en.html#home">Home</a></li>
+            <li><a href="index-en.html#cars">Cars</a></li>
+            <li><a href="contact-en.html">Contact</a></li>
+            <li><a href="#booking">Booking</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h3>Legal &amp; ANPC</h3>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="#terms-conditions">Terms &amp; Conditions</a></li>
+            <li><a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">ANPC - Dispute Resolution</a></li>
+            <li><a href="https://veirondaune.ro" target="_blank" rel="noopener">Veiron Daune</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right: Fiscal data -->
+      <div class="footer-fiscal">
+        <h3>Fiscal Data</h3>
+        <ul>
+          <li>Company Name: VEIRON AUTO SRL</li>
+          <li>VAT: 29943648</li>
+          <li>Reg. No.: J2012000193305</li>
+          <li>EUID: ROONRC.J2012000193305</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 VEIRON AUTO. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

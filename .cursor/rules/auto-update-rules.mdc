@@ -1,0 +1,266 @@
+---
+alwaysApply: true
+---
+# VEIRONAUTO - Auto-Update Rules
+
+## Overview
+Acest fișier conține regulile pentru actualizarea automată a fișierelor din memory-bank când se creează sau se modifică fișiere în proiect.
+
+## Reguli de Actualizare Automată
+
+### 1. Când se creează un fișier HTML
+**Fișiere afectate**: `progress.md`, `todo.md`
+**Acțiuni**:
+- Marchează ca completat task-ul corespunzător din `todo.md`
+- Actualizează progresul în `progress.md`
+- Adaugă în daily progress log
+
+**Exemple**:
+- `public_html/index.html` → Complete "Create index.html" task
+- `public_html/admin/login.html` → Complete "Create admin login page" task
+- `public_html/booking.html` → Complete "Create booking page" task
+
+### 2. Când se creează un fișier CSS
+**Fișiere afectate**: `progress.md`, `todo.md`
+**Acțiuni**:
+- Marchează ca completat task-ul CSS corespunzător
+- Actualizează progresul în ETAPA 2
+- Verifică dacă toate fișierele CSS din aceeași categorie sunt complete
+
+**Exemple**:
+- `public_html/assets/css/common/base.css` → Complete "Create base.css" task
+- `public_html/assets/css/components/buttons.css` → Complete "Create buttons.css" task
+- `public_html/assets/css/themes/en-eur.css` → Complete "Create en-eur.css" task
+
+### 3. Când se creează un fișier JavaScript
+**Fișiere afectate**: `progress.md`, `todo.md`
+**Acțiuni**:
+- Marchează ca completat task-ul JS corespunzător
+- Actualizează progresul în ETAPA 2
+- Verifică dependențele între fișiere JS
+
+**Exemple**:
+- `public_html/assets/js/core/app.js` → Complete "Create app.js" task
+- `public_html/assets/js/components/booking.js` → Complete "Create booking.js" task
+- `public_html/assets/js/i18n/en.js` → Complete "Create en.js" task
+
+### 4. Când se creează un fișier PHP
+**Fișiere afectate**: `progress.md`, `todo.md`
+**Acțiuni**:
+- Marchează ca completat task-ul PHP corespunzător
+- Actualizează progresul în ETAPA 3
+- Verifică dacă toate fișierele PHP din aceeași categorie sunt complete
+
+**Exemple**:
+- `app/config/database.php` → Complete "Create database.php" task
+- `app/api/cars.php` → Complete "Create cars.php" task
+- `app/includes/functions.php` → Complete "Create functions.php" task
+
+### 5. Când se creează un fișier JSON
+**Fișiere afectate**: `progress.md`, `todo.md`
+**Acțiuni**:
+- Marchează ca completat task-ul JSON corespunzător
+- Actualizează progresul în ETAPA 2
+- Verifică dacă toate fișierele JSON sunt complete
+
+**Exemple**:
+- `public_html/assets/json/cars.json` → Complete "Create cars.json" task
+- `public_html/assets/json/services.json` → Complete "Create services.json" task
+- `public_html/assets/json/countries.json` → Complete "Create countries.json" task
+
+### 6. Când se creează un fișier de configurare
+**Fișiere afectate**: `progress.md`, `todo.md`, `notes.md`
+**Acțiuni**:
+- Marchează ca completat task-ul de configurare
+- Actualizează progresul în ETAPA 1 sau 3
+- Adaugă note tehnice în `notes.md`
+
+**Exemple**:
+- `.gitignore` → Complete "Create .gitignore" task
+- `database/schema.sql` → Complete "Create database schema" task
+- `app/config/app.php` → Complete "Create app.php" task
+
+## Reguli pentru Actualizarea Progresului
+
+### Calculul Progresului
+```javascript
+// Formula pentru calculul progresului
+progress_percentage = (completed_tasks / total_tasks) * 100
+
+// Pentru fiecare etapă
+etapa_progress = (etapa_completed_tasks / etapa_total_tasks) * 100
+
+// Pentru progresul general
+overall_progress = (all_completed_tasks / 153) * 100
+```
+
+### Actualizarea Daily Progress Log
+**Când se completează un task**:
+- Adaugă data curentă
+- Listează task-urile completate
+- Actualizează numărul de task-uri rămase
+- Adaugă note despre blocaje sau probleme
+
+### Actualizarea Milestones
+**Când o etapă ajunge la 100%**:
+- Marchează milestone-ul ca completat
+- Actualizează status-ul în `progress.md`
+- Adaugă data de completare
+
+## Reguli pentru Dependențe
+
+### Dependențe între Task-uri
+**Exemple**:
+- Nu poți completa "Create booking.js" înainte de "Create app.js"
+- Nu poți completa "Create cars.php" înainte de "Create database.php"
+- Nu poți completa "Test API endpoints" înainte de "Create API endpoints"
+
+### Verificarea Dependențelor
+**Când se completează un task**:
+- Verifică dacă toate dependențele sunt satisfăcute
+- Dacă nu, marchează task-ul ca "Blocked" în loc de "Completed"
+- Adaugă în daily progress log motivul blocajului
+
+## Reguli pentru Actualizarea Notes.md
+
+### Când se adaugă funcționalități noi
+**Acțiuni**:
+- Adaugă detalii tehnice în secțiunea corespunzătoare
+- Documentează deciziile de implementare
+- Adaugă exemple de cod dacă este necesar
+
+### Când se schimbă arhitectura
+**Acțiuni**:
+- Actualizează secțiunea "Technical Architecture"
+- Documentează motivele schimbării
+- Actualizează diagramele sau structurile
+
+## Reguli pentru Actualizarea Project-Structure.md
+
+### Când se adaugă fișiere noi
+**Acțiuni**:
+- Actualizează structura de directoare
+- Adaugă descrieri pentru fișierele noi
+- Verifică dacă structura este încă validă
+
+### Când se schimbă organizarea
+**Acțiuni**:
+- Actualizează diagrama de structură
+- Documentează motivele reorganizării
+- Verifică dacă toate referințele sunt actualizate
+
+## Reguli pentru Actualizarea README.md
+
+### Când se schimbă statisticile proiectului
+**Acțiuni**:
+- Actualizează numărul de task-uri completate
+- Actualizează progresul general
+- Actualizează timeline-ul estimat
+
+### Când se adaugă funcționalități noi
+**Acțiuni**:
+- Adaugă în secțiunea "Key Features"
+- Actualizează "Technology Stack" dacă este necesar
+- Actualizează "Implementation Details"
+
+## Reguli pentru Erori și Excepții
+
+### Când un task nu poate fi completat
+**Acțiuni**:
+- Marchează task-ul ca "Blocked" în loc de "Completed"
+- Adaugă motivul blocajului în daily progress log
+- Actualizează dependențele pentru task-urile afectate
+
+### Când se descoperă task-uri noi
+**Acțiuni**:
+- Adaugă task-ul nou în `todo.md`
+- Actualizează numărul total de task-uri
+- Recalculează progresul și timeline-ul
+
+### Când se elimină task-uri
+**Acțiuni**:
+- Marchează task-ul ca "Removed"
+- Actualizează numărul total de task-uri
+- Recalculează progresul și timeline-ul
+
+## Reguli pentru Validare
+
+### Validarea Progresului
+**Înainte de a marca un task ca completat**:
+- Verifică dacă fișierul există fizic
+- Verifică dacă fișierul nu este gol
+- Verifică dacă toate dependențele sunt satisfăcute
+
+### Validarea Structurii
+**Înainte de a actualiza project-structure.md**:
+- Verifică dacă toate directoarele există
+- Verifică dacă toate fișierele sunt în locațiile corecte
+- Verifică dacă structura este consistentă
+
+## Reguli pentru Backup
+
+### Backup înainte de actualizări majore
+**Când se actualizează mai multe fișiere simultan**:
+- Creează backup al fișierelor din memory-bank
+- Salvează versiunea anterioară
+- Documentează schimbările făcute
+
+### Backup după actualizări
+**După fiecare actualizare automată**:
+- Salvează timestamp-ul actualizării
+- Documentează ce s-a schimbat
+- Verifică dacă actualizările sunt corecte
+
+## Reguli pentru Notificări
+
+### Când se completează o etapă
+**Acțiuni**:
+- Adaugă notificare în daily progress log
+- Actualizează milestone-ul corespunzător
+- Calculează progresul general actualizat
+
+### Când se întâlnesc blocaje
+**Acțiuni**:
+- Adaugă notificare în daily progress log
+- Marchează task-ul ca "Blocked"
+- Documentează motivul blocajului
+
+### Când se schimbă timeline-ul
+**Acțiuni**:
+- Actualizează estimarea de timp
+- Documentează motivele schimbării
+- Recalculează milestone-urile
+
+## Reguli pentru Consistență
+
+### Verificarea Consistenței
+**După fiecare actualizare**:
+- Verifică dacă numărul de task-uri este consistent
+- Verifică dacă progresul este calculat corect
+- Verifică dacă toate referințele sunt valide
+
+### Sincronizarea între Fișiere
+**Când se actualizează un fișier**:
+- Verifică dacă toate fișierele din memory-bank sunt sincronizate
+- Actualizează toate referințele cross-file
+- Verifică dacă nu există inconsistențe
+
+## Reguli pentru Performanță
+
+### Optimizarea Actualizărilor
+**Pentru actualizări frecvente**:
+- Batch multiple updates together
+- Minimize file I/O operations
+- Cache frequently accessed data
+
+### Limitarea Actualizărilor
+**Pentru a evita actualizări excesive**:
+- Actualizează doar când este necesar
+- Evită actualizări redundante
+- Optimizează frecvența actualizărilor
+
+---
+
+**Ultima actualizare**: [Data curentă]
+**Versiune**: 1.0
+**Status**: Activ 

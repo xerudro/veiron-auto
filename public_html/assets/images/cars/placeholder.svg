@@ -1,0 +1,10 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="300" height="200" fill="#f5f5f5"/>
+<path d="M50 120C50 115.582 53.5817 112 58 112H242C246.418 112 250 115.582 250 120V140C250 144.418 246.418 148 242 148H58C53.5817 148 50 144.418 50 140V120Z" fill="#cccccc"/>
+<circle cx="80" cy="160" r="15" fill="#999999"/>
+<circle cx="220" cy="160" r="15" fill="#999999"/>
+<path d="M70 100L90 80H210L230 100V120H70V100Z" fill="#cccccc"/>
+<rect x="100" y="85" width="20" height="15" fill="#999999"/>
+<rect x="180" y="85" width="20" height="15" fill="#999999"/>
+<text x="150" y="190" font-family="Arial, sans-serif" font-size="12" fill="#999999" text-anchor="middle">Car Image</text>
+</svg>

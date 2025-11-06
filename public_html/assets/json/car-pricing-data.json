@@ -1,0 +1,923 @@
+{
+  "metadata": {
+    "source": "Grila tarife .xlsx",
+    "extractedAt": "2024-12-19",
+    "currency": "EUR",
+    "dailyKmLimit": 300,
+    "extraKmRate": 0.10,
+    "vatIncluded": true,
+    "optionalChildSeat": 2
+  },
+  "pricingTiers": {
+    "tier1": "1-3 zile",
+    "tier2": "4-7 zile",
+    "tier3": "8-14 zile",
+    "tier4": "15-30 zile"
+  },
+  "cars": [
+    {
+      "id": "skoda-scala-automat",
+      "name": "SKODA SCALA AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 60,
+        "tier2": 57,
+        "tier3": 54,
+        "tier4": 50
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 8,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 15,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "vw-t-cross-automat",
+      "name": "VW T-CROSS AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 70,
+        "tier2": 67,
+        "tier3": 64,
+        "tier4": 60
+      },
+      "deposit": 250,
+      "insurance": {
+        "premium": {
+          "dailyRate": 9,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 17,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "skoda-octavia-sedan-automat",
+      "name": "SKODA OCTAVIA SEDAN AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 52,
+        "tier2": 48,
+        "tier3": 46,
+        "tier4": 44
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 18,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "skoda-kamiq-automat",
+      "name": "SKODA KAMIQ AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 70,
+        "tier2": 67,
+        "tier3": 64,
+        "tier4": 60
+      },
+      "deposit": 250,
+      "insurance": {
+        "premium": {
+          "dailyRate": 13,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 20,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "toyota-rav4-automat",
+      "name": "TOYOTA RAV4 AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 100,
+        "tier2": 95,
+        "tier3": 90,
+        "tier4": 85
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 15,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 22,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "skoda-kodiaq-7-locuri-automat",
+      "name": "SKODA KODIAQ (7 locuri) - AUTOMAT",
+      "transmission": "automat",
+      "seats": 7,
+      "pricing": {
+        "tier1": 97,
+        "tier2": 92,
+        "tier3": 88,
+        "tier4": 85
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 15,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 22,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "skoda-kodiaq-automat",
+      "name": "SKODA KODIAQ AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 100,
+        "tier2": 95,
+        "tier3": 90,
+        "tier4": 85
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 15,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 22,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "volvo-xc40-automat",
+      "name": "VOLVO XC40 AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 100,
+        "tier2": 95,
+        "tier3": 90,
+        "tier4": 85
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 13,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 20,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "bmw-x1-automat",
+      "name": "BMW X1 AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 100,
+        "tier2": 95,
+        "tier3": 90,
+        "tier4": 80
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 15,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 22,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "volvo-xc60-automat-nou",
+      "name": "VOLVO XC60 AUTOMAT NOU",
+      "transmission": "automat",
+      "condition": "nou",
+      "pricing": {
+        "tier1": 110,
+        "tier2": 105,
+        "tier3": 100,
+        "tier4": 90
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 15,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 22,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "mercedes-glc-automat",
+      "name": "MERCEDES GLC AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 130,
+        "tier2": 120,
+        "tier3": 110,
+        "tier4": 100
+      },
+      "deposit": 400,
+      "insurance": {
+        "premium": {
+          "dailyRate": 20,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 28,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "renault-trafic-8-plus-1-automat",
+      "name": "RENAULT TRAFIC (8+1 locuri) AUTOMAT",
+      "transmission": "automat",
+      "seats": 9,
+      "pricing": {
+        "tier1": 100,
+        "tier2": 96,
+        "tier3": 90,
+        "tier4": 82
+      },
+      "deposit": 400,
+      "insurance": {
+        "premium": {
+          "dailyRate": 20,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 28,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "vw-caravelle-8-plus-1",
+      "name": "VW CARAVELLE (8+1 LOCURI)",
+      "seats": 9,
+      "pricing": {
+        "tier1": 95,
+        "tier2": 90,
+        "tier3": 85,
+        "tier4": 75
+      },
+      "deposit": 400,
+      "insurance": {
+        "premium": {
+          "dailyRate": 20,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 28,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "seat-alhambra-7-locuri-automat",
+      "name": "SEAT ALHAMBRA 7 LOCURI AUTOMAT",
+      "transmission": "automat",
+      "seats": 7,
+      "pricing": {
+        "tier1": 55,
+        "tier2": 51,
+        "tier3": 48,
+        "tier4": 45
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 9,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "seat-alhambra-manual-7-locuri",
+      "name": "SEAT ALHAMBRA MANUAL 7 LOCURI",
+      "transmission": "manual",
+      "seats": 7,
+      "pricing": {
+        "tier1": 50,
+        "tier2": 46,
+        "tier3": 43,
+        "tier4": 40
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 9,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "mercedes-gle-automat",
+      "name": "MERCEDES GLE AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 110,
+        "tier2": 105,
+        "tier3": 100,
+        "tier4": 85
+      },
+      "deposit": 400,
+      "insurance": {
+        "premium": {
+          "dailyRate": 17,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 24,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "vw-touareg-automat",
+      "name": "VW TOUAREG AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 90,
+        "tier2": 83,
+        "tier3": 77,
+        "tier4": 70
+      },
+      "deposit": 400,
+      "insurance": {
+        "premium": {
+          "dailyRate": 15,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 22,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "audi-a6-automat",
+      "name": "AUDI A6 AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 70,
+        "tier2": 67,
+        "tier3": 63,
+        "tier4": 55
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 13,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "bmw-seria-5-combi-automat",
+      "name": "BMW SERIA 5 COMBI AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 80,
+        "tier2": 74,
+        "tier3": 66,
+        "tier4": 60
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 13,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 20,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "bmw-seria-5-combi-manual",
+      "name": "BMW SERIA 5 COMBI MANUAL",
+      "transmission": "manual",
+      "pricing": {
+        "tier1": 60,
+        "tier2": 57,
+        "tier3": 54,
+        "tier4": 48
+      },
+      "deposit": 250,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "audi-a4-automat",
+      "name": "AUDI A4 AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 50,
+        "tier2": 45,
+        "tier3": 41,
+        "tier4": 38
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "mitsubishi-outlander-automat",
+      "name": "MITSUBISHI OUTLANDER AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 68,
+        "tier2": 64,
+        "tier3": 60,
+        "tier4": 57
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 18,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "vw-tiguan-automat",
+      "name": "VW TIGUAN AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 58,
+        "tier2": 55,
+        "tier3": 51,
+        "tier4": 48
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "vw-passat-automat",
+      "name": "VW PASSAT AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 58,
+        "tier2": 55,
+        "tier3": 51,
+        "tier4": 48
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 18,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "vw-jetta-manual",
+      "name": "VW JETTA MANUAL",
+      "transmission": "manual",
+      "pricing": {
+        "tier1": 50,
+        "tier2": 47,
+        "tier3": 44,
+        "tier4": 40
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 18,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "vw-polo-manual",
+      "name": "VW POLO MANUAL",
+      "transmission": "manual",
+      "pricing": {
+        "tier1": 36,
+        "tier2": 33,
+        "tier3": 30,
+        "tier4": 28
+      },
+      "deposit": 150,
+      "insurance": {
+        "premium": {
+          "dailyRate": 8,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "vw-golf-manual",
+      "name": "VW GOLF MANUAL",
+      "transmission": "manual",
+      "pricing": {
+        "tier1": 38,
+        "tier2": 35,
+        "tier3": 32,
+        "tier4": 30
+      },
+      "deposit": 150,
+      "insurance": {
+        "premium": {
+          "dailyRate": 8,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "audi-a3-automat",
+      "name": "AUDI A3 AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 40,
+        "tier2": 37,
+        "tier3": 34,
+        "tier4": 33
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 9,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "renault-megane-manual",
+      "name": "RENAULT MEGANE MANUAL",
+      "transmission": "manual",
+      "pricing": {
+        "tier1": 40,
+        "tier2": 37,
+        "tier3": 34,
+        "tier4": 33
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 18,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "seat-exeo-combi-manual",
+      "name": "SEAT EXEO COMBI MANUAL",
+      "transmission": "manual",
+      "pricing": {
+        "tier1": 37,
+        "tier2": 35,
+        "tier3": 33,
+        "tier4": 30
+      },
+      "deposit": 150,
+      "insurance": {
+        "premium": {
+          "dailyRate": 8,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "seat-exeo-manual",
+      "name": "SEAT EXEO MANUAL",
+      "transmission": "manual",
+      "pricing": {
+        "tier1": 37,
+        "tier2": 35,
+        "tier3": 33,
+        "tier4": 30
+      },
+      "deposit": 150,
+      "insurance": {
+        "premium": {
+          "dailyRate": 8,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "honda-accord-automat",
+      "name": "HONDA ACCORD AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 40,
+        "tier2": 37,
+        "tier3": 34,
+        "tier4": 33
+      },
+      "deposit": 150,
+      "insurance": {
+        "premium": {
+          "dailyRate": 9,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "skoda-octavia-combi-automat",
+      "name": "SKODA OCTAVIA COMBI AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 36,
+        "tier2": 34,
+        "tier3": 32,
+        "tier4": 30
+      },
+      "deposit": 250,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "mazda-6-manual",
+      "name": "MAZDA 6 MANUAL",
+      "transmission": "manual",
+      "pricing": {
+        "tier1": 40,
+        "tier2": 37,
+        "tier3": 34,
+        "tier4": 32
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 9,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "vw-passat-manual",
+      "name": "VW PASSAT MANUAL",
+      "transmission": "manual",
+      "pricing": {
+        "tier1": 50,
+        "tier2": 45,
+        "tier3": 40,
+        "tier4": 35
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 18,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "vw-passat-cc-automat",
+      "name": "VW PASSAT CC AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 65,
+        "tier2": 62,
+        "tier3": 57,
+        "tier4": 53
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 15,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 22,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "skoda-superb-automat",
+      "name": "SKODA SUPERB AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 60,
+        "tier2": 57,
+        "tier3": 53,
+        "tier4": 50
+      },
+      "deposit": 250,
+      "insurance": {
+        "premium": {
+          "dailyRate": 13,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 20,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "mercedes-e-klasse",
+      "name": "MERCEDES E KLASSE",
+      "pricing": {
+        "tier1": 65,
+        "tier2": 63,
+        "tier3": 60,
+        "tier4": 57
+      },
+      "deposit": 250,
+      "insurance": {
+        "premium": {
+          "dailyRate": 13,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "bmw-seria-5-automat-nou",
+      "name": "BMW SERIA 5 AUTOMAT NOU",
+      "transmission": "automat",
+      "condition": "nou",
+      "pricing": {
+        "tier1": 90,
+        "tier2": 83,
+        "tier3": 77,
+        "tier4": 73
+      },
+      "deposit": 400,
+      "insurance": {
+        "premium": {
+          "dailyRate": 20,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 28,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "bmw-seria-5-gt",
+      "name": "BMW SERIA 5 GT",
+      "pricing": {
+        "tier1": 80,
+        "tier2": 72,
+        "tier3": 60,
+        "tier4": 55
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 13,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "volvo-xc60-automat",
+      "name": "VOLVO XC60 AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 60,
+        "tier2": 55,
+        "tier3": 50,
+        "tier4": 45
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 13,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 20,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "vw-touran-automat",
+      "name": "VW TOURAN AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 60,
+        "tier2": 55,
+        "tier3": 50,
+        "tier4": 45
+      },
+      "deposit": 200,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        }
+      }
+    },
+    {
+      "id": "bmw-x3-nou",
+      "name": "BMW X3 NOU",
+      "condition": "nou",
+      "pricing": {
+        "tier1": 115,
+        "tier2": 108,
+        "tier3": 100,
+        "tier4": 90
+      },
+      "deposit": 400,
+      "insurance": {
+        "premium": {
+          "dailyRate": 20,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 28,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "audi-q5-nou",
+      "name": "AUDI Q5 NOU",
+      "condition": "nou",
+      "pricing": {
+        "tier1": 120,
+        "tier2": 112,
+        "tier3": 105,
+        "tier4": 95
+      },
+      "deposit": 400,
+      "insurance": {
+        "premium": {
+          "dailyRate": 20,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 28,
+          "deposit": 0
+        }
+      }
+    }
+  ]
+}

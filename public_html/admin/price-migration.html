@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEIRONAUTO - Migrare Prețuri din Excel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .migration-card {
+            border-left: 4px solid #007bff;
+            margin-bottom: 1rem;
+        }
+        .price-change {
+            font-weight: bold;
+        }
+        .price-increase {
+            color: #dc3545;
+        }
+        .price-decrease {
+            color: #28a745;
+        }
+        .price-same {
+            color: #6c757d;
+        }
+        .log-area {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .status-badge {
+            font-size: 0.75rem;
+        }
+        .car-mapping {
+            background-color: #f8f9fa;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="h3 mb-0">
+                        <i class="fas fa-file-excel text-success me-2"></i>
+                        Migrare Prețuri din Excel
+                    </h1>
+                    <a href="../index-ro.html" class="btn btn-outline-secondary">
+                        <i class="fas fa-home me-1"></i> Înapoi la Site
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-cogs me-2"></i>
+                            Panou de Control
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <button id="loadDataBtn" class="btn btn-primary w-100">
+                                    <i class="fas fa-download me-1"></i>
+                                    Încarcă Date Excel
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button id="generateReportBtn" class="btn btn-info w-100" disabled>
+                                    <i class="fas fa-chart-line me-1"></i>
+                                    Generează Raport
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button id="previewChangesBtn" class="btn btn-warning w-100" disabled>
+                                    <i class="fas fa-eye me-1"></i>
+                                    Previzualizează Modificări
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button id="applyChangesBtn" class="btn btn-success w-100" disabled>
+                                    <i class="fas fa-check me-1"></i>
+                                    Aplică Modificări
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <label for="exchangeRate" class="form-label">Rata de Schimb (EUR → RON):</label>
+                                <input type="number" id="exchangeRate" class="form-control" value="5.07" step="0.01" min="1">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Status:</label>
+                                <div>
+                                    <span id="statusBadge" class="badge bg-secondary status-badge">Neîncărcat</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Migration Report -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-clipboard-list me-2"></i>
+                            Raport Migrare
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="migrationReport" class="text-muted">
+                            <i class="fas fa-info-circle me-1"></i>
+                            Încarcă datele Excel pentru a genera raportul de migrare.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Car Mappings -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-link me-2"></i>
+                            Mapare Mașini (Sistem Actual → Excel)
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="carMappings" class="row">
+                            <!-- Car mappings will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Price Changes Preview -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-exchange-alt me-2"></i>
+                            Previzualizare Modificări Prețuri
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="priceChanges" class="text-muted">
+                            <i class="fas fa-info-circle me-1"></i>
+                            Generează raportul pentru a vedea modificările de prețuri.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Log Area -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">
+                            <i class="fas fa-terminal me-2"></i>
+                            Log Activitate
+                        </h5>
+                        <button id="clearLogBtn" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-trash me-1"></i>
+                            Șterge Log
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div id="logArea" class="log-area">
+                            <div class="text-muted">Log-ul va fi afișat aici...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/pricing-data-loader.js"></script>
+    <script src="../assets/js/price-migration-script.js"></script>
+    
+    <script>
+        /**
+         * Price Migration Admin Interface
+         */
+        class PriceMigrationAdmin {
+            constructor() {
+                this.migrationScript = new PriceMigrationScript();
+                this.migrationReport = null;
+                this.initializeEventListeners();
+                this.displayCarMappings();
+            }
+
+            /**
+             * Initialize event listeners
+             */
+            initializeEventListeners() {
+                document.getElementById('loadDataBtn').addEventListener('click', () => this.loadData());
+                document.getElementById('generateReportBtn').addEventListener('click', () => this.generateReport());
+                document.getElementById('previewChangesBtn').addEventListener('click', () => this.previewChanges());
+                document.getElementById('applyChangesBtn').addEventListener('click', () => this.applyChanges());
+                document.getElementById('clearLogBtn').addEventListener('click', () => this.clearLog());
+                document.getElementById('exchangeRate').addEventListener('change', (e) => this.updateExchangeRate(e.target.value));
+            }
+
+            /**
+             * Log message to the log area
+             */
+            log(message, type = 'info') {
+                const logArea = document.getElementById('logArea');
+                const timestamp = new Date().toLocaleTimeString();
+                const iconClass = {
+                    'info': 'fas fa-info-circle text-primary',
+                    'success': 'fas fa-check-circle text-success',
+                    'warning': 'fas fa-exclamation-triangle text-warning',
+                    'error': 'fas fa-times-circle text-danger'
+                }[type] || 'fas fa-info-circle';
+                
+                const logEntry = document.createElement('div');
+                logEntry.innerHTML = `<span class="text-muted">[${timestamp}]</span> <i class="${iconClass} me-1"></i> ${message}`;
+                logArea.appendChild(logEntry);
+                logArea.scrollTop = logArea.scrollHeight;
+            }
+
+            /**
+             * Clear log area
+             */
+            clearLog() {
+                document.getElementById('logArea').innerHTML = '<div class="text-muted">Log-ul a fost șters...</div>';
+            }
+
+            /**
+             * Update status badge
+             */
+            updateStatus(status, type = 'secondary') {
+                const badge = document.getElementById('statusBadge');
+                badge.className = `badge bg-${type} status-badge`;
+                badge.textContent = status;
+            }
+
+            /**
+             * Update exchange rate
+             */
+            updateExchangeRate(rate) {
+                this.migrationScript.exchangeRate = parseFloat(rate);
+                this.log(`Rata de schimb actualizată la: 1 EUR = ${rate} RON`);
+            }
+
+            /**
+             * Load Excel data
+             */
+            async loadData() {
+                try {
+                    this.log('Încărcare date Excel...');
+                    this.updateStatus('Se încarcă...', 'warning');
+                    
+                    await this.migrationScript.loadExcelData();
+                    await this.migrationScript.loadCurrentBookingData();
+                    await this.migrationScript.loadCurrentBookingDataEN();
+                    
+                    this.log('Datele au fost încărcate cu succes!', 'success');
+                    this.updateStatus('Date încărcate', 'success');
+                    
+                    // Enable next step
+                    document.getElementById('generateReportBtn').disabled = false;
+                    
+                } catch (error) {
+                    this.log(`Eroare la încărcarea datelor: ${error.message}`, 'error');
+                    this.updateStatus('Eroare încărcare', 'danger');
+                }
+            }
+
+            /**
+             * Generate migration report
+             */
+            async generateReport() {
+                try {
+                    this.log('Generare raport migrare...');
+                    
+                    this.migrationReport = this.migrationScript.generateMigrationReport();
+                    this.displayMigrationReport();
+                    
+                    this.log('Raportul a fost generat cu succes!', 'success');
+                    this.updateStatus('Raport generat', 'info');
+                    
+                    // Enable next steps
+                    document.getElementById('previewChangesBtn').disabled = false;
+                    
+                } catch (error) {
+                    this.log(`Eroare la generarea raportului: ${error.message}`, 'error');
+                }
+            }
+
+            /**
+             * Display migration report
+             */
+            displayMigrationReport() {
+                const reportDiv = document.getElementById('migrationReport');
+                
+                if (!this.migrationReport) {
+                    reportDiv.innerHTML = '<div class="text-muted">Nu există raport disponibil.</div>';
+                    return;
+                }
+                
+                const report = this.migrationReport;
+                
+                reportDiv.innerHTML = `
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card border-primary">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-primary">${report.migrations.length}</h5>
+                                    <p class="card-text">Mașini de actualizat</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-warning">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-warning">${report.unmappedCars.length}</h5>
+                                    <p class="card-text">Mașini nemapate</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-info">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-info">${report.newCarsInExcel.length}</h5>
+                                    <p class="card-text">Mașini noi în Excel</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-success">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-success">${report.exchangeRate}</h5>
+                                    <p class="card-text">Rata de schimb</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    ${report.unmappedCars.length > 0 ? `
+                        <div class="alert alert-warning mt-3">
+                            <h6><i class="fas fa-exclamation-triangle me-1"></i> Mașini nemapate:</h6>
+                            <p class="mb-0">${report.unmappedCars.join(', ')}</p>
+                        </div>
+                    ` : ''}
+                    
+                    ${report.newCarsInExcel.length > 0 ? `
+                        <div class="alert alert-info mt-3">
+                            <h6><i class="fas fa-plus-circle me-1"></i> Mașini noi în Excel:</h6>
+                            <ul class="mb-0">
+                                ${report.newCarsInExcel.map(car => `<li>${car.name} (${car.pricing.tier1} EUR/zi)</li>`).join('')}
+                            </ul>
+                        </div>
+                    ` : ''}
+                `;
+            }
+
+            /**
+             * Display car mappings
+             */
+            displayCarMappings() {
+                const mappingsDiv = document.getElementById('carMappings');
+                const mapping = {
+                    'audi-q3': 'audi-a3-automat',
+                    'mazda-6': 'mazda-6-manual',
+                    'audi-a6': 'audi-a6-automat',
+                    'bmw-gt-530': 'bmw-seria-5-automat-nou',
+                    'mercedes-e-class': 'mercedes-e-klasse',
+                    'renault-koleos': 'mitsubishi-outlander-automat',
+                    'toyota-rav4': 'toyota-rav4-automat',
+                    'renault-traffic-8-1': 'renault-trafic-8-plus-1-automat',
+                    'vw-t-cross': 'vw-t-cross-automat',
+                    'skoda-scala': 'skoda-scala-automat'
+                };
+                
+                mappingsDiv.innerHTML = Object.entries(mapping).map(([current, excel]) => `
+                    <div class="col-md-6 col-lg-4">
+                        <div class="car-mapping">
+                            <div class="fw-bold text-primary">${current}</div>
+                            <div class="text-muted">↓</div>
+                            <div class="text-success">${excel}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            /**
+             * Preview changes
+             */
+            previewChanges() {
+                if (!this.migrationReport) {
+                    this.log('Generează mai întâi raportul!', 'warning');
+                    return;
+                }
+                
+                this.log('Afișare previzualizare modificări...');
+                this.displayPriceChanges();
+                
+                // Enable apply button
+                document.getElementById('applyChangesBtn').disabled = false;
+            }
+
+            /**
+             * Display price changes
+             */
+            displayPriceChanges() {
+                const changesDiv = document.getElementById('priceChanges');
+                
+                if (!this.migrationReport || this.migrationReport.migrations.length === 0) {
+                    changesDiv.innerHTML = '<div class="text-muted">Nu există modificări de prețuri.</div>';
+                    return;
+                }
+                
+                changesDiv.innerHTML = this.migrationReport.migrations.map(migration => {
+                    const change = migration.displayPriceChange;
+                    const changeClass = change.difference > 0 ? 'price-increase' : 
+                                       change.difference < 0 ? 'price-decrease' : 'price-same';
+                    const changeIcon = change.difference > 0 ? 'fa-arrow-up' : 
+                                      change.difference < 0 ? 'fa-arrow-down' : 'fa-minus';
+                    
+                    return `
+                        <div class="migration-card card">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-md-4">
+                                        <h6 class="mb-1">${migration.carId}</h6>
+                                        <small class="text-muted">${migration.excelCarId}</small>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <div class="price-change ${changeClass}">
+                                            <i class="fas ${changeIcon} me-1"></i>
+                                            ${change.old} RON → ${change.new} RON
+                                        </div>
+                                        <small class="text-muted">
+                                            ${change.difference > 0 ? '+' : ''}${change.difference} RON
+                                        </small>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small class="text-muted">
+                                            Tier 1: ${migration.newPricingRON.tier1} RON<br>
+                                            Tier 2: ${migration.newPricingRON.tier2} RON<br>
+                                            Tier 3: ${migration.newPricingRON.tier3} RON<br>
+                                            Tier 4: ${migration.newPricingRON.tier4} RON
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            /**
+             * Apply changes (simulation)
+             */
+            async applyChanges() {
+                try {
+                    this.log('Aplicare modificări...', 'warning');
+                    this.updateStatus('Se aplică...', 'warning');
+                    
+                    // Generate updated files
+                    const updatedBookingJS = this.migrationScript.generateUpdatedBookingJS();
+                    const updatedBookingENJS = this.migrationScript.generateUpdatedBookingENJS();
+                    
+                    // In a real implementation, these would be saved to files
+                    this.log('Fișierele actualizate au fost generate:', 'success');
+                    this.log('- booking.js (RON)', 'info');
+                    this.log('- booking-en.js (EUR)', 'info');
+                    
+                    // Show download links or save functionality
+                    this.showDownloadOptions(updatedBookingJS, updatedBookingENJS);
+                    
+                    this.updateStatus('Modificări aplicate', 'success');
+                    
+                } catch (error) {
+                    this.log(`Eroare la aplicarea modificărilor: ${error.message}`, 'error');
+                    this.updateStatus('Eroare aplicare', 'danger');
+                }
+            }
+
+            /**
+             * Show download options for updated files
+             */
+            showDownloadOptions(bookingJS, bookingENJS) {
+                const modal = document.createElement('div');
+                modal.className = 'modal fade';
+                modal.innerHTML = `
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Fișiere Actualizate</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Fișierele au fost generate cu succes. Poți descărca sau copia conținutul:</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class="btn btn-primary w-100 mb-2" onclick="downloadFile('booking.js', \`${bookingJS.replace(/`/g, '\\`')}\`)">
+                                            <i class="fas fa-download me-1"></i> Descarcă booking.js
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-primary w-100 mb-2" onclick="downloadFile('booking-en.js', \`${bookingENJS.replace(/`/g, '\\`')}\`)">
+                                            <i class="fas fa-download me-1"></i> Descarcă booking-en.js
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                const bootstrapModal = new bootstrap.Modal(modal);
+                bootstrapModal.show();
+                
+                modal.addEventListener('hidden.bs.modal', () => {
+                    document.body.removeChild(modal);
+                });
+            }
+        }
+
+        /**
+         * Download file function
+         */
+        function downloadFile(filename, content) {
+            const blob = new Blob([content], { type: 'text/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Initialize the admin interface
+        document.addEventListener('DOMContentLoaded', () => {
+            new PriceMigrationAdmin();
+        });
+    </script>
+</body>
+</html>
