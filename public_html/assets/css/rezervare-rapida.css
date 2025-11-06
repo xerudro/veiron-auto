@@ -9,6 +9,29 @@
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: 1px;
+  color: var(--text-dark);
+}
+
+/* Override parc-auto styles for quick booking section */
+.quick-booking-section .cars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 0;
+}
+
+.quick-booking-section .car-card {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  color: var(--text-light);
+}
+
+.quick-booking-section .car-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--box-shadow-hover);
 }
 .quick-booking-grid {
   display: grid;
@@ -210,21 +233,39 @@
     object-position: center 42% !important;
   }
 }
-@media (min-width: 1200px) and (max-width: 1500px) {
-  .car-image {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: contain;
-    min-height: 140px;
-    max-height: 180px;
-    background: #fff;
-    display: block;
-    margin-bottom: 20px;
+/* Responsive Design for Quick Booking Section */
+@media (max-width: 1400px) {
+  .quick-booking-section .cars-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  .quick-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+}
+
+@media (max-width: 1200px) {
+  .quick-booking-section .cars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
-} 
+}
+
+@media (max-width: 768px) {
+  .quick-booking-section .cars-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px;
+  }
+  
+  .quick-booking-section .car-card {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-booking-section {
+    padding: 30px 0;
+  }
+  
+  .quick-booking-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+}
