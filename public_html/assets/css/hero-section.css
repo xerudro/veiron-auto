@@ -142,8 +142,10 @@
     width: 400px;
     height: 300px;
     object-fit: cover;
-    object-position: center;
+    object-position: center center;
     transition: transform 0.3s ease;
+    display: block;
+    border-radius: 12px;
 }
 
 .hero-car-image:hover {
