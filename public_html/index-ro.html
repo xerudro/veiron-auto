@@ -166,13 +166,9 @@
     <section class="quick-booking-section">
         <div class="container">
             <h2 class="section-title">Rezervare rapidă</h2>
-            <div class="quick-booking-grid">
+            <div class="cars-grid">
                 <!-- Card 1 -->
                 <div class="car-card">
-                    <div class="car-card-header">
-                        <div class="car-type">Van</div>
-                        <div class="car-availability">Disponibil</div>
-                    </div>
                     <div class="car-image-container">
                         <img src="assets/images/cars/renault_traffic_8+1_van.jpg" alt="Renault Traffic 8+1" class="car-image" />
                     </div>
@@ -210,10 +206,6 @@
                 </div>
                 <!-- Card 2 -->
                 <div class="car-card">
-                    <div class="car-card-header">
-                        <div class="car-type">Sedan</div>
-                        <div class="car-availability">Disponibil</div>
-                    </div>
                     <div class="car-image-container">
                         <img src="assets/images/cars/audi-a6/audi-a6-veiron-auto-satu-mare.png" alt="Audi A6" class="car-image" />
                     </div>
@@ -251,10 +243,6 @@
                 </div>
                 <!-- Card 3 -->
                 <div class="car-card">
-                    <div class="car-card-header">
-                        <div class="car-type">SUV</div>
-                        <div class="car-availability">Disponibil</div>
-                    </div>
                     <div class="car-image-container">
                         <img src="assets/images/cars/toyota-rav4.jpg" alt="Toyota Rav4" class="car-image" />
                     </div>
@@ -291,79 +279,189 @@
                     </div>
                 </div>
                 <!-- Card 4 -->
-                <div class="quick-card">
-                    <div class="car-title">Mercedes E-Class</div>
-                    <div class="car-similar-text">sau Asemănător</div>
-                    <div class="car-desc">Sedan Automatic</div>
-                    <div class="car-tags">
-                        <span><i class="fas fa-user"></i>5</span>
-                        <span><i class="fas fa-suitcase"></i>4</span>
-                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                <div class="car-card">
+                    <div class="car-image-container">
+                        <img src="assets/images/cars/mercedes-e-class.jpg" alt="Mercedes E-Class" class="car-image" />
                     </div>
-                    <img src="assets/images/cars/mercedes-e-class.jpg" alt="Mercedes E-Class" class="car-image" />
-                    <div class="car-included"><i class="fas fa-check"></i>300 kilometri incluși</div>
-                    <div class="car-price">330<span class="car-currency">,00 lei / zi (aprox.)</span></div>
-                    <a href="booking.html?quick=1&carId=MercedesEClass" class="btn btn-primary book-btn">Rezervă rapid</a>
+                    <div class="car-details">
+                        <h3 class="car-title">Mercedes E-Class</h3>
+                        <div class="car-similar-text">sau Asemănător</div>
+                        <div class="car-characteristics">
+                            <div class="char-item">
+                                <i class="fas fa-users"></i>
+                                <span>5 Persoane</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>4 Bagaje</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Automat</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Aer condiționat</span>
+                            </div>
+                        </div>
+                        <div class="car-included">
+                            <i class="fas fa-check"></i>
+                            <span>300 kilometri incluși</span>
+                        </div>
+                        <div class="car-price">
+                            <span class="price-amount">330,00</span>
+                            <span class="price-currency">lei / zi</span>
+                        </div>
+                        <a href="booking.html?quick=1&carId=MercedesEClass" class="btn-book">Rezervă rapid</a>
+                    </div>
                 </div>
                 <!-- Card 5 -->
-                <div class="quick-card">
-                    <div class="car-title">BMW GT 530</div>
-                    <div class="car-similar-text">sau Asemănător</div>
-                    <div class="car-desc">SUV Automatic</div>
-                    <div class="car-tags">
-                        <span><i class="fas fa-user"></i>5</span>
-                        <span><i class="fas fa-suitcase"></i>4</span>
-                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                <div class="car-card">
+                    <div class="car-image-container">
+                        <img src="assets/images/cars/bmw-530-gt/bmw-seria5-gt-satu-mare.png" alt="BMW GT 530" class="car-image" />
                     </div>
-                    <img src="assets/images/cars/bmw-530-gt/bmw-seria5-gt-satu-mare.png" alt="BMW GT 530" class="car-image" />
-                    <div class="car-included"><i class="fas fa-check"></i>300 kilometri incluși</div>
-                    <div class="car-price">405<span class="car-currency">,00 lei / zi (aprox.)</span></div>
-                    <a href="booking.html?quick=1&carId=BMWGT530" class="btn btn-primary book-btn">Rezervă rapid</a>
+                    <div class="car-details">
+                        <h3 class="car-title">BMW GT 530</h3>
+                        <div class="car-similar-text">sau Asemănător</div>
+                        <div class="car-characteristics">
+                            <div class="char-item">
+                                <i class="fas fa-users"></i>
+                                <span>5 Persoane</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>4 Bagaje</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Automat</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Aer condiționat</span>
+                            </div>
+                        </div>
+                        <div class="car-included">
+                            <i class="fas fa-check"></i>
+                            <span>300 kilometri incluși</span>
+                        </div>
+                        <div class="car-price">
+                            <span class="price-amount">405,00</span>
+                            <span class="price-currency">lei / zi</span>
+                        </div>
+                        <a href="booking.html?quick=1&carId=BMWGT530" class="btn-book">Rezervă rapid</a>
+                    </div>
                 </div>
                 <!-- Card 6 -->
-                <div class="quick-card">
-                    <div class="car-title">Mazda 6</div>
-                    <div class="car-similar-text">sau Asemănător</div>
-                    <div class="car-desc">Sedan Manual</div>
-                    <div class="car-tags">
-                        <span><i class="fas fa-user"></i>5</span>
-                        <span><i class="fas fa-suitcase"></i>3</span>
-                        <span><i class="fas fa-gauge"></i>Manual</span>
+                <div class="car-card">
+                    <div class="car-image-container">
+                        <img src="assets/images/cars/mazda-6-hatchback/mazda-6-rent-a-car.png" alt="Mazda 6" class="car-image" />
                     </div>
-                    <img src="assets/images/cars/mazda-6-hatchback/mazda-6-rent-a-car.png" alt="Mazda 6" class="car-image" />
-                    <div class="car-included"><i class="fas fa-check"></i>300 kilometri incluși</div>
-                    <div class="car-price">203<span class="car-currency">,00 lei / zi (aprox.)</span></div>
-                    <a href="booking.html?quick=1&carId=Mazda6" class="btn btn-primary book-btn">Rezervă rapid</a>
+                    <div class="car-details">
+                        <h3 class="car-title">Mazda 6</h3>
+                        <div class="car-similar-text">sau Asemănător</div>
+                        <div class="car-characteristics">
+                            <div class="char-item">
+                                <i class="fas fa-users"></i>
+                                <span>5 Persoane</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>3 Bagaje</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Manual</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Aer condiționat</span>
+                            </div>
+                        </div>
+                        <div class="car-included">
+                            <i class="fas fa-check"></i>
+                            <span>300 kilometri incluși</span>
+                        </div>
+                        <div class="car-price">
+                            <span class="price-amount">203,00</span>
+                            <span class="price-currency">lei / zi</span>
+                        </div>
+                        <a href="booking.html?quick=1&carId=Mazda6" class="btn-book">Rezervă rapid</a>
+                    </div>
                 </div>
                 <!-- Card 7 -->
-                <div class="quick-card">
-                    <div class="car-title">Audi Q3</div>
-                    <div class="car-similar-text">sau Asemănător</div>
-                    <div class="car-desc">SUV Automatic</div>
-                    <div class="car-tags">
-                        <span><i class="fas fa-user"></i>5</span>
-                        <span><i class="fas fa-suitcase"></i>3</span>
-                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                <div class="car-card">
+                    <div class="car-image-container">
+                        <img src="assets/images/cars/Audi-Q3.jpg" alt="Audi Q3" class="car-image" />
                     </div>
-                    <img src="assets/images/cars/Audi-Q3.jpg" alt="Audi Q3" class="car-image" />
-                    <div class="car-included"><i class="fas fa-check"></i>300 kilometri incluși</div>
-                    <div class="car-price">406<span class="car-currency">,00 lei / zi (aprox.)</span></div>
-                    <a href="booking.html?quick=1&carId=AudiQ3" class="btn btn-primary book-btn">Rezervă rapid</a>
+                    <div class="car-details">
+                        <h3 class="car-title">Audi Q3</h3>
+                        <div class="car-similar-text">sau Asemănător</div>
+                        <div class="car-characteristics">
+                            <div class="char-item">
+                                <i class="fas fa-users"></i>
+                                <span>5 Persoane</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>3 Bagaje</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Automat</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Aer condiționat</span>
+                            </div>
+                        </div>
+                        <div class="car-included">
+                            <i class="fas fa-check"></i>
+                            <span>300 kilometri incluși</span>
+                        </div>
+                        <div class="car-price">
+                            <span class="price-amount">406,00</span>
+                            <span class="price-currency">lei / zi</span>
+                        </div>
+                        <a href="booking.html?quick=1&carId=AudiQ3" class="btn-book">Rezervă rapid</a>
+                    </div>
                 </div>
                 <!-- Card 8 -->
-                <div class="quick-card">
-                    <div class="car-title">Renault Koleos</div>
-                    <div class="car-similar-text">sau Asemănător</div>
-                    <div class="car-desc">SUV Automatic</div>
-                    <div class="car-tags">
-                        <span><i class="fas fa-user"></i>5</span>
-                        <span><i class="fas fa-suitcase"></i>4</span>
-                        <span><i class="fas fa-gauge"></i>Automatic</span>
+                <div class="car-card">
+                    <div class="car-image-container">
+                        <img src="assets/images/cars/renault_koleos.jpg" alt="Renault Koleos" class="car-image" />
                     </div>
-                    <img src="assets/images/cars/renault_koleos.jpg" alt="Renault Koleos" class="car-image" />
-                    <div class="car-included"><i class="fas fa-check"></i>300 kilometri incluși</div>
-                    <div class="car-price">355<span class="car-currency">,00 lei / zi (aprox.)</span></div>
-                    <a href="booking.html?quick=1&carId=RenaultKoleos" class="btn btn-primary book-btn">Rezervă rapid</a>
+                    <div class="car-details">
+                        <h3 class="car-title">Renault Koleos</h3>
+                        <div class="car-similar-text">sau Asemănător</div>
+                        <div class="car-characteristics">
+                            <div class="char-item">
+                                <i class="fas fa-users"></i>
+                                <span>5 Persoane</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-suitcase"></i>
+                                <span>4 Bagaje</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-cog"></i>
+                                <span>Automat</span>
+                            </div>
+                            <div class="char-item">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Aer condiționat</span>
+                            </div>
+                        </div>
+                        <div class="car-included">
+                            <i class="fas fa-check"></i>
+                            <span>300 kilometri incluși</span>
+                        </div>
+                        <div class="car-price">
+                            <span class="price-amount">355,00</span>
+                            <span class="price-currency">lei / zi</span>
+                        </div>
+                        <a href="booking.html?quick=1&carId=RenaultKoleos" class="btn-book">Rezervă rapid</a>
+                    </div>
                 </div>
             </div>
         </div>
