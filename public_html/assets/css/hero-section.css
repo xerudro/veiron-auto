@@ -141,8 +141,8 @@
 .hero-car-image {
     width: 400px;
     height: 300px;
-    object-fit: cover;
-    object-position: center 45%;
+    object-fit: cover !important;
+    object-position: center 42% !important;
     transition: transform 0.3s ease;
     display: block;
     border-radius: 12px;
@@ -150,6 +150,14 @@
 
 .hero-car-image:hover {
     transform: scale(1.05);
+}
+
+/* Specific targeting for slider car images */
+.hero-slider .hero-car-image,
+.slider-track .hero-car-image,
+.car-grid .hero-car-image {
+    object-fit: cover !important;
+    object-position: center 42% !important;
 }
 
 .car-name {
@@ -252,8 +260,8 @@
     
     .hero-car-image {
         height: 120px;
-        object-fit: cover;
-        object-position: center 45%;
+        object-fit: cover !important;
+        object-position: center 40% !important;
     }
     
     .slider-btn {
@@ -310,8 +318,8 @@
     
     .hero-car-image {
         height: 100px;
-        object-fit: cover;
-        object-position: center 45%;
+        object-fit: cover !important;
+        object-position: center 38% !important;
     }
     
     .slider-btn {

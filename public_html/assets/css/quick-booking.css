@@ -85,8 +85,8 @@
 
 /* Ensure image container doesn't overflow */
 .quick-card .car-image {
-  object-fit: cover;
-  object-position: center 45%;
+  object-fit: cover !important;
+  object-position: center 42% !important;
 }
 .car-included {
   display: flex;
@@ -126,18 +126,18 @@
 .book-btn:hover {
   background: #e03e00;
 }
-@media (max-width: 1200px) {
+/* Fix for 1020x1231 and similar resolutions */
+@media (max-width: 1280px) and (min-width: 1020px) {
   .quick-booking-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
   .car-image {
     width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: contain;
-    min-height: 140px;
-    max-height: 180px;
-    background: #fff;
-    display: block;
+    height: 160px;
+    object-fit: cover !important;
+    object-position: center 45% !important;
+    border-radius: 12px 12px 0 0;
     margin-bottom: 20px;
   }
   .quick-card {
@@ -145,7 +145,29 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    min-height: 0;
+    min-height: 420px;
+    padding: 32px 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .quick-booking-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .car-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover !important;
+    object-position: center 45% !important;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 20px;
+  }
+  .quick-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 400px;
     padding: 32px 12px;
   }
 }
@@ -168,10 +190,24 @@
     padding: 32px 12px;
   }
 }
+/* Z Fold 5 and similar narrow screens */
+@media (max-width: 400px) {
+  .car-image {
+    height: 140px;
+    object-fit: cover !important;
+    object-position: center 40% !important;
+  }
+  .quick-card {
+    padding: 24px 16px;
+    min-height: 350px;
+  }
+}
+
 @media (max-width: 530px) {
   .car-image {
-    min-height: 100px;
-    max-height: 140px;
+    height: 140px;
+    object-fit: cover !important;
+    object-position: center 42% !important;
   }
 }
 @media (min-width: 1200px) and (max-width: 1500px) {
