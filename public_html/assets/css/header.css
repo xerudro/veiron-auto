@@ -247,9 +247,43 @@ body {
   }
 }
 
-/* Hide hero slider on screens < 1280px */
-@media (max-width: 1279px) {
-  .hero-slider {
+/* Responsive slider visibility controls */
+/* Large slider (4 cars) - visible only on large screens */
+.hero-slider-large {
+  display: block;
+}
+
+.hero-slider-medium,
+.hero-slider-small {
+  display: none;
+}
+
+/* Medium screens (1025px - 1279px): Show 3-car slider */
+@media (max-width: 1279px) and (min-width: 1025px) {
+  .hero-slider-large {
     display: none !important;
+  }
+
+  .hero-slider-medium {
+    display: block !important;
+  }
+
+  .hero-slider-small {
+    display: none !important;
+  }
+}
+
+/* Small screens (<1025px): Show 2-car slider */
+@media (max-width: 1024px) {
+  .hero-slider-large {
+    display: none !important;
+  }
+
+  .hero-slider-medium {
+    display: none !important;
+  }
+
+  .hero-slider-small {
+    display: block !important;
   }
 }

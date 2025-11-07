@@ -144,7 +144,7 @@ const carData = [
         luggage: 6,
         doors: 4,
         fuel: "Diesel",
-        image: "assets/images/cars/renault_traffic_8+1_van.jpg",
+        image: "assets/images/cars/renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png",
         pricing: {
             tier1: { daily: 100 }, // 1-3 zile
             tier2: { daily: 96 },  // 4-7 zile

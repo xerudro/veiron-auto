@@ -83,13 +83,15 @@
         <div class="hero-container">
             <h1 class="hero-title">Simplu si rapid</h1>
             <p class="hero-subtitle">Găsește mașina perfectă pentru călătoria ta. Prețuri competitive și servicii de calitate.</p>
-            <div class="hero-slider">
+
+            <!-- Slider for large screens (4 cars) - visible on >=1280px -->
+            <div class="hero-slider hero-slider-large">
                 <div class="slider-container">
                     <div class="slider-track">
                         <div class="slide active">
                             <div class="car-grid">
                                 <div class="car-card">
-                                    <img src="assets/images/cars/renault_traffic_8+1_van.jpg" alt="Renault Traffic Van" class="hero-car-image">
+                                    <img src="assets/images/cars/renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png" alt="Renault Traffic Van" class="hero-car-image">
                                     <div class="car-name">Renault Traffic Van</div>
                                     <div class="car-similar-text">sau Asemănător</div>
                                 </div>
@@ -118,7 +120,7 @@
                                     <div class="car-similar-text">sau Asemănător</div>
                                 </div>
                                 <div class="car-card">
-                                    <img src="assets/images/cars/Mazda_6.jpg" alt="Mazda 6" class="hero-car-image">
+                                    <img src="assets/images/cars/mazda-6-hatchback/mazda-6-rent-a-car.png" alt="Mazda 6" class="hero-car-image">
                                     <div class="car-name">Mazda 6</div>
                                     <div class="car-similar-text">sau Asemănător</div>
                                 </div>
@@ -130,6 +132,112 @@
                                 <div class="car-card">
                                     <img src="assets/images/cars/renault_koleos.jpg" alt="Renault Koleos" class="hero-car-image">
                                     <div class="car-name">Renault Koleos</div>
+                                    <div class="car-similar-text">sau Asemănător</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                    </div>
+                    <button class="slider-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slider for medium screens (3 cars) - visible on 1025px-1279px -->
+            <div class="hero-slider hero-slider-medium">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="slide active">
+                            <div class="car-grid car-grid-3">
+                                <div class="car-card">
+                                    <img src="assets/images/cars/renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png" alt="Renault Traffic Van" class="hero-car-image">
+                                    <div class="car-name">Renault Traffic Van</div>
+                                    <div class="car-similar-text">sau Asemănător</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/audi-a6/audi-a6-veiron-auto-satu-mare.png" alt="Audi A6" class="hero-car-image">
+                                    <div class="car-name">Audi A6</div>
+                                    <div class="car-similar-text">sau Asemănător</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/toyota-rav4.jpg" alt="Toyota Rav4" class="hero-car-image">
+                                    <div class="car-name">Toyota Rav4</div>
+                                    <div class="car-similar-text">sau Asemănător</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="car-grid car-grid-3">
+                                <div class="car-card">
+                                    <img src="assets/images/cars/bmw-530-gt/bmw-seria5-gt-satu-mare.png" alt="BMW GT 530" class="hero-car-image">
+                                    <div class="car-name">BMW GT 530</div>
+                                    <div class="car-similar-text">sau Asemănător</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/mazda-6-hatchback/mazda-6-rent-a-car.png" alt="Mazda 6" class="hero-car-image">
+                                    <div class="car-name">Mazda 6</div>
+                                    <div class="car-similar-text">sau Asemănător</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/Audi-Q3.jpg" alt="Audi Q3" class="hero-car-image">
+                                    <div class="car-name">Audi Q3</div>
+                                    <div class="car-similar-text">sau Asemănător</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                    </div>
+                    <button class="slider-btn next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slider for small screens (2 cars) - visible on <1025px -->
+            <div class="hero-slider hero-slider-small">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="slide active">
+                            <div class="car-grid car-grid-2">
+                                <div class="car-card">
+                                    <img src="assets/images/cars/renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png" alt="Renault Traffic Van" class="hero-car-image">
+                                    <div class="car-name">Renault Traffic Van</div>
+                                    <div class="car-similar-text">sau Asemănător</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/audi-a6/audi-a6-veiron-auto-satu-mare.png" alt="Audi A6" class="hero-car-image">
+                                    <div class="car-name">Audi A6</div>
+                                    <div class="car-similar-text">sau Asemănător</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="car-grid car-grid-2">
+                                <div class="car-card">
+                                    <img src="assets/images/cars/toyota-rav4.jpg" alt="Toyota Rav4" class="hero-car-image">
+                                    <div class="car-name">Toyota Rav4</div>
+                                    <div class="car-similar-text">sau Asemănător</div>
+                                </div>
+                                <div class="car-card">
+                                    <img src="assets/images/cars/bmw-530-gt/bmw-seria5-gt-satu-mare.png" alt="BMW GT 530" class="hero-car-image">
+                                    <div class="car-name">BMW GT 530</div>
                                     <div class="car-similar-text">sau Asemănător</div>
                                 </div>
                             </div>
@@ -170,7 +278,7 @@
                 <!-- Card 1 -->
                 <div class="car-card">
                     <div class="car-image-container">
-                        <img src="assets/images/cars/renault_traffic_8+1_van.jpg" alt="Renault Traffic 8+1" class="car-image" />
+                        <img src="assets/images/cars/renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png" alt="Renault Traffic 8+1" class="car-image" />
                     </div>
                     <div class="car-details">
                         <h3 class="car-title">Renault Traffic 8+1</h3>
@@ -355,7 +463,7 @@
                 <!-- Card 6 -->
                 <div class="car-card">
                     <div class="car-image-container">
-                        <img src="assets/images/cars/Mazda_6.jpg" alt="Mazda 6" class="car-image" />
+                        <img src="assets/images/cars/mazda-6-hatchback/mazda-6-rent-a-car.png" alt="Mazda 6" class="car-image" />
                     </div>
                     <div class="car-details">
                         <h3 class="car-title">Mazda 6</h3>

@@ -75,8 +75,8 @@ body {
 }
 
 .step-number {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: var(--white);
     border: 2px solid var(--gray-medium);
@@ -521,6 +521,8 @@ label {
     min-height: 2.4rem;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    text-overflow: ellipsis;
     justify-content: center;
 }
 
@@ -1436,8 +1438,8 @@ main {
 }
 
 .progress-circle {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   background: #fff;
   border: 3px solid #e0e0e0;
   border-radius: 50%;

@@ -1,17 +1,28 @@
 // Hero Slider Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    const sliderTrack = document.querySelector('.slider-track');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    
+    // Initialize all three sliders
+    initializeSlider('.hero-slider-large');
+    initializeSlider('.hero-slider-medium');
+    initializeSlider('.hero-slider-small');
+});
+
+// Function to initialize a specific slider
+function initializeSlider(sliderSelector) {
+    const sliderContainer = document.querySelector(sliderSelector);
+    if (!sliderContainer) return;
+
+    const sliderTrack = sliderContainer.querySelector('.slider-track');
+    const slides = sliderContainer.querySelectorAll('.slide');
+    const dots = sliderContainer.querySelectorAll('.dot');
+    const prevBtn = sliderContainer.querySelector('.prev-btn');
+    const nextBtn = sliderContainer.querySelector('.next-btn');
+
     if (!sliderTrack || slides.length === 0) return;
-    
+
     let currentSlide = 0;
     let slideInterval;
     const slideDuration = 5000; // 5 seconds per slide
-    
+
     // Initialize slider
     function initSlider() {
         updateSlider();
@@ -132,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', () => {
         updateSlider();
     });
-    
+
     // Initialize the slider
     initSlider();
-}); 
+} 

@@ -94,7 +94,7 @@
     max-width: 1800px;
     height: 92vh;
     max-height: 450px;
-    margin: 0 auto 40px;
+    margin: 0 auto 80px;
     z-index: 2;
 }
 
@@ -102,7 +102,8 @@
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: none;
+    background: transparent;
 }
 
 .slider-track {
@@ -125,6 +126,14 @@
     max-width: 1800px;
 }
 
+.car-grid-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.car-grid-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
 .car-card {
     background: white;
     border-radius: 12px;
@@ -139,8 +148,9 @@
 }
 
 .hero-car-image {
-    width: 400px;
-    height: 300px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
     object-fit: cover !important;
     object-position: center 42% !important;
     transition: transform 0.3s ease;
@@ -160,12 +170,33 @@
     object-position: center 42% !important;
 }
 
+/* Special styling for Mazda 6 image to display completely without cropping */
+.hero-slider img[alt="Mazda 6"],
+.slider-track img[alt="Mazda 6"],
+.car-grid img[alt="Mazda 6"] {
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: scale(0.95);
+}
+
+/* Special styling for Renault Traffic Van image */
+.hero-slider img[alt="Renault Traffic Van"],
+.slider-track img[alt="Renault Traffic Van"],
+.car-grid img[alt="Renault Traffic Van"] {
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: scale(0.85);
+}
+
 .car-name {
     padding: 12px 15px 8px 15px;
     text-align: center;
     font-weight: 600;
     font-size: 16px;
     color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .car-similar-text {
@@ -190,8 +221,8 @@
     background: rgba(255,255,255,0.2);
     border: none;
     color: white;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -226,6 +257,54 @@
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1279px) and (min-width: 1025px) {
+    .hero-slider {
+        max-height: 400px;
+    }
+
+    .hero-section {
+        min-height: 85vh;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 956px) {
+    .hero-slider {
+        max-height: 380px;
+        margin-bottom: 140px;
+    }
+
+    .hero-section {
+        min-height: 80vh;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 955px) and (min-width: 769px) {
+    .hero-slider {
+        max-height: 380px;
+        margin-bottom: 100px;
+    }
+
+    .hero-section {
+        min-height: 80vh;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hero-container {
         gap: 30px;
@@ -242,6 +321,7 @@
 
     .hero-buttons {
         justify-content: center;
+        padding-bottom: 100px;
     }
 
     .btn {
@@ -251,24 +331,25 @@
 
     .hero-slider {
         max-width: 600px;
+        margin-bottom: 30px;
     }
-    
+
     .car-grid {
         gap: 10px;
         max-width: 800px;
     }
-    
+
     .hero-car-image {
-        height: 120px;
+        aspect-ratio: 4/3;
         object-fit: cover !important;
         object-position: center 40% !important;
     }
-    
+
     .slider-btn {
         width: 35px;
         height: 35px;
     }
-    
+
     .dot {
         width: 10px;
         height: 10px;
@@ -309,24 +390,25 @@
 
     .hero-slider {
         max-width: 400px;
+        margin-bottom: 35px;
     }
-    
+
     .car-grid {
         gap: 8px;
         max-width: 600px;
     }
-    
+
     .hero-car-image {
-        height: 100px;
+        aspect-ratio: 4/3;
         object-fit: cover !important;
         object-position: center 38% !important;
     }
-    
+
     .slider-btn {
         width: 30px;
         height: 30px;
     }
-    
+
     .dot {
         width: 8px;
         height: 8px;

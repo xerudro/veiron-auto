@@ -37,6 +37,9 @@
   margin-bottom: 4px;
   min-height: 52px;
   line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .car-similar-text {
   font-size: 0.9rem;

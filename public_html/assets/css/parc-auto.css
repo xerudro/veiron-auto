@@ -260,23 +260,20 @@ body {
 
 /* Color Cassette */
 .color-cassette {
-    position: absolute;
-    top: 295px;
-    right: 15px;
     background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 6px 14px;
     opacity: 1;
     visibility: visible;
-    transform: translateX(0);
     transition: all 0.3s ease;
-    z-index: 10;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     height: 28px;
+    margin: 8px 0 4px 0;
+    width: fit-content;
 }
 
 .color-label {
@@ -394,6 +391,9 @@ body {
     letter-spacing: 0.8px;
     margin-bottom: 4px;
     color: var(--text-light);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .car-similar-text {
@@ -416,8 +416,9 @@ body {
     overflow: hidden;
 }
 
+
 .description-spacer {
-    height: 25px;
+    height: 8px;
     width: 100%;
     display: block;
 }
@@ -802,8 +803,8 @@ body {
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: white;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 18px;
@@ -940,8 +941,8 @@ body {
     }
     
     .zoom-btn {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
         font-size: 16px;
     }
     
@@ -1020,8 +1021,8 @@ body {
 }
 
 .pagination-num {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border: 1px solid var(--gray-light);
     background: white;
     color: var(--text-dark);

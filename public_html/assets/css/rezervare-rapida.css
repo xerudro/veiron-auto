@@ -21,7 +21,7 @@
 /* Rezervare Rapidă Section Styles */
 .quick-booking-section {
   background: #fff;
-  padding: 48px 0;
+  padding: 48px 20px;
 }
 .quick-booking-section .section-title {
   text-align: center;
@@ -80,6 +80,9 @@
   margin-bottom: 4px;
   min-height: 52px;
   line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .car-similar-text {
   font-size: 0.9rem;
@@ -408,9 +411,16 @@
   .quick-booking-section {
     padding: 30px 0;
   }
-  
+
   .quick-booking-section .section-title {
     font-size: 1.8rem;
     margin-bottom: 24px;
   }
+}
+
+/* Special styling for Mazda 6 image to display completely without cropping */
+.quick-booking-section .car-image-container img[alt="Mazda 6"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: scale(1.3);
 }
