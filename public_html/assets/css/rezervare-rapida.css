@@ -472,5 +472,5 @@
 .quick-card img[alt="Audi Q3"] {
   object-fit: contain !important;
   object-position: center !important;
-  transform: scale(1.2);
+  transform: scale(1.0);
 }
