@@ -460,3 +460,11 @@
   object-position: center !important;
   transform: scale(1.0);
 }
+
+/* Special styling for Audi Q3 in Quick Card */
+.quick-booking-section .car-card img[alt="Audi Q3"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: scale(1.2);
+}
+

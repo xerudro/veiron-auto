@@ -179,6 +179,15 @@
     transform: scale(0.95);
 }
 
+/* Special styling for Audi Q3 image to scale down */
+.hero-slider img[alt="Audi Q3"],
+.slider-track img[alt="Audi Q3"],
+.car-grid img[alt="Audi Q3"] {
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: scale(0.85);
+}
+
 /* Special styling for Renault Traffic Van image */
 .hero-slider img[alt="Renault Traffic Van"],
 .slider-track img[alt="Renault Traffic Van"],
