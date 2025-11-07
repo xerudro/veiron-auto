@@ -157,7 +157,8 @@ function getDefaultImages(carId, carName) {
         'mazda-6-manual': 'mazda-6-hatchback/mazda-6-rent-a-car.png', // Mazda 6 image
         'mazda-6': 'Mazda_6.jpg',
         'mercedes-e-class-sedan': 'mercedes-e-class.jpg',
-        'toyota-rav4-suv': 'toyota-rav4.jpg',
+        'toyota-rav4': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
+        'toyota-rav4-suv': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'renault-traffic-van': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-traffic-8plus1': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-trafic-8-plus-1-automat': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',

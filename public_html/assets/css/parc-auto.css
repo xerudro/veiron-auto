@@ -348,6 +348,12 @@ body {
     transform-origin: center;
 }
 
+.car-card[data-model="toyota-rav4"] .main-image {
+    transform: scale(0.85);
+    transform-origin: center;
+    object-fit: contain;
+}
+
 .gallery-thumbs {
     display: flex;
     gap: 8px;

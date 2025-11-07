@@ -188,6 +188,15 @@
     transform: scale(0.85);
 }
 
+/* Special styling for Toyota Rav4 image */
+.hero-slider img[alt="Toyota Rav4"],
+.slider-track img[alt="Toyota Rav4"],
+.car-grid img[alt="Toyota Rav4"] {
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: scale(0.9);
+}
+
 .car-name {
     padding: 12px 15px 8px 15px;
     text-align: center;

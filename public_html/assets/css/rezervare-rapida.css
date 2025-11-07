@@ -432,3 +432,17 @@
   transform: scale(1.1);
 
 }
+
+/* Special styling for Renault Traffic image to make it smaller */
+.quick-booking-section .car-image-container img[alt="Toyota Rav4"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: scale(1.1);
+}
+
+/* Special styling for Quick Card in index-en.html */
+.quick-card img[alt="Toyota Rav4"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: scale(0.7);
+}
