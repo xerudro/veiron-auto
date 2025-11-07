@@ -36,7 +36,18 @@ const CAR_MODELS = {
         title: 'MERCEDES E-CLASS',
         images: [
             { file: 'mercedes-e-class/mercedes-e-class-luxury-satu-mare.png', alt: 'Mercedes E-Class sedan premium - imagine principală', isDirectImage: true },
-            { file: 'mercedes-e-class/gallery/mercedes-e-class-interior-luxury-executive.jpg', alt: 'Interior luxury executive Mercedes E-Class', isDirectImage: true }
+            { file: 'mercedes-e-class/gallery/mercedes-e-class-interior-luxury-executive.jpg', alt: 'Interior luxury executive Mercedes E-Class', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Vedere laterală', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Portbagaj executive', isDirectImage: true }
+        ]
+    },
+    'mercedes-e-klasse': {
+        title: 'MERCEDES E KLASSE',
+        images: [
+            { file: 'mercedes-e-class/mercedes-e-class-luxury-satu-mare.png', alt: 'Mercedes E-Class sedan premium - imagine principală', isDirectImage: true },
+            { file: 'mercedes-e-class/gallery/mercedes-e-class-interior-luxury-executive.jpg', alt: 'Interior luxury executive Mercedes E-Class', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Vedere laterală', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Portbagaj executive', isDirectImage: true }
         ]
     },
     'toyota-rav4': {
@@ -70,6 +81,15 @@ const CAR_MODELS = {
         title: 'RENAULT KOLEOS',
         images: [
             { file: 'renault-koleos-suv-inchiriere-family-satu-mare.jpg', alt: 'Renault Koleos SUV închiriere family Satu Mare' }
+        ]
+    },
+    'audi-q3': {
+        title: 'AUDI Q3',
+        images: [
+            { file: 'audi-q3/audi-q3-2011-veiron-auto-rent.png', alt: 'Audi Q3 SUV', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Interior Audi Q3', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Vedere laterală', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Portbagaj', isDirectImage: false }
         ]
     }
 };
@@ -135,6 +155,16 @@ const CAR_COLORS = {
         color: 'white',
         colorRO: 'ALB',
         colorEN: 'WHITE'
+    },
+    'audi-q3': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
+    },
+    'mercedes-e-klasse': {
+        color: 'grey',
+        colorRO: 'GRI METALIZAT',
+        colorEN: 'GREY METALLIC'
     }
 };
 
@@ -268,7 +298,7 @@ function getFallbackImage() {
 
 // Dynamic Gallery System
 function initDynamicGalleries() {
-    const carCards = document.querySelectorAll('.car-card[data-model]:not([data-model="mercedes-e-class"]):not([data-model="mercedes-e-klasse"])');
+    const carCards = document.querySelectorAll('.car-card[data-model]');
     
     carCards.forEach((card, index) => {
         const modelId = card.dataset.model;
@@ -736,10 +766,12 @@ class CarFleet {
             window.CarEnhancements.mapBaggageCapacity(car) : 
             (car.category === 'van' ? '4 bagaje mari' : '3 bagaje mari');
         
-        // Determine main image src - use direct path for Mercedes
+        // Determine main image src - use direct path for Mercedes and Audi Q3
         let mainImageSrc = '';
         if (car.id === 'mercedes-e-klasse' || car.id === 'mercedes-e-class') {
             mainImageSrc = 'assets/images/cars/mercedes-e-class/mercedes-e-class-luxury-satu-mare.png';
+        } else if (car.id === 'audi-q3') {
+            mainImageSrc = 'assets/images/cars/audi-q3/audi-q3-2011-veiron-auto-rent.png';
         }
         
         carElement.innerHTML = `

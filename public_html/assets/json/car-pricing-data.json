@@ -918,6 +918,28 @@
           "deposit": 0
         }
       }
+    },
+    {
+      "id": "audi-q3",
+      "name": "AUDI Q3",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 75,
+        "tier2": 70,
+        "tier3": 65,
+        "tier4": 60
+      },
+      "deposit": 300,
+      "insurance": {
+        "premium": {
+          "dailyRate": 12,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 19,
+          "deposit": 0
+        }
+      }
     }
   ]
 }

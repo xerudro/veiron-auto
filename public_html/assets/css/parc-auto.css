@@ -274,6 +274,7 @@ body {
     height: 28px;
     margin: 8px 0 4px 0;
     width: fit-content;
+    flex-wrap: nowrap;
 }
 
 .color-label {
@@ -289,6 +290,8 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
+    flex-shrink: 1;
+    min-width: 0;
 }
 
 .color-swatch {
@@ -355,7 +358,8 @@ body {
 }
 
 .car-card[data-model="mercedes-e-class"] .main-image,
-.car-card[data-model="mercedes-e-klasse"] .main-image {
+.car-card[data-model="mercedes-e-klasse"] .main-image,
+.car-card[data-model="audi-q3"] .main-image {
     object-fit: contain !important;
     object-position: center !important;
     transform: none !important;
