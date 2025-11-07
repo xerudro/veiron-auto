@@ -355,9 +355,16 @@ body {
 }
 
 .car-card[data-model="mercedes-e-class"] .main-image {
-    transform: scale(0.9);
-    transform-origin: center;
-    object-fit: contain;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+}
+
+.car-card[data-model="mercedes-e-class"] .gallery-main {
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-thumbs {

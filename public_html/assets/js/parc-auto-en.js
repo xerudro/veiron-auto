@@ -267,7 +267,7 @@ function getFallbackImage() {
 
 // Dynamic Gallery System
 function initDynamicGalleries() {
-    const carCards = document.querySelectorAll('.car-card[data-model]');
+    const carCards = document.querySelectorAll('.car-card[data-model]:not([data-model="mercedes-e-class"])');
     
     carCards.forEach((card, index) => {
         const modelId = card.dataset.model;
