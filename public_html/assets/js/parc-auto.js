@@ -268,7 +268,7 @@ function getFallbackImage() {
 
 // Dynamic Gallery System
 function initDynamicGalleries() {
-    const carCards = document.querySelectorAll('.car-card[data-model]:not([data-model="mercedes-e-class"])');
+    const carCards = document.querySelectorAll('.car-card[data-model]:not([data-model="mercedes-e-class"]):not([data-model="mercedes-e-klasse"])');
     
     carCards.forEach((card, index) => {
         const modelId = card.dataset.model;
@@ -736,10 +736,16 @@ class CarFleet {
             window.CarEnhancements.mapBaggageCapacity(car) : 
             (car.category === 'van' ? '4 bagaje mari' : '3 bagaje mari');
         
+        // Determine main image src - use direct path for Mercedes
+        let mainImageSrc = '';
+        if (car.id === 'mercedes-e-klasse' || car.id === 'mercedes-e-class') {
+            mainImageSrc = 'assets/images/cars/mercedes-e-class/mercedes-e-class-luxury-satu-mare.png';
+        }
+        
         carElement.innerHTML = `
             <div class="car-gallery">
                 <div class="gallery-main">
-                    <img src="" alt="${car.displayName}" class="main-image">
+                    <img src="${mainImageSrc}" alt="${car.displayName}" class="main-image">
                 </div>
                 <div class="gallery-thumbs">
                     <!-- Images will be loaded dynamically -->
