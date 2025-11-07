@@ -465,12 +465,12 @@
 .quick-booking-section .car-image-container img[alt="Audi Q3"] {
   object-fit: contain !important;
   object-position: center !important;
-  transform: scale(1.1);
+  transform: scale(1.0);
 }
 
 /* Special styling for Mercedes E-Class in Quick Card */
 .quick-card img[alt="Audi Q3"] {
   object-fit: contain !important;
   object-position: center !important;
-  transform: scale(1.0);
+  transform: scale(1.2);
 }
