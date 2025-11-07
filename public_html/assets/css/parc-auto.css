@@ -354,6 +354,12 @@ body {
     object-fit: contain;
 }
 
+.car-card[data-model="mercedes-e-class"] .main-image {
+    transform: scale(0.9);
+    transform-origin: center;
+    object-fit: contain;
+}
+
 .gallery-thumbs {
     display: flex;
     gap: 8px;

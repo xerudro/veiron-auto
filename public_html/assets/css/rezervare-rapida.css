@@ -446,3 +446,17 @@
   object-position: center !important;
   transform: scale(0.7);
 }
+
+/* Special styling for Mercedes E-Class image in Quick Booking */
+.quick-booking-section .car-image-container img[alt="Mercedes E-Class"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: scale(1.1);
+}
+
+/* Special styling for Mercedes E-Class in Quick Card */
+.quick-card img[alt="Mercedes E-Class"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: scale(1.0);
+}

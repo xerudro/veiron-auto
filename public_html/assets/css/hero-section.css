@@ -185,7 +185,7 @@
 .car-grid img[alt="Renault Traffic Van"] {
     object-fit: contain !important;
     object-position: center !important;
-    transform: scale(0.85);
+    transform: scale(1.0);
 }
 
 /* Special styling for Toyota Rav4 image */
@@ -195,6 +195,15 @@
     object-fit: contain !important;
     object-position: center !important;
     transform: scale(0.9);
+}
+
+/* Special styling for Mercedes Benz E Class image */
+.hero-slider img[alt="Mercedes Benz E Class"],
+.slider-track img[alt="Mercedes Benz E Class"],
+.car-grid img[alt="Mercedes Benz E Class"] {
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: scale(0.95);
 }
 
 .car-name {

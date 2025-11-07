@@ -156,6 +156,7 @@ function getDefaultImages(carId, carName) {
         'honda-accord-automat': 'honda-accord-automat/honda-accord-automat-veiron-auto.png', // Honda Accord image
         'mazda-6-manual': 'mazda-6-hatchback/mazda-6-rent-a-car.png', // Mazda 6 image
         'mazda-6': 'Mazda_6.jpg',
+        'mercedes-e-class': 'mercedes-e-class/mercedes-e-class-luxury-satu-mare.png',
         'mercedes-e-class-sedan': 'mercedes-e-class.jpg',
         'toyota-rav4': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-suv': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
