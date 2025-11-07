@@ -9,8 +9,15 @@ const CAR_MODELS = {
     'renault-traffic-8plus1': {
         title: 'Renault Traffic 8+1',
         images: [
-            { file: 'main.jpg', alt: 'Renault Traffic 8+1 - main view' },
-            { file: 'inchirieri_auto_satu_mare.jpg', alt: 'Renault Traffic 8+1 car rental Satu Mare' }
+            { file: 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png', alt: 'Renault Traffic 8+1 - main view', isDirectImage: true },
+            { file: 'renault-traffic-8plus1/gallery/renault-traffic-lateral-van-spatios.jpg', alt: 'Renault Traffic 8+1 car rental Satu Mare', isDirectImage: true }
+        ]
+    },
+    'renault-trafic-8-plus-1-automat': {
+        title: 'RENAULT TRAFIC (8+1 seats)',
+        images: [
+            { file: 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png', alt: 'RENAULT TRAFIC (8+1 seats) - main image', isDirectImage: true },
+            { file: 'renault-traffic-8plus1/gallery/renault-traffic-lateral-van-spatios.jpg', alt: 'Side view - spacious van', isDirectImage: true }
         ]
     },
     'audi-a6': {
@@ -151,7 +158,9 @@ function getDefaultImages(carId, carName) {
         'mazda-6': 'Mazda_6.jpg',
         'mercedes-e-class-sedan': 'mercedes-e-class.jpg',
         'toyota-rav4-suv': 'toyota-rav4.jpg',
-        'renault-traffic-van': 'renault_traffic_8+1_van.jpg',
+        'renault-traffic-van': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
+        'renault-traffic-8plus1': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
+        'renault-trafic-8-plus-1-automat': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-koleos-suv': 'renault_koleos.jpg'
     };
     
@@ -718,7 +727,6 @@ class CarFleet {
             (car.category === 'van' ? '4 large bags' : '3 large bags');
         
         carElement.innerHTML = `
-            ${this.generateColorCassette(car.id)}
             <div class="car-gallery">
                 <div class="gallery-main">
                     <img src="" alt="${car.displayName}" class="main-image">
@@ -731,6 +739,7 @@ class CarFleet {
                 <h3 class="car-title">${car.displayName}</h3>
                 <p class="car-similar-text">or similar</p>
                 <p class="car-description">${window.CarEnhancementsEN ? window.CarEnhancementsEN.getEnhancedDescriptionEN(car) : this.getCarDescription(car)}</p>
+                ${this.generateColorCassette(car.id)}
                 <div class="description-spacer"></div>
                 <div class="car-features">
                     <div class="feature">
@@ -1192,7 +1201,7 @@ function openImageZoom(clickedImage, carCard) {
     
     // Build images array from model configuration
     currentZoomData.images = model.images.map(img => ({
-        src: getImagePath(modelId, img.file),
+        src: getImagePath(modelId, img.file, img.isDirectImage),
         alt: img.alt,
         fallback: getFallbackImage()
     }));

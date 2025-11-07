@@ -9,8 +9,15 @@ const CAR_MODELS = {
     'renault-traffic-8plus1': {
         title: 'Renault Traffic 8+1',
         images: [
-            { file: 'renault-traffic-8plus1-van-inchiriere-satu-mare.jpg', alt: 'Renault Traffic 8+1 van închiriere Satu Mare' },
-            { file: 'renault-traffic-lateral-van-spatios.jpg', alt: 'Vedere laterală van spațios' }
+            { file: 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png', alt: 'Renault Traffic 8+1 van închiriere Satu Mare', isDirectImage: true },
+            { file: 'renault-traffic-8plus1/gallery/renault-traffic-lateral-van-spatios.jpg', alt: 'Vedere laterală van spațios', isDirectImage: true }
+        ]
+    },
+    'renault-trafic-8-plus-1-automat': {
+        title: 'RENAULT TRAFIC (8+1 locuri)',
+        images: [
+            { file: 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png', alt: 'RENAULT TRAFIC (8+1 locuri) - imagine principală', isDirectImage: true },
+            { file: 'renault-traffic-8plus1/gallery/renault-traffic-lateral-van-spatios.jpg', alt: 'Vedere laterală van spațios', isDirectImage: true }
         ]
     },
     'audi-a6': {
@@ -151,7 +158,9 @@ function getDefaultImages(carId, carName) {
         'mazda-6': 'Mazda_6.jpg',
         'mercedes-e-class-sedan': 'mercedes-e-class.jpg',
         'toyota-rav4-suv': 'toyota-rav4.jpg',
-        'renault-traffic-van': 'renault_traffic_8+1_van.jpg',
+        'renault-traffic-van': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
+        'renault-traffic-8plus1': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
+        'renault-trafic-8-plus-1-automat': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-koleos-suv': 'renault_koleos.jpg'
     };
     
@@ -244,6 +253,7 @@ function convertEurToRon(eurPrice) {
 // Helper function to get image path
 function getImagePath(modelId, imageFile, isDirectImage = false) {
     if (isDirectImage) {
+        // For direct images, the path already includes the full path from cars/ folder
         return `assets/images/cars/${imageFile}`;
     }
     return `assets/images/cars/${modelId}/gallery/${imageFile}`;
@@ -276,6 +286,8 @@ function loadCarGallery(card, model, modelId, cardIndex) {
     // Clear existing content
     thumbsContainer.innerHTML = '';
     
+
+    
     // Get images from model configuration or use defaults
     let imageConfig;
     if (model && model.images) {
@@ -284,12 +296,15 @@ function loadCarGallery(card, model, modelId, cardIndex) {
         // Use default images for cars not in CAR_MODELS
         const carName = card.querySelector('.car-title')?.textContent || 'Mașină';
         imageConfig = getDefaultImages(modelId, carName);
+
     }
     
     // Load images with fallback
     const images = imageConfig.map(img => {
+        const imagePath = getImagePath(modelId, img.file, img.isDirectImage);
+
         return {
-            src: getImagePath(modelId, img.file, img.isDirectImage),
+            src: imagePath,
             alt: img.alt,
             fallback: getFallbackImage()
         };
@@ -720,7 +735,6 @@ class CarFleet {
             (car.category === 'van' ? '4 bagaje mari' : '3 bagaje mari');
         
         carElement.innerHTML = `
-            ${this.generateColorCassette(car.id)}
             <div class="car-gallery">
                 <div class="gallery-main">
                     <img src="" alt="${car.displayName}" class="main-image">
@@ -733,6 +747,7 @@ class CarFleet {
                 <h3 class="car-title">${car.displayName}</h3>
                 <p class="car-similar-text">sau asemănător</p>
                 <p class="car-description">${window.CarEnhancements ? window.CarEnhancements.getEnhancedDescription(car) : this.getCarDescription(car)}</p>
+                ${this.generateColorCassette(car.id)}
                 <div class="description-spacer"></div>
                 <div class="car-features">
                     <div class="feature">
@@ -1194,7 +1209,7 @@ function openImageZoom(clickedImage, carCard) {
     
     // Build images array from model configuration
     currentZoomData.images = model.images.map(img => ({
-        src: getImagePath(modelId, img.file),
+        src: getImagePath(modelId, img.file, img.isDirectImage),
         alt: img.alt,
         fallback: getFallbackImage()
     }));
