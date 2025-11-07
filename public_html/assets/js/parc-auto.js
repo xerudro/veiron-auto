@@ -35,8 +35,8 @@ const CAR_MODELS = {
     'mercedes-e-class': {
         title: 'MERCEDES E-CLASS',
         images: [
-            { file: 'mercedes-e-class-sedan-premium-inchiriere-satu-mare.jpg', alt: 'Mercedes E-Class sedan premium închiriere Satu Mare' },
-            { file: 'mercedes-e-class-interior-luxury-executive.jpg', alt: 'Interior luxury executive Mercedes E-Class' }
+            { file: 'mercedes-e-class/mercedes-e-class-luxury-satu-mare.png', alt: 'Mercedes E-Class sedan premium - imagine principală', isDirectImage: true },
+            { file: 'mercedes-e-class/gallery/mercedes-e-class-interior-luxury-executive.jpg', alt: 'Interior luxury executive Mercedes E-Class', isDirectImage: true }
         ]
     },
     'toyota-rav4': {
