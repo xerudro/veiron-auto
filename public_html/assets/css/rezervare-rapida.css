@@ -461,16 +461,9 @@
   transform: scale(1.0);
 }
 
-/* Special styling for Mercedes E-Class image in Quick Booking */
-.quick-booking-section .car-image-container img[alt="Audi Q3"] {
+/* Special styling for Audi Q3 in Quick Booking Section */
+.quick-booking-section .car-card img[alt="Audi Q3"] {
   object-fit: contain !important;
   object-position: center !important;
-  transform: scale(1.0);
-}
-
-/* Special styling for Mercedes E-Class in Quick Card */
-.quick-card img[alt="Audi Q3"] {
-  object-fit: contain !important;
-  object-position: center !important;
-  transform: scale(1.0);
+  transform: scale(1.1);
 }
