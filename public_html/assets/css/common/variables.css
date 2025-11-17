@@ -1,0 +1,76 @@
+/* ========================================
+   VEIRON AUTO - Global CSS Variables
+   Centralized design system tokens
+   ======================================== */
+
+:root {
+    /* Primary Brand Colors */
+    --primary-color: #ff4500;
+    --primary-hover: #e03d00;
+    --primary-dark: #e03e00;
+
+    /* Secondary Colors */
+    --secondary-color: #2c3e50;
+    --accent-color: #34495e;
+
+    /* Text Colors */
+    --text-dark: #2c3e50;
+    --text-main: #232526;
+    --text-light: #ecf0f1;
+    --text-muted: #7f8c8d;
+
+    /* Background Colors */
+    --white: #ffffff;
+    --background-light: #f8f9fa;
+    --background-dark: #2c3e50;
+    --bg-light: #fafafa;
+    --bg-card: #f5f5f5;
+
+    /* Gray Scale */
+    --gray-light: #ecf0f1;
+    --gray-medium: #95a5a6;
+    --gray-dark: #7f8c8d;
+    --gray-darker: #34495e;
+
+    /* Orange Brand Variations (for contact pages) */
+    --va-orange: #ff4500;
+    --va-orange-dark: #e03e00;
+    --va-bg-light: #fafafa;
+    --va-bg-card: #f5f5f5;
+    --va-text-main: #232526;
+
+    /* Card & Component Backgrounds */
+    --card-background: linear-gradient(180deg, #232526 0%, #181a1b 100%);
+
+    /* Spacing & Layout */
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-lg: 16px;
+
+    /* Shadows */
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.18);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.25);
+    --va-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.04);
+    --box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    --box-shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+    --transition-fast: all 0.2s ease;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--white);
+}
