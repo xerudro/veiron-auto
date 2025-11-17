@@ -388,9 +388,9 @@ class CarFleet {
             // Mobile sidebar collapse functionality
             this.initMobileSidebar();
             
-            console.log('Car Fleet System initialized with', this.allCars.length, 'cars');
+            logger.log('Car Fleet System initialized with', this.allCars.length, 'cars');
         } catch (error) {
-            console.error('Failed to initialize Car Fleet System:', error);
+            logger.error('Failed to initialize Car Fleet System:', error);
             this.showErrorMessage();
         }
     }
@@ -417,9 +417,9 @@ class CarFleet {
                 return enhancedCar;
             });
             
-            console.log('Loaded', this.allCars.length, 'cars from JSON');
+            logger.log('Loaded', this.allCars.length, 'cars from JSON');
         } catch (error) {
-            console.error('Error loading car data:', error);
+            logger.error('Error loading car data:', error);
             throw error;
         }
     }
@@ -630,14 +630,14 @@ class CarFleet {
         // Handle booking form parameters
         if (urlParams.has('location')) {
             const location = urlParams.get('location');
-            console.log('Locația de ridicare:', location);
+            logger.log('Locația de ridicare:', location);
             // Poți adăuga logică pentru afișarea locației
         }
         
         if (urlParams.has('pickupDate') && urlParams.has('dropoffDate')) {
             const pickupDate = urlParams.get('pickupDate');
             const dropoffDate = urlParams.get('dropoffDate');
-            console.log('Perioada închirierii:', pickupDate, '-', dropoffDate);
+            logger.log('Perioada închirierii:', pickupDate, '-', dropoffDate);
             
             // Calculează numărul de zile pentru afișare
             const days = this.calculateRentalDays(pickupDate, dropoffDate);
@@ -649,7 +649,7 @@ class CarFleet {
         
         if (urlParams.has('driverAge')) {
             const driverAge = parseInt(urlParams.get('driverAge'));
-            console.log('Vârsta șoferului:', driverAge);
+            logger.log('Vârsta șoferului:', driverAge);
             
             // Poate fi folosit pentru filtrarea mașinilor disponibile pentru vârsta respectivă
             this.filterByDriverAge(driverAge);
@@ -994,9 +994,9 @@ class CarFleet {
     filterByDriverAge(age) {
         // Această funcție poate fi extinsă pentru a aplica restricții pe vârstă
         if (age < 21) {
-            console.log('Șofer tânăr - se pot aplica restricții pentru anumite categorii de vehicule');
+            logger.log('Șofer tânăr - se pot aplica restricții pentru anumite categorii de vehicule');
         } else if (age > 70) {
-            console.log('Șofer senior - se pot aplica restricții pentru anumite categorii de vehicule');
+            logger.log('Șofer senior - se pot aplica restricții pentru anumite categorii de vehicule');
         }
         
         // Aici poți adăuga logica specifică pentru restricțiile pe vârstă
@@ -1124,7 +1124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Dynamic Gallery Loading
     initDynamicGalleries();
 
-    console.log('Parc Auto page loaded successfully');
+    logger.log('Parc Auto page loaded successfully');
 });
 
 // Image Zoom System

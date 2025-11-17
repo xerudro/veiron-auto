@@ -19,17 +19,17 @@ class BookingSystem {
         try {
             // Verifică dacă toate componentele sunt disponibile
             if (typeof BookingDataManager === 'undefined') {
-                console.error('BookingDataManager not found');
+                logger.error('BookingDataManager not found');
                 return;
             }
 
             if (typeof BookingFormHandler === 'undefined') {
-                console.error('BookingFormHandler not found');
+                logger.error('BookingFormHandler not found');
                 return;
             }
 
             if (typeof EmailService === 'undefined') {
-                console.error('EmailService not found');
+                logger.error('EmailService not found');
                 return;
             }
 
@@ -41,16 +41,16 @@ class BookingSystem {
             const bookingForm = document.getElementById('bookingForm');
             if (bookingForm) {
                 this.formHandler = new BookingFormHandler();
-                console.log('Booking form handler initialized');
+                logger.log('Booking form handler initialized');
             }
 
-            console.log('Booking system initialized successfully');
+            logger.log('Booking system initialized successfully');
             
             // Adaugă event listeners pentru debugging
             this.addDebugListeners();
             
         } catch (error) {
-            console.error('Error initializing booking system:', error);
+            logger.error('Error initializing booking system:', error);
         }
     }
 
@@ -62,18 +62,18 @@ class BookingSystem {
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
             window.debugBookingData = () => {
                 const data = this.dataManager.loadBookingData();
-                console.log('Current booking data:', data);
+                logger.log('Current booking data:', data);
                 return data;
             };
 
             window.clearBookingData = () => {
                 this.dataManager.clearBookingData();
-                console.log('Booking data cleared');
+                logger.log('Booking data cleared');
             };
 
-            console.log('Debug functions available:');
-            console.log('- debugBookingData() - to view current booking data');
-            console.log('- clearBookingData() - to clear booking data');
+            logger.log('Debug functions available:');
+            logger.log('- debugBookingData() - to view current booking data');
+            logger.log('- clearBookingData() - to clear booking data');
         }
     }
 

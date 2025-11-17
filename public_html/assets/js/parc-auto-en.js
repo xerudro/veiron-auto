@@ -386,9 +386,9 @@ class CarFleet {
             // Mobile sidebar collapse functionality
             this.initMobileSidebar();
             
-            console.log('Car Fleet System initialized with', this.allCars.length, 'cars');
+            logger.log('Car Fleet System initialized with', this.allCars.length, 'cars');
         } catch (error) {
-            console.error('Failed to initialize Car Fleet System:', error);
+            logger.error('Failed to initialize Car Fleet System:', error);
             this.showErrorMessage();
         }
     }
@@ -415,9 +415,9 @@ class CarFleet {
                 return enhancedCar;
             });
             
-            console.log('Loaded', this.allCars.length, 'cars from JSON');
+            logger.log('Loaded', this.allCars.length, 'cars from JSON');
         } catch (error) {
-            console.error('Error loading car data:', error);
+            logger.error('Error loading car data:', error);
             throw error;
         }
     }
@@ -628,14 +628,14 @@ class CarFleet {
         // Handle booking form parameters
         if (urlParams.has('location')) {
             const location = urlParams.get('location');
-            console.log('Pickup location:', location);
+            logger.log('Pickup location:', location);
             // You can add logic to display the location
         }
         
         if (urlParams.has('pickupDate') && urlParams.has('dropoffDate')) {
             const pickupDate = urlParams.get('pickupDate');
             const dropoffDate = urlParams.get('dropoffDate');
-            console.log('Rental period:', pickupDate, '-', dropoffDate);
+            logger.log('Rental period:', pickupDate, '-', dropoffDate);
             
             // Calculate number of days for display
             const days = this.calculateRentalDays(pickupDate, dropoffDate);
@@ -647,7 +647,7 @@ class CarFleet {
         
         if (urlParams.has('driverAge')) {
             const driverAge = parseInt(urlParams.get('driverAge'));
-            console.log('Driver age:', driverAge);
+            logger.log('Driver age:', driverAge);
             
             // Can be used to filter cars available for this age
             this.filterByDriverAge(driverAge);
@@ -992,9 +992,9 @@ class CarFleet {
     filterByDriverAge(age) {
         // This function can be extended to apply age restrictions
         if (age < 21) {
-            console.log('Young driver - restrictions may apply for certain vehicle categories');
+            logger.log('Young driver - restrictions may apply for certain vehicle categories');
         } else if (age > 70) {
-            console.log('Senior driver - restrictions may apply for certain vehicle categories');
+            logger.log('Senior driver - restrictions may apply for certain vehicle categories');
         }
         
         // Here you can add specific logic for age restrictions
@@ -1122,7 +1122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Dynamic Gallery Loading
     initDynamicGalleries();
 
-    console.log('Parc Auto page loaded successfully');
+    logger.log('Parc Auto page loaded successfully');
 });
 
 // Image Zoom System

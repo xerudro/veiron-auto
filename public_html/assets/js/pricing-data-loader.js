@@ -25,7 +25,7 @@ class CarPricingDataLoader {
             this.data = await response.json();
             return this.data;
         } catch (error) {
-            console.error('Error loading pricing data:', error);
+            logger.error('Error loading pricing data:', error);
             throw error;
         }
     }

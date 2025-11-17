@@ -382,7 +382,7 @@ class BookingForm {
         // Simulate API delay
         return new Promise((resolve) => {
             setTimeout(() => {
-                console.log('Booking data:', data);
+                logger.log('Booking data:', data);
                 resolve({ success: true });
             }, 2000);
         });
