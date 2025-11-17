@@ -80,7 +80,7 @@ const CAR_MODELS = {
     'renault-koleos': {
         title: 'RENAULT KOLEOS',
         images: [
-            { file: 'renault-koleos-suv-inchiriere-family-satu-mare.jpg', alt: 'Renault Koleos SUV închiriere family Satu Mare' }
+            { file: 'renault-koleos/renault-koleos-satu-mare-ieftin.png', alt: 'Renault Koleos SUV închiriere family Satu Mare', isDirectImage: true }
         ]
     },
     'audi-q3': {
@@ -193,7 +193,7 @@ function getDefaultImages(carId, carName) {
         'renault-traffic-van': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-traffic-8plus1': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-trafic-8-plus-1-automat': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
-        'renault-koleos-suv': 'renault_koleos.jpg'
+        'renault-koleos-suv': 'renault-koleos/renault-koleos-satu-mare-ieftin.png'
     };
     
     // Check if we have a specific image for this car
