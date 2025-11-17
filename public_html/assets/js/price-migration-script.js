@@ -27,7 +27,7 @@ class PriceMigrationScript {
             this.excelData = await response.json();
             return this.excelData;
         } catch (error) {
-            console.error('Error loading Excel data:', error);
+            logger.error('Error loading Excel data:', error);
             throw error;
         }
     }
@@ -50,7 +50,7 @@ class PriceMigrationScript {
             }
             return this.currentBookingData;
         } catch (error) {
-            console.error('Error loading current booking data:', error);
+            logger.error('Error loading current booking data:', error);
             throw error;
         }
     }
@@ -73,7 +73,7 @@ class PriceMigrationScript {
             }
             return this.currentBookingDataEN;
         } catch (error) {
-            console.error('Error loading current booking data EN:', error);
+            logger.error('Error loading current booking data EN:', error);
             throw error;
         }
     }
@@ -301,7 +301,7 @@ if (typeof module !== 'undefined' && module.exports) {
      */
     async runMigration() {
         try {
-            console.log('Starting price migration...');
+            logger.log('Starting price migration...');
             
             // Load all data
             await this.loadExcelData();
@@ -315,7 +315,7 @@ if (typeof module !== 'undefined' && module.exports) {
             const updatedBookingJS = this.generateUpdatedBookingJS();
             const updatedBookingENJS = this.generateUpdatedBookingENJS();
             
-            console.log('Migration completed successfully');
+            logger.log('Migration completed successfully');
             
             return {
                 success: true,
@@ -326,7 +326,7 @@ if (typeof module !== 'undefined' && module.exports) {
                 }
             };
         } catch (error) {
-            console.error('Migration failed:', error);
+            logger.error('Migration failed:', error);
             return {
                 success: false,
                 error: error.message
@@ -354,7 +354,7 @@ if (typeof window !== 'undefined') {
  * const result = await migration.runMigration();
  * 
  * if (result.success) {
- *     console.log('Migration report:', result.report);
- *     console.log('Updated booking.js:', result.updatedFiles['booking.js']);
+ *     logger.log('Migration report:', result.report);
+ *     logger.log('Updated booking.js:', result.updatedFiles['booking.js']);
  * }
  */
