@@ -106,7 +106,7 @@ const carData = [
         luggage: 4,
         doors: 5,
         fuel: "Diesel",
-        image: "assets/images/cars/renault_koleos.jpg",
+        image: "assets/images/cars/renault-koleos/renault-koleos-satu-mare-ieftin.png",
         pricing: {
             tier1: { daily: 70, weekly: 420, monthly: 1400 },
             tier2: { daily: 65, weekly: 390, monthly: 1300 },
