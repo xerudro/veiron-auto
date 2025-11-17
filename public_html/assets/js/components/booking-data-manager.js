@@ -1,6 +1,8 @@
 /**
  * Booking Data Manager
  * Gestionează salvarea și încărcarea datelor de rezervare în session storage
+ *
+ * Note: Requires logger.js to be loaded before this file
  */
 
 class BookingDataManager {
@@ -21,10 +23,10 @@ class BookingDataManager {
             };
             
             sessionStorage.setItem(this.storageKey, JSON.stringify(dataToSave));
-            console.log('Booking data saved successfully:', dataToSave);
+            logger.log('Booking data saved successfully:', dataToSave);
             return true;
         } catch (error) {
-            console.error('Error saving booking data:', error);
+            logger.error('Error saving booking data:', error);
             return false;
         }
     }
@@ -38,12 +40,12 @@ class BookingDataManager {
             const data = sessionStorage.getItem(this.storageKey);
             if (data) {
                 const bookingData = JSON.parse(data);
-                console.log('Booking data loaded successfully:', bookingData);
+                logger.log('Booking data loaded successfully:', bookingData);
                 return bookingData;
             }
             return null;
         } catch (error) {
-            console.error('Error loading booking data:', error);
+            logger.error('Error loading booking data:', error);
             return null;
         }
     }
@@ -54,10 +56,10 @@ class BookingDataManager {
     clearBookingData() {
         try {
             sessionStorage.removeItem(this.storageKey);
-            console.log('Booking data cleared successfully');
+            logger.log('Booking data cleared successfully');
             return true;
         } catch (error) {
-            console.error('Error clearing booking data:', error);
+            logger.error('Error clearing booking data:', error);
             return false;
         }
     }

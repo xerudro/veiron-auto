@@ -1,6 +1,8 @@
 /**
  * Booking Form Handler
  * Gestionează colectarea și validarea datelor din formularul de rezervare
+ *
+ * Note: Requires logger.js to be loaded before this file
  */
 
 class BookingFormHandler {
@@ -27,7 +29,7 @@ class BookingFormHandler {
         // Adaugă validare în timp real pentru câmpuri
         this.addRealTimeValidation();
         
-        console.log('Booking form handler initialized');
+        logger.log('Booking form handler initialized');
     }
 
     /**
@@ -234,7 +236,7 @@ class BookingFormHandler {
      */
     showSuccessMessage() {
         // Poți personaliza acest mesaj
-        console.log('Booking data saved successfully');
+        logger.log('Booking data saved successfully');
     }
 
     /**

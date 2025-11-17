@@ -47,7 +47,7 @@ class EmailService {
             }
 
         } catch (error) {
-            console.error('Error submitting final booking:', error);
+            logger.error('Error submitting final booking:', error);
             return {
                 success: false,
                 message: error.message || 'Eroare la trimiterea rezervării. Vă rugăm să încercați din nou.'
@@ -79,7 +79,7 @@ class EmailService {
             return result;
 
         } catch (error) {
-            console.error('Error sending booking to server:', error);
+            logger.error('Error sending booking to server:', error);
             throw error;
         }
     }
@@ -183,9 +183,9 @@ class EmailService {
     async simulateEmailSending(bookingData) {
         return new Promise((resolve) => {
             setTimeout(() => {
-                console.log('Simulating email sending...');
-                console.log('Client email content:', this.generateClientEmailContent(bookingData));
-                console.log('Owner email content:', this.generateOwnerEmailContent(bookingData));
+                logger.log('Simulating email sending...');
+                logger.log('Client email content:', this.generateClientEmailContent(bookingData));
+                logger.log('Owner email content:', this.generateOwnerEmailContent(bookingData));
                 
                 resolve({
                     success: true,
