@@ -1,0 +1,74 @@
+/* ========================================
+   VEIRON AUTO - Privacy Policy Styles
+   For privacy policy and terms pages
+   Extracted from contact-ro.css for reusability
+   ======================================== */
+
+.privacy-title {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ff4c00;
+  text-align: center;
+}
+
+.privacy-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  line-height: 1.7;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
+}
+
+.privacy-content h2,
+.privacy-content h3,
+.privacy-content h4 {
+  font-weight: 700;
+  color: #ff4c00;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  line-height: 1.2;
+}
+
+.privacy-content h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ff4c00;
+  padding-bottom: 0.3em;
+}
+
+.privacy-content h3 {
+  font-size: 1.2rem;
+  color: #e65100;
+}
+
+.privacy-content h4 {
+  font-size: 1.05rem;
+  color: #b34700;
+}
+
+.privacy-content p {
+  text-indent: 2em;
+  margin-bottom: 1.2em;
+  font-size: 1.05rem;
+  color: #232526;
+}
+
+.privacy-content ul,
+.privacy-content ol {
+  margin-left: 2.5em;
+  margin-bottom: 1.2em;
+  font-size: 1.05rem;
+}
+
+.privacy-content li {
+  margin-bottom: 0.5em;
+}
+
+.privacy-content hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 2em 0;
+}
