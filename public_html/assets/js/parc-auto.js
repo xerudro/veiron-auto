@@ -197,6 +197,7 @@ function getDefaultImages(carId, carName) {
         'mazda-6': 'Mazda_6.jpg',
         'mercedes-e-class': 'mercedes-e-class/mercedes-e-class-luxury-satu-mare.png',
         'mercedes-e-class-sedan': 'mercedes-e-class.jpg',
+        'mercedes-glc': 'mercedes-glc/mercedes-glc-luxury-suv-veiron-auto.png',
         'mercedes-glc-automat': 'mercedes-glc/mercedes-glc-luxury-suv-veiron-auto.png',
         'toyota-rav4': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-suv': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
