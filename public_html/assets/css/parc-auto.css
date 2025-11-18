@@ -359,6 +359,7 @@ body {
 
 .car-card[data-model="mercedes-e-class"] .main-image,
 .car-card[data-model="mercedes-e-klasse"] .main-image,
+.car-card[data-model="mercedes-glc"] .main-image,
 .car-card[data-model="audi-q3"] .main-image,
 .car-card[data-model="renault-koleos"] .main-image {
     object-fit: contain !important;
