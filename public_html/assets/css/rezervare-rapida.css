@@ -467,3 +467,18 @@
   object-position: center !important;
   transform: scale(1.1);
 }
+
+/* Special styling for Renault Koleos in Quick Booking Section */
+.quick-booking-section .car-card img[alt="Renault Koleos"],
+.quick-booking-section .car-image-container img[alt="Renault Koleos"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: scale(1.1);
+}
+
+/* Special styling for Renault Koleos in Quick Card */
+.quick-card img[alt="Renault Koleos"] {
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: scale(1.0);
+}

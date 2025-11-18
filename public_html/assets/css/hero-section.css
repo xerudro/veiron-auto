@@ -215,6 +215,15 @@
     transform: scale(0.95);
 }
 
+/* Special styling for Renault Koleos image to scale down */
+.hero-slider img[alt="Renault Koleos"],
+.slider-track img[alt="Renault Koleos"],
+.car-grid img[alt="Renault Koleos"] {
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: scale(0.85);
+}
+
 .car-name {
     padding: 12px 15px 8px 15px;
     text-align: center;
