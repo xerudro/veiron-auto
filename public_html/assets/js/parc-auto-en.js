@@ -174,6 +174,16 @@ const CAR_COLORS = {
         color: 'grey',
         colorRO: 'GRI METALIZAT',
         colorEN: 'GREY METALLIC'
+    },
+    'mercedes-glc': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
+    },
+    'mercedes-glc-automat': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
     }
 };
 
