@@ -22,6 +22,25 @@ const carData = [
         highlighted: true
     },
     {
+        id: 11,
+        name: "Mercedes GLC",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Automat",
+        image: "assets/images/cars/mercedes-glc/mercedes-glc-luxury-suv-veiron-auto.png",
+        pricing: {
+            tier1: { daily: 130 }, // 1-3 zile
+            tier2: { daily: 120 }, // 4-7 zile
+            tier3: { daily: 110 }, // 8-14 zile
+            tier4: { daily: 100 }  // 15-30 zile
+        },
+        warranty: 400,
+        highlighted: true
+    },
+    {
         id: 2,
         name: "Mazda 6",
         category: "sedan",
