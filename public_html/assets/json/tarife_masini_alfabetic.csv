@@ -1,0 +1,49 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7
+* tarifele includ TVA,,,,,,,
+"*limita KM / zi = 300, extra se tarfieaza cu 0.10 € / KM",,,,,,,
+AUDI A3 AUTOMAT,40 € / zi ,37 € / zi ,34 € / zi ,33 € / zi ,200,9€ / zi -> depozit 100,.
+AUDI A4 AUTOMAT,50 € / zi ,45 € / zi ,41 € / zi ,38 € / zi ,200,10€ / zi -> depozit 100,.
+AUDI A6 AUTOMAT,70 € / zi ,67 € / zi,63 € / zi ,55 € / zi,300,13€ / zi -> depozit 100,.
+AUDI Q5 NOU,120 € / zi ,112 € / zi ,105 € / zi ,95 € / zi ,400,20€ / zi -> depozit 100,28€ / zi -> depozit 0
+BMW SERIA 5 AUTOMAT NOU,90 € / zi ,83 € / zi ,77 € / zi ,73 € / zi ,400,20€ / zi -> depozit 100,28€ / zi -> depozit 0
+BMW SERIA 5 COMBI AUTOMAT,80 € / zi ,74€ / zi,66 € / zi ,60 € / zi,300,13€ / zi -> depozit 100,20€ / zi -> depozit 0
+BMW SERIA 5 COMBI MANUAL,60 € / zi ,57 € / zi ,54 € / zi ,48 € / zi ,250,10€ / zi -> depozit 100,.
+BMW SERIA 5 GT,80 € / zi ,72 € / zi ,60 € / zi ,55 € / zi ,200,13€ / zi -> depozit 100,.
+BMW X1 AUTOMAT,100 € / zi,95 € / zi,90 € / zi,80 € / zi,300,15€ / zi -> depozit 100,22€ / zi -> depozit 0
+BMW X3 NOU,115 € / zi ,108 € / zi ,100 € / zi ,90 € / zi ,400,20€ / zi -> depozit 100,28€ / zi -> depozit 0
+HONDA ACCORD AUTOMAT,40 € / zi ,37 € / zi ,34 € / zi ,33 € / zi ,150,9€ / zi -> depozit 100,.
+"MARCA, MODEL, TRANSMISIE",1 - 3 zile,4 - 7 zile,8 - 14 zile,15 - 30 zile,Garantie,Asigurare Premium,Asigurare Integrala
+MAZDA 6 MANUAL,40 € / zi ,37 € / zi ,34 € / zi ,32 € / zi ,200,9€ / zi -> depozit 100,.
+MERCEDES E KLASSE,65 € / zi ,63 € / zi ,60 € / zi ,57 € / zi ,250,13€ / zi -> depozit 100,.
+MERCEDES GLC AUTOMAT,130 € / zi,120 € / zi,110 € / zi,100 € / zi,400,20€ / zi -> depozit 100,28€ / zi -> depozit 0
+MERCEDES GLE AUTOMAT,110 € / zi, 105 € / zi,100 € / zi,85 € / zi,400,17€ / zi -> depozit 100,24€ / zi -> depozit 0
+MITSUBISHI OUTLANDER AUTOMAT,68 € / zi ,64 € / zi ,60 € / zi ,57 € / zi ,300,10€ / zi -> depozit 100,18€ / zi -> depozit 0
+"Optionale: scaun bebe, inaltator = 2 Euro / zi",,,,,,,
+RENAULT MEGANE MANUAL,40 € / zi ,37 € / zi ,34 € / zi ,33 € / zi ,200,10€ / zi -> depozit 100,18€ / zi -> depozit 0
+RENAULT TRAFIC ( 8+1 locuri) AUTOMAT,100 € / zi,96 € / zi,90 € / zi,82 € / zi,400,20€ / zi -> depozit 100,28€ / zi -> depozit 0
+SEAT ALHAMBRA 7 LOCURI  AUTOMAT,55 € / zi,51 € / zi,48 € / zi,45 € / zi,200,9€ / zi -> depozit 100,.
+SEAT ALHAMBRA MANUAL 7 LOCURI ,50 € / zi,46 € / zi,43 € / zi,40 € / zi,200,9€ / zi -> depozit 100,.
+SEAT EXEO  MANUAL ,37 € / zi ,35 € / zi ,33 € / zi ,30 € / zi ,150,8€ / zi -> depozit 100,.
+SEAT EXEO COMBI MANUAL,37 € / zi ,35 € / zi ,33 € / zi ,30 € / zi ,150,8€ / zi -> depozit 100,.
+SKODA KAMIQ AUTOMAT,70 € / zi,67 € / zi,64 € / zi,60 € / zi,250,13€ / zi -> depozit 100,20€ / zi -> depozit 0
+SKODA KODIAQ ( 7 locuri) - AUTOMAT,97 € / zi, 92 € / zi, 88 € / zi,85 € / zi,300,15€ / zi -> depozit 100,22€ / zi -> depozit 0
+SKODA KODIAQ AUTOMAT ,100 € / zi,95 € / zi,90 € / zi,85 € / zi,300,15€ / zi -> depozit 100,22€ / zi -> depozit 0
+SKODA OCTAVIA COMBI AUTOMAT ,36 € / zi ,34 € / zi ,32 € / zi ,30 € / zi ,250,10€ / zi -> depozit 100,.
+SKODA OCTAVIA SEDAN AUTOMAT,52 € / zi,48  € / zi,46 € / zi,44 € / zi,200,10€ / zi -> depozit 100,18€ / zi -> depozit 0
+SKODA SCALA AUTOMAT ,60 € / zi,57 € / zi,54 € / zi,50 € / zi,200,8€ / zi -> depozit 100,15€ / zi -> depozit 0
+SKODA SUPERB AUTOMAT,60 € / zi ,57 € / zi ,53 € / zi ,50 € / zi ,250,13€ / zi -> depozit 100,20€ / zi -> depozit 0
+TOYOTA RAV4 AUTOMAT,100 € / zi,95 € / zi,90 € / zi,85 € / zi,300,15€ / zi -> depozit 100,22€ / zi -> depozit 0
+VOLVO XC40 AUTOMAT,100 € / zi,95 € / zi,90 € / zi,85 € / zi,300,13€ / zi -> depozit 100,20€ / zi -> depozit 0
+VOLVO XC60 AUTOMAT,60 € / zi ,55 € / zi ,50 € / zi ,45 € / zi ,200,13€ / zi -> depozit 100,20€ / zi -> depozit 0
+VOVLO XC60 AUTOMAT NOU,110 € / zi,105 € / zi,100 € / zi,90 € / zi,300,15€ / zi -> depozit 100,22€ / zi -> depozit 0
+VW CARAVELLE ( 8+1 LOCURI),95 € / zi,90 € / zi,85 € / zi,75 € / zi,400,20€ / zi -> depozit 100,28€ / zi -> depozit 0
+VW GOLF MANUAL ,38 € / zi ,35 € / zi ,32 € / zi ,30 € / zi ,150,8€ / zi -> depozit 100,.
+VW JETTA  MANUAL,50 € / zi ,47 € / zi ,44 € / zi ,40 € / zi ,200,10€ / zi -> depozit 100,18€ / zi -> depozit 0
+VW PASSAT AUTOMAT,58 € / zi ,55 € / zi ,51 € / zi ,48 € / zi ,200,10€ / zi -> depozit 100,18€ / zi -> depozit 0
+VW PASSAT CC AUTOMAT,65 € / zi ,62 € / zi ,57 € / zi ,53 € / zi ,300,15€ / zi -> depozit 100,22€ / zi -> depozit 0
+VW PASSAT MANUAL,50 € / zi ,45 € / zi ,40 € / zi ,35 € / zi ,200,10€ / zi -> depozit 100,18€ / zi -> depozit 0
+VW POLO  MANUAL,36 € / zi ,33 € / zi ,30 € / zi ,28 € / zi ,150,8€ / zi -> depozit 100,.
+VW T-CROSS AUTOMAT ,70 € / zi,67 € / zi,64 € / zi,60 € / zi,250,9€ / zi -> depozit 100,17€ / zi -> depozit 0
+VW TIGUAN AUTOMAT ,58 € / zi ,55 € / zi ,51 € / zi ,48 € / zi ,200,10€ / zi -> depozit 100,.
+VW TOUAREG AUTOMAT ,90 € / zi,83 € / zi,77 € / zi,70 € / zi,400,15€ / zi -> depozit 100,22€ / zi -> depozit 0
+VW TOURAN AUTOMAT,60 € / zi ,55 € / zi ,50 € / zi ,45 € / zi ,200,10€ / zi -> depozit 100,.

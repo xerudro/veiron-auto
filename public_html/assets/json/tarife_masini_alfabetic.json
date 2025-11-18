@@ -1,0 +1,482 @@
+[
+  {
+    "Unnamed: 0":"* tarifele includ TVA",
+    "Unnamed: 1":null,
+    "Unnamed: 2":null,
+    "Unnamed: 3":null,
+    "Unnamed: 4":null,
+    "Unnamed: 5":null,
+    "Unnamed: 6":null,
+    "Unnamed: 7":null
+  },
+  {
+    "Unnamed: 0":"*limita KM \/ zi = 300, extra se tarfieaza cu 0.10 € \/ KM",
+    "Unnamed: 1":null,
+    "Unnamed: 2":null,
+    "Unnamed: 3":null,
+    "Unnamed: 4":null,
+    "Unnamed: 5":null,
+    "Unnamed: 6":null,
+    "Unnamed: 7":null
+  },
+  {
+    "Unnamed: 0":"AUDI A3 AUTOMAT",
+    "Unnamed: 1":"40 € \/ zi ",
+    "Unnamed: 2":"37 € \/ zi ",
+    "Unnamed: 3":"34 € \/ zi ",
+    "Unnamed: 4":"33 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"9€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"AUDI A4 AUTOMAT",
+    "Unnamed: 1":"50 € \/ zi ",
+    "Unnamed: 2":"45 € \/ zi ",
+    "Unnamed: 3":"41 € \/ zi ",
+    "Unnamed: 4":"38 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"AUDI A6 AUTOMAT",
+    "Unnamed: 1":"70 € \/ zi ",
+    "Unnamed: 2":"67 € \/ zi",
+    "Unnamed: 3":"63 € \/ zi ",
+    "Unnamed: 4":"55 € \/ zi",
+    "Unnamed: 5":300,
+    "Unnamed: 6":"13€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"AUDI Q5 NOU",
+    "Unnamed: 1":"120 € \/ zi ",
+    "Unnamed: 2":"112 € \/ zi ",
+    "Unnamed: 3":"105 € \/ zi ",
+    "Unnamed: 4":"95 € \/ zi ",
+    "Unnamed: 5":400,
+    "Unnamed: 6":"20€ \/ zi -> depozit 100",
+    "Unnamed: 7":"28€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"BMW SERIA 5 AUTOMAT NOU",
+    "Unnamed: 1":"90 € \/ zi ",
+    "Unnamed: 2":"83 € \/ zi ",
+    "Unnamed: 3":"77 € \/ zi ",
+    "Unnamed: 4":"73 € \/ zi ",
+    "Unnamed: 5":400,
+    "Unnamed: 6":"20€ \/ zi -> depozit 100",
+    "Unnamed: 7":"28€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"BMW SERIA 5 COMBI AUTOMAT",
+    "Unnamed: 1":"80 € \/ zi ",
+    "Unnamed: 2":"74€ \/ zi",
+    "Unnamed: 3":"66 € \/ zi ",
+    "Unnamed: 4":"60 € \/ zi",
+    "Unnamed: 5":300,
+    "Unnamed: 6":"13€ \/ zi -> depozit 100",
+    "Unnamed: 7":"20€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"BMW SERIA 5 COMBI MANUAL",
+    "Unnamed: 1":"60 € \/ zi ",
+    "Unnamed: 2":"57 € \/ zi ",
+    "Unnamed: 3":"54 € \/ zi ",
+    "Unnamed: 4":"48 € \/ zi ",
+    "Unnamed: 5":250,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"BMW SERIA 5 GT",
+    "Unnamed: 1":"80 € \/ zi ",
+    "Unnamed: 2":"72 € \/ zi ",
+    "Unnamed: 3":"60 € \/ zi ",
+    "Unnamed: 4":"55 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"13€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"BMW X1 AUTOMAT",
+    "Unnamed: 1":"100 € \/ zi",
+    "Unnamed: 2":"95 € \/ zi",
+    "Unnamed: 3":"90 € \/ zi",
+    "Unnamed: 4":"80 € \/ zi",
+    "Unnamed: 5":300,
+    "Unnamed: 6":"15€ \/ zi -> depozit 100",
+    "Unnamed: 7":"22€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"BMW X3 NOU",
+    "Unnamed: 1":"115 € \/ zi ",
+    "Unnamed: 2":"108 € \/ zi ",
+    "Unnamed: 3":"100 € \/ zi ",
+    "Unnamed: 4":"90 € \/ zi ",
+    "Unnamed: 5":400,
+    "Unnamed: 6":"20€ \/ zi -> depozit 100",
+    "Unnamed: 7":"28€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"HONDA ACCORD AUTOMAT",
+    "Unnamed: 1":"40 € \/ zi ",
+    "Unnamed: 2":"37 € \/ zi ",
+    "Unnamed: 3":"34 € \/ zi ",
+    "Unnamed: 4":"33 € \/ zi ",
+    "Unnamed: 5":150,
+    "Unnamed: 6":"9€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"MARCA, MODEL, TRANSMISIE",
+    "Unnamed: 1":"1 - 3 zile",
+    "Unnamed: 2":"4 - 7 zile",
+    "Unnamed: 3":"8 - 14 zile",
+    "Unnamed: 4":"15 - 30 zile",
+    "Unnamed: 5":"Garantie",
+    "Unnamed: 6":"Asigurare Premium",
+    "Unnamed: 7":"Asigurare Integrala"
+  },
+  {
+    "Unnamed: 0":"MAZDA 6 MANUAL",
+    "Unnamed: 1":"40 € \/ zi ",
+    "Unnamed: 2":"37 € \/ zi ",
+    "Unnamed: 3":"34 € \/ zi ",
+    "Unnamed: 4":"32 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"9€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"MERCEDES E KLASSE",
+    "Unnamed: 1":"65 € \/ zi ",
+    "Unnamed: 2":"63 € \/ zi ",
+    "Unnamed: 3":"60 € \/ zi ",
+    "Unnamed: 4":"57 € \/ zi ",
+    "Unnamed: 5":250,
+    "Unnamed: 6":"13€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"MERCEDES GLC AUTOMAT",
+    "Unnamed: 1":"130 € \/ zi",
+    "Unnamed: 2":"120 € \/ zi",
+    "Unnamed: 3":"110 € \/ zi",
+    "Unnamed: 4":"100 € \/ zi",
+    "Unnamed: 5":400,
+    "Unnamed: 6":"20€ \/ zi -> depozit 100",
+    "Unnamed: 7":"28€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"MERCEDES GLE AUTOMAT",
+    "Unnamed: 1":"110 € \/ zi",
+    "Unnamed: 2":" 105 € \/ zi",
+    "Unnamed: 3":"100 € \/ zi",
+    "Unnamed: 4":"85 € \/ zi",
+    "Unnamed: 5":400,
+    "Unnamed: 6":"17€ \/ zi -> depozit 100",
+    "Unnamed: 7":"24€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"MITSUBISHI OUTLANDER AUTOMAT",
+    "Unnamed: 1":"68 € \/ zi ",
+    "Unnamed: 2":"64 € \/ zi ",
+    "Unnamed: 3":"60 € \/ zi ",
+    "Unnamed: 4":"57 € \/ zi ",
+    "Unnamed: 5":300,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"18€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"Optionale: scaun bebe, inaltator = 2 Euro \/ zi",
+    "Unnamed: 1":null,
+    "Unnamed: 2":null,
+    "Unnamed: 3":null,
+    "Unnamed: 4":null,
+    "Unnamed: 5":null,
+    "Unnamed: 6":null,
+    "Unnamed: 7":null
+  },
+  {
+    "Unnamed: 0":"RENAULT MEGANE MANUAL",
+    "Unnamed: 1":"40 € \/ zi ",
+    "Unnamed: 2":"37 € \/ zi ",
+    "Unnamed: 3":"34 € \/ zi ",
+    "Unnamed: 4":"33 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"18€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"RENAULT TRAFIC ( 8+1 locuri) AUTOMAT",
+    "Unnamed: 1":"100 € \/ zi",
+    "Unnamed: 2":"96 € \/ zi",
+    "Unnamed: 3":"90 € \/ zi",
+    "Unnamed: 4":"82 € \/ zi",
+    "Unnamed: 5":400,
+    "Unnamed: 6":"20€ \/ zi -> depozit 100",
+    "Unnamed: 7":"28€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"SEAT ALHAMBRA 7 LOCURI  AUTOMAT",
+    "Unnamed: 1":"55 € \/ zi",
+    "Unnamed: 2":"51 € \/ zi",
+    "Unnamed: 3":"48 € \/ zi",
+    "Unnamed: 4":"45 € \/ zi",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"9€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"SEAT ALHAMBRA MANUAL 7 LOCURI ",
+    "Unnamed: 1":"50 € \/ zi",
+    "Unnamed: 2":"46 € \/ zi",
+    "Unnamed: 3":"43 € \/ zi",
+    "Unnamed: 4":"40 € \/ zi",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"9€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"SEAT EXEO  MANUAL ",
+    "Unnamed: 1":"37 € \/ zi ",
+    "Unnamed: 2":"35 € \/ zi ",
+    "Unnamed: 3":"33 € \/ zi ",
+    "Unnamed: 4":"30 € \/ zi ",
+    "Unnamed: 5":150,
+    "Unnamed: 6":"8€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"SEAT EXEO COMBI MANUAL",
+    "Unnamed: 1":"37 € \/ zi ",
+    "Unnamed: 2":"35 € \/ zi ",
+    "Unnamed: 3":"33 € \/ zi ",
+    "Unnamed: 4":"30 € \/ zi ",
+    "Unnamed: 5":150,
+    "Unnamed: 6":"8€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"SKODA KAMIQ AUTOMAT",
+    "Unnamed: 1":"70 € \/ zi",
+    "Unnamed: 2":"67 € \/ zi",
+    "Unnamed: 3":"64 € \/ zi",
+    "Unnamed: 4":"60 € \/ zi",
+    "Unnamed: 5":250,
+    "Unnamed: 6":"13€ \/ zi -> depozit 100",
+    "Unnamed: 7":"20€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"SKODA KODIAQ ( 7 locuri) - AUTOMAT",
+    "Unnamed: 1":"97 € \/ zi",
+    "Unnamed: 2":" 92 € \/ zi",
+    "Unnamed: 3":" 88 € \/ zi",
+    "Unnamed: 4":"85 € \/ zi",
+    "Unnamed: 5":300,
+    "Unnamed: 6":"15€ \/ zi -> depozit 100",
+    "Unnamed: 7":"22€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"SKODA KODIAQ AUTOMAT ",
+    "Unnamed: 1":"100 € \/ zi",
+    "Unnamed: 2":"95 € \/ zi",
+    "Unnamed: 3":"90 € \/ zi",
+    "Unnamed: 4":"85 € \/ zi",
+    "Unnamed: 5":300,
+    "Unnamed: 6":"15€ \/ zi -> depozit 100",
+    "Unnamed: 7":"22€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"SKODA OCTAVIA COMBI AUTOMAT ",
+    "Unnamed: 1":"36 € \/ zi ",
+    "Unnamed: 2":"34 € \/ zi ",
+    "Unnamed: 3":"32 € \/ zi ",
+    "Unnamed: 4":"30 € \/ zi ",
+    "Unnamed: 5":250,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"SKODA OCTAVIA SEDAN AUTOMAT",
+    "Unnamed: 1":"52 € \/ zi",
+    "Unnamed: 2":"48  € \/ zi",
+    "Unnamed: 3":"46 € \/ zi",
+    "Unnamed: 4":"44 € \/ zi",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"18€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"SKODA SCALA AUTOMAT ",
+    "Unnamed: 1":"60 € \/ zi",
+    "Unnamed: 2":"57 € \/ zi",
+    "Unnamed: 3":"54 € \/ zi",
+    "Unnamed: 4":"50 € \/ zi",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"8€ \/ zi -> depozit 100",
+    "Unnamed: 7":"15€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"SKODA SUPERB AUTOMAT",
+    "Unnamed: 1":"60 € \/ zi ",
+    "Unnamed: 2":"57 € \/ zi ",
+    "Unnamed: 3":"53 € \/ zi ",
+    "Unnamed: 4":"50 € \/ zi ",
+    "Unnamed: 5":250,
+    "Unnamed: 6":"13€ \/ zi -> depozit 100",
+    "Unnamed: 7":"20€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"TOYOTA RAV4 AUTOMAT",
+    "Unnamed: 1":"100 € \/ zi",
+    "Unnamed: 2":"95 € \/ zi",
+    "Unnamed: 3":"90 € \/ zi",
+    "Unnamed: 4":"85 € \/ zi",
+    "Unnamed: 5":300,
+    "Unnamed: 6":"15€ \/ zi -> depozit 100",
+    "Unnamed: 7":"22€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VOLVO XC40 AUTOMAT",
+    "Unnamed: 1":"100 € \/ zi",
+    "Unnamed: 2":"95 € \/ zi",
+    "Unnamed: 3":"90 € \/ zi",
+    "Unnamed: 4":"85 € \/ zi",
+    "Unnamed: 5":300,
+    "Unnamed: 6":"13€ \/ zi -> depozit 100",
+    "Unnamed: 7":"20€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VOLVO XC60 AUTOMAT",
+    "Unnamed: 1":"60 € \/ zi ",
+    "Unnamed: 2":"55 € \/ zi ",
+    "Unnamed: 3":"50 € \/ zi ",
+    "Unnamed: 4":"45 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"13€ \/ zi -> depozit 100",
+    "Unnamed: 7":"20€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VOVLO XC60 AUTOMAT NOU",
+    "Unnamed: 1":"110 € \/ zi",
+    "Unnamed: 2":"105 € \/ zi",
+    "Unnamed: 3":"100 € \/ zi",
+    "Unnamed: 4":"90 € \/ zi",
+    "Unnamed: 5":300,
+    "Unnamed: 6":"15€ \/ zi -> depozit 100",
+    "Unnamed: 7":"22€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VW CARAVELLE ( 8+1 LOCURI)",
+    "Unnamed: 1":"95 € \/ zi",
+    "Unnamed: 2":"90 € \/ zi",
+    "Unnamed: 3":"85 € \/ zi",
+    "Unnamed: 4":"75 € \/ zi",
+    "Unnamed: 5":400,
+    "Unnamed: 6":"20€ \/ zi -> depozit 100",
+    "Unnamed: 7":"28€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VW GOLF MANUAL ",
+    "Unnamed: 1":"38 € \/ zi ",
+    "Unnamed: 2":"35 € \/ zi ",
+    "Unnamed: 3":"32 € \/ zi ",
+    "Unnamed: 4":"30 € \/ zi ",
+    "Unnamed: 5":150,
+    "Unnamed: 6":"8€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"VW JETTA  MANUAL",
+    "Unnamed: 1":"50 € \/ zi ",
+    "Unnamed: 2":"47 € \/ zi ",
+    "Unnamed: 3":"44 € \/ zi ",
+    "Unnamed: 4":"40 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"18€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VW PASSAT AUTOMAT",
+    "Unnamed: 1":"58 € \/ zi ",
+    "Unnamed: 2":"55 € \/ zi ",
+    "Unnamed: 3":"51 € \/ zi ",
+    "Unnamed: 4":"48 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"18€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VW PASSAT CC AUTOMAT",
+    "Unnamed: 1":"65 € \/ zi ",
+    "Unnamed: 2":"62 € \/ zi ",
+    "Unnamed: 3":"57 € \/ zi ",
+    "Unnamed: 4":"53 € \/ zi ",
+    "Unnamed: 5":300,
+    "Unnamed: 6":"15€ \/ zi -> depozit 100",
+    "Unnamed: 7":"22€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VW PASSAT MANUAL",
+    "Unnamed: 1":"50 € \/ zi ",
+    "Unnamed: 2":"45 € \/ zi ",
+    "Unnamed: 3":"40 € \/ zi ",
+    "Unnamed: 4":"35 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"18€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VW POLO  MANUAL",
+    "Unnamed: 1":"36 € \/ zi ",
+    "Unnamed: 2":"33 € \/ zi ",
+    "Unnamed: 3":"30 € \/ zi ",
+    "Unnamed: 4":"28 € \/ zi ",
+    "Unnamed: 5":150,
+    "Unnamed: 6":"8€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"VW T-CROSS AUTOMAT ",
+    "Unnamed: 1":"70 € \/ zi",
+    "Unnamed: 2":"67 € \/ zi",
+    "Unnamed: 3":"64 € \/ zi",
+    "Unnamed: 4":"60 € \/ zi",
+    "Unnamed: 5":250,
+    "Unnamed: 6":"9€ \/ zi -> depozit 100",
+    "Unnamed: 7":"17€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VW TIGUAN AUTOMAT ",
+    "Unnamed: 1":"58 € \/ zi ",
+    "Unnamed: 2":"55 € \/ zi ",
+    "Unnamed: 3":"51 € \/ zi ",
+    "Unnamed: 4":"48 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  },
+  {
+    "Unnamed: 0":"VW TOUAREG AUTOMAT ",
+    "Unnamed: 1":"90 € \/ zi",
+    "Unnamed: 2":"83 € \/ zi",
+    "Unnamed: 3":"77 € \/ zi",
+    "Unnamed: 4":"70 € \/ zi",
+    "Unnamed: 5":400,
+    "Unnamed: 6":"15€ \/ zi -> depozit 100",
+    "Unnamed: 7":"22€ \/ zi -> depozit 0"
+  },
+  {
+    "Unnamed: 0":"VW TOURAN AUTOMAT",
+    "Unnamed: 1":"60 € \/ zi ",
+    "Unnamed: 2":"55 € \/ zi ",
+    "Unnamed: 3":"50 € \/ zi ",
+    "Unnamed: 4":"45 € \/ zi ",
+    "Unnamed: 5":200,
+    "Unnamed: 6":"10€ \/ zi -> depozit 100",
+    "Unnamed: 7":"."
+  }
+]
