@@ -357,9 +357,15 @@ body {
     object-fit: contain;
 }
 
+.car-card[data-model="mercedes-glc"] .main-image,
+.car-card[data-model="mercedes-glc-automat"] .main-image {
+    transform: scale(0.85);
+    transform-origin: center;
+    object-fit: contain;
+}
+
 .car-card[data-model="mercedes-e-class"] .main-image,
 .car-card[data-model="mercedes-e-klasse"] .main-image,
-.car-card[data-model="mercedes-glc"] .main-image,
 .car-card[data-model="audi-q3"] .main-image,
 .car-card[data-model="renault-koleos"] .main-image {
     object-fit: contain !important;
