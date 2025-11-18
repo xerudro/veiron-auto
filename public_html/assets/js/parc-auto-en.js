@@ -50,6 +50,15 @@ const CAR_MODELS = {
             { file: 'placeholder.jpg', alt: 'Executive trunk', isDirectImage: true }
         ]
     },
+    'mercedes-glc': {
+        title: 'MERCEDES GLC',
+        images: [
+            { file: 'mercedes-glc/mercedes-glc-luxury-suv-veiron-auto.png', alt: 'Mercedes GLC luxury SUV - rental Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Premium interior Mercedes GLC', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Premium SUV side view', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Mercedes GLC trunk', isDirectImage: false }
+        ]
+    },
     'toyota-rav4': {
         title: 'TOYOTA RAV4',
         images: [
@@ -188,6 +197,7 @@ function getDefaultImages(carId, carName) {
         'mazda-6': 'Mazda_6.jpg',
         'mercedes-e-class': 'mercedes-e-class/mercedes-e-class-luxury-satu-mare.png',
         'mercedes-e-class-sedan': 'mercedes-e-class.jpg',
+        'mercedes-glc-automat': 'mercedes-glc/mercedes-glc-luxury-suv-veiron-auto.png',
         'toyota-rav4': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-suv': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'renault-traffic-van': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
