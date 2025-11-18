@@ -260,6 +260,28 @@
       }
     },
     {
+      "id": "mercedes-gle-automat",
+      "name": "MERCEDES GLE AUTOMAT",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 110,
+        "tier2": 105,
+        "tier3": 100,
+        "tier4": 85
+      },
+      "deposit": 400,
+      "insurance": {
+        "premium": {
+          "dailyRate": 17,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 24,
+          "deposit": 0
+        }
+      }
+    },
+    {
       "id": "renault-trafic-8-plus-1-automat",
       "name": "RENAULT TRAFIC (8+1 locuri) AUTOMAT",
       "transmission": "automat",
@@ -339,28 +361,6 @@
         "premium": {
           "dailyRate": 9,
           "deposit": 100
-        }
-      }
-    },
-    {
-      "id": "mercedes-gle-automat",
-      "name": "MERCEDES GLE AUTOMAT",
-      "transmission": "automat",
-      "pricing": {
-        "tier1": 110,
-        "tier2": 105,
-        "tier3": 100,
-        "tier4": 85
-      },
-      "deposit": 400,
-      "insurance": {
-        "premium": {
-          "dailyRate": 17,
-          "deposit": 100
-        },
-        "comprehensive": {
-          "dailyRate": 24,
-          "deposit": 0
         }
       }
     },

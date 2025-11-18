@@ -364,6 +364,13 @@ body {
     object-fit: contain;
 }
 
+.car-card[data-model="mercedes-gle"] .main-image,
+.car-card[data-model="mercedes-gle-automat"] .main-image {
+    transform: scale(1.0);
+    transform-origin: center;
+    object-fit: contain;
+}
+
 .car-card[data-model="mercedes-e-class"] .main-image,
 .car-card[data-model="mercedes-e-klasse"] .main-image,
 .car-card[data-model="audi-q3"] .main-image,

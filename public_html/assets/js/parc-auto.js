@@ -59,6 +59,15 @@ const CAR_MODELS = {
             { file: 'placeholder.jpg', alt: 'Portbagaj Mercedes GLC', isDirectImage: false }
         ]
     },
+    'mercedes-gle': {
+        title: 'MERCEDES GLE',
+        images: [
+            { file: 'mercedes-gle/mercedes-gle-suv-satu-mare.png', alt: 'Mercedes GLE SUV premium - închiriere Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Interior premium Mercedes GLE', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Vedere laterală SUV premium', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Portbagaj Mercedes GLE', isDirectImage: false }
+        ]
+    },
     'toyota-rav4': {
         title: 'TOYOTA RAV4',
         images: [
@@ -176,14 +185,24 @@ const CAR_COLORS = {
         colorEN: 'GREY METALLIC'
     },
     'mercedes-glc': {
-        color: 'grey',
-        colorRO: 'GRI',
-        colorEN: 'GREY'
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
     },
     'mercedes-glc-automat': {
-        color: 'grey',
-        colorRO: 'GRI',
-        colorEN: 'GREY'
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'mercedes-gle': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
+    },
+    'mercedes-gle-automat': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
     }
 };
 
@@ -209,6 +228,8 @@ function getDefaultImages(carId, carName) {
         'mercedes-e-class-sedan': 'mercedes-e-class.jpg',
         'mercedes-glc': 'mercedes-glc/mercedes-glc-luxury-suv-veiron-auto.png',
         'mercedes-glc-automat': 'mercedes-glc/mercedes-glc-luxury-suv-veiron-auto.png',
+        'mercedes-gle': 'mercedes-gle/mercedes-gle-suv-satu-mare.png',
+        'mercedes-gle-automat': 'mercedes-gle/mercedes-gle-suv-satu-mare.png',
         'toyota-rav4': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-suv': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'renault-traffic-van': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
