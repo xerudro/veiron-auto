@@ -109,6 +109,15 @@ const CAR_MODELS = {
             { file: 'placeholder.jpg', alt: 'Vedere laterală', isDirectImage: false },
             { file: 'placeholder.jpg', alt: 'Portbagaj', isDirectImage: false }
         ]
+    },
+    'mitsubishi-outlander-automat': {
+        title: 'MITSUBISHI OUTLANDER AUTOMAT',
+        images: [
+            { file: 'mitsubishi-outlander/mitsubishi_outlander_suv_rent_a_car_satu_mare.png', alt: 'Mitsubishi Outlander SUV - închiriere Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Interior Mitsubishi Outlander', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Vedere laterală SUV', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Portbagaj Mitsubishi Outlander', isDirectImage: false }
+        ]
     }
 };
 
@@ -203,6 +212,11 @@ const CAR_COLORS = {
         color: 'black',
         colorRO: 'NEGRU',
         colorEN: 'BLACK'
+    },
+    'mitsubishi-outlander-automat': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
     }
 };
 
@@ -235,7 +249,8 @@ function getDefaultImages(carId, carName) {
         'renault-traffic-van': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-traffic-8plus1': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-trafic-8-plus-1-automat': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
-        'renault-koleos-suv': 'renault-koleos/renault-koleos-satu-mare-ieftin.png'
+        'renault-koleos-suv': 'renault-koleos/renault-koleos-satu-mare-ieftin.png',
+        'mitsubishi-outlander-automat': 'mitsubishi-outlander/mitsubishi_outlander_suv_rent_a_car_satu_mare.png' // Mitsubishi Outlander SUV image
     };
     
     // Check if we have a specific image for this car
