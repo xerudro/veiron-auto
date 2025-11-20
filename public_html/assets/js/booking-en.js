@@ -11,7 +11,7 @@ const carData = [
         luggage: 4,
         doors: 5,
         fuel: "Petrol",
-        image: "assets/images/cars/Audi-Q3.jpg",
+        image: "assets/images/cars/audi-q3/audi-q3-2011-veiron-auto-rent.png",
         pricing: {
             tier1: { daily: 80, weekly: 480, monthly: 1600 },
             tier2: { daily: 75, weekly: 450, monthly: 1500 },
@@ -49,7 +49,7 @@ const carData = [
         luggage: 3,
         doors: 4,
         fuel: "Petrol",
-        image: "assets/images/cars/Mazda_6.jpg",
+        image: "assets/images/cars/mazda-6-hatchback/mazda-6-rent-a-car.png",
         pricing: {
             tier1: { daily: 40, weekly: 240, monthly: 800 },
             tier2: { daily: 38, weekly: 228, monthly: 760 },
@@ -68,7 +68,7 @@ const carData = [
         luggage: 3,
         doors: 4,
         fuel: "Diesel",
-        image: "assets/images/cars/audi-a6.jpg",
+        image: "assets/images/cars/audi-a6/audi-a6-veiron-auto-satu-mare.png",
         pricing: {
             tier1: { daily: 70, weekly: 420, monthly: 1400 },
             tier2: { daily: 67, weekly: 402, monthly: 1340 },
@@ -87,7 +87,7 @@ const carData = [
         luggage: 4,
         doors: 4,
         fuel: "Diesel",
-        image: "assets/images/cars/bmw_gt_530.jpg",
+        image: "assets/images/cars/bmw-530-gt/bmw-seria5-gt-satu-mare.png",
         pricing: {
             tier1: { daily: 80, weekly: 480, monthly: 1600 },
             tier2: { daily: 76, weekly: 456, monthly: 1520 },
@@ -106,7 +106,7 @@ const carData = [
         luggage: 3,
         doors: 4,
         fuel: "Diesel",
-        image: "assets/images/cars/mercedes-e-class.jpg",
+        image: "assets/images/cars/mercedes-e-class/mercedes-e-class-luxury-satu-mare.png",
         pricing: {
             tier1: { daily: 65, weekly: 390, monthly: 1300 },
             tier2: { daily: 62, weekly: 372, monthly: 1240 },
@@ -144,7 +144,7 @@ const carData = [
         luggage: 4,
         doors: 5,
         fuel: "Hybrid",
-        image: "assets/images/cars/toyota-rav4.jpg",
+        image: "assets/images/cars/toyota-rav4/toyota-rav4-suv-rent-a-car.png",
         pricing: {
             tier1: { daily: 100, weekly: 600, monthly: 2000 },
             tier2: { daily: 95, weekly: 570, monthly: 1900 },
@@ -210,6 +210,329 @@ const carData = [
         },
         warranty: 1000,
         highlighted: false
+    },
+    {
+        id: 12,
+        name: "Mitsubishi Outlander",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/mitsubishi-outlander/mitsubishi_outlander_suv_rent_a_car_satu_mare.png",
+        pricing: {
+            tier1: { daily: 68, weekly: 408, monthly: 1360 },
+            tier2: { daily: 64, weekly: 384, monthly: 1280 },
+            tier3: { daily: 60, weekly: 360, monthly: 1200 },
+            tier4: { daily: 57, weekly: 342, monthly: 1140 }
+        },
+        warranty: 1500,
+        highlighted: false
+    },
+    {
+        id: 13,
+        name: "Skoda Kamiq",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 5,
+        fuel: "Petrol",
+        image: "assets/images/cars/skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png",
+        pricing: {
+            tier1: { daily: 70, weekly: 420, monthly: 1400 },
+            tier2: { daily: 67, weekly: 402, monthly: 1340 },
+            tier3: { daily: 64, weekly: 384, monthly: 1280 },
+            tier4: { daily: 60, weekly: 360, monthly: 1200 }
+        },
+        warranty: 1250,
+        highlighted: false
+    },
+    {
+        id: 14,
+        name: "Renault Megane",
+        category: "compact",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 3,
+        doors: 5,
+        fuel: "Petrol",
+        image: "assets/images/cars/renault-megane/renault_megane_manual_rent_a_car.png",
+        pricing: {
+            tier1: { daily: 40, weekly: 240, monthly: 800 },
+            tier2: { daily: 37, weekly: 222, monthly: 740 },
+            tier3: { daily: 34, weekly: 204, monthly: 680 },
+            tier4: { daily: 33, weekly: 198, monthly: 660 }
+        },
+        warranty: 1000,
+        highlighted: false
+    },
+    {
+        id: 15,
+        name: "Seat Alhambra Automatic",
+        category: "van",
+        transmission: "automatic",
+        passengers: 7,
+        luggage: 5,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/seat-alhambra/seat_alhambra_7_locuri_inchiriere.png",
+        pricing: {
+            tier1: { daily: 55, weekly: 330, monthly: 1100 },
+            tier2: { daily: 51, weekly: 306, monthly: 1020 },
+            tier3: { daily: 48, weekly: 288, monthly: 960 },
+            tier4: { daily: 45, weekly: 270, monthly: 900 }
+        },
+        warranty: 1000,
+        highlighted: false
+    },
+    {
+        id: 16,
+        name: "Seat Alhambra Manual",
+        category: "van",
+        transmission: "manual",
+        passengers: 7,
+        luggage: 5,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/seat-alhambra/seat_alhambra_7_locuri_inchiriere.png",
+        pricing: {
+            tier1: { daily: 50, weekly: 300, monthly: 1000 },
+            tier2: { daily: 46, weekly: 276, monthly: 920 },
+            tier3: { daily: 43, weekly: 258, monthly: 860 },
+            tier4: { daily: 40, weekly: 240, monthly: 800 }
+        },
+        warranty: 1000,
+        highlighted: false
+    },
+    {
+        id: 17,
+        name: "Seat Exeo",
+        category: "sedan",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 3,
+        doors: 4,
+        fuel: "Diesel",
+        image: "assets/images/cars/seat-exeo/seat_exeo_manual_inchiriere_auto.png",
+        pricing: {
+            tier1: { daily: 37, weekly: 222, monthly: 740 },
+            tier2: { daily: 35, weekly: 210, monthly: 700 },
+            tier3: { daily: 33, weekly: 198, monthly: 660 },
+            tier4: { daily: 30, weekly: 180, monthly: 600 }
+        },
+        warranty: 750,
+        highlighted: false
+    },
+    {
+        id: 18,
+        name: "Seat Exeo Combi",
+        category: "sedan",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png",
+        pricing: {
+            tier1: { daily: 37, weekly: 222, monthly: 740 },
+            tier2: { daily: 35, weekly: 210, monthly: 700 },
+            tier3: { daily: 33, weekly: 198, monthly: 660 },
+            tier4: { daily: 30, weekly: 180, monthly: 600 }
+        },
+        warranty: 750,
+        highlighted: false
+    },
+    {
+        id: 19,
+        name: "Audi A3",
+        category: "compact",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 5,
+        fuel: "Petrol",
+        image: "assets/images/cars/audi-a3-tfsi/audi-a3-inchirieri-auto-satu-mare.png",
+        pricing: {
+            tier1: { daily: 40, weekly: 240, monthly: 800 },
+            tier2: { daily: 37, weekly: 222, monthly: 740 },
+            tier3: { daily: 34, weekly: 204, monthly: 680 },
+            tier4: { daily: 33, weekly: 198, monthly: 660 }
+        },
+        warranty: 1000,
+        highlighted: false
+    },
+    {
+        id: 20,
+        name: "Audi A4",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 4,
+        fuel: "Diesel",
+        image: "assets/images/cars/audi-a4/audi-a4-inchrieri-auto-satu-mare.png",
+        pricing: {
+            tier1: { daily: 50, weekly: 300, monthly: 1000 },
+            tier2: { daily: 45, weekly: 270, monthly: 900 },
+            tier3: { daily: 41, weekly: 246, monthly: 820 },
+            tier4: { daily: 38, weekly: 228, monthly: 760 }
+        },
+        warranty: 1000,
+        highlighted: false
+    },
+    {
+        id: 21,
+        name: "Audi Q5",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/audi-q5/audi-q5-luxury-automata.png",
+        pricing: {
+            tier1: { daily: 120, weekly: 720, monthly: 2400 },
+            tier2: { daily: 112, weekly: 672, monthly: 2240 },
+            tier3: { daily: 105, weekly: 630, monthly: 2100 },
+            tier4: { daily: 95, weekly: 570, monthly: 1900 }
+        },
+        warranty: 2000,
+        highlighted: true
+    },
+    {
+        id: 22,
+        name: "BMW X1",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/bmw-x1-2025/bmw-x1-suv-satu-mare-veiron.png",
+        pricing: {
+            tier1: { daily: 100, weekly: 600, monthly: 2000 },
+            tier2: { daily: 95, weekly: 570, monthly: 1900 },
+            tier3: { daily: 90, weekly: 540, monthly: 1800 },
+            tier4: { daily: 80, weekly: 480, monthly: 1600 }
+        },
+        warranty: 1500,
+        highlighted: false
+    },
+    {
+        id: 23,
+        name: "BMW X3",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Hybrid",
+        image: "assets/images/cars/bmw-x3-hybrid/bmw-x3-hybrid-veiron-auto.png",
+        pricing: {
+            tier1: { daily: 115, weekly: 690, monthly: 2300 },
+            tier2: { daily: 108, weekly: 648, monthly: 2160 },
+            tier3: { daily: 100, weekly: 600, monthly: 2000 },
+            tier4: { daily: 90, weekly: 540, monthly: 1800 }
+        },
+        warranty: 2000,
+        highlighted: true
+    },
+    {
+        id: 24,
+        name: "BMW 5 Series Sedan",
+        category: "premium",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 4,
+        fuel: "Diesel",
+        image: "assets/images/cars/bmw-seria5-sedan/bmw-seria5-sedan-luxury.png",
+        pricing: {
+            tier1: { daily: 90, weekly: 540, monthly: 1800 },
+            tier2: { daily: 83, weekly: 498, monthly: 1660 },
+            tier3: { daily: 77, weekly: 462, monthly: 1540 },
+            tier4: { daily: 73, weekly: 438, monthly: 1460 }
+        },
+        warranty: 2000,
+        highlighted: true
+    },
+    {
+        id: 25,
+        name: "BMW 5 Series Touring Automatic",
+        category: "premium",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/bmw-seria5-touring/bmw-seria5-touring-satu-mare.png",
+        pricing: {
+            tier1: { daily: 80, weekly: 480, monthly: 1600 },
+            tier2: { daily: 74, weekly: 444, monthly: 1480 },
+            tier3: { daily: 66, weekly: 396, monthly: 1320 },
+            tier4: { daily: 60, weekly: 360, monthly: 1200 }
+        },
+        warranty: 1500,
+        highlighted: false
+    },
+    {
+        id: 26,
+        name: "BMW 5 Series Touring Manual",
+        category: "premium",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/bmw-seria5-touring/bmw-seria5-touring-satu-mare.png",
+        pricing: {
+            tier1: { daily: 60, weekly: 360, monthly: 1200 },
+            tier2: { daily: 57, weekly: 342, monthly: 1140 },
+            tier3: { daily: 54, weekly: 324, monthly: 1080 },
+            tier4: { daily: 48, weekly: 288, monthly: 960 }
+        },
+        warranty: 1250,
+        highlighted: false
+    },
+    {
+        id: 27,
+        name: "Honda Accord",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 4,
+        fuel: "Petrol",
+        image: "assets/images/cars/honda-accord-automat/honda-accord-automat-veiron-auto.png",
+        pricing: {
+            tier1: { daily: 40, weekly: 240, monthly: 800 },
+            tier2: { daily: 37, weekly: 222, monthly: 740 },
+            tier3: { daily: 34, weekly: 204, monthly: 680 },
+            tier4: { daily: 33, weekly: 198, monthly: 660 }
+        },
+        warranty: 750,
+        highlighted: false
+    },
+    {
+        id: 28,
+        name: "Mercedes GLE",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/mercedes-gle/mercedes-gle-suv-satu-mare.png",
+        pricing: {
+            tier1: { daily: 110, weekly: 660, monthly: 2200 },
+            tier2: { daily: 105, weekly: 630, monthly: 2100 },
+            tier3: { daily: 100, weekly: 600, monthly: 2000 },
+            tier4: { daily: 85, weekly: 510, monthly: 1700 }
+        },
+        warranty: 2000,
+        highlighted: true
     }
 ];
 

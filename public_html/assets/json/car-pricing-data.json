@@ -328,7 +328,7 @@
     },
     {
       "id": "seat-alhambra-7-locuri-automat",
-      "name": "SEAT ALHAMBRA 7 LOCURI AUTOMAT",
+      "name": "SEAT ALHAMBRA AUTOMAT",
       "transmission": "automat",
       "seats": 7,
       "pricing": {
@@ -347,7 +347,7 @@
     },
     {
       "id": "seat-alhambra-manual-7-locuri",
-      "name": "SEAT ALHAMBRA MANUAL 7 LOCURI",
+      "name": "SEAT ALHAMBRA MANUAL",
       "transmission": "manual",
       "seats": 7,
       "pricing": {

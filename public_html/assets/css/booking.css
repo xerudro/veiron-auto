@@ -574,6 +574,7 @@ label {
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-height: 270px;
 }
 
 .car-name {
@@ -581,7 +582,11 @@ label {
     font-weight: 700;
     margin-bottom: 8px;
     text-align: center;
-    line-height: 1.2;
+    line-height: 1.3;
+    min-height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .car-similar-text {
@@ -594,21 +599,30 @@ label {
 }
 
 .car-details {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
     margin-bottom: 20px;
-    justify-content: center;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .car-detail {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
     font-size: 0.85rem;
     background: rgba(255,255,255,0.1);
-    padding: 4px 8px;
+    padding: 6px 10px;
     border-radius: 4px;
+}
+
+.car-detail:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 140px;
 }
 
 .car-detail i {
@@ -621,6 +635,7 @@ label {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    min-height: 50px;
 }
 
 .car-price {
@@ -632,11 +647,13 @@ label {
 .price-amount {
     font-size: 1.8rem;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 .price-period {
     font-size: 1rem;
     color: var(--gray-medium);
+    line-height: 1.2;
 }
 
 .warranty-info {
@@ -645,10 +662,12 @@ label {
     gap: 5px;
     font-size: 0.85rem;
     color: var(--gray-medium);
+    white-space: nowrap;
 }
 
 .warranty-info i {
     color: var(--primary-color);
+    font-size: 0.9rem;
 }
 
 .car-select-btn {
@@ -1238,36 +1257,145 @@ main {
         max-width: 100%;
         gap: 30px;
     }
-    
+
     .filter-sidebar {
-        width: 230px;
-        padding: 18px;
+        width: 220px;
+        padding: 16px;
     }
-    
+
     .car-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        gap: 18px;
     }
-    
+
     .car-card {
         min-height: 450px;
     }
-    
+
     .car-image-container {
-        height: 180px;
-        padding: 20px;
+        height: 170px;
+        padding: 18px;
     }
-    
+
     .car-info {
-        padding: 20px;
+        padding: 18px;
+        min-height: 280px;
     }
-    
+
     .car-name {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
+        min-height: 2.8rem;
     }
-    
+
+    .car-detail {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .car-details {
+        max-width: 100%;
+        gap: 6px;
+    }
+
+    .price-amount {
+        font-size: 1.6rem;
+    }
+
+    .warranty-info {
+        font-size: 0.75rem;
+    }
+
     .equipment-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1140px) {
+    .filter-sidebar {
+        width: 200px;
+        padding: 14px;
+    }
+
+    .car-grid {
+        gap: 15px;
+    }
+
+    .car-name {
+        font-size: 1.1rem;
+    }
+
+    .car-detail {
+        font-size: 0.75rem;
+        padding: 4px 6px;
+        gap: 4px;
+    }
+
+    .car-detail i {
+        font-size: 0.75rem;
+    }
+
+    .price-amount {
+        font-size: 1.5rem;
+    }
+
+    .price-period {
+        font-size: 0.9rem;
+    }
+
+    .warranty-info {
+        font-size: 0.7rem;
+    }
+
+    .warranty-info i {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .filter-sidebar {
+        width: 180px;
+        padding: 12px;
+    }
+
+    .filter-section h3 {
+        font-size: 0.95rem;
+    }
+
+    .filter-option {
+        font-size: 0.85rem;
+    }
+
+    .car-grid {
+        gap: 12px;
+    }
+
+    .car-image-container {
+        height: 150px;
+        padding: 15px;
+    }
+
+    .car-info {
+        padding: 15px;
+        min-height: 260px;
+    }
+
+    .car-name {
+        font-size: 1.05rem;
+        margin-bottom: 6px;
+    }
+
+    .car-details {
+        gap: 5px;
+        margin-bottom: 15px;
+    }
+
+    .car-detail {
+        font-size: 0.7rem;
+        padding: 3px 5px;
+    }
+
+    .car-pricing {
+        margin-bottom: 15px;
     }
 }
 

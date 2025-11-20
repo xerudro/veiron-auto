@@ -11,7 +11,7 @@ const carData = [
         luggage: 4,
         doors: 5,
         fuel: "Benzină",
-        image: "assets/images/cars/Audi-Q3.jpg",
+        image: "assets/images/cars/audi-q3/audi-q3-2011-veiron-auto-rent.png",
         pricing: {
             tier1: { daily: 120 }, // 1-3 zile
             tier2: { daily: 112 }, // 4-7 zile
@@ -49,7 +49,7 @@ const carData = [
         luggage: 3,
         doors: 4,
         fuel: "Benzină",
-        image: "assets/images/cars/Mazda_6.jpg",
+        image: "assets/images/cars/mazda-6-hatchback/mazda-6-rent-a-car.png",
         pricing: {
             tier1: { daily: 203 }, // 1-3 zile (40 EUR)
             tier2: { daily: 193 }, // 4-7 zile (38 EUR)
@@ -68,7 +68,7 @@ const carData = [
         luggage: 3,
         doors: 4,
         fuel: "Diesel",
-        image: "assets/images/cars/audi-a6.jpg",
+        image: "assets/images/cars/audi-a6/audi-a6-veiron-auto-satu-mare.png",
         pricing: {
             tier1: { daily: 354 }, // 1-3 zile (70 EUR)
             tier2: { daily: 340 }, // 4-7 zile (67 EUR)
@@ -87,7 +87,7 @@ const carData = [
         luggage: 4,
         doors: 4,
         fuel: "Diesel",
-        image: "assets/images/cars/bmw_gt_530.jpg",
+        image: "assets/images/cars/bmw-530-gt/bmw-seria5-gt-satu-mare.png",
         pricing: {
             tier1: { daily: 405 }, // 1-3 zile (80 EUR)
             tier2: { daily: 385 }, // 4-7 zile (76 EUR)
@@ -106,7 +106,7 @@ const carData = [
         luggage: 3,
         doors: 4,
         fuel: "Diesel",
-        image: "assets/images/cars/mercedes-e-class.jpg",
+        image: "assets/images/cars/mercedes-e-class/mercedes-e-class-luxury-satu-mare.png",
         pricing: {
             tier1: { daily: 330 }, // 1-3 zile (65 EUR)
             tier2: { daily: 315 }, // 4-7 zile (62 EUR)
@@ -144,7 +144,7 @@ const carData = [
         luggage: 4,
         doors: 5,
         fuel: "Hibrid",
-        image: "assets/images/cars/toyota-rav4.jpg",
+        image: "assets/images/cars/toyota-rav4/toyota-rav4-suv-rent-a-car.png",
         pricing: {
             tier1: { daily: 100 }, // 1-3 zile
             tier2: { daily: 95 },  // 4-7 zile
@@ -210,6 +210,329 @@ const carData = [
         },
         warranty: 200,
         highlighted: false
+    },
+    {
+        id: 12,
+        name: "Mitsubishi Outlander",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/mitsubishi-outlander/mitsubishi_outlander_suv_rent_a_car_satu_mare.png",
+        pricing: {
+            tier1: { daily: 68 },
+            tier2: { daily: 64 },
+            tier3: { daily: 60 },
+            tier4: { daily: 57 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    {
+        id: 13,
+        name: "Skoda Kamiq",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 5,
+        fuel: "Benzină",
+        image: "assets/images/cars/skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png",
+        pricing: {
+            tier1: { daily: 70 },
+            tier2: { daily: 67 },
+            tier3: { daily: 64 },
+            tier4: { daily: 60 }
+        },
+        warranty: 250,
+        highlighted: false
+    },
+    {
+        id: 14,
+        name: "Renault Megane",
+        category: "compact",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 3,
+        doors: 5,
+        fuel: "Benzină",
+        image: "assets/images/cars/renault-megane/renault_megane_manual_rent_a_car.png",
+        pricing: {
+            tier1: { daily: 40 },
+            tier2: { daily: 37 },
+            tier3: { daily: 34 },
+            tier4: { daily: 33 }
+        },
+        warranty: 200,
+        highlighted: false
+    },
+    {
+        id: 15,
+        name: "Seat Alhambra Automat",
+        category: "van",
+        transmission: "automatic",
+        passengers: 7,
+        luggage: 5,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/seat-alhambra/seat_alhambra_7_locuri_inchiriere.png",
+        pricing: {
+            tier1: { daily: 55 },
+            tier2: { daily: 51 },
+            tier3: { daily: 48 },
+            tier4: { daily: 45 }
+        },
+        warranty: 200,
+        highlighted: false
+    },
+    {
+        id: 16,
+        name: "Seat Alhambra Manual",
+        category: "van",
+        transmission: "manual",
+        passengers: 7,
+        luggage: 5,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/seat-alhambra/seat_alhambra_7_locuri_inchiriere.png",
+        pricing: {
+            tier1: { daily: 50 },
+            tier2: { daily: 46 },
+            tier3: { daily: 43 },
+            tier4: { daily: 40 }
+        },
+        warranty: 200,
+        highlighted: false
+    },
+    {
+        id: 17,
+        name: "Seat Exeo",
+        category: "sedan",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 3,
+        doors: 4,
+        fuel: "Diesel",
+        image: "assets/images/cars/seat-exeo/seat_exeo_manual_inchiriere_auto.png",
+        pricing: {
+            tier1: { daily: 37 },
+            tier2: { daily: 35 },
+            tier3: { daily: 33 },
+            tier4: { daily: 30 }
+        },
+        warranty: 150,
+        highlighted: false
+    },
+    {
+        id: 18,
+        name: "Seat Exeo Combi",
+        category: "sedan",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png",
+        pricing: {
+            tier1: { daily: 37 },
+            tier2: { daily: 35 },
+            tier3: { daily: 33 },
+            tier4: { daily: 30 }
+        },
+        warranty: 150,
+        highlighted: false
+    },
+    {
+        id: 19,
+        name: "Audi A3",
+        category: "compact",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 5,
+        fuel: "Benzină",
+        image: "assets/images/cars/audi-a3-tfsi/audi-a3-inchirieri-auto-satu-mare.png",
+        pricing: {
+            tier1: { daily: 40 },
+            tier2: { daily: 37 },
+            tier3: { daily: 34 },
+            tier4: { daily: 33 }
+        },
+        warranty: 200,
+        highlighted: false
+    },
+    {
+        id: 20,
+        name: "Audi A4",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 4,
+        fuel: "Diesel",
+        image: "assets/images/cars/audi-a4/audi-a4-inchrieri-auto-satu-mare.png",
+        pricing: {
+            tier1: { daily: 50 },
+            tier2: { daily: 45 },
+            tier3: { daily: 41 },
+            tier4: { daily: 38 }
+        },
+        warranty: 200,
+        highlighted: false
+    },
+    {
+        id: 21,
+        name: "Audi Q5",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/audi-q5/audi-q5-luxury-automata.png",
+        pricing: {
+            tier1: { daily: 120 },
+            tier2: { daily: 112 },
+            tier3: { daily: 105 },
+            tier4: { daily: 95 }
+        },
+        warranty: 400,
+        highlighted: true
+    },
+    {
+        id: 22,
+        name: "BMW X1",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/bmw-x1-2025/bmw-x1-suv-satu-mare-veiron.png",
+        pricing: {
+            tier1: { daily: 100 },
+            tier2: { daily: 95 },
+            tier3: { daily: 90 },
+            tier4: { daily: 80 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    {
+        id: 23,
+        name: "BMW X3",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Hibrid",
+        image: "assets/images/cars/bmw-x3-hybrid/bmw-x3-hybrid-veiron-auto.png",
+        pricing: {
+            tier1: { daily: 115 },
+            tier2: { daily: 108 },
+            tier3: { daily: 100 },
+            tier4: { daily: 90 }
+        },
+        warranty: 400,
+        highlighted: true
+    },
+    {
+        id: 24,
+        name: "BMW Seria 5 Sedan",
+        category: "premium",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 4,
+        fuel: "Diesel",
+        image: "assets/images/cars/bmw-seria5-sedan/bmw-seria5-sedan-luxury.png",
+        pricing: {
+            tier1: { daily: 90 },
+            tier2: { daily: 83 },
+            tier3: { daily: 77 },
+            tier4: { daily: 73 }
+        },
+        warranty: 400,
+        highlighted: true
+    },
+    {
+        id: 25,
+        name: "BMW Seria 5 Combi Automat",
+        category: "premium",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/bmw-seria5-touring/bmw-seria5-touring-satu-mare.png",
+        pricing: {
+            tier1: { daily: 80 },
+            tier2: { daily: 74 },
+            tier3: { daily: 66 },
+            tier4: { daily: 60 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    {
+        id: 26,
+        name: "BMW Seria 5 Combi Manual",
+        category: "premium",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/bmw-seria5-touring/bmw-seria5-touring-satu-mare.png",
+        pricing: {
+            tier1: { daily: 60 },
+            tier2: { daily: 57 },
+            tier3: { daily: 54 },
+            tier4: { daily: 48 }
+        },
+        warranty: 250,
+        highlighted: false
+    },
+    {
+        id: 27,
+        name: "Honda Accord",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 4,
+        fuel: "Benzină",
+        image: "assets/images/cars/honda-accord-automat/honda-accord-automat-veiron-auto.png",
+        pricing: {
+            tier1: { daily: 40 },
+            tier2: { daily: 37 },
+            tier3: { daily: 34 },
+            tier4: { daily: 33 }
+        },
+        warranty: 150,
+        highlighted: false
+    },
+    {
+        id: 28,
+        name: "Mercedes GLE",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/mercedes-gle/mercedes-gle-suv-satu-mare.png",
+        pricing: {
+            tier1: { daily: 110 },
+            tier2: { daily: 105 },
+            tier3: { daily: 100 },
+            tier4: { daily: 85 }
+        },
+        warranty: 400,
+        highlighted: true
     }
 ];
 

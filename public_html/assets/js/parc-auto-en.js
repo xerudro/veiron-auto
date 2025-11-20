@@ -118,6 +118,60 @@ const CAR_MODELS = {
             { file: 'placeholder.jpg', alt: 'SUV side view', isDirectImage: false },
             { file: 'placeholder.jpg', alt: 'Mitsubishi Outlander trunk', isDirectImage: false }
         ]
+    },
+    'seat-alhambra-7-locuri-automat': {
+        title: 'SEAT ALHAMBRA AUTOMATIC',
+        images: [
+            { file: 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', alt: 'Seat Alhambra 7 seats - car rental Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Seat Alhambra interior', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: '7-seater van side view', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Seat Alhambra trunk', isDirectImage: false }
+        ]
+    },
+    'seat-alhambra-manual-7-locuri': {
+        title: 'SEAT ALHAMBRA MANUAL',
+        images: [
+            { file: 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', alt: 'Seat Alhambra 7 seats manual - car rental Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Seat Alhambra interior', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: '7-seater van side view', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Seat Alhambra trunk', isDirectImage: false }
+        ]
+    },
+    'renault-megane-manual': {
+        title: 'RENAULT MEGANE MANUAL',
+        images: [
+            { file: 'renault-megane/renault_megane_manual_rent_a_car.png', alt: 'Renault Megane manual - car rental Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Renault Megane interior', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Side view', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Renault Megane trunk', isDirectImage: false }
+        ]
+    },
+    'seat-exeo-manual': {
+        title: 'SEAT EXEO MANUAL',
+        images: [
+            { file: 'seat-exeo/seat_exeo_manual_inchiriere_auto.png', alt: 'Seat Exeo manual - car rental Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Seat Exeo interior', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Side view', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Seat Exeo trunk', isDirectImage: false }
+        ]
+    },
+    'seat-exeo-combi-manual': {
+        title: 'SEAT EXEO COMBI MANUAL',
+        images: [
+            { file: 'seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png', alt: 'Seat Exeo Combi manual - car rental Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Seat Exeo Combi interior', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Combi side view', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Seat Exeo Combi trunk', isDirectImage: false }
+        ]
+    },
+    'skoda-kamiq-automat': {
+        title: 'SKODA KAMIQ AUTOMATIC',
+        images: [
+            { file: 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png', alt: 'Skoda Kamiq SUV - car rental Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Skoda Kamiq interior', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'SUV side view', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Skoda Kamiq trunk', isDirectImage: false }
+        ]
     }
 };
 
@@ -217,6 +271,41 @@ const CAR_COLORS = {
         color: 'white',
         colorRO: 'ALB',
         colorEN: 'WHITE'
+    },
+    'seat-alhambra-7-locuri-automat': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'seat-alhambra-manual-7-locuri': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'renault-megane-manual': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
+    },
+    'renault-trafic-8-plus-1-automat': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'seat-exeo-manual': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'seat-exeo-combi-manual': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'skoda-kamiq-automat': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
     }
 };
 
@@ -250,7 +339,13 @@ function getDefaultImages(carId, carName) {
         'renault-traffic-8plus1': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-trafic-8-plus-1-automat': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-koleos-suv': 'renault-koleos/renault-koleos-satu-mare-ieftin.png',
-        'mitsubishi-outlander-automat': 'mitsubishi-outlander/mitsubishi_outlander_suv_rent_a_car_satu_mare.png' // Mitsubishi Outlander SUV image
+        'mitsubishi-outlander-automat': 'mitsubishi-outlander/mitsubishi_outlander_suv_rent_a_car_satu_mare.png', // Mitsubishi Outlander SUV image
+        'seat-alhambra-7-locuri-automat': 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', // Seat Alhambra 7 seats automatic
+        'seat-alhambra-manual-7-locuri': 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', // Seat Alhambra 7 seats manual
+        'renault-megane-manual': 'renault-megane/renault_megane_manual_rent_a_car.png', // Renault Megane manual
+        'seat-exeo-manual': 'seat-exeo/seat_exeo_manual_inchiriere_auto.png', // Seat Exeo manual
+        'seat-exeo-combi-manual': 'seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png', // Seat Exeo Combi manual
+        'skoda-kamiq-automat': 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png' // Skoda Kamiq SUV automatic
     };
     
     // Check if we have a specific image for this car
@@ -521,9 +616,13 @@ class CarFleet {
     }
 
     formatCarName(name) {
-        // Clean up car names for display, but keep AUTOMAT/MANUAL for BMW COMBI to avoid confusion
+        // Clean up car names for display, but keep AUTOMAT/MANUAL for specific models to avoid confusion
         if (name.includes('BMW SERIA 5 COMBI')) {
             return name; // Keep the full name including AUTOMAT/MANUAL for BMW COMBI
+        }
+        // Keep AUTOMAT/MANUAL for SEAT ALHAMBRA to differentiate between the two models
+        if (name.includes('SEAT ALHAMBRA')) {
+            return name; // Keep the full name including AUTOMAT/MANUAL
         }
         // Add HYBRID to BMW X3 NOU
         if (name.includes('BMW X3 NOU')) {
