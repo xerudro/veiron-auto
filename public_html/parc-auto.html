@@ -20,7 +20,7 @@
             <!-- Logo -->
             <div class="logo">
                 <a href="index-ro.html" class="logo-link">
-                    <span class="logo-text">VEIRON AUTO</span>
+                    <img src="assets/images/ui/veiron-auto-inchirieri-auto-satu-mare.png" alt="Veiron Auto - Închirieri auto Satu Mare" class="logo-image">
                 </a>
             </div>
 
@@ -144,7 +144,20 @@
                                     <option value="price-desc">Preț descrescător</option>
                                 </select>
                             </div>
-                            
+
+                            <div class="filter-group price-range-group">
+                                <label>Preț / zi (lei):</label>
+                                <div class="price-range-inputs">
+                                    <div class="price-input-wrapper">
+                                        <input type="number" id="min-price-filter" class="filter-select price-input-field" placeholder="Min" min="0">
+                                    </div>
+                                    <span class="price-separator">-</span>
+                                    <div class="price-input-wrapper">
+                                        <input type="number" id="max-price-filter" class="filter-select price-input-field" placeholder="Max" min="0">
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="filter-actions">
                                 <button class="clear-filters-btn" id="clear-filters">
                                     <i class="fas fa-times"></i> Șterge filtrele

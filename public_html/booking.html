@@ -20,7 +20,7 @@
             <!-- Logo -->
             <div class="logo">
                 <a href="index-ro.html" class="logo-link">
-                    <span class="logo-text">VEIRON AUTO</span>
+                    <img src="assets/images/ui/veiron-auto-inchirieri-auto-satu-mare.png" alt="Veiron Auto - Închirieri auto Satu Mare" class="logo-image">
                 </a>
             </div>
 
@@ -256,6 +256,24 @@
                                         Van
                                     </label>
                                 </div>
+                            </div>
+
+                            <div class="filter-group">
+                                <h4 class="filter-group-title">Preț / zi (lei)</h4>
+                                <div class="price-filter-inputs">
+                                    <div class="price-input-group">
+                                        <label for="min-price">Minim</label>
+                                        <input type="number" id="min-price" class="price-input" placeholder="0" min="0">
+                                    </div>
+                                    <div class="price-separator">-</div>
+                                    <div class="price-input-group">
+                                        <label for="max-price">Maxim</label>
+                                        <input type="number" id="max-price" class="price-input" placeholder="2000" min="0">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-reset-price" onclick="resetPriceFilter()">
+                                    <i class="fas fa-redo"></i> Resetează
+                                </button>
                             </div>
                         </div>
 

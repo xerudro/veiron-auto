@@ -151,6 +151,48 @@ body {
     box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.1);
 }
 
+/* Price Range Filter Styles */
+.price-range-group {
+    margin-bottom: 20px;
+}
+
+.price-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.price-input-wrapper {
+    flex: 1;
+}
+
+.price-input-field {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid var(--gray-light);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: white;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.price-input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.1);
+}
+
+.price-input-field::placeholder {
+    color: var(--gray-medium);
+}
+
+.price-range-inputs .price-separator {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
 .clear-filters-btn {
     width: 100%;
     background: var(--primary-color);

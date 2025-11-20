@@ -550,13 +550,15 @@ class CarFleet {
             category: document.getElementById('category-filter'),
             passengers: document.getElementById('passengers-filter'),
             transmission: document.getElementById('transmission-filter'),
-            sort: document.getElementById('sort-filter')
+            sort: document.getElementById('sort-filter'),
+            minPrice: document.getElementById('min-price-filter'),
+            maxPrice: document.getElementById('max-price-filter')
         };
         this.clearFiltersBtn = document.getElementById('clear-filters');
         this.noResultsElement = document.getElementById('no-results');
         this.carsGrid = document.getElementById('cars-grid');
         this.allCars = [];
-        
+
         this.init();
     }
 
@@ -570,7 +572,12 @@ class CarFleet {
             
             // Add event listeners
             Object.values(this.filters).forEach(filter => {
-                filter.addEventListener('change', () => this.applyFilters());
+                if (filter.id === 'min-price-filter' || filter.id === 'max-price-filter') {
+                    // Use 'input' event for real-time filtering on price inputs
+                    filter.addEventListener('input', () => this.applyFilters());
+                } else {
+                    filter.addEventListener('change', () => this.applyFilters());
+                }
             });
 
             this.clearFiltersBtn.addEventListener('click', () => this.clearAllFilters());
@@ -1007,7 +1014,9 @@ class CarFleet {
         const activeFilters = {
             category: this.filters.category.value,
             passengers: this.filters.passengers.value,
-            transmission: this.filters.transmission.value
+            transmission: this.filters.transmission.value,
+            minPrice: this.filters.minPrice.value ? parseFloat(this.filters.minPrice.value) : null,
+            maxPrice: this.filters.maxPrice.value ? parseFloat(this.filters.maxPrice.value) : null
         };
 
         // Filter cars from all available cars
@@ -1022,10 +1031,10 @@ class CarFleet {
             // Passengers filter
             if (activeFilters.passengers) {
                 const carPassengers = car.displayPassengers;
-                const requiredPassengers = activeFilters.passengers.includes('+') 
-                    ? parseInt(activeFilters.passengers) 
+                const requiredPassengers = activeFilters.passengers.includes('+')
+                    ? parseInt(activeFilters.passengers)
                     : parseInt(activeFilters.passengers);
-                
+
                 if (activeFilters.passengers.includes('+')) {
                     if (carPassengers < requiredPassengers) {
                         shouldShow = false;
@@ -1040,6 +1049,17 @@ class CarFleet {
             // Transmission filter
             if (activeFilters.transmission && car.displayTransmission !== activeFilters.transmission) {
                 shouldShow = false;
+            }
+
+            // Price filter
+            if (activeFilters.minPrice !== null || activeFilters.maxPrice !== null) {
+                const carPrice = car.ronPrice;
+                if (activeFilters.minPrice !== null && carPrice < activeFilters.minPrice) {
+                    shouldShow = false;
+                }
+                if (activeFilters.maxPrice !== null && carPrice > activeFilters.maxPrice) {
+                    shouldShow = false;
+                }
             }
 
             return shouldShow;

@@ -809,15 +809,27 @@ function getFilteredCars() {
     const transmissionFilters = Array.from(document.querySelectorAll('input[value="automatic"], input[value="manual"]'))
         .filter(input => input.checked)
         .map(input => input.value);
-    
+
     const classFilters = Array.from(document.querySelectorAll('input[value="economy"], input[value="compact"], input[value="sedan"], input[value="suv"], input[value="premium"], input[value="van"]'))
         .filter(input => input.checked)
         .map(input => input.value);
-    
+
+    // Get price filter values
+    const minPriceInput = document.getElementById('min-price');
+    const maxPriceInput = document.getElementById('max-price');
+    const minPrice = minPriceInput && minPriceInput.value ? parseFloat(minPriceInput.value) : 0;
+    const maxPrice = maxPriceInput && maxPriceInput.value ? parseFloat(maxPriceInput.value) : Infinity;
+
     return carData.filter(car => {
         const transmissionMatch = transmissionFilters.length === 0 || transmissionFilters.includes(car.transmission);
         const classMatch = classFilters.length === 0 || classFilters.includes(car.category);
-        return transmissionMatch && classMatch;
+
+        // Calculate daily price in lei based on current pricing tier
+        const pricing = car.pricing[bookingState.pricingTier];
+        const dailyPriceLei = Math.round(pricing.daily * 5.07);
+        const priceMatch = dailyPriceLei >= minPrice && dailyPriceLei <= maxPrice;
+
+        return transmissionMatch && classMatch && priceMatch;
     });
 }
 
@@ -1006,6 +1018,17 @@ function setupEventListeners() {
     document.querySelectorAll('.filter-option input').forEach(input => {
         input.addEventListener('change', renderCarGrid);
     });
+
+    // Price filter listeners
+    const minPriceInput = document.getElementById('min-price');
+    const maxPriceInput = document.getElementById('max-price');
+
+    if (minPriceInput) {
+        minPriceInput.addEventListener('input', renderCarGrid);
+    }
+    if (maxPriceInput) {
+        maxPriceInput.addEventListener('input', renderCarGrid);
+    }
     
     // Insurance selection
     document.querySelectorAll('.insurance-select').forEach(btn => {
@@ -1351,17 +1374,32 @@ function handleScrollForReservationBar() {
 function initFooterOverlapPrevention() {
     // Initial adjustment
     adjustReservationBarPosition();
-    
+
     // Add scroll listener for dynamic adjustment
     window.addEventListener('scroll', handleScrollForReservationBar());
-    
+
     // Add resize listener for responsive adjustment
     window.addEventListener('resize', adjustReservationBarPosition);
-    
+
     // Add mutation observer for dynamic content changes
     const observer = new MutationObserver(adjustReservationBarPosition);
     observer.observe(document.body, {
         childList: true,
         subtree: true
     });
+}
+
+// Reset price filter
+function resetPriceFilter() {
+    const minPriceInput = document.getElementById('min-price');
+    const maxPriceInput = document.getElementById('max-price');
+
+    if (minPriceInput) {
+        minPriceInput.value = '';
+    }
+    if (maxPriceInput) {
+        maxPriceInput.value = '';
+    }
+
+    renderCarGrid();
 }

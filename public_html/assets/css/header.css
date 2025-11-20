@@ -56,6 +56,17 @@ body {
     align-items: center;
 }
 
+.logo-image {
+    height: 70px;
+    width: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.logo-image:hover {
+    opacity: 0.8;
+}
+
 .logo-text {
     font-weight: 800;
     font-size: 1.5rem;
@@ -213,9 +224,16 @@ body {
     .lang-btn span {
         display: none;
     }
+
+    .logo-image {
+        height: 40px;
+    }
 }
 
 @media (max-width: 480px) {
+    .logo-image {
+        height: 35px;
+    }
     .header-container {
         padding: 0 15px;
     }
