@@ -246,6 +246,18 @@ const CAR_MODELS = {
         images: [
             { file: 'vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png', alt: 'VW T-Cross automatic compact SUV - car rental Satu Mare', isDirectImage: true }
         ]
+    },
+    'vw-golf-manual': {
+        title: 'VW GOLF MANUAL',
+        images: [
+            { file: 'vw-golf-4/inchirieri-auto-ieftine-satu-mare-vw-golf-4.png', alt: 'VW Golf 4 manual - affordable car rental Satu Mare', isDirectImage: true }
+        ]
+    },
+    'vw-tiguan-automat': {
+        title: 'VW TIGUAN AUTOMATIC',
+        images: [
+            { file: 'vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png', alt: 'VW Tiguan automatic SUV - car rental Satu Mare', isDirectImage: true }
+        ]
     }
 };
 
@@ -435,6 +447,21 @@ const CAR_COLORS = {
         color: 'white',
         colorRO: 'ALB',
         colorEN: 'WHITE'
+    },
+    'vw-golf-manual': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
+    },
+    'vw-tiguan-automat': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'vw-t-cross-automat': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
     }
 };
 
@@ -477,7 +504,10 @@ function getDefaultImages(carId, carName) {
         'seat-exeo-combi-manual': 'seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png', // Seat Exeo Combi manual
         'skoda-kamiq-automat': 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png', // Skoda Kamiq SUV automatic
         'skoda-scala-automat': 'skoda-scala/skoda-scala-automatic-satu-mare.png', // Skoda Scala compact automatic
-        'volvo-xc40-automat': 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png' // Volvo XC40 SUV automatic
+        'volvo-xc40-automat': 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png', // Volvo XC40 SUV automatic
+        'vw-golf-manual': 'vw-golf-4/inchirieri-auto-ieftine-satu-mare-vw-golf-4.png', // VW Golf 4 manual
+        'vw-t-cross-automat': 'vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png', // VW T-Cross automatic
+        'vw-tiguan-automat': 'vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png' // VW Tiguan automatic
     };
     
     // Check if we have a specific image for this car

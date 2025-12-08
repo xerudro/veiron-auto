@@ -182,7 +182,7 @@ const carData = [
         luggage: 3,
         doors: 5,
         fuel: "Benzină",
-        image: "assets/images/cars/vw-tcross.jpg",
+        image: "assets/images/cars/vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png",
         pricing: {
             tier1: { daily: 70 }, // 1-3 zile
             tier2: { daily: 67 }, // 4-7 zile
@@ -201,7 +201,7 @@ const carData = [
         luggage: 3,
         doors: 5,
         fuel: "Benzină",
-        image: "assets/images/cars/skoda-scala.jpg",
+        image: "assets/images/cars/skoda-scala/skoda-scala-automatic-satu-mare.png",
         pricing: {
             tier1: { daily: 60 }, // 1-3 zile
             tier2: { daily: 57 }, // 4-7 zile
@@ -537,7 +537,10 @@ const carData = [
 ];
 
 const CAR_IMAGE_FALLBACKS = {
-    'toyota-rav4': '/assets/images/cars/toyota-rav4/toyota-rav4-suv-rent-a-car.png'
+    'toyota-rav4': '/assets/images/cars/toyota-rav4/toyota-rav4-suv-rent-a-car.png',
+    'vw-golf-manual': '/assets/images/cars/vw-golf-4/inchirieri-auto-ieftine-satu-mare-vw-golf-4.png',
+    'vw-t-cross-automat': '/assets/images/cars/vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png',
+    'vw-tiguan-automat': '/assets/images/cars/vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png'
 };
 
 // Additional services data based on Excel rates

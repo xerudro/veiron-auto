@@ -578,6 +578,11 @@ label {
     max-height: 100%;
 }
 
+/* Mărire imagine Skoda Scala cu 20% */
+.car-card[data-car-id="10"] .car-image {
+    transform: scale(1.5);
+}
+
 .car-name {
     font-size: 1.2rem;
     font-weight: 700;
