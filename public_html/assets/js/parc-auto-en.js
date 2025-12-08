@@ -71,7 +71,7 @@ const CAR_MODELS = {
     'toyota-rav4': {
         title: 'TOYOTA RAV4',
         images: [
-            { file: 'toyota-rav4-suv-inchiriere-4x4-satu-mare.jpg', alt: 'Toyota RAV4 SUV 4x4 rental Satu Mare' },
+            { file: 'toyota-rav4/toyota-rav4-suv-rent-a-car.png', alt: 'Toyota RAV4 SUV 4x4 rental Satu Mare', isDirectImage: true },
             { file: 'toyota-rav4-suv-inchiriere-4x4-satu-mare-2.jpg', alt: 'Toyota RAV4 SUV 4x4 rental Satu Mare (view 2)' }
         ]
     },
@@ -171,6 +171,24 @@ const CAR_MODELS = {
             { file: 'placeholder.jpg', alt: 'Skoda Kamiq interior', isDirectImage: false },
             { file: 'placeholder.jpg', alt: 'SUV side view', isDirectImage: false },
             { file: 'placeholder.jpg', alt: 'Skoda Kamiq trunk', isDirectImage: false }
+        ]
+    },
+    'skoda-scala-automat': {
+        title: 'SKODA SCALA AUTOMATIC',
+        images: [
+            { file: 'skoda-scala/skoda-scala-automatic-satu-mare.png', alt: 'Skoda Scala compact - car rental Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Skoda Scala interior', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Compact car side view', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Skoda Scala trunk', isDirectImage: false }
+        ]
+    },
+    'volvo-xc40-automat': {
+        title: 'VOLVO XC40 AUTOMATIC',
+        images: [
+            { file: 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png', alt: 'Volvo XC40 SUV - car rental Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Volvo XC40 interior', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'SUV side view', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Volvo XC40 trunk', isDirectImage: false }
         ]
     }
 };
@@ -306,6 +324,16 @@ const CAR_COLORS = {
         color: 'grey',
         colorRO: 'GRI',
         colorEN: 'GREY'
+    },
+    'skoda-scala-automat': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'volvo-xc40-automat': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
     }
 };
 
@@ -345,7 +373,9 @@ function getDefaultImages(carId, carName) {
         'renault-megane-manual': 'renault-megane/renault_megane_manual_rent_a_car.png', // Renault Megane manual
         'seat-exeo-manual': 'seat-exeo/seat_exeo_manual_inchiriere_auto.png', // Seat Exeo manual
         'seat-exeo-combi-manual': 'seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png', // Seat Exeo Combi manual
-        'skoda-kamiq-automat': 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png' // Skoda Kamiq SUV automatic
+        'skoda-kamiq-automat': 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png', // Skoda Kamiq SUV automatic
+        'skoda-scala-automat': 'skoda-scala/skoda-scala-automatic-satu-mare.png', // Skoda Scala compact automatic
+        'volvo-xc40-automat': 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png' // Volvo XC40 SUV automatic
     };
     
     // Check if we have a specific image for this car
@@ -355,6 +385,18 @@ function getDefaultImages(carId, carName) {
             file: imageFile, // Direct filename - will be handled specially in getImagePath
             alt: `${carName} - main view`,
             isDirectImage: true // Flag to indicate this is a direct car image, not in gallery
+        }];
+    }
+
+    // Attempt a normalized lookup (handles ids like toyota-rav4-automat vs toyota-rav4)
+    const normalizedId = carId
+        .replace(/-automat/gi, '')
+        .replace(/-manual/gi, '');
+    if (normalizedId !== carId && carImageMap[normalizedId]) {
+        return [{
+            file: carImageMap[normalizedId],
+            alt: `${carName} - main view`,
+            isDirectImage: true
         }];
     }
     
@@ -511,15 +553,15 @@ function loadCarGallery(card, model, modelId, cardIndex) {
 function loadImageWithFallback(imgElement, primarySrc, fallbackSrc, altText) {
     imgElement.alt = altText;
     
-    // Try to load primary image
-    const testImage = new Image();
-    testImage.onload = function() {
-        imgElement.src = primarySrc;
-    };
-    testImage.onerror = function() {
-        imgElement.src = fallbackSrc;
-    };
-    testImage.src = primarySrc;
+    // Clear src first to force reload
+    imgElement.src = '';
+    imgElement.src = primarySrc;
+    
+    setTimeout(() => {
+        if (!imgElement.complete || imgElement.naturalWidth === 0) {
+            imgElement.src = fallbackSrc;
+        }
+    }, 100);
 }
 
 function changeMainImageNew(cardId, clickedThumb, imageSrc, fallbackSrc) {
