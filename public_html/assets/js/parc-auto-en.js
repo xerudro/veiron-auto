@@ -240,6 +240,12 @@ const CAR_MODELS = {
         images: [
             { file: 'vw-caravelle/vw-caravelle-van-inchirieri-family-satu-mare.png', alt: 'VW Caravelle 8+1 seats van - family car rental Satu Mare', isDirectImage: true }
         ]
+    },
+    'vw-t-cross-automat': {
+        title: 'VW T-CROSS AUTOMATIC',
+        images: [
+            { file: 'vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png', alt: 'VW T-Cross automatic compact SUV - car rental Satu Mare', isDirectImage: true }
+        ]
     }
 };
 
