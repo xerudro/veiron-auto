@@ -376,6 +376,10 @@ body {
     background: #ea580c;
 }
 
+.color-swatch.gold {
+    background: #D7B468;
+}
+
 /* Car Gallery */
 .car-gallery {
     padding: 15px 15px 0;

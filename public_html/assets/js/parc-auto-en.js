@@ -253,10 +253,34 @@ const CAR_MODELS = {
             { file: 'vw-golf-4/inchirieri-auto-ieftine-satu-mare-vw-golf-4.png', alt: 'VW Golf 4 manual - affordable car rental Satu Mare', isDirectImage: true }
         ]
     },
+    'vw-jetta-manual': {
+        title: 'VW JETTA MANUAL',
+        images: [
+            { file: 'vw-jetta-2.0/vw-jetta-2-0-diese-satu-mare-ieftin.png', alt: 'VW Jetta 2.0 manual diesel - affordable car rental Satu Mare', isDirectImage: true }
+        ]
+    },
     'vw-tiguan-automat': {
         title: 'VW TIGUAN AUTOMATIC',
         images: [
             { file: 'vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png', alt: 'VW Tiguan automatic SUV - car rental Satu Mare', isDirectImage: true }
+        ]
+    },
+    'ssangyong-actyon-automat': {
+        title: 'SSANGYONG KGM ACTYON',
+        images: [
+            { file: 'placeholder.jpg', alt: 'SsangYong KGM Actyon - automatic SUV rental Satu Mare', isDirectImage: true }
+        ]
+    },
+    'ssangyong-korando': {
+        title: 'SSANGYONG KGM KORANDO',
+        images: [
+            { file: 'placeholder.jpg', alt: 'SsangYong KGM Korando - SUV rental Satu Mare', isDirectImage: true }
+        ]
+    },
+    'toyota-avensis-combi': {
+        title: 'TOYOTA AVENSIS COMBI',
+        images: [
+            { file: 'placeholder.jpg', alt: 'Toyota Avensis Combi - estate car rental Satu Mare', isDirectImage: true }
         ]
     }
 };
@@ -453,6 +477,11 @@ const CAR_COLORS = {
         colorRO: 'GRI',
         colorEN: 'GREY'
     },
+    'vw-jetta-manual': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
     'vw-tiguan-automat': {
         color: 'white',
         colorRO: 'ALB',
@@ -462,6 +491,21 @@ const CAR_COLORS = {
         color: 'black',
         colorRO: 'NEGRU',
         colorEN: 'BLACK'
+    },
+    'ssangyong-actyon-automat': {
+        color: 'gold',
+        colorRO: 'AURIU',
+        colorEN: 'GOLD'
+    },
+    'ssangyong-korando': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
+    },
+    'toyota-avensis-combi': {
+        color: 'blue',
+        colorRO: 'ALBASTRU',
+        colorEN: 'BLUE'
     }
 };
 
@@ -506,8 +550,12 @@ function getDefaultImages(carId, carName) {
         'skoda-scala-automat': 'skoda-scala/skoda-scala-automatic-satu-mare.png', // Skoda Scala compact automatic
         'volvo-xc40-automat': 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png', // Volvo XC40 SUV automatic
         'vw-golf-manual': 'vw-golf-4/inchirieri-auto-ieftine-satu-mare-vw-golf-4.png', // VW Golf 4 manual
+        'vw-jetta-manual': 'vw-jetta-2.0/vw-jetta-2-0-diese-satu-mare-ieftin.png', // VW Jetta 2.0 manual
         'vw-t-cross-automat': 'vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png', // VW T-Cross automatic
-        'vw-tiguan-automat': 'vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png' // VW Tiguan automatic
+        'vw-tiguan-automat': 'vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png', // VW Tiguan automatic
+        'ssangyong-actyon-automat': 'placeholder.jpg', // SsangYong Actyon (image to be added)
+        'ssangyong-korando': 'placeholder.jpg', // SsangYong Korando (image to be added)
+        'toyota-avensis-combi': 'placeholder.jpg' // Toyota Avensis Combi (image to be added)
     };
     
     // Check if we have a specific image for this car

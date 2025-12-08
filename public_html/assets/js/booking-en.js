@@ -539,8 +539,12 @@ const carData = [
 const CAR_IMAGE_FALLBACKS = {
     'toyota-rav4': '/assets/images/cars/toyota-rav4/toyota-rav4-suv-rent-a-car.png',
     'vw-golf-manual': '/assets/images/cars/vw-golf-4/inchirieri-auto-ieftine-satu-mare-vw-golf-4.png',
+    'vw-jetta-manual': '/assets/images/cars/vw-jetta-2.0/vw-jetta-2-0-diese-satu-mare-ieftin.png',
     'vw-t-cross-automat': '/assets/images/cars/vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png',
-    'vw-tiguan-automat': '/assets/images/cars/vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png'
+    'vw-tiguan-automat': '/assets/images/cars/vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png',
+    'ssangyong-actyon-automat': '/assets/images/cars/placeholder.svg',
+    'ssangyong-korando': '/assets/images/cars/placeholder.svg',
+    'toyota-avensis-combi': '/assets/images/cars/placeholder.svg'
 };
 
 // Additional services data

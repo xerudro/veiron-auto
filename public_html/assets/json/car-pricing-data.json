@@ -942,6 +942,72 @@
           "deposit": 0
         }
       }
+    },
+    {
+      "id": "ssangyong-actyon-automat",
+      "name": "SSANGYONG KGM ACTYON",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 80,
+        "tier2": 77,
+        "tier3": 74,
+        "tier4": 70
+      },
+      "deposit": 100,
+      "insurance": {
+        "premium": {
+          "dailyRate": 13,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 20,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "ssangyong-korando",
+      "name": "SSANGYONG KGM KORANDO",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 60,
+        "tier2": 57,
+        "tier3": 54,
+        "tier4": 50
+      },
+      "deposit": 100,
+      "insurance": {
+        "premium": {
+          "dailyRate": 10,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 18,
+          "deposit": 0
+        }
+      }
+    },
+    {
+      "id": "toyota-avensis-combi",
+      "name": "TOYOTA AVENSIS COMBI",
+      "transmission": "automat",
+      "pricing": {
+        "tier1": 40,
+        "tier2": 37,
+        "tier3": 34,
+        "tier4": 32
+      },
+      "deposit": 100,
+      "insurance": {
+        "premium": {
+          "dailyRate": 9,
+          "deposit": 100
+        },
+        "comprehensive": {
+          "dailyRate": 17,
+          "deposit": 0
+        }
+      }
     }
   ]
 }
