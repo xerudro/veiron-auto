@@ -23,7 +23,8 @@
         "tier1": 60,
         "tier2": 57,
         "tier3": 54,
-        "tier4": 50
+        "tier4": 50,
+        "medium": 55.25
       },
       "deposit": 200,
       "insurance": {
@@ -127,7 +128,7 @@
     },
     {
       "id": "skoda-kodiaq-7-locuri-automat",
-      "name": "SKODA KODIAQ (7 locuri) - AUTOMAT",
+      "name": "SKODA KODIAQ - 7 LOCURI",
       "transmission": "automat",
       "seats": 7,
       "pricing": {
@@ -150,7 +151,7 @@
     },
     {
       "id": "skoda-kodiaq-automat",
-      "name": "SKODA KODIAQ AUTOMAT",
+      "name": "SKODA KODIAQ - 5 LOCURI",
       "transmission": "automat",
       "pricing": {
         "tier1": 100,
@@ -178,7 +179,8 @@
         "tier1": 100,
         "tier2": 95,
         "tier3": 90,
-        "tier4": 85
+        "tier4": 85,
+        "medium": 92.5
       },
       "deposit": 300,
       "insurance": {

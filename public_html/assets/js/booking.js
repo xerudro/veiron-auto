@@ -13,12 +13,12 @@ const carData = [
         fuel: "Benzină",
         image: "assets/images/cars/audi-q3/audi-q3-2011-veiron-auto-rent.png",
         pricing: {
-            tier1: { daily: 120 }, // 1-3 zile
-            tier2: { daily: 112 }, // 4-7 zile
-            tier3: { daily: 105 }, // 8-14 zile
-            tier4: { daily: 95 }   // 15-30 zile
+            tier1: { daily: 75 }, // 1-3 zile
+            tier2: { daily: 70 }, // 4-7 zile
+            tier3: { daily: 65 }, // 8-14 zile
+            tier4: { daily: 60 }  // 15-30 zile
         },
-        warranty: 400,
+        warranty: 300,
         highlighted: true
     },
     {
@@ -51,10 +51,10 @@ const carData = [
         fuel: "Benzină",
         image: "assets/images/cars/mazda-6-hatchback/mazda-6-rent-a-car.png",
         pricing: {
-            tier1: { daily: 203 }, // 1-3 zile (40 EUR)
-            tier2: { daily: 193 }, // 4-7 zile (38 EUR)
-            tier3: { daily: 183 }, // 8-14 zile (36 EUR)
-            tier4: { daily: 172 }  // 15-30 zile (34 EUR)
+            tier1: { daily: 40 }, // 1-3 zile
+            tier2: { daily: 37 }, // 4-7 zile
+            tier3: { daily: 34 }, // 8-14 zile
+            tier4: { daily: 32 }  // 15-30 zile
         },
         warranty: 200,
         highlighted: false
@@ -70,10 +70,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/audi-a6/audi-a6-veiron-auto-satu-mare.png",
         pricing: {
-            tier1: { daily: 354 }, // 1-3 zile (70 EUR)
-            tier2: { daily: 340 }, // 4-7 zile (67 EUR)
-            tier3: { daily: 319 }, // 8-14 zile (63 EUR)
-            tier4: { daily: 304 }  // 15-30 zile (60 EUR)
+            tier1: { daily: 70 }, // 1-3 zile
+            tier2: { daily: 67 }, // 4-7 zile
+            tier3: { daily: 63 }, // 8-14 zile
+            tier4: { daily: 55 }  // 15-30 zile
         },
         warranty: 300,
         highlighted: true
@@ -89,12 +89,12 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-530-gt/bmw-seria5-gt-satu-mare.png",
         pricing: {
-            tier1: { daily: 405 }, // 1-3 zile (80 EUR)
-            tier2: { daily: 385 }, // 4-7 zile (76 EUR)
-            tier3: { daily: 365 }, // 8-14 zile (72 EUR)
-            tier4: { daily: 345 }  // 15-30 zile (68 EUR)
+            tier1: { daily: 80 }, // 1-3 zile
+            tier2: { daily: 72 }, // 4-7 zile
+            tier3: { daily: 60 }, // 8-14 zile
+            tier4: { daily: 55 }  // 15-30 zile
         },
-        warranty: 400,
+        warranty: 200,
         highlighted: false
     },
     {
@@ -108,10 +108,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/mercedes-e-class/mercedes-e-class-luxury-satu-mare.png",
         pricing: {
-            tier1: { daily: 330 }, // 1-3 zile (65 EUR)
-            tier2: { daily: 315 }, // 4-7 zile (62 EUR)
-            tier3: { daily: 304 }, // 8-14 zile (60 EUR)
-            tier4: { daily: 289 }  // 15-30 zile (57 EUR)
+            tier1: { daily: 65 }, // 1-3 zile
+            tier2: { daily: 63 }, // 4-7 zile
+            tier3: { daily: 60 }, // 8-14 zile
+            tier4: { daily: 57 }  // 15-30 zile
         },
         warranty: 250,
         highlighted: true
@@ -536,6 +536,10 @@ const carData = [
     }
 ];
 
+const CAR_IMAGE_FALLBACKS = {
+    'toyota-rav4': '/assets/images/cars/toyota-rav4/toyota-rav4-suv-rent-a-car.png'
+};
+
 // Additional services data based on Excel rates
 const additionalServices = {
     insurance: {
@@ -572,10 +576,15 @@ document.addEventListener('DOMContentLoaded', function() {
     renderCarGrid();
     setupEventListeners();
     updateReservationBar();
-    
+
+    // Hide reservation bar on step 1
+    if (elements.reservationBar && bookingState.currentStep === 1) {
+        elements.reservationBar.style.display = 'none';
+    }
+
     // Initial validation for step 1
     validateStep1AndUpdateButton();
-    
+
     // Initialize footer overlap prevention
     initFooterOverlapPrevention();
 });
@@ -874,7 +883,12 @@ function updateReservationBar() {
             </div>
         `;
     } else {
-        elements.selectedCarInfo.innerHTML = '<span class="no-selection">Selectează o mașină pentru a continua</span>';
+        // Show message only from step 2 onwards
+        if (bookingState.currentStep >= 2) {
+            elements.selectedCarInfo.innerHTML = '<span class="no-selection">Selectează o mașină pentru a continua</span>';
+        } else {
+            elements.selectedCarInfo.innerHTML = '';
+        }
         elements.reservationDates.innerHTML = '';
         elements.reservationTotal.innerHTML = '';
         
@@ -1147,7 +1161,7 @@ function updateStepDisplay() {
             step.classList.remove('active');
         }
     });
-    
+
     // Update step content
     elements.bookingSteps.forEach((step, index) => {
         if (index + 1 === bookingState.currentStep) {
@@ -1156,7 +1170,16 @@ function updateStepDisplay() {
             step.classList.add('hidden');
         }
     });
-    
+
+    // Show/hide reservation bar based on step
+    if (elements.reservationBar) {
+        if (bookingState.currentStep >= 2) {
+            elements.reservationBar.style.display = 'block';
+        } else {
+            elements.reservationBar.style.display = 'none';
+        }
+    }
+
     // Update final summary on step 4
     if (bookingState.currentStep === 4) {
         updateFinalSummary();

@@ -71,8 +71,8 @@ const CAR_MODELS = {
     'toyota-rav4': {
         title: 'TOYOTA RAV4',
         images: [
-            { file: 'toyota-rav4-suv-inchiriere-4x4-satu-mare.jpg', alt: 'Toyota RAV4 SUV închiriere 4x4 Satu Mare' },
-            { file: 'toyota-rav4-suv-inchiriere-4x4-satu-mare-2.jpg', alt: 'Toyota RAV4 SUV închiriere 4x4 Satu Mare (vedere 2)' }
+            { file: 'toyota-rav4/toyota-rav4-suv-rent-a-car.png', alt: 'Toyota RAV4 SUV închiriere 4x4 Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Toyota RAV4 SUV închiriere 4x4 Satu Mare (vedere laterală)', isDirectImage: true }
         ]
     },
     'audi-a3-tfsi': {
@@ -171,6 +171,74 @@ const CAR_MODELS = {
             { file: 'placeholder.jpg', alt: 'Interior Skoda Kamiq', isDirectImage: false },
             { file: 'placeholder.jpg', alt: 'Vedere laterală SUV', isDirectImage: false },
             { file: 'placeholder.jpg', alt: 'Portbagaj Skoda Kamiq', isDirectImage: false }
+        ]
+    },
+    'skoda-scala-automat': {
+        title: 'SKODA SCALA AUTOMAT',
+        images: [
+            { file: 'skoda-scala/skoda-scala-automatic-satu-mare.png', alt: 'Skoda Scala compact - închiriere Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Interior Skoda Scala', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Vedere laterală compact', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Portbagaj Skoda Scala', isDirectImage: false }
+        ]
+    },
+    'volvo-xc40-automat': {
+        title: 'VOLVO XC40 AUTOMAT',
+        images: [
+            { file: 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png', alt: 'Volvo XC40 SUV - închiriere Satu Mare', isDirectImage: true },
+            { file: 'placeholder.jpg', alt: 'Interior Volvo XC40', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Vedere laterală SUV', isDirectImage: false },
+            { file: 'placeholder.jpg', alt: 'Portbagaj Volvo XC40', isDirectImage: false }
+        ]
+    },
+    'skoda-kodiaq-7-locuri-automat': {
+        title: 'SKODA KODIAQ - 7 LOCURI',
+        images: [
+            { file: 'skoda-kodiaq/skoda-kodiak-7-locuri-rent-a-car-airport-satu-mare-veiron.png', alt: 'Skoda Kodiaq 7 locuri SUV - închiriere Satu Mare', isDirectImage: true },
+            { file: 'skoda-kodiaq/gallery/skoda-kodiaq-portbagaj-comparatie-diferenta-locuri.png', alt: 'Portbagaj Skoda Kodiaq - comparație spațiu 5 vs 7 locuri', isDirectImage: true }
+        ]
+    },
+    'skoda-kodiaq-automat': {
+        title: 'SKODA KODIAQ - 5 LOCURI',
+        images: [
+            { file: 'skoda-kodiaq/skoda-kodiak-7-locuri-rent-a-car-airport-satu-mare-veiron.png', alt: 'Skoda Kodiaq 5 locuri SUV - închiriere Satu Mare', isDirectImage: true },
+            { file: 'skoda-kodiaq/gallery/skoda-kodiaq-portbagaj-comparatie-diferenta-locuri.png', alt: 'Portbagaj Skoda Kodiaq - comparație spațiu 5 vs 7 locuri', isDirectImage: true }
+        ]
+    },
+    'skoda-octavia-sedan-automat': {
+        title: 'SKODA OCTAVIA SEDAN AUTOMAT',
+        images: [
+            { file: 'skoda-octavia-sedan/skoda-octavia-sedan-rent-a-car-cluj-napoca-veiron.png', alt: 'Skoda Octavia Sedan - închiriere Cluj-Napoca', isDirectImage: true }
+        ]
+    },
+    'skoda-octavia-combi-automat': {
+        title: 'SKODA OCTAVIA COMBI AUTOMAT',
+        images: [
+            { file: 'skoda-octavia-combi/inchirieri-skoda-octavia-combi-pret-avantajos.png', alt: 'Skoda Octavia Combi - închiriere preț avantajos', isDirectImage: true }
+        ]
+    },
+    'volvo-xc60-automat': {
+        title: 'VOLVO XC60 AUTOMAT',
+        images: [
+            { file: 'volvo-xc60-facelift/volvo-xc60-automat-suv-luxury-inchirieri-auto-satu-mare.png', alt: 'Volvo XC60 Facelift SUV luxury - închiriere Satu Mare', isDirectImage: true }
+        ]
+    },
+    'volvo-xc60-automat-nou': {
+        title: 'VOLVO XC60 AUTOMAT NOU',
+        images: [
+            { file: 'volvo-xc60-automat/volvo-xc60-suv-debrecen-satumare-veiron-auto.png', alt: 'Volvo XC60 NOU SUV - închiriere Debrecen și Satu Mare', isDirectImage: true }
+        ]
+    },
+    'skoda-superb-automat': {
+        title: 'SKODA SUPERB AUTOMAT',
+        images: [
+            { file: 'skoda-superb/skoda-suberb-inchirieri-satu-mare-ieftin.png', alt: 'Skoda Superb - închirieri Satu Mare preț ieftin', isDirectImage: true }
+        ]
+    },
+    'vw-caravelle-8-plus-1': {
+        title: 'VW CARAVELLE (8+1 LOCURI)',
+        images: [
+            { file: 'vw-caravelle/vw-caravelle-van-inchirieri-family-satu-mare.png', alt: 'VW Caravelle 8+1 locuri van - închirieri family Satu Mare', isDirectImage: true }
         ]
     }
 };
@@ -306,6 +374,61 @@ const CAR_COLORS = {
         color: 'grey',
         colorRO: 'GRI',
         colorEN: 'GREY'
+    },
+    'skoda-scala-automat': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'volvo-xc40-automat': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
+    },
+    'skoda-kodiaq-automat': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
+    },
+    'skoda-kodiaq-7-locuri-automat': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'skoda-octavia-combi-automat': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'skoda-octavia-sedan-automat': {
+        color: 'blue',
+        colorRO: 'ALBASTRU',
+        colorEN: 'BLUE'
+    },
+    'skoda-superb-automat': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'toyota-rav4-automat': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
+    },
+    'vw-caravelle-8-plus-1': {
+        color: 'orange',
+        colorRO: 'PORTOCALIU',
+        colorEN: 'ORANGE'
+    },
+    'volvo-xc60-automat': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
+    },
+    'volvo-xc60-automat-nou': {
+        color: 'white',
+        colorRO: 'ALB',
+        colorEN: 'WHITE'
     }
 };
 
@@ -335,6 +458,7 @@ function getDefaultImages(carId, carName) {
         'mercedes-gle-automat': 'mercedes-gle/mercedes-gle-suv-satu-mare.png',
         'toyota-rav4': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-suv': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
+        'toyota-rav4-automat': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'renault-traffic-van': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-traffic-8plus1': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
         'renault-trafic-8-plus-1-automat': 'renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png',
@@ -345,7 +469,9 @@ function getDefaultImages(carId, carName) {
         'renault-megane-manual': 'renault-megane/renault_megane_manual_rent_a_car.png', // Renault Megane manual
         'seat-exeo-manual': 'seat-exeo/seat_exeo_manual_inchiriere_auto.png', // Seat Exeo manual
         'seat-exeo-combi-manual': 'seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png', // Seat Exeo Combi manual
-        'skoda-kamiq-automat': 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png' // Skoda Kamiq SUV
+        'skoda-kamiq-automat': 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png', // Skoda Kamiq SUV
+        'skoda-scala-automat': 'skoda-scala/skoda-scala-automatic-satu-mare.png', // Skoda Scala compact
+        'volvo-xc40-automat': 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png' // Volvo XC40 SUV
     };
     
     // Check if we have a specific image for this car
@@ -486,6 +612,16 @@ function loadCarGallery(card, model, modelId, cardIndex) {
     // Load images with fallback
     const images = imageConfig.map(img => {
         const imagePath = getImagePath(modelId, img.file, img.isDirectImage);
+
+        // Debug logging for Toyota RAV4
+        if (modelId === 'toyota-rav4') {
+            console.log('🚗 Toyota RAV4 Image Config:', {
+                modelId,
+                file: img.file,
+                isDirectImage: img.isDirectImage,
+                generatedPath: imagePath
+            });
+        }
 
         return {
             src: imagePath,

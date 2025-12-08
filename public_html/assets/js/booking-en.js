@@ -13,10 +13,10 @@ const carData = [
         fuel: "Petrol",
         image: "assets/images/cars/audi-q3/audi-q3-2011-veiron-auto-rent.png",
         pricing: {
-            tier1: { daily: 80, weekly: 480, monthly: 1600 },
-            tier2: { daily: 75, weekly: 450, monthly: 1500 },
-            tier3: { daily: 70, weekly: 420, monthly: 1400 },
-            tier4: { daily: 65, weekly: 390, monthly: 1300 }
+            tier1: { daily: 75, weekly: 450, monthly: 1500 },
+            tier2: { daily: 70, weekly: 420, monthly: 1400 },
+            tier3: { daily: 65, weekly: 390, monthly: 1300 },
+            tier4: { daily: 60, weekly: 360, monthly: 1200 }
         },
         warranty: 1500,
         highlighted: true
@@ -52,9 +52,9 @@ const carData = [
         image: "assets/images/cars/mazda-6-hatchback/mazda-6-rent-a-car.png",
         pricing: {
             tier1: { daily: 40, weekly: 240, monthly: 800 },
-            tier2: { daily: 38, weekly: 228, monthly: 760 },
-            tier3: { daily: 36, weekly: 216, monthly: 720 },
-            tier4: { daily: 34, weekly: 204, monthly: 680 }
+            tier2: { daily: 37, weekly: 222, monthly: 740 },
+            tier3: { daily: 34, weekly: 204, monthly: 680 },
+            tier4: { daily: 32, weekly: 192, monthly: 640 }
         },
         warranty: 1000,
         highlighted: false
@@ -73,7 +73,7 @@ const carData = [
             tier1: { daily: 70, weekly: 420, monthly: 1400 },
             tier2: { daily: 67, weekly: 402, monthly: 1340 },
             tier3: { daily: 63, weekly: 378, monthly: 1260 },
-            tier4: { daily: 60, weekly: 360, monthly: 1200 }
+            tier4: { daily: 55, weekly: 330, monthly: 1100 }
         },
         warranty: 2000,
         highlighted: true
@@ -90,9 +90,9 @@ const carData = [
         image: "assets/images/cars/bmw-530-gt/bmw-seria5-gt-satu-mare.png",
         pricing: {
             tier1: { daily: 80, weekly: 480, monthly: 1600 },
-            tier2: { daily: 76, weekly: 456, monthly: 1520 },
-            tier3: { daily: 72, weekly: 432, monthly: 1440 },
-            tier4: { daily: 68, weekly: 408, monthly: 1360 }
+            tier2: { daily: 72, weekly: 432, monthly: 1440 },
+            tier3: { daily: 60, weekly: 360, monthly: 1200 },
+            tier4: { daily: 55, weekly: 330, monthly: 1100 }
         },
         warranty: 2500,
         highlighted: false
@@ -109,7 +109,7 @@ const carData = [
         image: "assets/images/cars/mercedes-e-class/mercedes-e-class-luxury-satu-mare.png",
         pricing: {
             tier1: { daily: 65, weekly: 390, monthly: 1300 },
-            tier2: { daily: 62, weekly: 372, monthly: 1240 },
+            tier2: { daily: 63, weekly: 378, monthly: 1260 },
             tier3: { daily: 60, weekly: 360, monthly: 1200 },
             tier4: { daily: 57, weekly: 342, monthly: 1140 }
         },
@@ -536,6 +536,10 @@ const carData = [
     }
 ];
 
+const CAR_IMAGE_FALLBACKS = {
+    'toyota-rav4': '/assets/images/cars/toyota-rav4/toyota-rav4-suv-rent-a-car.png'
+};
+
 // Additional services data
 const additionalServices = {
     insurance: {
@@ -608,10 +612,15 @@ document.addEventListener('DOMContentLoaded', function() {
     renderCarGrid();
     setupEventListeners();
     updateReservationBar();
-    
+
+    // Hide reservation bar on step 1
+    if (elements.reservationBar && bookingState.currentStep === 1) {
+        elements.reservationBar.style.display = 'none';
+    }
+
     // Initial validation for step 1
     validateStep1AndUpdateButton();
-    
+
     // Initialize footer overlap prevention
     initFooterOverlapPrevention();
 });
@@ -889,7 +898,12 @@ function updateReservationBar() {
             </div>
         `;
     } else {
-        elements.selectedCarInfo.innerHTML = '<span class="no-selection">Select a car to continue</span>';
+        // Show message only from step 2 onwards
+        if (bookingState.currentStep >= 2) {
+            elements.selectedCarInfo.innerHTML = '<span class="no-selection">Select a car to continue</span>';
+        } else {
+            elements.selectedCarInfo.innerHTML = '';
+        }
         elements.reservationDates.innerHTML = '';
         elements.reservationTotal.innerHTML = '';
         
@@ -1161,7 +1175,7 @@ function updateStepDisplay() {
             step.classList.remove('active');
         }
     });
-    
+
     // Update step content
     elements.bookingSteps.forEach((step, index) => {
         if (index + 1 === bookingState.currentStep) {
@@ -1170,7 +1184,16 @@ function updateStepDisplay() {
             step.classList.add('hidden');
         }
     });
-    
+
+    // Show/hide reservation bar based on step
+    if (elements.reservationBar) {
+        if (bookingState.currentStep >= 2) {
+            elements.reservationBar.style.display = 'block';
+        } else {
+            elements.reservationBar.style.display = 'none';
+        }
+    }
+
     // Update final summary on step 4
     if (bookingState.currentStep === 4) {
         updateFinalSummary();

@@ -368,6 +368,14 @@ body {
     background: #1a1a1a;
 }
 
+.color-swatch.blue {
+    background: #1e40af;
+}
+
+.color-swatch.orange {
+    background: #ea580c;
+}
+
 /* Car Gallery */
 .car-gallery {
     padding: 15px 15px 0;
