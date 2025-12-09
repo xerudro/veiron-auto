@@ -581,7 +581,7 @@ const carData = [
         luggage: 3,
         doors: 5,
         fuel: "Petrol",
-        image: "assets/images/cars/placeholder.jpg",
+        image: "assets/images/cars/toyota-avensis-combi/toyota-avensis-combi-solutionare-daune-auto-satu-mare.png",
         pricing: {
             tier1: { daily: 40, weekly: 240, monthly: 800 },
             tier2: { daily: 38, weekly: 228, monthly: 760 },
@@ -601,7 +601,7 @@ const CAR_IMAGE_FALLBACKS = {
     'vw-tiguan-automat': '/assets/images/cars/vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png',
     'ssangyong-actyon-automat': '/assets/images/cars/ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png',
     'ssangyong-korando': '/assets/images/cars/ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png',
-    'toyota-avensis-combi': '/assets/images/cars/placeholder.svg'
+    'toyota-avensis-combi': '/assets/images/cars/toyota-avensis-combi/toyota-avensis-combi-solutionare-daune-auto-satu-mare.png'
 };
 
 // Additional services data

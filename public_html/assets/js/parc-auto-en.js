@@ -280,7 +280,7 @@ const CAR_MODELS = {
     'toyota-avensis-combi': {
         title: 'TOYOTA AVENSIS COMBI',
         images: [
-            { file: 'placeholder.jpg', alt: 'Toyota Avensis Combi - estate car rental Satu Mare', isDirectImage: true }
+            { file: 'toyota-avensis-combi/toyota-avensis-combi-solutionare-daune-auto-satu-mare.png', alt: 'Toyota Avensis Combi - estate car rental Satu Mare', isDirectImage: true }
         ]
     }
 };
@@ -555,7 +555,7 @@ function getDefaultImages(carId, carName) {
         'vw-tiguan-automat': 'vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png', // VW Tiguan automatic
         'ssangyong-actyon-automat': 'ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png', // SsangYong Actyon
         'ssangyong-korando': 'ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png', // SsangYong Korando
-        'toyota-avensis-combi': 'placeholder.jpg' // Toyota Avensis Combi (image to be added)
+        'toyota-avensis-combi': 'toyota-avensis-combi/toyota-avensis-combi-solutionare-daune-auto-satu-mare.png' // Toyota Avensis Combi
     };
     
     // Check if we have a specific image for this car
