@@ -418,6 +418,13 @@ body {
     object-fit: contain;
 }
 
+/* SsangYong Actyon - micșorare cu 10% */
+.car-card[data-model="ssangyong-actyon-automat"] .main-image {
+    transform: scale(1.0);
+    transform-origin: center;
+    object-fit: contain;
+}
+
 .car-card[data-model="mercedes-gle"] .main-image,
 .car-card[data-model="mercedes-gle-automat"] .main-image {
     transform: scale(1.0);

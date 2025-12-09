@@ -533,6 +533,63 @@ const carData = [
         },
         warranty: 2000,
         highlighted: true
+    },
+    {
+        id: 29,
+        name: "SSANGYONG KGM ACTYON",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Petrol",
+        image: "assets/images/cars/ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png",
+        pricing: {
+            tier1: { daily: 80, weekly: 480, monthly: 1600 },
+            tier2: { daily: 77, weekly: 462, monthly: 1540 },
+            tier3: { daily: 74, weekly: 444, monthly: 1480 },
+            tier4: { daily: 70, weekly: 420, monthly: 1400 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    {
+        id: 30,
+        name: "SSANGYONG KGM KORANDO",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 5,
+        fuel: "Petrol",
+        image: "assets/images/cars/ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png",
+        pricing: {
+            tier1: { daily: 60, weekly: 360, monthly: 1200 },
+            tier2: { daily: 57, weekly: 342, monthly: 1140 },
+            tier3: { daily: 54, weekly: 324, monthly: 1080 },
+            tier4: { daily: 50, weekly: 300, monthly: 1000 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    {
+        id: 31,
+        name: "TOYOTA AVENSIS COMBI",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 5,
+        fuel: "Petrol",
+        image: "assets/images/cars/placeholder.jpg",
+        pricing: {
+            tier1: { daily: 40, weekly: 240, monthly: 800 },
+            tier2: { daily: 38, weekly: 228, monthly: 760 },
+            tier3: { daily: 36, weekly: 216, monthly: 720 },
+            tier4: { daily: 34, weekly: 204, monthly: 680 }
+        },
+        warranty: 300,
+        highlighted: false
     }
 ];
 
@@ -542,8 +599,8 @@ const CAR_IMAGE_FALLBACKS = {
     'vw-jetta-manual': '/assets/images/cars/vw-jetta-2.0/vw-jetta-2-0-diese-satu-mare-ieftin.png',
     'vw-t-cross-automat': '/assets/images/cars/vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png',
     'vw-tiguan-automat': '/assets/images/cars/vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png',
-    'ssangyong-actyon-automat': '/assets/images/cars/placeholder.svg',
-    'ssangyong-korando': '/assets/images/cars/placeholder.svg',
+    'ssangyong-actyon-automat': '/assets/images/cars/ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png',
+    'ssangyong-korando': '/assets/images/cars/ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png',
     'toyota-avensis-combi': '/assets/images/cars/placeholder.svg'
 };
 

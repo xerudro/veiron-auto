@@ -268,13 +268,13 @@ const CAR_MODELS = {
     'ssangyong-actyon-automat': {
         title: 'SSANGYONG KGM ACTYON',
         images: [
-            { file: 'placeholder.jpg', alt: 'SsangYong KGM Actyon - închiriere SUV automat Satu Mare', isDirectImage: true }
+            { file: 'ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png', alt: 'SsangYong KGM Actyon - închiriere SUV automat Satu Mare', isDirectImage: true }
         ]
     },
     'ssangyong-korando': {
         title: 'SSANGYONG KGM KORANDO',
         images: [
-            { file: 'placeholder.jpg', alt: 'SsangYong KGM Korando - închiriere SUV Satu Mare', isDirectImage: true }
+            { file: 'ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png', alt: 'SsangYong KGM Korando - închiriere SUV Satu Mare', isDirectImage: true }
         ]
     },
     'toyota-avensis-combi': {
@@ -553,8 +553,8 @@ function getDefaultImages(carId, carName) {
         'vw-jetta-manual': 'vw-jetta-2.0/vw-jetta-2-0-diese-satu-mare-ieftin.png', // VW Jetta 2.0 manual
         'vw-t-cross-automat': 'vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png', // VW T-Cross automat
         'vw-tiguan-automat': 'vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png', // VW Tiguan automat
-        'ssangyong-actyon-automat': 'placeholder.jpg', // SsangYong Actyon (imagine va fi adăugată)
-        'ssangyong-korando': 'placeholder.jpg', // SsangYong Korando (imagine va fi adăugată)
+        'ssangyong-actyon-automat': 'ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png', // SsangYong Actyon
+        'ssangyong-korando': 'ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png', // SsangYong Korando
         'toyota-avensis-combi': 'placeholder.jpg' // Toyota Avensis Combi (imagine va fi adăugată)
     };
     

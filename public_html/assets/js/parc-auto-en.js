@@ -268,13 +268,13 @@ const CAR_MODELS = {
     'ssangyong-actyon-automat': {
         title: 'SSANGYONG KGM ACTYON',
         images: [
-            { file: 'placeholder.jpg', alt: 'SsangYong KGM Actyon - automatic SUV rental Satu Mare', isDirectImage: true }
+            { file: 'ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png', alt: 'SsangYong KGM Actyon - automatic SUV rental Satu Mare', isDirectImage: true }
         ]
     },
     'ssangyong-korando': {
         title: 'SSANGYONG KGM KORANDO',
         images: [
-            { file: 'placeholder.jpg', alt: 'SsangYong KGM Korando - SUV rental Satu Mare', isDirectImage: true }
+            { file: 'ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png', alt: 'SsangYong KGM Korando - SUV rental Satu Mare', isDirectImage: true }
         ]
     },
     'toyota-avensis-combi': {
@@ -553,8 +553,8 @@ function getDefaultImages(carId, carName) {
         'vw-jetta-manual': 'vw-jetta-2.0/vw-jetta-2-0-diese-satu-mare-ieftin.png', // VW Jetta 2.0 manual
         'vw-t-cross-automat': 'vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png', // VW T-Cross automatic
         'vw-tiguan-automat': 'vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png', // VW Tiguan automatic
-        'ssangyong-actyon-automat': 'placeholder.jpg', // SsangYong Actyon (image to be added)
-        'ssangyong-korando': 'placeholder.jpg', // SsangYong Korando (image to be added)
+        'ssangyong-actyon-automat': 'ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png', // SsangYong Actyon
+        'ssangyong-korando': 'ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png', // SsangYong Korando
         'toyota-avensis-combi': 'placeholder.jpg' // Toyota Avensis Combi (image to be added)
     };
     
