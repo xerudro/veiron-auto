@@ -114,7 +114,35 @@
                                     <option value="luxury">Luxury</option>
                                 </select>
                             </div>
-                            
+
+                            <div class="filter-group search-filter-group">
+                                <label for="search-filter">Căutare:</label>
+                                <input
+                                    type="text"
+                                    id="search-filter"
+                                    class="filter-select"
+                                    placeholder="Caută mașină..."
+                                    autocomplete="off"
+                                >
+                                <small class="search-hint">Caută după nume, marcă sau model</small>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="brand-filter">Marcă:</label>
+                                <select id="brand-filter" class="filter-select">
+                                    <option value="">Toate mărcile</option>
+                                    <!-- Options populated dynamically by JavaScript -->
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="color-filter">Culoare:</label>
+                                <select id="color-filter" class="filter-select">
+                                    <option value="">Toate culorile</option>
+                                    <!-- Options populated dynamically by JavaScript -->
+                                </select>
+                            </div>
+
                             <div class="filter-group">
                                 <label for="passengers-filter">Pasageri:</label>
                                 <select id="passengers-filter" class="filter-select">

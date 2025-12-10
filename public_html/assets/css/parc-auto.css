@@ -127,6 +127,24 @@ body {
     margin-bottom: 8px;
 }
 
+/* Search Filter Styles */
+.search-filter-group {
+    margin-bottom: 20px;
+}
+
+.search-hint {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 12px;
+    font-style: italic;
+}
+
+#search-filter::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
 .filter-actions {
     margin-top: 20px;
     padding-top: 15px;

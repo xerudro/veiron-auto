@@ -639,6 +639,29 @@ function mapPassengers(car) {
     return 5; // Default
 }
 
+// Extract brand/manufacturer from car name
+function extractBrand(carName) {
+    const name = carName.toUpperCase();
+
+    // Map specific brand patterns
+    if (name.includes('MERCEDES')) return 'MERCEDES';
+    if (name.includes('BMW')) return 'BMW';
+    if (name.includes('AUDI')) return 'AUDI';
+    if (name.includes('RENAULT')) return 'RENAULT';
+    if (name.includes('SKODA')) return 'SKODA';
+    if (name.includes('VW') || name.includes('VOLKSWAGEN')) return 'VOLKSWAGEN';
+    if (name.includes('TOYOTA')) return 'TOYOTA';
+    if (name.includes('SEAT')) return 'SEAT';
+    if (name.includes('VOLVO')) return 'VOLVO';
+    if (name.includes('MAZDA')) return 'MAZDA';
+    if (name.includes('HONDA')) return 'HONDA';
+    if (name.includes('MITSUBISHI')) return 'MITSUBISHI';
+    if (name.includes('SSANGYONG')) return 'SSANGYONG';
+
+    // Fallback: first word before space
+    return name.split(' ')[0];
+}
+
 // Convert EUR to RON
 function convertEurToRon(eurPrice) {
     return Math.round(eurPrice * 5.07);
@@ -786,10 +809,14 @@ class CarFleet {
         try {
             // Load car data from JSON
             await this.loadCarData();
-            
+
+            // Populate dynamic filters
+            this.populateBrandFilter();
+            this.populateColorFilter();
+
             // Clear existing hardcoded cars
             this.carsGrid.innerHTML = '';
-            
+
             // Add event listeners
             Object.values(this.filters).forEach(filter => {
                 if (filter.id === 'min-price-filter' || filter.id === 'max-price-filter') {
@@ -801,6 +828,30 @@ class CarFleet {
             });
 
             this.clearFiltersBtn.addEventListener('click', () => this.clearAllFilters());
+
+            // Search filter with debounce
+            let searchTimeout;
+            const searchInput = document.getElementById('search-filter');
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        this.applyFilters();
+                    }, 300); // 300ms delay
+                });
+            }
+
+            // Brand filter
+            const brandFilter = document.getElementById('brand-filter');
+            if (brandFilter) {
+                brandFilter.addEventListener('change', () => this.applyFilters());
+            }
+
+            // Color filter
+            const colorFilter = document.getElementById('color-filter');
+            if (colorFilter) {
+                colorFilter.addEventListener('change', () => this.applyFilters());
+            }
 
             // Check URL parameters on load
             this.handleUrlParameters();
@@ -1231,12 +1282,19 @@ class CarFleet {
     }
 
     applyFilters() {
+        const searchFilter = document.getElementById('search-filter');
+        const brandFilter = document.getElementById('brand-filter');
+        const colorFilter = document.getElementById('color-filter');
+
         const activeFilters = {
             category: this.filters.category.value,
             passengers: this.filters.passengers.value,
             transmission: this.filters.transmission.value,
             minPrice: this.filters.minPrice.value ? parseFloat(this.filters.minPrice.value) : null,
-            maxPrice: this.filters.maxPrice.value ? parseFloat(this.filters.maxPrice.value) : null
+            maxPrice: this.filters.maxPrice.value ? parseFloat(this.filters.maxPrice.value) : null,
+            search: searchFilter ? searchFilter.value.toLowerCase().trim() : '',
+            brand: brandFilter ? brandFilter.value : '',
+            color: colorFilter ? colorFilter.value : ''
         };
 
         // Filter cars from all available cars
@@ -1278,6 +1336,30 @@ class CarFleet {
                     shouldShow = false;
                 }
                 if (activeFilters.maxPrice !== null && carPrice > activeFilters.maxPrice) {
+                    shouldShow = false;
+                }
+            }
+
+            // Search filter
+            if (activeFilters.search && activeFilters.search !== '') {
+                const searchText = `${car.name} ${car.displayCategory} ${car.displayTransmission}`.toLowerCase();
+                if (!searchText.includes(activeFilters.search)) {
+                    shouldShow = false;
+                }
+            }
+
+            // Brand filter
+            if (activeFilters.brand && activeFilters.brand !== '') {
+                const carBrand = extractBrand(car.name);
+                if (carBrand !== activeFilters.brand) {
+                    shouldShow = false;
+                }
+            }
+
+            // Color filter
+            if (activeFilters.color && activeFilters.color !== '') {
+                const colorData = CAR_COLORS[car.id];
+                if (!colorData || colorData.color !== activeFilters.color) {
                     shouldShow = false;
                 }
             }
@@ -1354,6 +1436,14 @@ class CarFleet {
             filter.classList.remove('filter-active');
         });
 
+        // Reset new filters (search, brand, color)
+        const searchFilter = document.getElementById('search-filter');
+        const brandFilter = document.getElementById('brand-filter');
+        const colorFilter = document.getElementById('color-filter');
+        if (searchFilter) searchFilter.value = '';
+        if (brandFilter) brandFilter.value = '';
+        if (colorFilter) colorFilter.value = '';
+
         // Reset to page 1
         currentPage = 1;
 
@@ -1364,7 +1454,86 @@ class CarFleet {
         url.search = '';
         window.history.replaceState({}, '', url);
     }
-    
+
+    /**
+     * Populează dinamic filtrul de brand cu mărcile disponibile
+     */
+    populateBrandFilter() {
+        const brandFilter = document.getElementById('brand-filter');
+        if (!brandFilter) return;
+
+        // Extract unique brands from all cars
+        const brandsSet = new Set();
+        this.allCars.forEach(car => {
+            const brand = extractBrand(car.name);
+            if (brand) {
+                brandsSet.add(brand);
+            }
+        });
+
+        // Sort brands alphabetically
+        const brands = Array.from(brandsSet).sort();
+
+        // Clear existing options except the first one (Toate mărcile)
+        while (brandFilter.options.length > 1) {
+            brandFilter.remove(1);
+        }
+
+        // Add brand options
+        brands.forEach(brand => {
+            const option = document.createElement('option');
+            option.value = brand;
+            // Capitalize first letter for display
+            option.textContent = brand.charAt(0) + brand.slice(1).toLowerCase();
+            brandFilter.appendChild(option);
+        });
+    }
+
+    /**
+     * Populează dinamic filtrul de culoare cu culorile disponibile
+     */
+    populateColorFilter() {
+        const colorFilter = document.getElementById('color-filter');
+        if (!colorFilter) return;
+
+        // Extract unique colors from CAR_COLORS based on existing cars
+        const colorsSet = new Set();
+        const colorLabels = {
+            'white': 'Alb',
+            'grey': 'Gri',
+            'black': 'Negru',
+            'gold': 'Auriu',
+            'blue': 'Albastru',
+            'orange': 'Portocaliu'
+        };
+
+        this.allCars.forEach(car => {
+            const colorData = CAR_COLORS[car.id];
+            if (colorData && colorData.color) {
+                colorsSet.add(colorData.color);
+            }
+        });
+
+        // Sort colors in specific order
+        const colorOrder = ['white', 'grey', 'black', 'gold', 'blue', 'orange'];
+        const colors = Array.from(colorsSet).sort((a, b) => {
+            return colorOrder.indexOf(a) - colorOrder.indexOf(b);
+        });
+
+        // Clear existing options except the first one (Toate culorile)
+        while (colorFilter.options.length > 1) {
+            colorFilter.remove(1);
+        }
+
+        // Add color options
+        colors.forEach(color => {
+            const option = document.createElement('option');
+            option.value = color;
+            option.textContent = colorLabels[color] || color;
+            colorFilter.appendChild(option);
+        });
+    }
+
     /**
      * Calculează numărul de zile între două date
      * @param {string} startDate - Data de început (format YYYY-MM-DD)

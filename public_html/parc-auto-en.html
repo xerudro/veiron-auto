@@ -114,7 +114,35 @@
                                     <option value="luxury">Luxury</option>
                                 </select>
                             </div>
-                            
+
+                            <div class="filter-group search-filter-group">
+                                <label for="search-filter">Search:</label>
+                                <input
+                                    type="text"
+                                    id="search-filter"
+                                    class="filter-select"
+                                    placeholder="Search car..."
+                                    autocomplete="off"
+                                >
+                                <small class="search-hint">Search by name, brand or model</small>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="brand-filter">Brand:</label>
+                                <select id="brand-filter" class="filter-select">
+                                    <option value="">All Brands</option>
+                                    <!-- Options populated dynamically by JavaScript -->
+                                </select>
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="color-filter">Color:</label>
+                                <select id="color-filter" class="filter-select">
+                                    <option value="">All Colors</option>
+                                    <!-- Options populated dynamically by JavaScript -->
+                                </select>
+                            </div>
+
                             <div class="filter-group">
                                 <label for="passengers-filter">Passengers:</label>
                                 <select id="passengers-filter" class="filter-select">
