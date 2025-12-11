@@ -24,8 +24,7 @@ public_html/
 |   |   |   |-- app.js
 |   |   |   |-- api-client.js
 |   |   |   |-- booking.js / booking-en.js
-|   |   |   |-- parc-auto.js / parc-auto-en.js
-|   |   |   `-- config.js     # MODE/API toggles
+|   |   |   `-- parc-auto.js / parc-auto-en.js
 |   |   `-- json/car-pricing-data.json
 |   |-- *.html                # index-ro/en, booking, parc-auto, contact, despre-noi, policies
 |   `-- README.md             # Frontend deployment guide
@@ -52,7 +51,7 @@ public_html/
 ### 1. Static Website Only (Frontend Package)
 
 1. `cd frontend` and upload the contents to your host (`public_html`, `www`, Netlify, GitHub Pages, etc.).
-2. Update `assets/js/config.js` so `MODE` stays `static` and `API_ENABLED` remains `false`.
+2. Leave `assets/js/api-client.js` as-is so the auto-detection keeps `window.API_ENABLED` false when no backend responds.
 3. Customize copy, pricing, and contact details in the HTML files and `assets/json/car-pricing-data.json`.
 4. Preview locally with `npx http-server -p 8080 frontend` or `python -m http.server 8080`.
 
@@ -75,7 +74,7 @@ This mode needs only HTML hosting because all interactive pieces read from the J
    ```
 5. Point Apache/Nginx rewrites at `backend/api/v1/index.php`, and allow `uploads/` plus `logs/` to be writable.
 6. Run `php tests/test_env_config.php` and request `/backend/api/v1/health` to confirm the API is live.
-7. Switch the frontend to API mode in `frontend/assets/js/config.js` (`MODE: 'api'`, `API_ENABLED: true`, `API_BASE_URL: '/backend/api/v1'` or the absolute URL).
+7. Update the `possibleBackendUrls` array (or manually instantiate `VeironautoAPI`) in `frontend/assets/js/api-client.js` so it points to your deployed backend endpoint and exposes it via `window.veironautoAPI`.
 
 ## Frontend Highlights
 
