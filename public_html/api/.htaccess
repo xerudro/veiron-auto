@@ -1,0 +1,37 @@
+# API Routing Configuration
+# Redirects all requests to v1/index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Don't rewrite files or directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Rewrite everything else to v1/index.php
+    RewriteRule ^(.*)$ v1/index.php [QSA,L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    # Prevent MIME sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Frame Options
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Remove X-Powered-By header
+    Header unset X-Powered-By
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Prevent access to sensitive files
+<FilesMatch "\.(env|log|sql|md)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

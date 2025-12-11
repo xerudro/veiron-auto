@@ -114,3 +114,7 @@ docs/README_root.md
 public_html/assets/docs/README_root.md
 public_html/update-progress.ps1
 public_html/nul
+public_html/.env
+public_html/.env.example
+public_html/composer.json
+public_html/EMAIL_SYSTEM_README.md

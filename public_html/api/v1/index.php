@@ -1,0 +1,181 @@
+<?php
+/**
+ * VEIRONAUTO REST API v1
+ * Main API Entry Point
+ */
+
+// Load configuration first
+require_once __DIR__ . '/../../config/api.php';
+
+// Error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', API_DEBUG);
+
+// Set timezone
+date_default_timezone_set('Europe/Bucharest');
+
+// Load core classes
+require_once __DIR__ . '/../core/Request.php';
+require_once __DIR__ . '/../core/Response.php';
+require_once __DIR__ . '/../core/Router.php';
+require_once __DIR__ . '/../core/Auth.php';
+
+// CORS Headers
+header('Access-Control-Allow-Origin: *'); // In production, use specific origin
+header('Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
+
+// Handle preflight OPTIONS request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(204);
+    exit;
+}
+
+// Initialize request and router
+$request = new Request();
+$router = new Router($request);
+
+// ============================================
+// PUBLIC ROUTES (No authentication required)
+// ============================================
+
+// Health check
+$router->get('/v1/health', function($req) {
+    Response::success([
+        'status' => 'healthy',
+        'version' => API_VERSION,
+        'timestamp' => date('c')
+    ], 'API is running');
+});
+
+// Authentication routes
+$router->post('/v1/auth/login', function($req) {
+    $email = $req->body('email');
+    $password = $req->body('password');
+    
+    if (empty($email) || empty($password)) {
+        Response::badRequest('Email and password are required');
+    }
+    
+    $user = Auth::authenticate($email, $password);
+    
+    if (!$user) {
+        Response::unauthorized('Invalid credentials');
+    }
+    
+    $token = Auth::generateToken($user);
+    
+    Response::success([
+        'token' => $token,
+        'user' => $user
+    ], 'Login successful');
+});
+
+$router->post('/v1/auth/logout', function($req) {
+    $token = Auth::extractToken($req);
+    
+    if (!$token) {
+        Response::badRequest('Token not provided');
+    }
+    
+    $payload = Auth::validateToken($token);
+    
+    if (!$payload) {
+        Response::badRequest('Invalid token');
+    }
+    
+    Auth::blacklistToken($token, $payload['exp']);
+    
+    Response::success(null, 'Logout successful');
+});
+
+// Test endpoint
+$router->get('/v1/test', function($req) {
+    Response::success([
+        'message' => 'API is working!',
+        'method' => $req->method(),
+        'uri' => $req->uri(),
+        'query' => $req->query(),
+        'headers' => $req->headers()
+    ]);
+});
+
+// ============================================
+// PROTECTED ROUTES (Require authentication)
+// ============================================
+
+// Cars endpoints (will be implemented in Phase 2)
+$router->get('/v1/cars', function($req) {
+    // TODO: Implement CarController
+    Response::success([], 'Cars endpoint - Coming soon');
+});
+
+$router->get('/v1/cars/{id}', function($req) {
+    $carId = $req->params('id');
+    Response::success(['id' => $carId], 'Car details endpoint - Coming soon');
+});
+
+// Bookings endpoints (will be implemented in Phase 3)
+$router->get('/v1/bookings', function($req) {
+    Response::success([], 'Bookings endpoint - Coming soon', ['auth']);
+});
+
+$router->post('/v1/bookings', function($req) {
+    Response::success([], 'Create booking endpoint - Coming soon');
+});
+
+// Admin only endpoint example
+$router->get('/v1/admin/stats', function($req) {
+    // Check authentication
+    $user = Auth::user($req);
+    
+    if (!$user) {
+        Response::unauthorized();
+    }
+    
+    if (!Auth::hasRole($user, 'admin')) {
+        Response::forbidden('Admin access required');
+    }
+    
+    Response::success([
+        'stats' => 'Admin statistics here',
+        'user' => $user
+    ]);
+});
+
+// ============================================
+// ERROR HANDLERS
+// ============================================
+
+// Set custom error handler
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+    if (API_DEBUG) {
+        Response::serverError("Error: $errstr in $errfile on line $errline");
+    } else {
+        Response::serverError('An internal error occurred');
+    }
+});
+
+// Set custom exception handler
+set_exception_handler(function($exception) {
+    if (API_DEBUG) {
+        Response::serverError($exception->getMessage() . ' in ' . $exception->getFile() . ':' . $exception->getLine());
+    } else {
+        Response::serverError('An internal error occurred');
+    }
+});
+
+// ============================================
+// DISPATCH REQUEST
+// ============================================
+
+try {
+    $router->dispatch();
+} catch (Exception $e) {
+    if (API_DEBUG) {
+        Response::serverError($e->getMessage());
+    } else {
+        Response::serverError('An error occurred while processing your request');
+    }
+}
+?>
