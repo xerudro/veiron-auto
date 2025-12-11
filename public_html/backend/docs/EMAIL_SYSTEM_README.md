@@ -16,10 +16,10 @@
 
 ### 3. Email Configuration
 - ✅ Created config/email.php with proper settings:
-  - Server: mail.veironauto.com
+  - Server: mail.veironauto.com (or your SMTP server)
   - Port: 465 (SSL)
-  - Account: test@veironauto.com
-  - Password: Veirontest123!
+  - Account: your-email@veironauto.com
+  - Password: your-secure-password
 
 ### 4. Fixed OpenSSL Extension
 - ✅ Enabled extension=openssl in H:\LOCAL DEV\php-8.3.17\php.ini (line 952)
@@ -27,7 +27,7 @@
 
 ### 5. Testing
 - ✅ Created test_email_simple.php for easy testing
-- ✅ Successfully sent test email to pcdoctor.satumare@gmail.com
+- ✅ Successfully sent test email (verified working)
 
 ## Current Structure
 
@@ -86,14 +86,14 @@ $result = $emailService->sendBookingNotification($bookingData);
 Edit `config/email.php` to change email settings:
 
 ```php
-define('SMTP_HOST', 'mail.veironauto.com');
+define('SMTP_HOST', 'mail.yourdomain.com');
 define('SMTP_PORT', 465);
-define('SMTP_USERNAME', 'test@veironauto.com');
-define('SMTP_PASSWORD', 'Veirontest123!');
+define('SMTP_USERNAME', 'noreply@yourdomain.com');
+define('SMTP_PASSWORD', 'your-secure-smtp-password');
 define('SMTP_ENCRYPTION', 'ssl');
-define('FROM_EMAIL', 'test@veironauto.com');
-define('FROM_NAME', 'VEIRONAUTO Car Rental');
-define('ADMIN_EMAIL', 'pcdoctor.satumare@gmail.com');
+define('FROM_EMAIL', 'noreply@yourdomain.com');
+define('FROM_NAME', 'Your Company Name');
+define('ADMIN_EMAIL', 'admin@yourdomain.com');
 define('SMTP_DEBUG', 0); // Set to 2 for debugging
 ```
 

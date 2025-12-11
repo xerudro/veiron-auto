@@ -29,7 +29,7 @@ Professional REST API with JWT authentication, ready for Vue.js admin dashboard.
 
 ### 1. Create JWT Blacklist Table
 ```bash
-mysql -u veironau1_admin -p veironau1_newsite < database/migrations/add_jwt_blacklist.sql
+mysql -u your_db_user -p your_database_name < database/migrations/add_jwt_blacklist.sql
 ```
 
 Or run in MySQL:

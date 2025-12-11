@@ -172,7 +172,7 @@ Required tables:
 
 To apply the schema:
 ```bash
-mysql -h 95.217.111.248 -u veironau1_admin -p veironau1_newsite < database/schema.sql
+mysql -h your_db_host -u your_db_user -p your_database_name < database/schema.sql
 ```
 
 Or import via phpMyAdmin/Adminer.
