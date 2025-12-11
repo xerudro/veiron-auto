@@ -1,0 +1,20 @@
+{
+    "name": "veironauto/car-rental-system",
+    "description": "VEIRONAUTO Car Rental Management System",
+    "type": "project",
+    "require": {
+        "php": ">=8.1",
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "VeironAuto\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "prefer-stable": true,
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}

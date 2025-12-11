@@ -20,6 +20,9 @@ require_once __DIR__ . '/../core/Response.php';
 require_once __DIR__ . '/../core/Router.php';
 require_once __DIR__ . '/../core/Auth.php';
 
+// Load controllers
+require_once __DIR__ . '/../controllers/CarController.php';
+
 // CORS Headers
 header('Access-Control-Allow-Origin: *'); // In production, use specific origin
 header('Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS');
@@ -34,6 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 // Initialize request and router
 $request = new Request();
 $router = new Router($request);
+
+// Initialize controllers
+$carController = new CarController();
 
 // ============================================
 // PUBLIC ROUTES (No authentication required)
@@ -104,15 +110,105 @@ $router->get('/v1/test', function($req) {
 // PROTECTED ROUTES (Require authentication)
 // ============================================
 
-// Cars endpoints (will be implemented in Phase 2)
-$router->get('/v1/cars', function($req) {
-    // TODO: Implement CarController
-    Response::success([], 'Cars endpoint - Coming soon');
+// ============================================
+// CARS ENDPOINTS
+// ============================================
+
+// Get all cars (public - for browsing)
+$router->get('/v1/cars', function($req) use ($carController) {
+    return $carController->index($req);
 });
 
-$router->get('/v1/cars/{id}', function($req) {
-    $carId = $req->params('id');
-    Response::success(['id' => $carId], 'Car details endpoint - Coming soon');
+// Get car brands (public)
+$router->get('/v1/cars/brands', function($req) use ($carController) {
+    return $carController->getBrands($req);
+});
+
+// Get car statistics (admin only)
+$router->get('/v1/cars/stats', function($req) use ($carController) {
+    $user = Auth::user($req);
+    if (!$user || !Auth::hasRole($user, 'admin')) {
+        Response::forbidden('Admin access required');
+    }
+    return $carController->getStats($req);
+});
+
+// Get single car (public)
+$router->get('/v1/cars/{id}', function($req) use ($carController) {
+    return $carController->show($req);
+});
+
+// Check car availability (public)
+$router->get('/v1/cars/{id}/availability', function($req) use ($carController) {
+    return $carController->checkAvailability($req);
+});
+
+// Get car images (public)
+$router->get('/v1/cars/{id}/images', function($req) use ($carController) {
+    return $carController->getImages($req);
+});
+
+// Create new car (admin only)
+$router->post('/v1/cars', function($req) use ($carController) {
+    $user = Auth::user($req);
+    if (!$user || !Auth::hasRole($user, 'admin')) {
+        Response::forbidden('Admin access required');
+    }
+    return $carController->store($req);
+});
+
+// Upload car image (admin/manager only)
+$router->post('/v1/cars/{id}/images', function($req) use ($carController) {
+    $user = Auth::user($req);
+    if (!$user || !Auth::hasRole($user, 'manager')) {
+        Response::forbidden('Manager access required');
+    }
+    return $carController->uploadImage($req);
+});
+
+// Update car - full update (admin only)
+$router->put('/v1/cars/{id}', function($req) use ($carController) {
+    $user = Auth::user($req);
+    if (!$user || !Auth::hasRole($user, 'admin')) {
+        Response::forbidden('Admin access required');
+    }
+    return $carController->update($req);
+});
+
+// Update car - partial update (admin/manager only)
+$router->patch('/v1/cars/{id}', function($req) use ($carController) {
+    $user = Auth::user($req);
+    if (!$user || !Auth::hasRole($user, 'manager')) {
+        Response::forbidden('Manager access required');
+    }
+    return $carController->patch($req);
+});
+
+// Set primary image (admin/manager only)
+$router->patch('/v1/cars/{id}/images/{imageId}/primary', function($req) use ($carController) {
+    $user = Auth::user($req);
+    if (!$user || !Auth::hasRole($user, 'manager')) {
+        Response::forbidden('Manager access required');
+    }
+    return $carController->setPrimaryImage($req);
+});
+
+// Delete car (admin only - soft delete)
+$router->delete('/v1/cars/{id}', function($req) use ($carController) {
+    $user = Auth::user($req);
+    if (!$user || !Auth::hasRole($user, 'admin')) {
+        Response::forbidden('Admin access required');
+    }
+    return $carController->destroy($req);
+});
+
+// Delete car image (admin/manager only)
+$router->delete('/v1/cars/{id}/images/{imageId}', function($req) use ($carController) {
+    $user = Auth::user($req);
+    if (!$user || !Auth::hasRole($user, 'manager')) {
+        Response::forbidden('Manager access required');
+    }
+    return $carController->deleteImage($req);
 });
 
 // Bookings endpoints (will be implemented in Phase 3)

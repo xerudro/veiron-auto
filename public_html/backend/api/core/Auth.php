@@ -153,22 +153,49 @@ class Auth {
     }
     
     /**
+     * Get authenticated user from request
+     * @param Request $request
+     * @return array|null - User data or null if not authenticated
+     */
+    public static function user(Request $request) {
+        $token = self::extractToken($request);
+
+        if (!$token) {
+            return null;
+        }
+
+        $payload = self::validateToken($token);
+
+        if (!$payload) {
+            return null;
+        }
+
+        // Check if token is blacklisted
+        if (self::isTokenBlacklisted($token)) {
+            return null;
+        }
+
+        // Return user data from payload
+        return $payload['user'] ?? null;
+    }
+
+    /**
      * Check if user has required role
      */
     public static function hasRole($user, $requiredRole) {
         if (!isset($user['role'])) {
             return false;
         }
-        
+
         $roleHierarchy = [
             'staff' => 1,
             'manager' => 2,
             'admin' => 3
         ];
-        
+
         $userRoleLevel = $roleHierarchy[$user['role']] ?? 0;
         $requiredRoleLevel = $roleHierarchy[$requiredRole] ?? 0;
-        
+
         return $userRoleLevel >= $requiredRoleLevel;
     }
     
