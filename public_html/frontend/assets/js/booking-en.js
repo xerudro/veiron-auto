@@ -2,6 +2,25 @@
 
 // Car data with pricing tiers
 const carData = [
+            {
+                id: 34,
+                name: "VW Touran",
+                category: "van",
+                transmission: "automatic",
+                passengers: 7,
+                luggage: 5,
+                doors: 5,
+                fuel: "Petrol",
+                image: "assets/images/cars/vw-touran/veiron-rent-vw-touran-inchirieri-auto.png",
+                pricing: {
+                    tier1: { daily: 60, weekly: 360, monthly: 1200 },
+                    tier2: { daily: 56, weekly: 336, monthly: 1120 },
+                    tier3: { daily: 52, weekly: 312, monthly: 1040 },
+                    tier4: { daily: 48, weekly: 288, monthly: 960 }
+                },
+                warranty: 1000,
+                highlighted: false
+            },
         {
             id: 33,
             name: "VW Touareg Automatic",

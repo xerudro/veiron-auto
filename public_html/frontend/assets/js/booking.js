@@ -2,6 +2,25 @@
 
 // Car data with pricing tiers based on Excel rates
 const carData = [
+            {
+                id: 34,
+                name: "VW Touran",
+                category: "van",
+                transmission: "automatic",
+                passengers: 7,
+                luggage: 5,
+                doors: 5,
+                fuel: "Benzină",
+                image: "assets/images/cars/vw-touran/veiron-rent-vw-touran-inchirieri-auto.png",
+                pricing: {
+                    tier1: { daily: 60 },
+                    tier2: { daily: 56 },
+                    tier3: { daily: 52 },
+                    tier4: { daily: 48 }
+                },
+                warranty: 200,
+                highlighted: false
+            },
         {
             id: 33,
             name: "VW Touareg Automat",

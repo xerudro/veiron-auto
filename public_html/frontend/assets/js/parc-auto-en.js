@@ -6,6 +6,12 @@ let carPricingData = null;
 
 // Car Models Configuration
 const CAR_MODELS = {
+        'vw-touran-automat': {
+            title: 'VW TOURAN AUTOMATIC',
+            images: [
+                { file: 'vw-touran/veiron-rent-vw-touran-inchirieri-auto.png', alt: 'VW Touran automatic - car rental Satu Mare', isDirectImage: true }
+            ]
+        },
     'renault-traffic-8plus1': {
         title: 'Renault Traffic 8+1',
         images: [
@@ -555,6 +561,7 @@ function getDefaultImages(carId, carName) {
         'vw-jetta-manual': 'vw-jetta-2.0/vw-jetta-2-0-diese-satu-mare-ieftin.png', // VW Jetta 2.0 manual
         'vw-t-cross-automat': 'vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png', // VW T-Cross automatic
         'vw-tiguan-automat': 'vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png', // VW Tiguan automatic
+        'vw-touran': 'vw-touran/veiron-rent-vw-touran-inchirieri-auto.png', // VW Touran image
         'ssangyong-actyon-automat': 'ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png', // SsangYong Actyon
         'ssangyong-korando': 'ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png', // SsangYong Korando
         'toyota-avensis-combi': 'toyota-avensis-combi/toyota-avensis-combi-solutionare-daune-auto-satu-mare.png' // Toyota Avensis Combi
