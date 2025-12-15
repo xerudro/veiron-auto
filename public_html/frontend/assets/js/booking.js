@@ -3,6 +3,25 @@
 // Car data with pricing tiers based on Excel rates
 const carData = [
             {
+                id: 35,
+                name: "VW Passat Variant 2.0",
+                category: "sedan",
+                transmission: "manual",
+                passengers: 5,
+                luggage: 5,
+                doors: 5,
+                fuel: "Diesel",
+                image: "assets/images/cars/vw-passat-variant/vw-passat-variant-2.0-inchirieri-auto-satu-mare.png",
+                pricing: {
+                    tier1: { daily: 55 },
+                    tier2: { daily: 52 },
+                    tier3: { daily: 48 },
+                    tier4: { daily: 45 }
+                },
+                warranty: 200,
+                highlighted: false
+            },
+            {
                 id: 34,
                 name: "VW Touran",
                 category: "van",
