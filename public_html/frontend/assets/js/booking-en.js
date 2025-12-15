@@ -1434,7 +1434,6 @@ function getPriceCategory(days) {
     return 'tier1'; // Default
 }
 
-// Get equipment name
 function getEquipmentName(equipmentCode) {
     const names = {
         'gps': 'GPS',
@@ -1456,6 +1455,7 @@ function completeBooking() {
             phone: document.getElementById('phone')?.value,
             countryCode: document.getElementById('country-code')?.value,
             birthDate: document.getElementById('birth-date')?.value,
+    // VW Passat CC Automat (added)
             licenseNumber: document.getElementById('license-number')?.value,
             privacyPolicy: document.getElementById('privacy-policy')?.checked,
             commercialInfo: document.getElementById('commercial-info')?.checked

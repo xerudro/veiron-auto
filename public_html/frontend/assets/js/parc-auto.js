@@ -6,6 +6,12 @@ let carPricingData = null;
 
 // Car Models Configuration
 const CAR_MODELS = {
+            'vw-passat-manual': {
+                title: 'VW PASSAT VARIANT 2.0',
+                images: [
+                    { file: 'vw-passat-variant/vw-passat-variant-2.0-inchirieri-auto-satu-mare.png', alt: 'VW Passat Variant 2.0 - închiriere auto Satu Mare', isDirectImage: true }
+                ]
+            },
         'vw-touran-automat': {
             title: 'VW TOURAN AUTOMAT',
             images: [
