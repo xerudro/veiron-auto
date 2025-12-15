@@ -2,6 +2,25 @@
 
 // Car data with pricing tiers based on Excel rates
 const carData = [
+        {
+            id: 33,
+            name: "VW Touareg Automat",
+            category: "suv",
+            transmission: "automatic",
+            passengers: 5,
+            luggage: 5,
+            doors: 5,
+            fuel: "Benzină",
+            image: "assets/images/cars/vw-touareg/vw-touareg-4x4-veiron-auto-satu-mare.png",
+            pricing: {
+                tier1: { daily: 90 },
+                tier2: { daily: 85 },
+                tier3: { daily: 80 },
+                tier4: { daily: 75 }
+            },
+            warranty: 400,
+            highlighted: true
+        },
     {
         id: 1,
         name: "Audi Q3",
@@ -590,6 +609,26 @@ const carData = [
         },
         warranty: 300,
         highlighted: false
+    },
+    // VW Passat CC Automat (added)
+    {
+        id: 32,
+        name: "VW Passat CC Automat",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 4,
+        fuel: "Benzină",
+        image: "assets/images/cars/vw-passat-cc-r-line/inchiriere-vw-pasat-cc-scaune-incalzite-satu-mare.png",
+        pricing: {
+            tier1: { daily: 65 },
+            tier2: { daily: 62 },
+            tier3: { daily: 57 },
+            tier4: { daily: 53 }
+        },
+        warranty: 300,
+        highlighted: true
     }
 ];
 
@@ -602,6 +641,7 @@ const CAR_IMAGE_FALLBACKS = {
     'ssangyong-actyon-automat': '/assets/images/cars/ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png',
     'ssangyong-korando': '/assets/images/cars/ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png',
     'toyota-avensis-combi': '/assets/images/cars/toyota-avensis-combi/toyota-avensis-combi-solutionare-daune-auto-satu-mare.png'
+    ,'vw-passat-cc-automat': '/assets/images/cars/vw-passat-cc-r-line/inchiriere-vw-pasat-cc-scaune-incalzite-satu-mare.png' // VW Passat CC fallback
 };
 
 // Additional services data based on Excel rates

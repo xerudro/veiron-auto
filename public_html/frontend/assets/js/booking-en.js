@@ -2,6 +2,25 @@
 
 // Car data with pricing tiers
 const carData = [
+        {
+            id: 33,
+            name: "VW Touareg Automatic",
+            category: "suv",
+            transmission: "automatic",
+            passengers: 5,
+            luggage: 5,
+            doors: 5,
+            fuel: "Petrol",
+            image: "assets/images/cars/vw-touareg/vw-touareg-4x4-veiron-auto-satu-mare.png",
+            pricing: {
+                tier1: { daily: 90, weekly: 540, monthly: 1800 },
+                tier2: { daily: 85, weekly: 510, monthly: 1700 },
+                tier3: { daily: 80, weekly: 480, monthly: 1600 },
+                tier4: { daily: 75, weekly: 450, monthly: 1500 }
+            },
+            warranty: 400,
+            highlighted: true
+        },
     {
         id: 1,
         name: "Audi Q3",
@@ -590,6 +609,26 @@ const carData = [
         },
         warranty: 300,
         highlighted: false
+    },
+    // VW Passat CC Automat (added)
+    {
+        id: 32,
+        name: "VW Passat CC Automat",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 4,
+        fuel: "Petrol",
+        image: "assets/images/cars/vw-passat-cc-r-line/inchiriere-vw-pasat-cc-scaune-incalzite-satu-mare.png",
+        pricing: {
+            tier1: { daily: 65, weekly: 390, monthly: 1300 },
+            tier2: { daily: 62, weekly: 372, monthly: 1240 },
+            tier3: { daily: 57, weekly: 342, monthly: 1140 },
+            tier4: { daily: 53, weekly: 318, monthly: 1060 }
+        },
+        warranty: 300,
+        highlighted: true
     }
 ];
 
@@ -602,6 +641,7 @@ const CAR_IMAGE_FALLBACKS = {
     'ssangyong-actyon-automat': '/assets/images/cars/ssangyong-actyon/kgm-actyon-benzina-gold-auriu-inchiriere-satu-mare.png',
     'ssangyong-korando': '/assets/images/cars/ssangyong-korando/ssangyong-kgm-korando-daune-auto-satu-mare.png',
     'toyota-avensis-combi': '/assets/images/cars/toyota-avensis-combi/toyota-avensis-combi-solutionare-daune-auto-satu-mare.png'
+    ,'vw-passat-cc-automat': '/assets/images/cars/vw-passat-cc-r-line/inchiriere-vw-pasat-cc-scaune-incalzite-satu-mare.png' // VW Passat CC fallback
 };
 
 // Additional services data

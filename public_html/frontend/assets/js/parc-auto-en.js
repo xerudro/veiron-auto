@@ -514,6 +514,7 @@ function getDefaultImages(carId, carName) {
     // Map car IDs to their corresponding individual image files
     // Each car gets a unique image to avoid duplicates
     const carImageMap = {
+        'vw-touareg-automat': 'vw-touareg/vw-touareg-4x4-veiron-auto-satu-mare.png', // VW Touareg image
         'audi-a3-automat': 'audi-a3-tfsi/audi-a3-inchirieri-auto-satu-mare.png', // Updated Audi A3 image
         'audi-a4-automat': 'audi-a4/audi-a4-inchrieri-auto-satu-mare.png', // Audi A4 in subfolder
         'audi-a6-automat': 'audi-a6/audi-a6-veiron-auto-satu-mare.png', // Updated Audi A6 VEIRON image
@@ -533,6 +534,7 @@ function getDefaultImages(carId, carName) {
         'mercedes-glc-automat': 'mercedes-glc/mercedes-glc-luxury-suv-veiron-auto.png',
         'mercedes-gle': 'mercedes-gle/mercedes-gle-suv-satu-mare.png',
         'mercedes-gle-automat': 'mercedes-gle/mercedes-gle-suv-satu-mare.png',
+        'vw-passat-cc-automat': 'vw-passat-cc-r-line/inchiriere-vw-pasat-cc-scaune-incalzite-satu-mare.png', // VW Passat CC image
         'toyota-rav4': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-suv': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-automat': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',

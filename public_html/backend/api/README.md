@@ -1,6 +1,7 @@
 # VEIRONAUTO REST API v1 🚗
 
 ## Phase 1: Core Framework - ✅ COMPLETE
+## Phase 2: Cars API - ✅ COMPLETE
 
 Professional REST API with JWT authentication, ready for Vue.js admin dashboard.
 
@@ -8,12 +9,21 @@ Professional REST API with JWT authentication, ready for Vue.js admin dashboard.
 
 ## 🎯 What's Been Built
 
-### Core Framework
+### Core Framework (Phase 1)
 - ✅ **Response.php** - Standardized JSON responses (200, 201, 400, 401, 403, 404, 422, 429, 500)
 - ✅ **Request.php** - HTTP request parsing (body, query, headers, files)
 - ✅ **Router.php** - RESTful routing with route parameters
 - ✅ **Auth.php** - JWT authentication with blacklist
 - ✅ **config/api.php** - Central configuration
+
+### Cars API (Phase 2)
+- ✅ **Car.php Model** - Complete database operations for cars
+- ✅ **CarController.php** - HTTP request handlers for cars
+- ✅ **ImageUploadHandler.php** - Professional image handling with thumbnails
+- ✅ **Advanced filtering, sorting, pagination** for cars
+- ✅ **Image management** - Upload, delete, primary image setting
+- ✅ **Availability checking** for date ranges
+- ✅ **Role-based access control** (admin, manager, staff)
 
 ### Features
 - ✅ JWT token generation and validation
@@ -22,6 +32,9 @@ Professional REST API with JWT authentication, ready for Vue.js admin dashboard.
 - ✅ CORS support
 - ✅ Error handling
 - ✅ Request/Response abstraction
+- ✅ Image upload with thumbnail generation
+- ✅ Car availability checking
+- ✅ Advanced filtering and pagination
 
 ---
 
@@ -112,10 +125,10 @@ curl -X POST http://localhost/api/v1/auth/logout \
 ```
 api/
 ├── v1/
-│   ├── index.php              # Main router
+│   ├── index.php              # Main router with car routes
 │   └── endpoints/             # Endpoint folders (future)
 │       ├── auth/
-│       ├── cars/
+│       ├── cars/              # Cars API implemented
 │       ├── bookings/
 │       ├── clients/
 │       └── images/
@@ -125,8 +138,12 @@ api/
 │   ├── Router.php            # Route dispatcher
 │   └── Auth.php              # JWT authentication
 ├── middleware/               # Middleware (future)
-├── models/                   # Data models (future)
-├── controllers/              # Controllers (future)
+├── models/
+│   └── Car.php               # Car model implemented
+├── controllers/
+│   └── CarController.php     # Car controller implemented
+├── handlers/
+│   └── ImageUploadHandler.php # Image upload handler implemented
 └── .htaccess                # URL rewriting
 ```
 
@@ -194,8 +211,19 @@ Authorization: Bearer YOUR_JWT_TOKEN
 | POST | `/v1/auth/logout` | Yes | Logout (blacklist token) |
 | GET | `/v1/test` | No | Test endpoint |
 | GET | `/v1/admin/stats` | Admin | Admin statistics (example) |
-| GET | `/v1/cars` | No | List cars (placeholder) |
-| GET | `/v1/cars/{id}` | No | Car details (placeholder) |
+| GET | `/v1/cars` | No | List all cars with filtering |
+| GET | `/v1/cars/brands` | No | Get available car brands |
+| GET | `/v1/cars/stats` | Admin | Car statistics |
+| GET | `/v1/cars/{id}` | No | Get single car details |
+| GET | `/v1/cars/{id}/availability` | No | Check car availability |
+| GET | `/v1/cars/{id}/images` | No | Get car images |
+| POST | `/v1/cars` | Admin | Create new car |
+| PUT | `/v1/cars/{id}` | Admin | Full update car |
+| PATCH | `/v1/cars/{id}` | Manager | Partial update car |
+| DELETE | `/v1/cars/{id}` | Admin | Soft delete car |
+| POST | `/v1/cars/{id}/images` | Manager | Upload car image |
+| DELETE | `/v1/cars/{id}/images/{imageId}` | Manager | Delete car image |
+| PATCH | `/v1/cars/{id}/images/{imageId}/primary` | Manager | Set primary image |
 | GET | `/v1/bookings` | Yes | List bookings (placeholder) |
 | POST | `/v1/bookings` | No | Create booking (placeholder) |
 
@@ -255,13 +283,14 @@ Authorization: Bearer YOUR_JWT_TOKEN
 
 ---
 
-## 🛠️ Next Steps (Phase 2)
+## 🛠️ Next Steps (Phase 3: Bookings API)
 
-- [ ] Implement CarController with CRUD operations
-- [ ] Add car availability checking
+- [ ] Implement BookingController with CRUD operations
+- [ ] Add booking creation with availability checking
 - [ ] Implement pricing calculation endpoint
-- [ ] Add filtering and pagination for cars
-- [ ] Create car images API
+- [ ] Add booking status management
+- [ ] Create booking notifications (email integration)
+- [ ] Add booking filtering and pagination
 
 ---
 
@@ -304,5 +333,5 @@ Import the API into Postman:
 
 ---
 
-**Phase 1 Complete! ✅**
-Ready for Phase 2: Cars API Implementation 🚗
+**Phase 1 & 2 Complete! ✅**
+Ready for Phase 3: Bookings API Implementation 📅

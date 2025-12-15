@@ -22,6 +22,7 @@ require_once __DIR__ . '/../core/Auth.php';
 
 // Load controllers
 require_once __DIR__ . '/../controllers/CarController.php';
+require_once __DIR__ . '/../controllers/BookingController.php';
 
 // CORS Headers
 header('Access-Control-Allow-Origin: *'); // In production, use specific origin
@@ -40,10 +41,28 @@ $router = new Router($request);
 
 // Initialize controllers
 $carController = new CarController();
+$bookingController = new BookingController();
 
 // ============================================
 // PUBLIC ROUTES (No authentication required)
 // ============================================
+
+// Bookings CRUD
+$router->get('/v1/bookings', function($req) use ($bookingController) {
+    $bookingController->index($req);
+});
+$router->get('/v1/bookings/{id}', function($req, $id) use ($bookingController) {
+    $bookingController->show($id);
+});
+$router->post('/v1/bookings', function($req) use ($bookingController) {
+    $bookingController->store($req);
+});
+$router->put('/v1/bookings/{id}', function($req, $id) use ($bookingController) {
+    $bookingController->update($id, $req);
+});
+$router->delete('/v1/bookings/{id}', function($req, $id) use ($bookingController) {
+    $bookingController->destroy($id);
+});
 
 // Health check
 $router->get('/v1/health', function($req) {
