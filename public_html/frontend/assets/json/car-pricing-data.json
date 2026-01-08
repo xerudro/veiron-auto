@@ -20,11 +20,10 @@
       "name": "SKODA SCALA AUTOMAT",
       "transmission": "automat",
       "pricing": {
-        "tier1": 60,
-        "tier2": 57,
-        "tier3": 54,
-        "tier4": 50,
-        "medium": 55.25
+        "tier1": 45,
+        "tier2": 45,
+        "tier3": 45,
+        "tier4": 45
       },
       "deposit": 200,
       "insurance": {
@@ -39,36 +38,14 @@
       }
     },
     {
-      "id": "vw-t-cross-automat",
-      "name": "VW T-CROSS AUTOMAT",
-      "transmission": "automat",
-      "pricing": {
-        "tier1": 70,
-        "tier2": 67,
-        "tier3": 64,
-        "tier4": 60
-      },
-      "deposit": 250,
-      "insurance": {
-        "premium": {
-          "dailyRate": 9,
-          "deposit": 100
-        },
-        "comprehensive": {
-          "dailyRate": 17,
-          "deposit": 0
-        }
-      }
-    },
-    {
       "id": "skoda-octavia-sedan-automat",
       "name": "SKODA OCTAVIA SEDAN AUTOMAT",
       "transmission": "automat",
       "pricing": {
-        "tier1": 52,
-        "tier2": 48,
-        "tier3": 46,
-        "tier4": 44
+        "tier1": 40,
+        "tier2": 40,
+        "tier3": 40,
+        "tier4": 40
       },
       "deposit": 200,
       "insurance": {
@@ -87,9 +64,9 @@
       "name": "SKODA KAMIQ AUTOMAT",
       "transmission": "automat",
       "pricing": {
-        "tier1": 70,
-        "tier2": 67,
-        "tier3": 64,
+        "tier1": 60,
+        "tier2": 60,
+        "tier3": 60,
         "tier4": 60
       },
       "deposit": 250,
@@ -109,10 +86,10 @@
       "name": "TOYOTA RAV4 AUTOMAT",
       "transmission": "automat",
       "pricing": {
-        "tier1": 100,
-        "tier2": 95,
-        "tier3": 90,
-        "tier4": 85
+        "tier1": 80,
+        "tier2": 80,
+        "tier3": 80,
+        "tier4": 80
       },
       "deposit": 300,
       "insurance": {
@@ -132,10 +109,10 @@
       "transmission": "automat",
       "seats": 7,
       "pricing": {
-        "tier1": 97,
-        "tier2": 92,
-        "tier3": 88,
-        "tier4": 85
+        "tier1": 80,
+        "tier2": 80,
+        "tier3": 80,
+        "tier4": 80
       },
       "deposit": 300,
       "insurance": {
@@ -154,10 +131,10 @@
       "name": "SKODA KODIAQ - 5 LOCURI",
       "transmission": "automat",
       "pricing": {
-        "tier1": 100,
-        "tier2": 95,
-        "tier3": 90,
-        "tier4": 85
+        "tier1": 75,
+        "tier2": 75,
+        "tier3": 75,
+        "tier4": 75
       },
       "deposit": 300,
       "insurance": {
@@ -176,11 +153,10 @@
       "name": "VOLVO XC40 AUTOMAT",
       "transmission": "automat",
       "pricing": {
-        "tier1": 100,
-        "tier2": 95,
-        "tier3": 90,
-        "tier4": 85,
-        "medium": 92.5
+        "tier1": 70,
+        "tier2": 70,
+        "tier3": 70,
+        "tier4": 70
       },
       "deposit": 300,
       "insurance": {
@@ -241,13 +217,13 @@
     },
     {
       "id": "mercedes-glc-automat",
-      "name": "MERCEDES GLC AUTOMAT",
+      "name": "MERCEDES GLC LINE PLUS",
       "transmission": "automat",
       "pricing": {
-        "tier1": 130,
-        "tier2": 120,
+        "tier1": 110,
+        "tier2": 110,
         "tier3": 110,
-        "tier4": 100
+        "tier4": 110
       },
       "deposit": 400,
       "insurance": {
@@ -265,11 +241,12 @@
       "id": "mercedes-gle-automat",
       "name": "MERCEDES GLE AUTOMAT",
       "transmission": "automat",
+      "year": 2017,
       "pricing": {
-        "tier1": 110,
-        "tier2": 105,
-        "tier3": 100,
-        "tier4": 85
+        "tier1": 90,
+        "tier2": 90,
+        "tier3": 90,
+        "tier4": 90
       },
       "deposit": 400,
       "insurance": {
@@ -289,10 +266,10 @@
       "transmission": "automat",
       "seats": 9,
       "pricing": {
-        "tier1": 100,
-        "tier2": 96,
-        "tier3": 90,
-        "tier4": 82
+        "tier1": 80,
+        "tier2": 80,
+        "tier3": 80,
+        "tier4": 80
       },
       "deposit": 400,
       "insurance": {
@@ -371,9 +348,9 @@
       "name": "VW TOUAREG AUTOMAT",
       "transmission": "automat",
       "pricing": {
-        "tier1": 90,
-        "tier2": 83,
-        "tier3": 77,
+        "tier1": 70,
+        "tier2": 70,
+        "tier3": 70,
         "tier4": 70
       },
       "deposit": 400,
@@ -491,10 +468,10 @@
       "name": "VW TIGUAN AUTOMAT",
       "transmission": "automat",
       "pricing": {
-        "tier1": 58,
-        "tier2": 55,
-        "tier3": 51,
-        "tier4": 48
+        "tier1": 50,
+        "tier2": 50,
+        "tier3": 50,
+        "tier4": 50
       },
       "deposit": 200,
       "insurance": {
@@ -509,10 +486,10 @@
       "name": "VW PASAT COMBI",
       "transmission": "automat",
       "pricing": {
-        "tier1": 58,
-        "tier2": 55,
-        "tier3": 51,
-        "tier4": 48
+        "tier1": 40,
+        "tier2": 40,
+        "tier3": 40,
+        "tier4": 40
       },
       "deposit": 200,
       "insurance": {
@@ -599,28 +576,6 @@
         "premium": {
           "dailyRate": 9,
           "deposit": 100
-        }
-      }
-    },
-    {
-      "id": "renault-megane-manual",
-      "name": "RENAULT MEGANE MANUAL",
-      "transmission": "manual",
-      "pricing": {
-        "tier1": 40,
-        "tier2": 37,
-        "tier3": 34,
-        "tier4": 33
-      },
-      "deposit": 200,
-      "insurance": {
-        "premium": {
-          "dailyRate": 10,
-          "deposit": 100
-        },
-        "comprehensive": {
-          "dailyRate": 18,
-          "deposit": 0
         }
       }
     },
@@ -715,36 +670,14 @@
       }
     },
     {
-      "id": "vw-passat-manual",
-      "name": "VW PASSAT VARIANT 2.0",
-      "transmission": "manual",
-      "pricing": {
-        "tier1": 50,
-        "tier2": 45,
-        "tier3": 40,
-        "tier4": 35
-      },
-      "deposit": 200,
-      "insurance": {
-        "premium": {
-          "dailyRate": 10,
-          "deposit": 100
-        },
-        "comprehensive": {
-          "dailyRate": 18,
-          "deposit": 0
-        }
-      }
-    },
-    {
       "id": "vw-passat-cc-automat",
       "name": "VW PASSAT CC AUTOMAT",
       "transmission": "automat",
       "pricing": {
-        "tier1": 65,
-        "tier2": 62,
-        "tier3": 57,
-        "tier4": 53
+        "tier1": 50,
+        "tier2": 50,
+        "tier3": 50,
+        "tier4": 50
       },
       "deposit": 300,
       "insurance": {
@@ -783,11 +716,12 @@
     {
       "id": "mercedes-e-klasse",
       "name": "MERCEDES E KLASSE",
+      "year": 2013,
       "pricing": {
-        "tier1": 65,
-        "tier2": 63,
-        "tier3": 60,
-        "tier4": 57
+        "tier1": 50,
+        "tier2": 50,
+        "tier3": 50,
+        "tier4": 50
       },
       "deposit": 250,
       "insurance": {
@@ -842,10 +776,10 @@
       "name": "VOLVO XC60 AUTOMAT",
       "transmission": "automat",
       "pricing": {
-        "tier1": 60,
-        "tier2": 55,
+        "tier1": 50,
+        "tier2": 50,
         "tier3": 50,
-        "tier4": 45
+        "tier4": 50
       },
       "deposit": 200,
       "insurance": {
@@ -863,11 +797,12 @@
       "id": "vw-touran-automat",
       "name": "VW TOURAN AUTOMAT",
       "transmission": "automat",
+      "seats": 7,
       "pricing": {
-        "tier1": 60,
-        "tier2": 55,
+        "tier1": 50,
+        "tier2": 50,
         "tier3": 50,
-        "tier4": 45
+        "tier4": 50
       },
       "deposit": 200,
       "insurance": {
