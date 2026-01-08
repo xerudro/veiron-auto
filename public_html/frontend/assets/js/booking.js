@@ -3,25 +3,6 @@
 // Car data with pricing tiers based on Excel rates
 const carData = [
             {
-                id: 35,
-                name: "VW Passat Variant 2.0",
-                category: "sedan",
-                transmission: "manual",
-                passengers: 5,
-                luggage: 5,
-                doors: 5,
-                fuel: "Diesel",
-                image: "assets/images/cars/vw-passat-variant/vw-passat-variant-2.0-inchirieri-auto-satu-mare.png",
-                pricing: {
-                    tier1: { daily: 55 },
-                    tier2: { daily: 52 },
-                    tier3: { daily: 48 },
-                    tier4: { daily: 45 }
-                },
-                warranty: 200,
-                highlighted: false
-            },
-            {
                 id: 34,
                 name: "VW Touran",
                 category: "van",
@@ -32,10 +13,10 @@ const carData = [
                 fuel: "Benzină",
                 image: "assets/images/cars/vw-touran/veiron-rent-vw-touran-inchirieri-auto.png",
                 pricing: {
-                    tier1: { daily: 60 },
-                    tier2: { daily: 56 },
-                    tier3: { daily: 52 },
-                    tier4: { daily: 48 }
+                    tier1: { daily: 50 },
+                    tier2: { daily: 50 },
+                    tier3: { daily: 50 },
+                    tier4: { daily: 50 }
                 },
                 warranty: 200,
                 highlighted: false
@@ -51,10 +32,10 @@ const carData = [
             fuel: "Benzină",
             image: "assets/images/cars/vw-touareg/vw-touareg-4x4-veiron-auto-satu-mare.png",
             pricing: {
-                tier1: { daily: 90 },
-                tier2: { daily: 85 },
-                tier3: { daily: 80 },
-                tier4: { daily: 75 }
+                tier1: { daily: 70 },
+                tier2: { daily: 70 },
+                tier3: { daily: 70 },
+                tier4: { daily: 70 }
             },
             warranty: 400,
             highlighted: true
@@ -80,7 +61,7 @@ const carData = [
     },
     {
         id: 11,
-        name: "Mercedes GLC",
+        name: "Mercedes GLC Line Plus",
         category: "suv",
         transmission: "automatic",
         passengers: 5,
@@ -89,10 +70,10 @@ const carData = [
         fuel: "Automat",
         image: "assets/images/cars/mercedes-glc/mercedes-glc-luxury-suv-veiron-auto.png",
         pricing: {
-            tier1: { daily: 130 }, // 1-3 zile
-            tier2: { daily: 120 }, // 4-7 zile
-            tier3: { daily: 110 }, // 8-14 zile
-            tier4: { daily: 100 }  // 15-30 zile
+            tier1: { daily: 110 },
+            tier2: { daily: 110 },
+            tier3: { daily: 110 },
+            tier4: { daily: 110 }
         },
         warranty: 400,
         highlighted: true
@@ -156,7 +137,7 @@ const carData = [
     },
     {
         id: 5,
-        name: "Mercedes E-Class",
+        name: "Mercedes E-Class (2013)",
         category: "premium",
         transmission: "automatic",
         passengers: 5,
@@ -165,10 +146,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/mercedes-e-class/mercedes-e-class-luxury-satu-mare.png",
         pricing: {
-            tier1: { daily: 65 }, // 1-3 zile
-            tier2: { daily: 63 }, // 4-7 zile
-            tier3: { daily: 60 }, // 8-14 zile
-            tier4: { daily: 57 }  // 15-30 zile
+            tier1: { daily: 50 },
+            tier2: { daily: 50 },
+            tier3: { daily: 50 },
+            tier4: { daily: 50 }
         },
         warranty: 250,
         highlighted: true
@@ -203,10 +184,10 @@ const carData = [
         fuel: "Hibrid",
         image: "assets/images/cars/toyota-rav4/toyota-rav4-suv-rent-a-car.png",
         pricing: {
-            tier1: { daily: 100 }, // 1-3 zile
-            tier2: { daily: 95 },  // 4-7 zile
-            tier3: { daily: 90 },  // 8-14 zile
-            tier4: { daily: 85 }   // 15-30 zile
+            tier1: { daily: 80 },
+            tier2: { daily: 80 },
+            tier3: { daily: 80 },
+            tier4: { daily: 80 }
         },
         warranty: 300,
         highlighted: true
@@ -222,32 +203,13 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png",
         pricing: {
-            tier1: { daily: 100 }, // 1-3 zile
-            tier2: { daily: 96 },  // 4-7 zile
-            tier3: { daily: 90 },  // 8-14 zile
-            tier4: { daily: 82 }   // 15-30 zile
+            tier1: { daily: 80 },
+            tier2: { daily: 80 },
+            tier3: { daily: 80 },
+            tier4: { daily: 80 }
         },
         warranty: 400,
         highlighted: false
-    },
-    {
-        id: 9,
-        name: "VW T-Cross",
-        category: "suv",
-        transmission: "automatic",
-        passengers: 5,
-        luggage: 3,
-        doors: 5,
-        fuel: "Benzină",
-        image: "assets/images/cars/vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png",
-        pricing: {
-            tier1: { daily: 70 }, // 1-3 zile
-            tier2: { daily: 67 }, // 4-7 zile
-            tier3: { daily: 64 }, // 8-14 zile
-            tier4: { daily: 60 }  // 15-30 zile
-        },
-        warranty: 250,
-        highlighted: true
     },
     {
         id: 10,
@@ -260,10 +222,10 @@ const carData = [
         fuel: "Benzină",
         image: "assets/images/cars/skoda-scala/skoda-scala-automatic-satu-mare.png",
         pricing: {
-            tier1: { daily: 60 }, // 1-3 zile
-            tier2: { daily: 57 }, // 4-7 zile
-            tier3: { daily: 54 }, // 8-14 zile
-            tier4: { daily: 50 }  // 15-30 zile
+            tier1: { daily: 45 },
+            tier2: { daily: 45 },
+            tier3: { daily: 45 },
+            tier4: { daily: 45 }
         },
         warranty: 200,
         highlighted: false
@@ -298,31 +260,12 @@ const carData = [
         fuel: "Benzină",
         image: "assets/images/cars/skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png",
         pricing: {
-            tier1: { daily: 70 },
-            tier2: { daily: 67 },
-            tier3: { daily: 64 },
+            tier1: { daily: 60 },
+            tier2: { daily: 60 },
+            tier3: { daily: 60 },
             tier4: { daily: 60 }
         },
         warranty: 250,
-        highlighted: false
-    },
-    {
-        id: 14,
-        name: "Renault Megane",
-        category: "compact",
-        transmission: "manual",
-        passengers: 5,
-        luggage: 3,
-        doors: 5,
-        fuel: "Benzină",
-        image: "assets/images/cars/renault-megane/renault_megane_manual_rent_a_car.png",
-        pricing: {
-            tier1: { daily: 40 },
-            tier2: { daily: 37 },
-            tier3: { daily: 34 },
-            tier4: { daily: 33 }
-        },
-        warranty: 200,
         highlighted: false
     },
     {
@@ -574,7 +517,7 @@ const carData = [
     },
     {
         id: 28,
-        name: "Mercedes GLE",
+        name: "Mercedes GLE (2017)",
         category: "suv",
         transmission: "automatic",
         passengers: 5,
@@ -583,10 +526,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/mercedes-gle/mercedes-gle-suv-satu-mare.png",
         pricing: {
-            tier1: { daily: 110 },
-            tier2: { daily: 105 },
-            tier3: { daily: 100 },
-            tier4: { daily: 85 }
+            tier1: { daily: 90 },
+            tier2: { daily: 90 },
+            tier3: { daily: 90 },
+            tier4: { daily: 90 }
         },
         warranty: 400,
         highlighted: true
@@ -660,10 +603,10 @@ const carData = [
         fuel: "Benzină",
         image: "assets/images/cars/vw-passat-cc-r-line/inchiriere-vw-pasat-cc-scaune-incalzite-satu-mare.png",
         pricing: {
-            tier1: { daily: 65 },
-            tier2: { daily: 62 },
-            tier3: { daily: 57 },
-            tier4: { daily: 53 }
+            tier1: { daily: 50 },
+            tier2: { daily: 50 },
+            tier3: { daily: 50 },
+            tier4: { daily: 50 }
         },
         warranty: 300,
         highlighted: true
