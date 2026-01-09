@@ -117,25 +117,6 @@ const carData = [
         highlighted: true
     },
     {
-        id: 4,
-        name: "BMW GT 530",
-        category: "suv",
-        transmission: "automatic",
-        passengers: 5,
-        luggage: 4,
-        doors: 4,
-        fuel: "Diesel",
-        image: "assets/images/cars/bmw-530-gt/bmw-seria5-gt-satu-mare.png",
-        pricing: {
-            tier1: { daily: 80, weekly: 480, monthly: 1600 },
-            tier2: { daily: 72, weekly: 432, monthly: 1440 },
-            tier3: { daily: 60, weekly: 360, monthly: 1200 },
-            tier4: { daily: 55, weekly: 330, monthly: 1100 }
-        },
-        warranty: 2500,
-        highlighted: false
-    },
-    {
         id: 5,
         name: "Mercedes E-Class (2013)",
         category: "premium",
@@ -367,7 +348,7 @@ const carData = [
         id: 20,
         name: "Audi A4",
         category: "sedan",
-        transmission: "automatic",
+        transmission: "manual",
         passengers: 5,
         luggage: 3,
         doors: 4,
@@ -412,32 +393,13 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-x1-2025/bmw-x1-suv-satu-mare-veiron.png",
         pricing: {
-            tier1: { daily: 100, weekly: 600, monthly: 2000 },
-            tier2: { daily: 95, weekly: 570, monthly: 1900 },
+            tier1: { daily: 90, weekly: 540, monthly: 1800 },
+            tier2: { daily: 90, weekly: 540, monthly: 1800 },
             tier3: { daily: 90, weekly: 540, monthly: 1800 },
-            tier4: { daily: 80, weekly: 480, monthly: 1600 }
+            tier4: { daily: 90, weekly: 540, monthly: 1800 }
         },
         warranty: 1500,
         highlighted: false
-    },
-    {
-        id: 23,
-        name: "BMW X3",
-        category: "suv",
-        transmission: "automatic",
-        passengers: 5,
-        luggage: 4,
-        doors: 5,
-        fuel: "Hybrid",
-        image: "assets/images/cars/bmw-x3-hybrid/bmw-x3-hybrid-veiron-auto.png",
-        pricing: {
-            tier1: { daily: 115, weekly: 690, monthly: 2300 },
-            tier2: { daily: 108, weekly: 648, monthly: 2160 },
-            tier3: { daily: 100, weekly: 600, monthly: 2000 },
-            tier4: { daily: 90, weekly: 540, monthly: 1800 }
-        },
-        warranty: 2000,
-        highlighted: true
     },
     {
         id: 24,
@@ -450,10 +412,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-seria5-sedan/bmw-seria5-sedan-luxury.png",
         pricing: {
-            tier1: { daily: 90, weekly: 540, monthly: 1800 },
-            tier2: { daily: 83, weekly: 498, monthly: 1660 },
-            tier3: { daily: 77, weekly: 462, monthly: 1540 },
-            tier4: { daily: 73, weekly: 438, monthly: 1460 }
+            tier1: { daily: 60, weekly: 360, monthly: 1200 },
+            tier2: { daily: 60, weekly: 360, monthly: 1200 },
+            tier3: { daily: 60, weekly: 360, monthly: 1200 },
+            tier4: { daily: 60, weekly: 360, monthly: 1200 }
         },
         warranty: 2000,
         highlighted: true

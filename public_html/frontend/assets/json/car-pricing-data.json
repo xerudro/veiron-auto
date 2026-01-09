@@ -175,10 +175,10 @@
       "name": "BMW X1 AUTOMAT",
       "transmission": "automat",
       "pricing": {
-        "tier1": 100,
-        "tier2": 95,
+        "tier1": 90,
+        "tier2": 90,
         "tier3": 90,
-        "tier4": 80
+        "tier4": 90
       },
       "deposit": 300,
       "insurance": {
@@ -424,9 +424,9 @@
       }
     },
     {
-      "id": "audi-a4-automat",
-      "name": "AUDI A4 AUTOMAT",
-      "transmission": "automat",
+      "id": "audi-a4-manual",
+      "name": "AUDI A4 MANUAL",
+      "transmission": "manual",
       "pricing": {
         "tier1": 50,
         "tier2": 45,
@@ -809,28 +809,6 @@
         "premium": {
           "dailyRate": 10,
           "deposit": 100
-        }
-      }
-    },
-    {
-      "id": "bmw-x3-nou",
-      "name": "BMW X3 NOU",
-      "condition": "nou",
-      "pricing": {
-        "tier1": 115,
-        "tier2": 108,
-        "tier3": 100,
-        "tier4": 90
-      },
-      "deposit": 400,
-      "insurance": {
-        "premium": {
-          "dailyRate": 20,
-          "deposit": 100
-        },
-        "comprehensive": {
-          "dailyRate": 28,
-          "deposit": 0
         }
       }
     },

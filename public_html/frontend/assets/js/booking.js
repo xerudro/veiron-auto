@@ -117,25 +117,6 @@ const carData = [
         highlighted: true
     },
     {
-        id: 4,
-        name: "BMW GT 530",
-        category: "premium",
-        transmission: "automatic",
-        passengers: 5,
-        luggage: 4,
-        doors: 4,
-        fuel: "Diesel",
-        image: "assets/images/cars/bmw-530-gt/bmw-seria5-gt-satu-mare.png",
-        pricing: {
-            tier1: { daily: 80 }, // 1-3 zile
-            tier2: { daily: 72 }, // 4-7 zile
-            tier3: { daily: 60 }, // 8-14 zile
-            tier4: { daily: 55 }  // 15-30 zile
-        },
-        warranty: 200,
-        highlighted: false
-    },
-    {
         id: 5,
         name: "Mercedes E-Class (2013)",
         category: "premium",
@@ -367,7 +348,7 @@ const carData = [
         id: 20,
         name: "Audi A4",
         category: "sedan",
-        transmission: "automatic",
+        transmission: "manual",
         passengers: 5,
         luggage: 3,
         doors: 4,
@@ -412,32 +393,13 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-x1-2025/bmw-x1-suv-satu-mare-veiron.png",
         pricing: {
-            tier1: { daily: 100 },
-            tier2: { daily: 95 },
+            tier1: { daily: 90 },
+            tier2: { daily: 90 },
             tier3: { daily: 90 },
-            tier4: { daily: 80 }
+            tier4: { daily: 90 }
         },
         warranty: 300,
         highlighted: false
-    },
-    {
-        id: 23,
-        name: "BMW X3",
-        category: "suv",
-        transmission: "automatic",
-        passengers: 5,
-        luggage: 4,
-        doors: 5,
-        fuel: "Hibrid",
-        image: "assets/images/cars/bmw-x3-hybrid/bmw-x3-hybrid-veiron-auto.png",
-        pricing: {
-            tier1: { daily: 115 },
-            tier2: { daily: 108 },
-            tier3: { daily: 100 },
-            tier4: { daily: 90 }
-        },
-        warranty: 400,
-        highlighted: true
     },
     {
         id: 24,
@@ -450,10 +412,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-seria5-sedan/bmw-seria5-sedan-luxury.png",
         pricing: {
-            tier1: { daily: 90 },
-            tier2: { daily: 83 },
-            tier3: { daily: 77 },
-            tier4: { daily: 73 }
+            tier1: { daily: 60 },
+            tier2: { daily: 60 },
+            tier3: { daily: 60 },
+            tier4: { daily: 60 }
         },
         warranty: 400,
         highlighted: true
