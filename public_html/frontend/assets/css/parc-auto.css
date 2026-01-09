@@ -457,7 +457,14 @@ body {
     object-fit: contain !important;
     object-position: center !important;
     transform: none !important;
+    }
+/* Mazda 6 image size adjustment */
+.car-card[data-model="mazda-6-manual"] .main-image {
+    object-fit: contain;
+    object-position: center
 }
+
+
 
 .gallery-thumbs {
     display: flex;

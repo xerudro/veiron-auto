@@ -4,7 +4,7 @@
 const carData = [
             {
                 id: 34,
-                name: "VW Touran",
+                name: "VW Touran - 7 seats",
                 category: "van",
                 transmission: "automatic",
                 passengers: 7,
@@ -13,10 +13,10 @@ const carData = [
                 fuel: "Petrol",
                 image: "assets/images/cars/vw-touran/veiron-rent-vw-touran-inchirieri-auto.png",
                 pricing: {
-                    tier1: { daily: 60, weekly: 360, monthly: 1200 },
-                    tier2: { daily: 56, weekly: 336, monthly: 1120 },
-                    tier3: { daily: 52, weekly: 312, monthly: 1040 },
-                    tier4: { daily: 48, weekly: 288, monthly: 960 }
+                    tier1: { daily: 50, weekly: 300, monthly: 1000 },
+                    tier2: { daily: 50, weekly: 300, monthly: 1000 },
+                    tier3: { daily: 50, weekly: 300, monthly: 1000 },
+                    tier4: { daily: 50, weekly: 300, monthly: 1000 }
                 },
                 warranty: 1000,
                 highlighted: false
@@ -32,10 +32,10 @@ const carData = [
             fuel: "Petrol",
             image: "assets/images/cars/vw-touareg/vw-touareg-4x4-veiron-auto-satu-mare.png",
             pricing: {
-                tier1: { daily: 90, weekly: 540, monthly: 1800 },
-                tier2: { daily: 85, weekly: 510, monthly: 1700 },
-                tier3: { daily: 80, weekly: 480, monthly: 1600 },
-                tier4: { daily: 75, weekly: 450, monthly: 1500 }
+                tier1: { daily: 70, weekly: 420, monthly: 1400 },
+                tier2: { daily: 70, weekly: 420, monthly: 1400 },
+                tier3: { daily: 70, weekly: 420, monthly: 1400 },
+                tier4: { daily: 70, weekly: 420, monthly: 1400 }
             },
             warranty: 400,
             highlighted: true
@@ -61,7 +61,7 @@ const carData = [
     },
     {
         id: 11,
-        name: "Mercedes GLC",
+        name: "Mercedes GLC Line Plus",
         category: "suv",
         transmission: "automatic",
         passengers: 5,
@@ -70,10 +70,10 @@ const carData = [
         fuel: "Automatic",
         image: "assets/images/cars/mercedes-glc/mercedes-glc-luxury-suv-veiron-auto.png",
         pricing: {
-            tier1: { daily: 130, weekly: 780, monthly: 2600 },
-            tier2: { daily: 120, weekly: 720, monthly: 2400 },
+            tier1: { daily: 110, weekly: 660, monthly: 2200 },
+            tier2: { daily: 110, weekly: 660, monthly: 2200 },
             tier3: { daily: 110, weekly: 660, monthly: 2200 },
-            tier4: { daily: 100, weekly: 600, monthly: 2000 }
+            tier4: { daily: 110, weekly: 660, monthly: 2200 }
         },
         warranty: 1500,
         highlighted: true
@@ -137,7 +137,7 @@ const carData = [
     },
     {
         id: 5,
-        name: "Mercedes E-Class",
+        name: "Mercedes E-Class (2013)",
         category: "premium",
         transmission: "automatic",
         passengers: 5,
@@ -146,10 +146,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/mercedes-e-class/mercedes-e-class-luxury-satu-mare.png",
         pricing: {
-            tier1: { daily: 65, weekly: 390, monthly: 1300 },
-            tier2: { daily: 63, weekly: 378, monthly: 1260 },
-            tier3: { daily: 60, weekly: 360, monthly: 1200 },
-            tier4: { daily: 57, weekly: 342, monthly: 1140 }
+            tier1: { daily: 50, weekly: 300, monthly: 1000 },
+            tier2: { daily: 50, weekly: 300, monthly: 1000 },
+            tier3: { daily: 50, weekly: 300, monthly: 1000 },
+            tier4: { daily: 50, weekly: 300, monthly: 1000 }
         },
         warranty: 2000,
         highlighted: true
@@ -184,10 +184,10 @@ const carData = [
         fuel: "Hybrid",
         image: "assets/images/cars/toyota-rav4/toyota-rav4-suv-rent-a-car.png",
         pricing: {
-            tier1: { daily: 100, weekly: 600, monthly: 2000 },
-            tier2: { daily: 95, weekly: 570, monthly: 1900 },
-            tier3: { daily: 90, weekly: 540, monthly: 1800 },
-            tier4: { daily: 85, weekly: 510, monthly: 1700 }
+            tier1: { daily: 80, weekly: 480, monthly: 1600 },
+            tier2: { daily: 80, weekly: 480, monthly: 1600 },
+            tier3: { daily: 80, weekly: 480, monthly: 1600 },
+            tier4: { daily: 80, weekly: 480, monthly: 1600 }
         },
         warranty: 1500,
         highlighted: true
@@ -203,31 +203,12 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/renault-traffic-8plus1/renault-trafic-pasageri-pret-avantajos.png",
         pricing: {
-            tier1: { daily: 90, weekly: 540, monthly: 1800 },
-            tier2: { daily: 85, weekly: 510, monthly: 1700 },
+            tier1: { daily: 80, weekly: 480, monthly: 1600 },
+            tier2: { daily: 80, weekly: 480, monthly: 1600 },
             tier3: { daily: 80, weekly: 480, monthly: 1600 },
-            tier4: { daily: 75, weekly: 450, monthly: 1500 }
+            tier4: { daily: 80, weekly: 480, monthly: 1600 }
         },
         warranty: 2000,
-        highlighted: false
-    },
-    {
-        id: 9,
-        name: "VW T-Cross",
-        category: "suv",
-        transmission: "automatic",
-        passengers: 5,
-        luggage: 3,
-        doors: 5,
-        fuel: "Petrol",
-        image: "assets/images/cars/vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png",
-        pricing: {
-            tier1: { daily: 60, weekly: 360, monthly: 1200 },
-            tier2: { daily: 55, weekly: 330, monthly: 1100 },
-            tier3: { daily: 50, weekly: 300, monthly: 1000 },
-            tier4: { daily: 45, weekly: 270, monthly: 900 }
-        },
-        warranty: 1200,
         highlighted: false
     },
     {
@@ -241,10 +222,10 @@ const carData = [
         fuel: "Petrol",
         image: "assets/images/cars/skoda-scala/skoda-scala-automatic-satu-mare.png",
         pricing: {
-            tier1: { daily: 50, weekly: 300, monthly: 1000 },
+            tier1: { daily: 45, weekly: 270, monthly: 900 },
             tier2: { daily: 45, weekly: 270, monthly: 900 },
-            tier3: { daily: 40, weekly: 240, monthly: 800 },
-            tier4: { daily: 35, weekly: 210, monthly: 700 }
+            tier3: { daily: 45, weekly: 270, monthly: 900 },
+            tier4: { daily: 45, weekly: 270, monthly: 900 }
         },
         warranty: 1000,
         highlighted: false
@@ -279,31 +260,12 @@ const carData = [
         fuel: "Petrol",
         image: "assets/images/cars/skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png",
         pricing: {
-            tier1: { daily: 70, weekly: 420, monthly: 1400 },
-            tier2: { daily: 67, weekly: 402, monthly: 1340 },
-            tier3: { daily: 64, weekly: 384, monthly: 1280 },
+            tier1: { daily: 60, weekly: 360, monthly: 1200 },
+            tier2: { daily: 60, weekly: 360, monthly: 1200 },
+            tier3: { daily: 60, weekly: 360, monthly: 1200 },
             tier4: { daily: 60, weekly: 360, monthly: 1200 }
         },
         warranty: 1250,
-        highlighted: false
-    },
-    {
-        id: 14,
-        name: "Renault Megane",
-        category: "compact",
-        transmission: "manual",
-        passengers: 5,
-        luggage: 3,
-        doors: 5,
-        fuel: "Petrol",
-        image: "assets/images/cars/renault-megane/renault_megane_manual_rent_a_car.png",
-        pricing: {
-            tier1: { daily: 40, weekly: 240, monthly: 800 },
-            tier2: { daily: 37, weekly: 222, monthly: 740 },
-            tier3: { daily: 34, weekly: 204, monthly: 680 },
-            tier4: { daily: 33, weekly: 198, monthly: 660 }
-        },
-        warranty: 1000,
         highlighted: false
     },
     {
@@ -555,7 +517,7 @@ const carData = [
     },
     {
         id: 28,
-        name: "Mercedes GLE",
+        name: "Mercedes GLE (2017)",
         category: "suv",
         transmission: "automatic",
         passengers: 5,
@@ -564,10 +526,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/mercedes-gle/mercedes-gle-suv-satu-mare.png",
         pricing: {
-            tier1: { daily: 110, weekly: 660, monthly: 2200 },
-            tier2: { daily: 105, weekly: 630, monthly: 2100 },
-            tier3: { daily: 100, weekly: 600, monthly: 2000 },
-            tier4: { daily: 85, weekly: 510, monthly: 1700 }
+            tier1: { daily: 90, weekly: 540, monthly: 1800 },
+            tier2: { daily: 90, weekly: 540, monthly: 1800 },
+            tier3: { daily: 90, weekly: 540, monthly: 1800 },
+            tier4: { daily: 90, weekly: 540, monthly: 1800 }
         },
         warranty: 2000,
         highlighted: true
@@ -641,10 +603,10 @@ const carData = [
         fuel: "Petrol",
         image: "assets/images/cars/vw-passat-cc-r-line/inchiriere-vw-pasat-cc-scaune-incalzite-satu-mare.png",
         pricing: {
-            tier1: { daily: 65, weekly: 390, monthly: 1300 },
-            tier2: { daily: 62, weekly: 372, monthly: 1240 },
-            tier3: { daily: 57, weekly: 342, monthly: 1140 },
-            tier4: { daily: 53, weekly: 318, monthly: 1060 }
+            tier1: { daily: 50, weekly: 300, monthly: 1000 },
+            tier2: { daily: 50, weekly: 300, monthly: 1000 },
+            tier3: { daily: 50, weekly: 300, monthly: 1000 },
+            tier4: { daily: 50, weekly: 300, monthly: 1000 }
         },
         warranty: 300,
         highlighted: true
