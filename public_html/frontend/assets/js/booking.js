@@ -51,10 +51,10 @@ const carData = [
         fuel: "Benzină",
         image: "assets/images/cars/audi-q3/audi-q3-2011-veiron-auto-rent.png",
         pricing: {
-            tier1: { daily: 75 }, // 1-3 zile
+            tier1: { daily: 70 }, // 1-3 zile
             tier2: { daily: 70 }, // 4-7 zile
-            tier3: { daily: 65 }, // 8-14 zile
-            tier4: { daily: 60 }  // 15-30 zile
+            tier3: { daily: 70 }, // 8-14 zile
+            tier4: { daily: 70 }  // 15-30 zile
         },
         warranty: 300,
         highlighted: true
@@ -108,10 +108,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/audi-a6/audi-a6-veiron-auto-satu-mare.png",
         pricing: {
-            tier1: { daily: 70 }, // 1-3 zile
-            tier2: { daily: 67 }, // 4-7 zile
-            tier3: { daily: 63 }, // 8-14 zile
-            tier4: { daily: 55 }  // 15-30 zile
+            tier1: { daily: 60 }, // 1-3 zile
+            tier2: { daily: 60 }, // 4-7 zile
+            tier3: { daily: 60 }, // 8-14 zile
+            tier4: { daily: 60 }  // 15-30 zile
         },
         warranty: 300,
         highlighted: true
@@ -374,10 +374,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/audi-q5/audi-q5-luxury-automata.png",
         pricing: {
-            tier1: { daily: 120 },
-            tier2: { daily: 112 },
-            tier3: { daily: 105 },
-            tier4: { daily: 95 }
+            tier1: { daily: 100 },
+            tier2: { daily: 100 },
+            tier3: { daily: 100 },
+            tier4: { daily: 100 }
         },
         warranty: 400,
         highlighted: true
@@ -431,9 +431,9 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-seria5-touring/bmw-seria5-touring-satu-mare.png",
         pricing: {
-            tier1: { daily: 80 },
-            tier2: { daily: 74 },
-            tier3: { daily: 66 },
+            tier1: { daily: 60 },
+            tier2: { daily: 60 },
+            tier3: { daily: 60 },
             tier4: { daily: 60 }
         },
         warranty: 300,
@@ -450,10 +450,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-seria5-touring/bmw-seria5-touring-satu-mare.png",
         pricing: {
-            tier1: { daily: 60 },
-            tier2: { daily: 57 },
-            tier3: { daily: 54 },
-            tier4: { daily: 48 }
+            tier1: { daily: 50 },
+            tier2: { daily: 50 },
+            tier3: { daily: 50 },
+            tier4: { daily: 50 }
         },
         warranty: 250,
         highlighted: false

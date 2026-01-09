@@ -304,7 +304,7 @@ const CAR_COLORS = {
         colorRO: 'ALB',
         colorEN: 'WHITE'
     },
-    'audi-a4-automat': {
+    'audi-a4-manual': {
         color: 'white',
         colorRO: 'ALB',
         colorEN: 'WHITE'
@@ -489,6 +489,16 @@ const CAR_COLORS = {
         colorRO: 'GRI',
         colorEN: 'GREY'
     },
+    'vw-polo-manual': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
+    },
+    'vw-polo-automat': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
+    },
     'vw-jetta-manual': {
         color: 'white',
         colorRO: 'ALB',
@@ -528,7 +538,7 @@ function getDefaultImages(carId, carName) {
     const carImageMap = {
         'vw-touareg-automat': 'vw-touareg/vw-touareg-4x4-veiron-auto-satu-mare.png', // VW Touareg image
         'audi-a3-automat': 'audi-a3-tfsi/audi-a3-inchirieri-auto-satu-mare.png', // Updated Audi A3 image
-        'audi-a4-automat': 'audi-a4/audi-a4-inchrieri-auto-satu-mare.png', // Audi A4 in subfolder
+        'audi-a4-manual': 'audi-a4/audi-a4-inchrieri-auto-satu-mare.png', // Audi A4 Manual in subfolder
         'audi-a6-automat': 'audi-a6/audi-a6-veiron-auto-satu-mare.png', // Updated Audi A6 VEIRON image
         'audi-q5-nou': 'audi-q5/audi-q5-luxury-automata.png', // Updated Audi Q5 luxury image
         'bmw-seria-5-gt': 'bmw-530-gt/bmw-seria5-gt-satu-mare.png', // Updated BMW Seria 5 GT image
@@ -547,6 +557,9 @@ function getDefaultImages(carId, carName) {
         'mercedes-gle': 'mercedes-gle/mercedes-gle-suv-satu-mare.png',
         'mercedes-gle-automat': 'mercedes-gle/mercedes-gle-suv-satu-mare.png',
         'vw-passat-cc-automat': 'vw-passat-cc-r-line/inchiriere-vw-pasat-cc-scaune-incalzite-satu-mare.png', // VW Passat CC image
+        'vw-passat-automat': 'vw-passat-combi/vw-passat-combi-2012-inchirieri-auto-ieftine.png', // VW Passat Combi image
+        'vw-polo-manual': 'vw-polo/vw-polo-inchirieri-ieftine-masini-satu-mare.png', // VW Polo Manual
+        'vw-polo-automat': 'vw-polo/vw-polo-inchirieri-ieftine-masini-satu-mare.png', // VW Polo Automat
         'toyota-rav4': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-suv': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-automat': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
@@ -594,7 +607,7 @@ function getDefaultImages(carId, carName) {
 
 // Car Category Mapping based on pricing and vehicle type
 function mapCarCategory(car) {
-    const name = car.name.toLowerCase();
+    const name = (car.nameEN || car.name).toLowerCase();
     const tier1Price = car.pricing.tier1;
     
     // Van category
@@ -649,8 +662,9 @@ function mapTransmission(car) {
 // Map passenger count
 function mapPassengers(car) {
     if (car.seats) return car.seats;
-    if (car.name.includes('8+1') || car.name.includes('9')) return 9;
-    if (car.name.includes('7 locuri') || car.name.includes('7 LOCURI')) return 7;
+    const name = car.nameEN || car.name;
+    if (name.includes('8+1') || name.includes('9')) return 9;
+    if (name.includes('7 locuri') || name.includes('7 LOCURI') || name.includes('7 SEATS') || name.includes('7 seats')) return 7;
     return 5; // Default
 }
 
@@ -897,9 +911,9 @@ class CarFleet {
                     displayTransmission: mapTransmission(car),
                     displayPassengers: mapPassengers(car),
                     eurPrice: convertEurToEur(car.pricing.tier1),
-                    displayName: this.formatCarName(car.name)
+                    displayName: this.formatCarName(car)
                 };
-                
+
                 return enhancedCar;
             });
             
@@ -910,9 +924,12 @@ class CarFleet {
         }
     }
 
-    formatCarName(name) {
+    formatCarName(car) {
+        // Use English name if available, otherwise use Romanian name
+        const name = car.nameEN || car.name;
+
         // Clean up car names for display, but keep AUTOMAT/MANUAL for specific models to avoid confusion
-        if (name.includes('BMW SERIA 5 COMBI')) {
+        if (name.includes('BMW SERIA 5 COMBI') || name.includes('BMW 5 SERIES TOURING')) {
             return name; // Keep the full name including AUTOMAT/MANUAL for BMW COMBI
         }
         // Keep AUTOMAT/MANUAL for SEAT ALHAMBRA to differentiate between the two models
@@ -927,7 +944,7 @@ class CarFleet {
         if (name.includes('BMW SERIA 5 AUTOMAT NOU')) {
             return name.replace('BMW SERIA 5 AUTOMAT NOU', 'BMW SERIA 5 SEDAN PREMIUM').trim();
         }
-        return name.replace(/AUTOMAT|MANUAL/gi, '').trim();
+        return name.replace(/AUTOMAT|MANUAL|AUTOMATIC/gi, '').trim();
     }
 
     createPaginationControls() {
@@ -1310,7 +1327,7 @@ class CarFleet {
 
             // Search filter - check car name, category, and transmission
             if (searchFilter && searchFilter !== '') {
-                const searchText = `${car.name} ${car.displayCategory} ${car.displayTransmission}`.toLowerCase();
+                const searchText = `${car.nameEN || car.name} ${car.displayCategory} ${car.displayTransmission}`.toLowerCase();
                 if (!searchText.includes(searchFilter)) {
                     return false;
                 }
@@ -1323,7 +1340,7 @@ class CarFleet {
 
             // Brand filter
             if (brandFilter && brandFilter !== '') {
-                const carBrand = extractBrand(car.name);
+                const carBrand = extractBrand(car.nameEN || car.name);
                 if (carBrand !== brandFilter) {
                     return false;
                 }
@@ -1472,7 +1489,7 @@ class CarFleet {
         // Extract unique brands from all cars
         const brandsSet = new Set();
         this.allCars.forEach(car => {
-            const brand = extractBrand(car.name);
+            const brand = extractBrand(car.nameEN || car.name);
             if (brand) {
                 brandsSet.add(brand);
             }

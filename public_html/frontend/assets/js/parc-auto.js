@@ -315,7 +315,7 @@ const CAR_COLORS = {
         colorRO: 'ALB',
         colorEN: 'WHITE'
     },
-    'audi-a4-automat': {
+    'audi-a4-manual': {
         color: 'white',
         colorRO: 'ALB',
         colorEN: 'WHITE'
@@ -500,6 +500,16 @@ const CAR_COLORS = {
         colorRO: 'GRI',
         colorEN: 'GREY'
     },
+    'vw-polo-manual': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
+    },
+    'vw-polo-automat': {
+        color: 'grey',
+        colorRO: 'GRI',
+        colorEN: 'GREY'
+    },
     'vw-jetta-manual': {
         color: 'white',
         colorRO: 'ALB',
@@ -539,7 +549,7 @@ function getDefaultImages(carId, carName) {
     const carImageMap = {
         'vw-touareg-automat': 'vw-touareg/vw-touareg-4x4-veiron-auto-satu-mare.png', // VW Touareg image
         'audi-a3-automat': 'audi-a3-tfsi/audi-a3-inchirieri-auto-satu-mare.png', // Updated Audi A3 image
-        'audi-a4-automat': 'audi-a4/audi-a4-inchrieri-auto-satu-mare.png', // Audi A4 in subfolder
+        'audi-a4-manual': 'audi-a4/audi-a4-inchrieri-auto-satu-mare.png', // Audi A4 Manual in subfolder
         'audi-a6-automat': 'audi-a6/audi-a6-veiron-auto-satu-mare.png', // Updated Audi A6 VEIRON image
         'audi-q5-nou': 'audi-q5/audi-q5-luxury-automata.png', // Updated Audi Q5 luxury image
         'bmw-seria-5-gt': 'bmw-530-gt/bmw-seria5-gt-satu-mare.png', // Updated BMW Seria 5 GT image
@@ -558,6 +568,9 @@ function getDefaultImages(carId, carName) {
         'mercedes-gle': 'mercedes-gle/mercedes-gle-suv-satu-mare.png',
         'mercedes-gle-automat': 'mercedes-gle/mercedes-gle-suv-satu-mare.png',
         'vw-passat-cc-automat': 'vw-passat-cc-r-line/inchiriere-vw-pasat-cc-scaune-incalzite-satu-mare.png', // VW Passat CC image
+        'vw-passat-automat': 'vw-passat-combi/vw-passat-combi-2012-inchirieri-auto-ieftine.png', // VW Passat Combi image
+        'vw-polo-manual': 'vw-polo/vw-polo-inchirieri-ieftine-masini-satu-mare.png', // VW Polo Manual
+        'vw-polo-automat': 'vw-polo/vw-polo-inchirieri-ieftine-masini-satu-mare.png', // VW Polo Automat
         'toyota-rav4': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-suv': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',
         'toyota-rav4-automat': 'toyota-rav4/toyota-rav4-suv-rent-a-car.png',

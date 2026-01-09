@@ -51,10 +51,10 @@ const carData = [
         fuel: "Petrol",
         image: "assets/images/cars/audi-q3/audi-q3-2011-veiron-auto-rent.png",
         pricing: {
-            tier1: { daily: 75, weekly: 450, monthly: 1500 },
+            tier1: { daily: 70, weekly: 420, monthly: 1400 },
             tier2: { daily: 70, weekly: 420, monthly: 1400 },
-            tier3: { daily: 65, weekly: 390, monthly: 1300 },
-            tier4: { daily: 60, weekly: 360, monthly: 1200 }
+            tier3: { daily: 70, weekly: 420, monthly: 1400 },
+            tier4: { daily: 70, weekly: 420, monthly: 1400 }
         },
         warranty: 1500,
         highlighted: true
@@ -108,10 +108,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/audi-a6/audi-a6-veiron-auto-satu-mare.png",
         pricing: {
-            tier1: { daily: 70, weekly: 420, monthly: 1400 },
-            tier2: { daily: 67, weekly: 402, monthly: 1340 },
-            tier3: { daily: 63, weekly: 378, monthly: 1260 },
-            tier4: { daily: 55, weekly: 330, monthly: 1100 }
+            tier1: { daily: 60, weekly: 360, monthly: 1200 },
+            tier2: { daily: 60, weekly: 360, monthly: 1200 },
+            tier3: { daily: 60, weekly: 360, monthly: 1200 },
+            tier4: { daily: 60, weekly: 360, monthly: 1200 }
         },
         warranty: 2000,
         highlighted: true
@@ -374,10 +374,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/audi-q5/audi-q5-luxury-automata.png",
         pricing: {
-            tier1: { daily: 120, weekly: 720, monthly: 2400 },
-            tier2: { daily: 112, weekly: 672, monthly: 2240 },
-            tier3: { daily: 105, weekly: 630, monthly: 2100 },
-            tier4: { daily: 95, weekly: 570, monthly: 1900 }
+            tier1: { daily: 100, weekly: 600, monthly: 2000 },
+            tier2: { daily: 100, weekly: 600, monthly: 2000 },
+            tier3: { daily: 100, weekly: 600, monthly: 2000 },
+            tier4: { daily: 100, weekly: 600, monthly: 2000 }
         },
         warranty: 2000,
         highlighted: true
@@ -431,9 +431,9 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-seria5-touring/bmw-seria5-touring-satu-mare.png",
         pricing: {
-            tier1: { daily: 80, weekly: 480, monthly: 1600 },
-            tier2: { daily: 74, weekly: 444, monthly: 1480 },
-            tier3: { daily: 66, weekly: 396, monthly: 1320 },
+            tier1: { daily: 60, weekly: 360, monthly: 1200 },
+            tier2: { daily: 60, weekly: 360, monthly: 1200 },
+            tier3: { daily: 60, weekly: 360, monthly: 1200 },
             tier4: { daily: 60, weekly: 360, monthly: 1200 }
         },
         warranty: 1500,
@@ -450,10 +450,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-seria5-touring/bmw-seria5-touring-satu-mare.png",
         pricing: {
-            tier1: { daily: 60, weekly: 360, monthly: 1200 },
-            tier2: { daily: 57, weekly: 342, monthly: 1140 },
-            tier3: { daily: 54, weekly: 324, monthly: 1080 },
-            tier4: { daily: 48, weekly: 288, monthly: 960 }
+            tier1: { daily: 50, weekly: 300, monthly: 1000 },
+            tier2: { daily: 50, weekly: 300, monthly: 1000 },
+            tier3: { daily: 50, weekly: 300, monthly: 1000 },
+            tier4: { daily: 50, weekly: 300, monthly: 1000 }
         },
         warranty: 1250,
         highlighted: false
