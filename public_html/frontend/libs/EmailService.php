@@ -168,7 +168,12 @@ class EmailService {
         $this->mailer->clearAddresses();
         $this->mailer->clearCCs();
         $this->mailer->clearBCCs();
-        $this->mailer->clearReplyTo();
+
+        // clearReplyTo() only exists in newer versions of PHPMailer
+        if (method_exists($this->mailer, 'clearReplyTo')) {
+            $this->mailer->clearReplyTo();
+        }
+
         $this->mailer->clearAttachments();
     }
 

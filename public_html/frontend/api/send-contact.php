@@ -120,13 +120,24 @@ try {
     }
 
 } catch (Exception $e) {
+    // Log error to file
+    $errorLog = __DIR__ . '/../../logs/contact-errors.log';
+    $errorDir = dirname($errorLog);
+    if (!is_dir($errorDir)) {
+        @mkdir($errorDir, 0755, true);
+    }
+
+    $errorMessage = date('Y-m-d H:i:s') . " - " . $e->getMessage() . " in " . $e->getFile() . " on line " . $e->getLine() . "\n";
+    @file_put_contents($errorLog, $errorMessage, FILE_APPEND);
+
     http_response_code(500);
     echo json_encode([
         'success' => false,
         'message' => 'Server error occurred. Please try again later.',
         'details' => $e->getMessage(),
         'file' => $e->getFile(),
-        'line' => $e->getLine()
+        'line' => $e->getLine(),
+        'trace' => explode("\n", $e->getTraceAsString())
     ]);
 }
 ?>

@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         email: form.querySelector('#email').value.trim(),
         phone: form.querySelector('#phone').value.trim(),
         subject: form.querySelector('#subject') ? form.querySelector('#subject').value.trim() : '',
-        message: form.querySelector('#message').value.trim()
+        message: form.querySelector('#notes').value.trim()
       }
 
       // Send data to API

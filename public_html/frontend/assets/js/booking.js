@@ -1595,7 +1595,7 @@ function getEquipmentName(equipmentCode) {
 }
 
 // Complete booking
-function completeBooking() {
+async function completeBooking() {
     if (validateCurrentStep()) {
         // Collect personal details
         bookingState.personalDetails = {
@@ -1605,19 +1605,60 @@ function completeBooking() {
             phone: document.getElementById('phone')?.value,
             countryCode: document.getElementById('country-code')?.value,
             birthDate: document.getElementById('birth-date')?.value,
-    // VW Passat CC Automat (added)
             licenseNumber: document.getElementById('license-number')?.value,
             privacyPolicy: document.getElementById('privacy-policy')?.checked,
             commercialInfo: document.getElementById('commercial-info')?.checked
         };
-        
-        // Here you would typically send the booking data to your backend
-        
-        // Show success message
-        alert('Rezervarea a fost finalizată cu succes! Veți primi un email de confirmare în curând.');
-        
-        // Redirect to confirmation page or reset form
-        // window.location.href = 'booking-confirmation.html';
+
+        // Send booking via email service
+        try {
+            if (!window.bookingSystem) {
+                throw new Error('Sistemul de rezervare nu este inițializat');
+            }
+
+            // Prepare client info
+            const clientInfo = {
+                name: `${bookingState.personalDetails.firstName} ${bookingState.personalDetails.lastName}`,
+                email: bookingState.personalDetails.email,
+                phone: `${bookingState.personalDetails.countryCode} ${bookingState.personalDetails.phone}`
+            };
+
+            // Prepare pricing info
+            const total = calculateTotal();
+            const pricingInfo = {
+                totalPrice: total, // in RON
+                totalPriceEUR: (total / 5.07).toFixed(2)
+            };
+
+            // Show loading message
+            const alertMsg = alert;
+            alert = function(msg) { console.log('Alert:', msg); };
+
+            // Submit booking
+            const result = await window.bookingSystem.submitFinalBooking(clientInfo, pricingInfo);
+
+            alert = alertMsg;
+
+            if (result.success) {
+                alert('Rezervarea a fost finalizată cu succes! Veți primi un email de confirmare în curând.');
+
+                // Clear booking data
+                if (window.bookingSystem.dataManager) {
+                    window.bookingSystem.dataManager.clearBookingData();
+                }
+
+                // Redirect to home or confirmation page
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            } else {
+                throw new Error(result.message || 'Eroare la trimiterea rezervării');
+            }
+
+        } catch (error) {
+            console.error('Error submitting booking:', error);
+            alert('A apărut o eroare la trimiterea rezervării: ' + error.message + '. Vă rugăm să ne contactați direct.');
+        }
     }
 }
 
