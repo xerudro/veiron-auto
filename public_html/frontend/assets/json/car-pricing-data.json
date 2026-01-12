@@ -195,29 +195,6 @@
       }
     },
     {
-      "id": "volvo-xc60-automat-nou",
-      "name": "VOLVO XC60 AUTOMAT NOU",
-      "transmission": "automat",
-      "condition": "nou",
-      "pricing": {
-        "tier1": 110,
-        "tier2": 105,
-        "tier3": 100,
-        "tier4": 90
-      },
-      "deposit": 300,
-      "insurance": {
-        "premium": {
-          "dailyRate": 15,
-          "deposit": 100
-        },
-        "comprehensive": {
-          "dailyRate": 22,
-          "deposit": 0
-        }
-      }
-    },
-    {
       "id": "mercedes-glc-automat",
       "name": "MERCEDES GLC LINE PLUS",
       "transmission": "automat",
@@ -506,28 +483,6 @@
       }
     },
     {
-      "id": "vw-jetta-manual",
-      "name": "VW JETTA MANUAL",
-      "transmission": "manual",
-      "pricing": {
-        "tier1": 50,
-        "tier2": 47,
-        "tier3": 44,
-        "tier4": 40
-      },
-      "deposit": 200,
-      "insurance": {
-        "premium": {
-          "dailyRate": 10,
-          "deposit": 100
-        },
-        "comprehensive": {
-          "dailyRate": 18,
-          "deposit": 0
-        }
-      }
-    },
-    {
       "id": "vw-polo-manual",
       "name": "VW POLO MANUAL",
       "transmission": "manual",
@@ -770,28 +725,6 @@
         },
         "comprehensive": {
           "dailyRate": 28,
-          "deposit": 0
-        }
-      }
-    },
-    {
-      "id": "volvo-xc60-automat",
-      "name": "VOLVO XC60 AUTOMAT",
-      "transmission": "automat",
-      "pricing": {
-        "tier1": 50,
-        "tier2": 50,
-        "tier3": 50,
-        "tier4": 50
-      },
-      "deposit": 200,
-      "insurance": {
-        "premium": {
-          "dailyRate": 13,
-          "deposit": 100
-        },
-        "comprehensive": {
-          "dailyRate": 20,
           "deposit": 0
         }
       }

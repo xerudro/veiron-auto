@@ -235,12 +235,6 @@ const CAR_MODELS = {
             { file: 'volvo-xc60-facelift/volvo-xc60-automat-suv-luxury-inchirieri-auto-satu-mare.png', alt: 'Volvo XC60 Facelift luxury SUV - car rental Satu Mare', isDirectImage: true }
         ]
     },
-    'volvo-xc60-automat-nou': {
-        title: 'VOLVO XC60 AUTOMATIC NEW',
-        images: [
-            { file: 'volvo-xc60-automat/volvo-xc60-suv-debrecen-satumare-veiron-auto.png', alt: 'Volvo XC60 NEW SUV - car rental Debrecen and Satu Mare', isDirectImage: true }
-        ]
-    },
     'skoda-superb-automat': {
         title: 'SKODA SUPERB AUTOMATIC',
         images: [
@@ -263,12 +257,6 @@ const CAR_MODELS = {
         title: 'VW GOLF MANUAL',
         images: [
             { file: 'vw-golf-4/inchirieri-auto-ieftine-satu-mare-vw-golf-4.png', alt: 'VW Golf 4 manual - affordable car rental Satu Mare', isDirectImage: true }
-        ]
-    },
-    'vw-jetta-manual': {
-        title: 'VW JETTA MANUAL',
-        images: [
-            { file: 'vw-jetta-2.0/vw-jetta-2-0-diese-satu-mare-ieftin.png', alt: 'VW Jetta 2.0 manual diesel - affordable car rental Satu Mare', isDirectImage: true }
         ]
     },
     'vw-tiguan-automat': {
@@ -479,11 +467,6 @@ const CAR_COLORS = {
         colorRO: 'ALB',
         colorEN: 'WHITE'
     },
-    'volvo-xc60-automat-nou': {
-        color: 'white',
-        colorRO: 'ALB',
-        colorEN: 'WHITE'
-    },
     'vw-golf-manual': {
         color: 'grey',
         colorRO: 'GRI',
@@ -498,11 +481,6 @@ const CAR_COLORS = {
         color: 'grey',
         colorRO: 'GRI',
         colorEN: 'GREY'
-    },
-    'vw-jetta-manual': {
-        color: 'white',
-        colorRO: 'ALB',
-        colorEN: 'WHITE'
     },
     'vw-tiguan-automat': {
         color: 'white',
@@ -577,7 +555,6 @@ function getDefaultImages(carId, carName) {
         'skoda-scala-automat': 'skoda-scala/skoda-scala-automatic-satu-mare.png', // Skoda Scala compact automatic
         'volvo-xc40-automat': 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png', // Volvo XC40 SUV automatic
         'vw-golf-manual': 'vw-golf-4/inchirieri-auto-ieftine-satu-mare-vw-golf-4.png', // VW Golf 4 manual
-        'vw-jetta-manual': 'vw-jetta-2.0/vw-jetta-2-0-diese-satu-mare-ieftin.png', // VW Jetta 2.0 manual
         'vw-t-cross-automat': 'vw-t-cross/vw-t-cross-automat-rent-a-car-satu-mare-veiron-auto.png', // VW T-Cross automatic
         'vw-tiguan-automat': 'vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png', // VW Tiguan automatic
         'vw-touran': 'vw-touran/veiron-rent-vw-touran-inchirieri-auto.png', // VW Touran image
