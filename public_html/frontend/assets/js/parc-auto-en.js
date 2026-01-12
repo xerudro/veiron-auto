@@ -6,10 +6,10 @@ let carPricingData = null;
 
 // Car Models Configuration
 const CAR_MODELS = {
-            'vw-passat-manual': {
-                title: 'VW PASSAT VARIANT 2.0',
+            'vw-polo-automat': {
+                title: 'VW POLO AUTOMATIC',
                 images: [
-                    { file: 'vw-passat-variant/vw-passat-variant-2.0-inchirieri-auto-satu-mare.png', alt: 'VW Passat Variant 2.0 - car rental Satu Mare', isDirectImage: true }
+                    { file: 'vw-polo/vw-polo-inchirieri-ieftine-masini-satu-mare.png', alt: 'VW Polo Automatic - car rental Satu Mare', isDirectImage: true }
                 ]
             },
         'vw-touran-automat': {
@@ -57,9 +57,7 @@ const CAR_MODELS = {
         title: 'MERCEDES E KLASSE',
         images: [
             { file: 'mercedes-e-class/mercedes-e-class-luxury-satu-mare.png', alt: 'Mercedes E-Class sedan premium - main image', isDirectImage: true },
-            { file: 'mercedes-e-class/gallery/mercedes-e-class-interior-luxury-executive.jpg', alt: 'Luxury executive interior Mercedes E-Class', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Side view', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Executive trunk', isDirectImage: true }
+            { file: 'mercedes-e-class/gallery/mercedes-e-class-interior-luxury-executive.jpg', alt: 'Luxury executive interior Mercedes E-Class', isDirectImage: true }
         ]
     },
     'mercedes-glc': {
@@ -116,91 +114,61 @@ const CAR_MODELS = {
     'audi-q3': {
         title: 'AUDI Q3',
         images: [
-            { file: 'audi-q3/audi-q3-2011-veiron-auto-rent.png', alt: 'Audi Q3 SUV', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Audi Q3 interior', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Side view', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Trunk', isDirectImage: false }
+            { file: 'audi-q3/audi-q3-2011-veiron-auto-rent.png', alt: 'Audi Q3 SUV', isDirectImage: true }
         ]
     },
     'mitsubishi-outlander-automat': {
         title: 'MITSUBISHI OUTLANDER AUTOMATIC',
         images: [
-            { file: 'mitsubishi-outlander/mitsubishi_outlander_suv_rent_a_car_satu_mare.png', alt: 'Mitsubishi Outlander SUV - car rental Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Mitsubishi Outlander interior', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'SUV side view', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Mitsubishi Outlander trunk', isDirectImage: false }
+            { file: 'mitsubishi-outlander/mitsubishi_outlander_suv_rent_a_car_satu_mare.png', alt: 'Mitsubishi Outlander SUV - car rental Satu Mare', isDirectImage: true }
         ]
     },
     'seat-alhambra-7-locuri-automat': {
         title: 'SEAT ALHAMBRA AUTOMATIC',
         images: [
-            { file: 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', alt: 'Seat Alhambra 7 seats - car rental Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Seat Alhambra interior', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: '7-seater van side view', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Seat Alhambra trunk', isDirectImage: false }
+            { file: 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', alt: 'Seat Alhambra 7 seats - car rental Satu Mare', isDirectImage: true }
         ]
     },
     'seat-alhambra-manual-7-locuri': {
         title: 'SEAT ALHAMBRA MANUAL',
         images: [
-            { file: 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', alt: 'Seat Alhambra 7 seats manual - car rental Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Seat Alhambra interior', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: '7-seater van side view', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Seat Alhambra trunk', isDirectImage: false }
+            { file: 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', alt: 'Seat Alhambra 7 seats manual - car rental Satu Mare', isDirectImage: true }
         ]
     },
     'renault-megane-manual': {
         title: 'RENAULT MEGANE MANUAL',
         images: [
-            { file: 'renault-megane/renault_megane_manual_rent_a_car.png', alt: 'Renault Megane manual - car rental Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Renault Megane interior', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Side view', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Renault Megane trunk', isDirectImage: false }
+            { file: 'renault-megane/renault_megane_manual_rent_a_car.png', alt: 'Renault Megane manual - car rental Satu Mare', isDirectImage: true }
         ]
     },
     'seat-exeo-manual': {
         title: 'SEAT EXEO MANUAL',
         images: [
-            { file: 'seat-exeo/seat_exeo_manual_inchiriere_auto.png', alt: 'Seat Exeo manual - car rental Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Seat Exeo interior', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Side view', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Seat Exeo trunk', isDirectImage: false }
+            { file: 'seat-exeo/seat_exeo_manual_inchiriere_auto.png', alt: 'Seat Exeo manual - car rental Satu Mare', isDirectImage: true }
         ]
     },
     'seat-exeo-combi-manual': {
         title: 'SEAT EXEO COMBI MANUAL',
         images: [
-            { file: 'seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png', alt: 'Seat Exeo Combi manual - car rental Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Seat Exeo Combi interior', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Combi side view', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Seat Exeo Combi trunk', isDirectImage: false }
+            { file: 'seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png', alt: 'Seat Exeo Combi manual - car rental Satu Mare', isDirectImage: true }
         ]
     },
     'skoda-kamiq-automat': {
         title: 'SKODA KAMIQ AUTOMATIC',
         images: [
-            { file: 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png', alt: 'Skoda Kamiq SUV - car rental Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Skoda Kamiq interior', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'SUV side view', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Skoda Kamiq trunk', isDirectImage: false }
+            { file: 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png', alt: 'Skoda Kamiq SUV - car rental Satu Mare', isDirectImage: true }
         ]
     },
     'skoda-scala-automat': {
         title: 'SKODA SCALA AUTOMATIC',
         images: [
-            { file: 'skoda-scala/skoda-scala-automatic-satu-mare.png', alt: 'Skoda Scala compact - car rental Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Skoda Scala interior', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Compact car side view', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Skoda Scala trunk', isDirectImage: false }
+            { file: 'skoda-scala/skoda-scala-automatic-satu-mare.png', alt: 'Skoda Scala compact - car rental Satu Mare', isDirectImage: true }
         ]
     },
     'volvo-xc40-automat': {
         title: 'VOLVO XC40 AUTOMATIC',
         images: [
-            { file: 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png', alt: 'Volvo XC40 SUV - car rental Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Volvo XC40 interior', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'SUV side view', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Volvo XC40 trunk', isDirectImage: false }
+            { file: 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png', alt: 'Volvo XC40 SUV - car rental Satu Mare', isDirectImage: true }
         ]
     },
     'skoda-kodiaq-7-locuri-automat': {

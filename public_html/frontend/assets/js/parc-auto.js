@@ -6,10 +6,10 @@ let carPricingData = null;
 
 // Car Models Configuration
 const CAR_MODELS = {
-            'vw-passat-manual': {
-                title: 'VW PASSAT VARIANT 2.0',
+            'vw-polo-automat': {
+                title: 'VW POLO AUTOMAT',
                 images: [
-                    { file: 'vw-passat-variant/vw-passat-variant-2.0-inchirieri-auto-satu-mare.png', alt: 'VW Passat Variant 2.0 - închiriere auto Satu Mare', isDirectImage: true }
+                    { file: 'vw-polo/vw-polo-inchirieri-ieftine-masini-satu-mare.png', alt: 'VW Polo Automat - închiriere auto Satu Mare', isDirectImage: true }
                 ]
             },
         'vw-touran-automat': {
@@ -57,9 +57,7 @@ const CAR_MODELS = {
         title: 'MERCEDES E KLASSE',
         images: [
             { file: 'mercedes-e-class/mercedes-e-class-luxury-satu-mare.png', alt: 'Mercedes E-Class sedan premium - imagine principală', isDirectImage: true },
-            { file: 'mercedes-e-class/gallery/mercedes-e-class-interior-luxury-executive.jpg', alt: 'Interior luxury executive Mercedes E-Class', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Portbagaj executive', isDirectImage: true }
+            { file: 'mercedes-e-class/gallery/mercedes-e-class-interior-luxury-executive.jpg', alt: 'Interior luxury executive Mercedes E-Class', isDirectImage: true }
         ]
     },
     'mercedes-glc': {
@@ -116,91 +114,61 @@ const CAR_MODELS = {
     'audi-q3': {
         title: 'AUDI Q3',
         images: [
-            { file: 'audi-q3/audi-q3-2011-veiron-auto-rent.png', alt: 'Audi Q3 SUV', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Interior Audi Q3', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Portbagaj', isDirectImage: false }
+            { file: 'audi-q3/audi-q3-2011-veiron-auto-rent.png', alt: 'Audi Q3 SUV', isDirectImage: true }
         ]
     },
     'mitsubishi-outlander-automat': {
         title: 'MITSUBISHI OUTLANDER AUTOMAT',
         images: [
-            { file: 'mitsubishi-outlander/mitsubishi_outlander_suv_rent_a_car_satu_mare.png', alt: 'Mitsubishi Outlander SUV - închiriere Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Interior Mitsubishi Outlander', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală SUV', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Portbagaj Mitsubishi Outlander', isDirectImage: false }
+            { file: 'mitsubishi-outlander/mitsubishi_outlander_suv_rent_a_car_satu_mare.png', alt: 'Mitsubishi Outlander SUV - închiriere Satu Mare', isDirectImage: true }
         ]
     },
     'seat-alhambra-7-locuri-automat': {
         title: 'SEAT ALHAMBRA AUTOMAT',
         images: [
-            { file: 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', alt: 'Seat Alhambra 7 locuri - închiriere Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Interior Seat Alhambra', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală van 7 locuri', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Portbagaj Seat Alhambra', isDirectImage: false }
+            { file: 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', alt: 'Seat Alhambra 7 locuri - închiriere Satu Mare', isDirectImage: true }
         ]
     },
     'seat-alhambra-manual-7-locuri': {
         title: 'SEAT ALHAMBRA MANUAL',
         images: [
-            { file: 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', alt: 'Seat Alhambra 7 locuri manual - închiriere Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Interior Seat Alhambra', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală van 7 locuri', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Portbagaj Seat Alhambra', isDirectImage: false }
+            { file: 'seat-alhambra/seat_alhambra_7_locuri_inchiriere.png', alt: 'Seat Alhambra 7 locuri manual - închiriere Satu Mare', isDirectImage: true }
         ]
     },
     'renault-megane-manual': {
         title: 'RENAULT MEGANE MANUAL',
         images: [
-            { file: 'renault-megane/renault_megane_manual_rent_a_car.png', alt: 'Renault Megane manual - închiriere Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Interior Renault Megane', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Portbagaj Renault Megane', isDirectImage: false }
+            { file: 'renault-megane/renault_megane_manual_rent_a_car.png', alt: 'Renault Megane manual - închiriere Satu Mare', isDirectImage: true }
         ]
     },
     'seat-exeo-manual': {
         title: 'SEAT EXEO MANUAL',
         images: [
-            { file: 'seat-exeo/seat_exeo_manual_inchiriere_auto.png', alt: 'Seat Exeo manual - închiriere Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Interior Seat Exeo', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Portbagaj Seat Exeo', isDirectImage: false }
+            { file: 'seat-exeo/seat_exeo_manual_inchiriere_auto.png', alt: 'Seat Exeo manual - închiriere Satu Mare', isDirectImage: true }
         ]
     },
     'seat-exeo-combi-manual': {
         title: 'SEAT EXEO COMBI MANUAL',
         images: [
-            { file: 'seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png', alt: 'Seat Exeo Combi manual - închiriere Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Interior Seat Exeo Combi', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală combi', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Portbagaj Seat Exeo Combi', isDirectImage: false }
+            { file: 'seat-exeo-combi/seat_exeo_combi_masina_ieftina_veiron_auto.png', alt: 'Seat Exeo Combi manual - închiriere Satu Mare', isDirectImage: true }
         ]
     },
     'skoda-kamiq-automat': {
         title: 'SKODA KAMIQ AUTOMAT',
         images: [
-            { file: 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png', alt: 'Skoda Kamiq SUV - închiriere Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Interior Skoda Kamiq', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală SUV', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Portbagaj Skoda Kamiq', isDirectImage: false }
+            { file: 'skoda-kamiq/skoda_kamiq_suv_4x4_satu_mare.png', alt: 'Skoda Kamiq SUV - închiriere Satu Mare', isDirectImage: true }
         ]
     },
     'skoda-scala-automat': {
         title: 'SKODA SCALA AUTOMAT',
         images: [
-            { file: 'skoda-scala/skoda-scala-automatic-satu-mare.png', alt: 'Skoda Scala compact - închiriere Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Interior Skoda Scala', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală compact', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Portbagaj Skoda Scala', isDirectImage: false }
+            { file: 'skoda-scala/skoda-scala-automatic-satu-mare.png', alt: 'Skoda Scala compact - închiriere Satu Mare', isDirectImage: true }
         ]
     },
     'volvo-xc40-automat': {
         title: 'VOLVO XC40 AUTOMAT',
         images: [
-            { file: 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png', alt: 'Volvo XC40 SUV - închiriere Satu Mare', isDirectImage: true },
-            { file: 'placeholder.jpg', alt: 'Interior Volvo XC40', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Vedere laterală SUV', isDirectImage: false },
-            { file: 'placeholder.jpg', alt: 'Portbagaj Volvo XC40', isDirectImage: false }
+            { file: 'volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png', alt: 'Volvo XC40 SUV - închiriere Satu Mare', isDirectImage: true }
         ]
     },
     'skoda-kodiaq-7-locuri-automat': {
