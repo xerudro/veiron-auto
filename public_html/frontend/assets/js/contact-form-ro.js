@@ -64,9 +64,70 @@ document.addEventListener('DOMContentLoaded', function () {
       errorBox.innerHTML = messages.join('<br>')
       errorBox.style.display = 'block'
     } else {
+      e.preventDefault()
       errorBox.style.display = 'none'
+      // Trimite formularul prin AJAX
+      submitContactForm(form, errorBox)
     }
   })
+
+  // Funcție pentru trimiterea formularului prin AJAX
+  async function submitContactForm(form, errorBox) {
+    var submitBtn = form.querySelector('button[type="submit"]')
+    var originalBtnText = submitBtn.textContent
+
+    try {
+      // Dezactivează butonul și schimbă textul
+      submitBtn.disabled = true
+      submitBtn.textContent = 'Se trimite...'
+
+      // Colectează datele din formular
+      var formData = {
+        name: form.querySelector('#nume').value.trim() + ' ' + form.querySelector('#prenume').value.trim(),
+        email: form.querySelector('#email').value.trim(),
+        phone: form.querySelector('#telefon').value.trim(),
+        subject: form.querySelector('#subiect') ? form.querySelector('#subiect').value.trim() : '',
+        message: form.querySelector('#mesaj').value.trim()
+      }
+
+      // Trimite datele către API
+      var response = await fetch('/frontend/api/send-contact.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      var result = await response.json()
+
+      if (result.success) {
+        // Afișează mesaj de succes
+        errorBox.style.color = '#28a745'
+        errorBox.innerHTML = result.message
+        errorBox.style.display = 'block'
+        // Resetează formularul
+        form.reset()
+        // Ascunde mesajul după 5 secunde
+        setTimeout(function() {
+          errorBox.style.display = 'none'
+          errorBox.style.color = '#ff4500'
+        }, 5000)
+      } else {
+        throw new Error(result.message || 'Eroare la trimiterea mesajului')
+      }
+
+    } catch (error) {
+      errorBox.style.color = '#ff4500'
+      errorBox.innerHTML = 'Eroare: ' + error.message + '. Vă rugăm să încercați din nou.'
+      errorBox.style.display = 'block'
+    } finally {
+      // Reactivează butonul și restaurează textul
+      submitBtn.disabled = false
+      submitBtn.textContent = originalBtnText
+    }
+  }
 
   // Elimină highlight-ul roșu la corectare
   form.querySelectorAll('input, textarea').forEach(function (el) {

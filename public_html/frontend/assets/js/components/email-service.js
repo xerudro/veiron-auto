@@ -5,8 +5,30 @@
 
 class EmailService {
     constructor() {
-        this.apiEndpoint = '/api/submit-booking';
+        this.apiEndpoint = '/frontend/api/send-booking.php';
         this.dataManager = new BookingDataManager();
+        this.language = this.detectLanguage();
+    }
+
+    /**
+     * Detectează limba curentă a paginii
+     * @returns {string} 'ro' sau 'en'
+     */
+    detectLanguage() {
+        // Verifică dacă URL-ul conține '-en'
+        const url = window.location.pathname;
+        if (url.includes('-en.html') || url.includes('/en/')) {
+            return 'en';
+        }
+
+        // Verifică atributul lang din HTML
+        const htmlLang = document.documentElement.lang;
+        if (htmlLang && htmlLang.toLowerCase().startsWith('en')) {
+            return 'en';
+        }
+
+        // Default: română
+        return 'ro';
     }
 
     /**
@@ -62,13 +84,16 @@ class EmailService {
      */
     async sendBookingToServer(bookingData) {
         try {
+            // Transform datele în formatul așteptat de PHP API
+            const flatData = this.transformBookingDataForAPI(bookingData);
+
             const response = await fetch(this.apiEndpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'X-Requested-With': 'XMLHttpRequest'
                 },
-                body: JSON.stringify(bookingData)
+                body: JSON.stringify(flatData)
             });
 
             if (!response.ok) {
@@ -82,6 +107,38 @@ class EmailService {
             logger.error('Error sending booking to server:', error);
             throw error;
         }
+    }
+
+    /**
+     * Transformă datele de booking în formatul așteptat de PHP API
+     * @param {Object} bookingData - Datele structurate de rezervare
+     * @returns {Object} Datele în format flat pentru API
+     */
+    transformBookingDataForAPI(bookingData) {
+        const { clientInfo, booking, pricing } = bookingData;
+
+        // Generează număr de rezervare unic
+        const bookingNumber = 'BK-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+
+        return {
+            booking_number: bookingNumber,
+            client_name: clientInfo.name || '',
+            client_email: clientInfo.email || '',
+            client_phone: clientInfo.phone || '',
+            car_name: booking.carType || booking.carName || '',
+            pickup_location: booking.pickup?.location || '',
+            pickup_date: booking.pickup?.date || '',
+            pickup_time: booking.pickup?.time || '',
+            dropoff_location: booking.dropoff?.location || '',
+            dropoff_date: booking.dropoff?.date || '',
+            dropoff_time: booking.dropoff?.time || '',
+            duration_days: booking.rentalDays || 0,
+            total_cost_eur: pricing.totalPriceEUR || (pricing.totalPrice / 5).toFixed(2), // Convert RON to EUR
+            total_cost_ron: pricing.totalPrice || 0,
+            status: 'Pending',
+            payment_status: 'Pending',
+            language: this.language // Add detected language
+        };
     }
 
     /**

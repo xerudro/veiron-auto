@@ -64,9 +64,70 @@ document.addEventListener('DOMContentLoaded', function () {
       errorBox.innerHTML = messages.join('<br>')
       errorBox.style.display = 'block'
     } else {
+      e.preventDefault()
       errorBox.style.display = 'none'
+      // Submit form via AJAX
+      submitContactForm(form, errorBox)
     }
   })
+
+  // Function to submit form via AJAX
+  async function submitContactForm(form, errorBox) {
+    var submitBtn = form.querySelector('button[type="submit"]')
+    var originalBtnText = submitBtn.textContent
+
+    try {
+      // Disable button and change text
+      submitBtn.disabled = true
+      submitBtn.textContent = 'Sending...'
+
+      // Collect form data
+      var formData = {
+        name: form.querySelector('#first-name').value.trim() + ' ' + form.querySelector('#last-name').value.trim(),
+        email: form.querySelector('#email').value.trim(),
+        phone: form.querySelector('#phone').value.trim(),
+        subject: form.querySelector('#subject') ? form.querySelector('#subject').value.trim() : '',
+        message: form.querySelector('#message').value.trim()
+      }
+
+      // Send data to API
+      var response = await fetch('/frontend/api/send-contact.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      var result = await response.json()
+
+      if (result.success) {
+        // Display success message
+        errorBox.style.color = '#28a745'
+        errorBox.innerHTML = result.message
+        errorBox.style.display = 'block'
+        // Reset form
+        form.reset()
+        // Hide message after 5 seconds
+        setTimeout(function() {
+          errorBox.style.display = 'none'
+          errorBox.style.color = '#ff4500'
+        }, 5000)
+      } else {
+        throw new Error(result.message || 'Error sending message')
+      }
+
+    } catch (error) {
+      errorBox.style.color = '#ff4500'
+      errorBox.innerHTML = 'Error: ' + error.message + '. Please try again.'
+      errorBox.style.display = 'block'
+    } finally {
+      // Re-enable button and restore text
+      submitBtn.disabled = false
+      submitBtn.textContent = originalBtnText
+    }
+  }
 
   // Remove error highlight on input
   form.querySelectorAll('input, textarea').forEach(function (el) {
