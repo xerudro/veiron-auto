@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // Send data to API
-      var response = await fetch('/frontend/api/send-contact.php', {
+      var response = await fetch('../api/send-contact.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

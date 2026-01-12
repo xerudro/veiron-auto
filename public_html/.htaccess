@@ -1,0 +1,47 @@
+# VEIRONAUTO .htaccess Configuration
+# Root routing - Frontend + Backend API
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # Permite fișierele și directoarele reale
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+    
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+    
+    # API v1 routing - redirect la backend
+    RewriteCond %{REQUEST_URI} ^/api/v1/
+    RewriteRule ^api/v1/(.*)$ backend/api/v1/index.php?route=$1 [QSA,L]
+    
+    # Frontend routing - redirect la frontend/index.html cu language detection
+    RewriteCond %{REQUEST_URI} !^/(backend|api|config|database|logs|vendor|optimization-journey|\.well-known)
+    RewriteRule ^(.*)$ frontend/index.html [L]
+</IfModule>
+
+# Protecție fișiere sensibile
+<FilesMatch "\.(env|json|log|sql|tmp)$">
+    Deny from all
+</FilesMatch>
+
+# Dezactivează dir listing
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# Cache headers
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpg|jpeg|png|gif|css|js|svg|ico|woff|woff2)$">
+        Header set Cache-Control "public, max-age=31536000"
+    </FilesMatch>
+    <FilesMatch "\.html?$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+</IfModule>
+
+# Compresie
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>

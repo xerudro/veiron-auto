@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEIRONAUTO - Închirieri Auto | Car Rental</title>
+    <script>
+        // Language Detection & Redirect
+        (function() {
+            // Check for saved preference
+            const savedLang = localStorage.getItem('veironauto_lang');
+            if (savedLang) {
+                if (savedLang === 'en') {
+                    window.location.href = 'index-en.html';
+                } else {
+                    window.location.href = 'index-ro.html';
+                }
+                return;
+            }
+            
+            // Check browser language
+            const browserLang = navigator.language || navigator.userLanguage;
+            const langPrefix = browserLang.split('-')[0].toLowerCase();
+            
+            // Default to Romanian if browser lang not detected
+            if (langPrefix === 'en') {
+                window.location.href = 'index-en.html';
+            } else {
+                window.location.href = 'index-ro.html';
+            }
+        })();
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=index-ro.html">
+    </noscript>
+</head>
+<body>
+    <p>Redirecting... / Se redirecționează...</p>
+</body>
+</html>
