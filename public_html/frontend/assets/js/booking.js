@@ -412,10 +412,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-seria5-sedan/bmw-seria5-sedan-luxury.png",
         pricing: {
-            tier1: { daily: 60 },
-            tier2: { daily: 60 },
-            tier3: { daily: 60 },
-            tier4: { daily: 60 }
+            tier1: { daily: 80 },
+            tier2: { daily: 80 },
+            tier3: { daily: 80 },
+            tier4: { daily: 80 }
         },
         warranty: 400,
         highlighted: true
@@ -572,6 +572,246 @@ const carData = [
         },
         warranty: 300,
         highlighted: true
+    },
+    // Skoda Kodiaq - 5 Locuri
+    {
+        id: 35,
+        name: "Skoda Kodiaq - 5 Locuri",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 5,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/skoda-kodiaq/skoda-kodiak-7-locuri-rent-a-car-airport-satu-mare-veiron.png",
+        pricing: {
+            tier1: { daily: 75 },
+            tier2: { daily: 75 },
+            tier3: { daily: 75 },
+            tier4: { daily: 75 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    // Skoda Kodiaq - 7 Locuri
+    {
+        id: 36,
+        name: "Skoda Kodiaq - 7 Locuri",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 7,
+        luggage: 3,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/skoda-kodiaq/skoda-kodiak-7-locuri-rent-a-car-airport-satu-mare-veiron.png",
+        pricing: {
+            tier1: { daily: 80 },
+            tier2: { daily: 80 },
+            tier3: { daily: 80 },
+            tier4: { daily: 80 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    // Skoda Octavia Combi Automat
+    {
+        id: 37,
+        name: "Skoda Octavia Combi Automat",
+        category: "compact",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Benzină",
+        image: "assets/images/cars/skoda-octavia-combi/inchirieri-skoda-octavia-combi-pret-avantajos.png",
+        pricing: {
+            tier1: { daily: 36 },
+            tier2: { daily: 34 },
+            tier3: { daily: 32 },
+            tier4: { daily: 30 }
+        },
+        warranty: 250,
+        highlighted: false
+    },
+    // Skoda Octavia Sedan Automat
+    {
+        id: 38,
+        name: "Skoda Octavia Sedan Automat",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 4,
+        fuel: "Benzină",
+        image: "assets/images/cars/skoda-octavia-sedan/skoda-octavia-sedan-rent-a-car-cluj-napoca-veiron.png",
+        pricing: {
+            tier1: { daily: 40 },
+            tier2: { daily: 40 },
+            tier3: { daily: 40 },
+            tier4: { daily: 40 }
+        },
+        warranty: 200,
+        highlighted: false
+    },
+    // Skoda Superb Automat
+    {
+        id: 39,
+        name: "Skoda Superb Automat",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 4,
+        fuel: "Diesel",
+        image: "assets/images/cars/skoda-superb/skoda-suberb-inchirieri-satu-mare-ieftin.png",
+        pricing: {
+            tier1: { daily: 60 },
+            tier2: { daily: 57 },
+            tier3: { daily: 53 },
+            tier4: { daily: 50 }
+        },
+        warranty: 250,
+        highlighted: false
+    },
+    // Volvo XC40 Automat
+    {
+        id: 40,
+        name: "Volvo XC40 Automat",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Benzină",
+        image: "assets/images/cars/volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png",
+        pricing: {
+            tier1: { daily: 70 },
+            tier2: { daily: 70 },
+            tier3: { daily: 70 },
+            tier4: { daily: 70 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    // VW Caravelle (8+1 Locuri)
+    {
+        id: 41,
+        name: "VW Caravelle (8+1 Locuri)",
+        category: "van",
+        transmission: "automatic",
+        passengers: 9,
+        luggage: 6,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/vw-caravelle/vw-caravelle-van-inchirieri-family-satu-mare.png",
+        pricing: {
+            tier1: { daily: 95 },
+            tier2: { daily: 90 },
+            tier3: { daily: 85 },
+            tier4: { daily: 75 }
+        },
+        warranty: 400,
+        highlighted: false
+    },
+    // VW Golf Manual
+    {
+        id: 42,
+        name: "VW Golf Manual",
+        category: "compact",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 3,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/vw-golf-4/inchirieri-auto-ieftine-satu-mare-vw-golf-4.png",
+        pricing: {
+            tier1: { daily: 38 },
+            tier2: { daily: 35 },
+            tier3: { daily: 32 },
+            tier4: { daily: 30 }
+        },
+        warranty: 150,
+        highlighted: false
+    },
+    // VW Passat Combi Automat
+    {
+        id: 43,
+        name: "VW Passat Combi Automat",
+        category: "compact",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/vw-passat-combi/vw-passat-combi-2012-inchirieri-auto-ieftine.png",
+        pricing: {
+            tier1: { daily: 40 },
+            tier2: { daily: 40 },
+            tier3: { daily: 40 },
+            tier4: { daily: 40 }
+        },
+        warranty: 200,
+        highlighted: false
+    },
+    // VW Polo Automat
+    {
+        id: 44,
+        name: "VW Polo Automat",
+        category: "compact",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 2,
+        doors: 5,
+        fuel: "Benzină",
+        image: "assets/images/cars/vw-polo/vw-polo-inchirieri-ieftine-masini-satu-mare.png",
+        pricing: {
+            tier1: { daily: 40 },
+            tier2: { daily: 40 },
+            tier3: { daily: 40 },
+            tier4: { daily: 40 }
+        },
+        warranty: 150,
+        highlighted: false
+    },
+    // VW Polo Manual
+    {
+        id: 45,
+        name: "VW Polo Manual",
+        category: "compact",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 2,
+        doors: 5,
+        fuel: "Benzină",
+        image: "assets/images/cars/vw-polo/vw-polo-inchirieri-ieftine-masini-satu-mare.png",
+        pricing: {
+            tier1: { daily: 40 },
+            tier2: { daily: 40 },
+            tier3: { daily: 40 },
+            tier4: { daily: 40 }
+        },
+        warranty: 150,
+        highlighted: false
+    },
+    // VW Tiguan Automat
+    {
+        id: 46,
+        name: "VW Tiguan Automat",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png",
+        pricing: {
+            tier1: { daily: 50 },
+            tier2: { daily: 50 },
+            tier3: { daily: 50 },
+            tier4: { daily: 50 }
+        },
+        warranty: 200,
+        highlighted: false
     }
 ];
 

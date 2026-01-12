@@ -412,10 +412,10 @@ const carData = [
         fuel: "Diesel",
         image: "assets/images/cars/bmw-seria5-sedan/bmw-seria5-sedan-luxury.png",
         pricing: {
-            tier1: { daily: 60, weekly: 360, monthly: 1200 },
-            tier2: { daily: 60, weekly: 360, monthly: 1200 },
-            tier3: { daily: 60, weekly: 360, monthly: 1200 },
-            tier4: { daily: 60, weekly: 360, monthly: 1200 }
+            tier1: { daily: 80, weekly: 480, monthly: 1600 },
+            tier2: { daily: 80, weekly: 480, monthly: 1600 },
+            tier3: { daily: 80, weekly: 480, monthly: 1600 },
+            tier4: { daily: 80, weekly: 480, monthly: 1600 }
         },
         warranty: 2000,
         highlighted: true
@@ -572,6 +572,246 @@ const carData = [
         },
         warranty: 300,
         highlighted: true
+    },
+    // Skoda Kodiaq - 5 Seats
+    {
+        id: 35,
+        name: "Skoda Kodiaq - 5 Seats",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 5,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/skoda-kodiaq/skoda-kodiak-7-locuri-rent-a-car-airport-satu-mare-veiron.png",
+        pricing: {
+            tier1: { daily: 75, weekly: 450, monthly: 1500 },
+            tier2: { daily: 75, weekly: 450, monthly: 1500 },
+            tier3: { daily: 75, weekly: 450, monthly: 1500 },
+            tier4: { daily: 75, weekly: 450, monthly: 1500 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    // Skoda Kodiaq - 7 Seats
+    {
+        id: 36,
+        name: "Skoda Kodiaq - 7 Seats",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 7,
+        luggage: 3,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/skoda-kodiaq/skoda-kodiak-7-locuri-rent-a-car-airport-satu-mare-veiron.png",
+        pricing: {
+            tier1: { daily: 80, weekly: 480, monthly: 1600 },
+            tier2: { daily: 80, weekly: 480, monthly: 1600 },
+            tier3: { daily: 80, weekly: 480, monthly: 1600 },
+            tier4: { daily: 80, weekly: 480, monthly: 1600 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    // Skoda Octavia Combi Automatic
+    {
+        id: 37,
+        name: "Skoda Octavia Combi Automatic",
+        category: "compact",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Petrol",
+        image: "assets/images/cars/skoda-octavia-combi/inchirieri-skoda-octavia-combi-pret-avantajos.png",
+        pricing: {
+            tier1: { daily: 36, weekly: 216, monthly: 720 },
+            tier2: { daily: 34, weekly: 204, monthly: 680 },
+            tier3: { daily: 32, weekly: 192, monthly: 640 },
+            tier4: { daily: 30, weekly: 180, monthly: 600 }
+        },
+        warranty: 250,
+        highlighted: false
+    },
+    // Skoda Octavia Sedan Automatic
+    {
+        id: 38,
+        name: "Skoda Octavia Sedan Automatic",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 3,
+        doors: 4,
+        fuel: "Petrol",
+        image: "assets/images/cars/skoda-octavia-sedan/skoda-octavia-sedan-rent-a-car-cluj-napoca-veiron.png",
+        pricing: {
+            tier1: { daily: 40, weekly: 240, monthly: 800 },
+            tier2: { daily: 40, weekly: 240, monthly: 800 },
+            tier3: { daily: 40, weekly: 240, monthly: 800 },
+            tier4: { daily: 40, weekly: 240, monthly: 800 }
+        },
+        warranty: 200,
+        highlighted: false
+    },
+    // Skoda Superb Automatic
+    {
+        id: 39,
+        name: "Skoda Superb Automatic",
+        category: "sedan",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 4,
+        fuel: "Diesel",
+        image: "assets/images/cars/skoda-superb/skoda-suberb-inchirieri-satu-mare-ieftin.png",
+        pricing: {
+            tier1: { daily: 60, weekly: 360, monthly: 1200 },
+            tier2: { daily: 57, weekly: 342, monthly: 1140 },
+            tier3: { daily: 53, weekly: 318, monthly: 1060 },
+            tier4: { daily: 50, weekly: 300, monthly: 1000 }
+        },
+        warranty: 250,
+        highlighted: false
+    },
+    // Volvo XC40 Automatic
+    {
+        id: 40,
+        name: "Volvo XC40 Automatic",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Petrol",
+        image: "assets/images/cars/volvo-xc40/volvo-xc40-automat-inchirieri-aeroport-budapesta-satumare.png",
+        pricing: {
+            tier1: { daily: 70, weekly: 420, monthly: 1400 },
+            tier2: { daily: 70, weekly: 420, monthly: 1400 },
+            tier3: { daily: 70, weekly: 420, monthly: 1400 },
+            tier4: { daily: 70, weekly: 420, monthly: 1400 }
+        },
+        warranty: 300,
+        highlighted: false
+    },
+    // VW Caravelle (8+1 Seats)
+    {
+        id: 41,
+        name: "VW Caravelle (8+1 Seats)",
+        category: "van",
+        transmission: "automatic",
+        passengers: 9,
+        luggage: 6,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/vw-caravelle/vw-caravelle-van-inchirieri-family-satu-mare.png",
+        pricing: {
+            tier1: { daily: 95, weekly: 570, monthly: 1900 },
+            tier2: { daily: 90, weekly: 540, monthly: 1800 },
+            tier3: { daily: 85, weekly: 510, monthly: 1700 },
+            tier4: { daily: 75, weekly: 450, monthly: 1500 }
+        },
+        warranty: 400,
+        highlighted: false
+    },
+    // VW Golf Manual
+    {
+        id: 42,
+        name: "VW Golf Manual",
+        category: "compact",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 3,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/vw-golf-4/inchirieri-auto-ieftine-satu-mare-vw-golf-4.png",
+        pricing: {
+            tier1: { daily: 38, weekly: 228, monthly: 760 },
+            tier2: { daily: 35, weekly: 210, monthly: 700 },
+            tier3: { daily: 32, weekly: 192, monthly: 640 },
+            tier4: { daily: 30, weekly: 180, monthly: 600 }
+        },
+        warranty: 150,
+        highlighted: false
+    },
+    // VW Passat Combi Automatic
+    {
+        id: 43,
+        name: "VW Passat Combi Automatic",
+        category: "compact",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/vw-passat-combi/vw-passat-combi-2012-inchirieri-auto-ieftine.png",
+        pricing: {
+            tier1: { daily: 40, weekly: 240, monthly: 800 },
+            tier2: { daily: 40, weekly: 240, monthly: 800 },
+            tier3: { daily: 40, weekly: 240, monthly: 800 },
+            tier4: { daily: 40, weekly: 240, monthly: 800 }
+        },
+        warranty: 200,
+        highlighted: false
+    },
+    // VW Polo Automatic
+    {
+        id: 44,
+        name: "VW Polo Automatic",
+        category: "compact",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 2,
+        doors: 5,
+        fuel: "Petrol",
+        image: "assets/images/cars/vw-polo/vw-polo-inchirieri-ieftine-masini-satu-mare.png",
+        pricing: {
+            tier1: { daily: 40, weekly: 240, monthly: 800 },
+            tier2: { daily: 40, weekly: 240, monthly: 800 },
+            tier3: { daily: 40, weekly: 240, monthly: 800 },
+            tier4: { daily: 40, weekly: 240, monthly: 800 }
+        },
+        warranty: 150,
+        highlighted: false
+    },
+    // VW Polo Manual
+    {
+        id: 45,
+        name: "VW Polo Manual",
+        category: "compact",
+        transmission: "manual",
+        passengers: 5,
+        luggage: 2,
+        doors: 5,
+        fuel: "Petrol",
+        image: "assets/images/cars/vw-polo/vw-polo-inchirieri-ieftine-masini-satu-mare.png",
+        pricing: {
+            tier1: { daily: 40, weekly: 240, monthly: 800 },
+            tier2: { daily: 40, weekly: 240, monthly: 800 },
+            tier3: { daily: 40, weekly: 240, monthly: 800 },
+            tier4: { daily: 40, weekly: 240, monthly: 800 }
+        },
+        warranty: 150,
+        highlighted: false
+    },
+    // VW Tiguan Automatic
+    {
+        id: 46,
+        name: "VW Tiguan Automatic",
+        category: "suv",
+        transmission: "automatic",
+        passengers: 5,
+        luggage: 4,
+        doors: 5,
+        fuel: "Diesel",
+        image: "assets/images/cars/vw-tiguan/vw-tiguan-veiron-auto-satu-mare.png",
+        pricing: {
+            tier1: { daily: 50, weekly: 300, monthly: 1000 },
+            tier2: { daily: 50, weekly: 300, monthly: 1000 },
+            tier3: { daily: 50, weekly: 300, monthly: 1000 },
+            tier4: { daily: 50, weekly: 300, monthly: 1000 }
+        },
+        warranty: 200,
+        highlighted: false
     }
 ];
 

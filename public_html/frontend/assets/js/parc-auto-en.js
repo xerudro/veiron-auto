@@ -482,10 +482,30 @@ const CAR_COLORS = {
         colorRO: 'GRI',
         colorEN: 'GREY'
     },
+    'vw-passat-automat': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
+    },
+    'vw-passat-cc-automat': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
+    },
+    'vw-touran-automat': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
+    },
     'vw-tiguan-automat': {
         color: 'white',
         colorRO: 'ALB',
         colorEN: 'WHITE'
+    },
+    'vw-touareg-automat': {
+        color: 'black',
+        colorRO: 'NEGRU',
+        colorEN: 'BLACK'
     },
     'vw-t-cross-automat': {
         color: 'black',

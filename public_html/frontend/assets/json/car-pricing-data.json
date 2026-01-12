@@ -712,10 +712,10 @@
       "transmission": "automat",
       "condition": "nou",
       "pricing": {
-        "tier1": 90,
-        "tier2": 83,
-        "tier3": 77,
-        "tier4": 73
+        "tier1": 80,
+        "tier2": 80,
+        "tier3": 80,
+        "tier4": 80
       },
       "deposit": 400,
       "insurance": {
