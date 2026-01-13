@@ -122,12 +122,56 @@ class EmailService {
     }
 
     /**
+     * Send contact form message to admin
+     */
+    public function sendContactMessage($contactData) {
+        try {
+            // Reset mailer for new email
+            $this->resetMailer();
+
+            // Add recipient (admin)
+            $this->mailer->addAddress(ADMIN_EMAIL, 'VEIRONAUTO Admin');
+
+            // Set reply-to as the sender's email
+            if (!empty($contactData['email'])) {
+                $this->mailer->addReplyTo($contactData['email'], $contactData['name']);
+            }
+
+            // Email content
+            $this->mailer->isHTML(true);
+            $this->mailer->Subject = 'New Contact Form Message - VEIRONAUTO';
+            $this->mailer->Body = $this->generateContactMessageHTML($contactData);
+            $this->mailer->AltBody = $this->generateContactMessageText($contactData);
+
+            // Send email
+            $this->mailer->send();
+
+            return [
+                'success' => true,
+                'message' => 'Contact message sent successfully'
+            ];
+
+        } catch (Exception $e) {
+            return [
+                'success' => false,
+                'message' => 'Failed to send contact message: ' . $this->mailer->ErrorInfo
+            ];
+        }
+    }
+
+    /**
      * Reset mailer for new email
      */
     private function resetMailer() {
         $this->mailer->clearAddresses();
         $this->mailer->clearCCs();
         $this->mailer->clearBCCs();
+
+        // clearReplyTo() only exists in newer versions of PHPMailer
+        if (method_exists($this->mailer, 'clearReplyTo')) {
+            $this->mailer->clearReplyTo();
+        }
+
         $this->mailer->clearAttachments();
     }
 

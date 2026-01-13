@@ -1,35 +1,24 @@
 # VEIRONAUTO Frontend .htaccess
-# Language detection + static asset serving
+# Static files only - HTML, CSS, JS, images
 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /frontend/
-    
-    # Permite fișierele reale (CSS, JS, imagini, etc.)
-    RewriteCond %{REQUEST_FILENAME} -f
-    RewriteRule ^ - [L]
-    
-    # Permite directoarele reale (assets, etc.)
-    RewriteCond %{REQUEST_FILENAME} -d
-    RewriteRule ^ - [L]
-    
-    # Redirecționează rădăcina către index.html cu language detection
-    RewriteCond %{REQUEST_URI} ^/frontend/?$
-    RewriteRule ^/?$ index.html [L]
-    
-</IfModule>
+# DirectoryIndex
+DirectoryIndex index.html
 
-# Protecție fișiere sensibile
-<FilesMatch "\.(env|php|log|sql)$">
-    Deny from all
-</FilesMatch>
+# ===== SECURITY =====
+
+# Blochează accesul la fișiere sensibile
+<Files ~ "\.env">
+    Require all denied
+</Files>
 
 # Dezactivează dir listing
 <IfModule mod_autoindex.c>
     Options -Indexes
 </IfModule>
 
-# Cache headers pentru assets
+# ===== CACHE HEADERS =====
+
+# Cache pentru assets
 <IfModule mod_headers.c>
     <FilesMatch "\.(jpg|jpeg|png|gif|css|js|svg|ico|woff|woff2|ttf)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
@@ -39,7 +28,9 @@
     </FilesMatch>
 </IfModule>
 
-# Compresie
+# ===== COMPRESIE =====
+
+# Compresie gzip
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json
 </IfModule>

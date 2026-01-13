@@ -1,0 +1,11 @@
+# Allow all JSON files in this directory
+<IfModule mod_authz_core.c>
+    Require all granted
+</IfModule>
+
+# Cache JSON files
+<IfModule mod_headers.c>
+    <FilesMatch "\.json$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+</IfModule>

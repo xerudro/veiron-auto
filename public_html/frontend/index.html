@@ -11,27 +11,27 @@
             const savedLang = localStorage.getItem('veironauto_lang');
             if (savedLang) {
                 if (savedLang === 'en') {
-                    window.location.href = 'index-en.html';
+                    window.location.replace('/en');
                 } else {
-                    window.location.href = 'index-ro.html';
+                    window.location.replace('/ro');
                 }
                 return;
             }
-            
+
             // Check browser language
             const browserLang = navigator.language || navigator.userLanguage;
             const langPrefix = browserLang.split('-')[0].toLowerCase();
-            
+
             // Default to Romanian if browser lang not detected
             if (langPrefix === 'en') {
-                window.location.href = 'index-en.html';
+                window.location.replace('/en');
             } else {
-                window.location.href = 'index-ro.html';
+                window.location.replace('/ro');
             }
         })();
     </script>
     <noscript>
-        <meta http-equiv="refresh" content="0; url=index-ro.html">
+        <meta http-equiv="refresh" content="0; url=/ro">
     </noscript>
 </head>
 <body>

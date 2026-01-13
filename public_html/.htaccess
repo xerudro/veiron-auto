@@ -1,6 +1,9 @@
 # VEIRONAUTO .htaccess Configuration
 # Root routing - Frontend + Backend API
 
+# DirectoryIndex - servește index.html din frontend
+DirectoryIndex frontend/index.html
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
@@ -12,19 +15,36 @@
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
     
-    # API v1 routing - redirect la backend
-    RewriteCond %{REQUEST_URI} ^/api/v1/
-    RewriteRule ^api/v1/(.*)$ backend/api/v1/index.php?route=$1 [QSA,L]
-    
+    # Public API endpoints - Backend
+    RewriteRule ^api/booking/?$ backend/api/public/booking.php [QSA,L]
+    RewriteRule ^api/contact/?$ backend/api/public/contact.php [QSA,L]
+
+    # Language routing - friendly URLs
+    RewriteRule ^en/?$ frontend/index-en.html [L]
+    RewriteRule ^ro/?$ frontend/index-ro.html [L]
+
     # Frontend routing - redirect la frontend/index.html cu language detection
-    RewriteCond %{REQUEST_URI} !^/(backend|api|config|database|logs|vendor|optimization-journey|\.well-known)
+    # EXCLUDE explicit paths
+    RewriteCond %{REQUEST_URI} !^/(backend|api|config|database|logs|vendor|optimization-journey|\.well-known)/
+    RewriteCond %{REQUEST_URI} !^/\.
     RewriteRule ^(.*)$ frontend/index.html [L]
 </IfModule>
 
 # Protecție fișiere sensibile
-<FilesMatch "\.(env|json|log|sql|tmp)$">
+<FilesMatch "\.(env|log|sql|tmp)$">
     Deny from all
 </FilesMatch>
+
+# Specific: blochează config și secret JSON files
+<Files "config.json">
+    Deny from all
+</Files>
+<Files "secrets.json">
+    Deny from all
+</Files>
+<Files "settings.json">
+    Deny from all
+</Files>
 
 # Dezactivează dir listing
 <IfModule mod_autoindex.c>

@@ -5,6 +5,16 @@
  * Note: Requires logger.js to be loaded before this file
  */
 
+// Simple logger if not defined globally
+if (typeof logger === 'undefined') {
+    window.logger = {
+        log: (...args) => console.log('[BookingForm]', ...args),
+        error: (...args) => console.error('[BookingForm]', ...args),
+        warn: (...args) => console.warn('[BookingForm]', ...args),
+        info: (...args) => console.info('[BookingForm]', ...args)
+    };
+}
+
 class BookingFormHandler {
     constructor() {
         this.dataManager = new BookingDataManager();

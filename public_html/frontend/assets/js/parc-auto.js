@@ -765,6 +765,13 @@ function loadCarGallery(card, model, modelId, cardIndex) {
 
 function loadImageWithFallback(imgElement, primarySrc, fallbackSrc, altText) {
     imgElement.alt = altText;
+    imgElement.loading = 'lazy'; // Enable lazy loading for performance
+
+    // If no primary source, use fallback directly
+    if (!primarySrc) {
+        imgElement.src = fallbackSrc;
+        return;
+    }
     
     // Try to load primary image
     const testImage = new Image();
@@ -772,6 +779,7 @@ function loadImageWithFallback(imgElement, primarySrc, fallbackSrc, altText) {
         imgElement.src = primarySrc;
     };
     testImage.onerror = function() {
+        console.warn(`⚠️ Image not found: ${primarySrc}, using fallback`);
         imgElement.src = fallbackSrc;
     };
     testImage.src = primarySrc;

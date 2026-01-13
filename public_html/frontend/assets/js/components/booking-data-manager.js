@@ -1,65 +1,142 @@
 /**
  * Booking Data Manager
- * Gestionează salvarea și încărcarea datelor de rezervare în session storage
+ * Gestionează salvarea și încărcarea datelor de rezervare în session storage cu fallback la localStorage
  *
  * Note: Requires logger.js to be loaded before this file
  */
 
+// Simple logger if not defined globally
+if (typeof logger === 'undefined') {
+    window.logger = {
+        log: (...args) => console.log('[BookingData]', ...args),
+        error: (...args) => console.error('[BookingData]', ...args),
+        warn: (...args) => console.warn('[BookingData]', ...args),
+        info: (...args) => console.info('[BookingData]', ...args)
+    };
+}
+
 class BookingDataManager {
     constructor() {
         this.storageKey = 'veironauto_booking_data';
+        this.useSessionStorage = this.checkStorageAvailability();
+        logger.log('BookingDataManager initialized. Using ' + (this.useSessionStorage ? 'sessionStorage' : 'localStorage'));
     }
 
     /**
-     * Salvează datele de rezervare în session storage
+     * Verifica disponibilitatea storage-ului
+     */
+    checkStorageAvailability() {
+        try {
+            sessionStorage.setItem('_test', 'test');
+            sessionStorage.removeItem('_test');
+            logger.log('✓ sessionStorage is available');
+            return true;
+        } catch (e) {
+            logger.warn('⚠ sessionStorage not available, falling back to localStorage');
+            return false;
+        }
+    }
+
+    /**
+     * Obține storage-ul activ
+     */
+    getStorage() {
+        return this.useSessionStorage ? sessionStorage : localStorage;
+    }
+
+    /**
+     * Salvează datele de rezervare în storage (sessionStorage cu fallback la localStorage)
      * @param {Object} bookingData - Datele de rezervare
      */
     saveBookingData(bookingData) {
         try {
+            if (!bookingData || typeof bookingData !== 'object') {
+                logger.error('Invalid booking data provided:', bookingData);
+                return false;
+            }
+
             const dataToSave = {
                 ...bookingData,
                 timestamp: new Date().toISOString(),
                 version: '1.0'
             };
             
-            sessionStorage.setItem(this.storageKey, JSON.stringify(dataToSave));
-            logger.log('Booking data saved successfully:', dataToSave);
+            const storage = this.getStorage();
+            const jsonString = JSON.stringify(dataToSave);
+            storage.setItem(this.storageKey, jsonString);
+            
+            logger.log('✓ Booking data saved successfully (' + (this.useSessionStorage ? 'sessionStorage' : 'localStorage') + ')');
+            logger.log('Saved data keys:', Object.keys(bookingData));
             return true;
         } catch (error) {
-            logger.error('Error saving booking data:', error);
-            return false;
+            logger.error('✗ Error saving booking data:', error);
+            // Try to save to the other storage type
+            try {
+                const otherStorage = this.useSessionStorage ? localStorage : sessionStorage;
+                const dataToSave = {
+                    ...bookingData,
+                    timestamp: new Date().toISOString(),
+                    version: '1.0'
+                };
+                otherStorage.setItem(this.storageKey, JSON.stringify(dataToSave));
+                logger.log('✓ Fallback: Data saved to ' + (!this.useSessionStorage ? 'sessionStorage' : 'localStorage'));
+                return true;
+            } catch (fallbackError) {
+                logger.error('✗ Fallback also failed:', fallbackError);
+                return false;
+            }
         }
     }
 
     /**
-     * Încarcă datele de rezervare din session storage
+     * Încarcă datele de rezervare din storage
      * @returns {Object|null} Datele de rezervare sau null dacă nu există
      */
     loadBookingData() {
         try {
-            const data = sessionStorage.getItem(this.storageKey);
+            const storage = this.getStorage();
+            const data = storage.getItem(this.storageKey);
+            
             if (data) {
                 const bookingData = JSON.parse(data);
-                logger.log('Booking data loaded successfully:', bookingData);
+                logger.log('✓ Booking data loaded successfully from ' + (this.useSessionStorage ? 'sessionStorage' : 'localStorage'));
+                logger.log('Loaded data keys:', Object.keys(bookingData));
                 return bookingData;
             }
+            
+            // Try the other storage
+            const otherStorage = this.useSessionStorage ? localStorage : sessionStorage;
+            const otherData = otherStorage.getItem(this.storageKey);
+            if (otherData) {
+                const bookingData = JSON.parse(otherData);
+                logger.log('✓ Booking data loaded from fallback storage');
+                return bookingData;
+            }
+            
+            logger.warn('⚠ No booking data found in either storage');
             return null;
         } catch (error) {
-            logger.error('Error loading booking data:', error);
+            logger.error('✗ Error loading booking data:', error);
             return null;
         }
     }
 
     /**
-     * Șterge datele de rezervare din session storage
+     * Șterge datele de rezervare din storage
      */
     clearBookingData() {
         try {
-            sessionStorage.removeItem(this.storageKey);
-            logger.log('Booking data cleared successfully');
+            const storage = this.getStorage();
+            storage.removeItem(this.storageKey);
+            
+            // Also clear from other storage
+            const otherStorage = this.useSessionStorage ? localStorage : sessionStorage;
+            otherStorage.removeItem(this.storageKey);
+            
+            logger.log('✓ Booking data cleared successfully from all storage types');
             return true;
         } catch (error) {
-            logger.error('Error clearing booking data:', error);
+            logger.error('✗ Error clearing booking data:', error);
             return false;
         }
     }

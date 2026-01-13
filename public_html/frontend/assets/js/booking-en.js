@@ -1054,7 +1054,7 @@ function renderCarGrid() {
         return `
             <div class="car-card ${isSelected ? 'selected' : ''}" data-car-id="${car.id}">
                 <div class="car-image-container">
-                    <img class="car-image" src="${car.image}" alt="${car.name}" onerror="this.src='assets/images/cars/placeholder.svg'; this.onerror=null;">
+                    <img class="car-image" src="${car.image}" alt="${car.name}" loading="lazy" onerror="this.src='assets/images/cars/placeholder.svg'; this.onerror=null;">
                 </div>
                 <div class="car-info">
                     <h3 class="car-name">${car.name}</h3>
@@ -1152,7 +1152,7 @@ function updateReservationBar() {
         
         elements.selectedCarInfo.innerHTML = `
             <div class="selected-car">
-                <img class="selected-car-image" src="${car.image}" alt="${car.name}" onerror="this.src='assets/images/cars/placeholder.jpg'">
+                <img class="selected-car-image" src="${car.image}" alt="${car.name}" loading="lazy" onerror="this.src='assets/images/cars/placeholder.jpg'">
                 <div class="selected-car-info">
                     <h4 class="selected-car-name">${car.name}</h4>
                 </div>
@@ -1517,7 +1517,7 @@ function updateFinalSummary() {
         
         elements.finalSummary.innerHTML = `
             <div class="summary-car">
-                <img src="${car.image}" alt="${car.name}" class="summary-car-image" onerror="this.src='assets/images/cars/placeholder.jpg'">
+                <img src="${car.image}" alt="${car.name}" class="summary-car-image" loading="lazy" onerror="this.src='assets/images/cars/placeholder.jpg'">
                 <div class="summary-car-details">
                     <div class="summary-car-name">${car.name}</div>
                     <div class="summary-car-class">${car.category} | ${car.transmission === 'automatic' ? 'Automatic' : 'Manual'}</div>
@@ -1627,7 +1627,42 @@ async function completeBooking() {
         // Send booking via email service
         try {
             if (!window.bookingSystem) {
-                throw new Error('Booking system not initialized');
+                console.error('Booking system initialization pending. Window.bookingSystem:', window.bookingSystem);
+                console.error('Available on window:', Object.keys(window).filter(k => k.includes('book') || k.includes('Book')));
+                
+                // Wait a bit longer and retry
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                if (!window.bookingSystem) {
+                    throw new Error('Booking system failed to initialize. Please refresh the page and try again.');
+                }
+            }
+
+            // Verify bookingState has data
+            console.log('📋 bookingState before save:', {
+                hasCurrentStep: !!bookingState.currentStep,
+                hasVisitDetails: !!bookingState.visitDetails,
+                hasSelectedCar: !!bookingState.selectedCar,
+                personalDetailsKeys: bookingState.personalDetails ? Object.keys(bookingState.personalDetails) : []
+            });
+
+            // Save booking data before submitting
+            if (window.bookingSystem.dataManager) {
+                const saveResult = window.bookingSystem.dataManager.saveBookingData(bookingState);
+                console.log('💾 Save result:', saveResult);
+                
+                if (!saveResult) {
+                    throw new Error('Failed to save booking data to storage');
+                }
+                
+                // Verify data was saved
+                const savedData = window.bookingSystem.dataManager.loadBookingData();
+                if (!savedData) {
+                    throw new Error('Booking data was not saved properly');
+                }
+                console.log('✓ Data verified in storage');
+            } else {
+                throw new Error('dataManager not available');
             }
 
             // Prepare client info

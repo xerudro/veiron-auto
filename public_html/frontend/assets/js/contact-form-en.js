@@ -91,7 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // Send data to API
-      var response = await fetch('../api/send-contact.php', {
+      console.log('📧 Sending contact message...', formData)
+      var response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -100,10 +101,13 @@ document.addEventListener('DOMContentLoaded', function () {
         body: JSON.stringify(formData)
       })
 
+      console.log('📧 Response status:', response.status, response.statusText)
       var result = await response.json()
+      console.log('📧 Response data:', result)
 
       if (result.success) {
         // Display success message
+        console.log('✅ Email sent successfully!')
         errorBox.style.color = '#28a745'
         errorBox.innerHTML = result.message
         errorBox.style.display = 'block'
@@ -119,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
     } catch (error) {
+      console.error('❌ Error sending email:', error)
       errorBox.style.color = '#ff4500'
       errorBox.innerHTML = 'Error: ' + error.message + '. Please try again.'
       errorBox.style.display = 'block'

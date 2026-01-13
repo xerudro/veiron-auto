@@ -1,5 +1,8 @@
 // Booking system for VEIRONAUTO - Romanian version
 
+// Placeholder image (inline SVG to avoid 404 warnings)
+const PLACEHOLDER_IMAGE = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%23999%22%3EImagine indisponibil%C4%83%3C/text%3E%3C/svg%3E';
+
 // Car data with pricing tiers based on Excel rates
 const carData = [
             {
@@ -1039,7 +1042,7 @@ function renderCarGrid() {
         return `
             <div class="car-card ${isSelected ? 'selected' : ''}" data-car-id="${car.id}">
                 <div class="car-image-container">
-                    <img class="car-image" src="${car.image}" alt="${car.name}" onerror="this.src='assets/images/cars/placeholder.svg'; this.onerror=null;">
+                    <img class="car-image" src="${car.image}" alt="${car.name}" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%23999%22%3ENo Image%3C/text%3E%3C/svg%3E'; this.onerror=null;">
                 </div>
                 <div class="car-info">
                     <h3 class="car-name">${car.name}</h3>
@@ -1137,7 +1140,7 @@ function updateReservationBar() {
         
         elements.selectedCarInfo.innerHTML = `
             <div class="selected-car">
-                <img class="selected-car-image" src="${car.image}" alt="${car.name}" onerror="this.src='assets/images/cars/placeholder.jpg'">
+                <img class="selected-car-image" src="${car.image}" alt="${car.name}" loading="lazy" onerror="this.src='assets/images/cars/placeholder.jpg'">
                 <div class="selected-car-info">
                     <h4 class="selected-car-name">${car.name}</h4>
                 </div>
@@ -1503,7 +1506,7 @@ function updateFinalSummary() {
         
         elements.finalSummary.innerHTML = `
             <div class="summary-car">
-                <img src="${car.image}" alt="${car.name}" class="summary-car-image" onerror="this.src='assets/images/cars/placeholder.jpg'">
+                <img src="${car.image}" alt="${car.name}" class="summary-car-image" loading="lazy" onerror="this.src='assets/images/cars/placeholder.jpg'">
                 <div class="summary-car-details">
                     <div class="summary-car-name">${car.name}</div>
                     <div class="summary-car-class">${car.category} | ${car.transmission === 'automatic' ? 'Automată' : 'Manuală'}</div>
@@ -1614,6 +1617,33 @@ async function completeBooking() {
         try {
             if (!window.bookingSystem) {
                 throw new Error('Sistemul de rezervare nu este inițializat');
+            }
+
+            // Verify bookingState has data
+            console.log('📋 bookingState before save:', {
+                hasCurrentStep: !!bookingState.currentStep,
+                hasVisitDetails: !!bookingState.visitDetails,
+                hasSelectedCar: !!bookingState.selectedCar,
+                personalDetailsKeys: bookingState.personalDetails ? Object.keys(bookingState.personalDetails) : []
+            });
+
+            // Save booking data before submitting
+            if (window.bookingSystem.dataManager) {
+                const saveResult = window.bookingSystem.dataManager.saveBookingData(bookingState);
+                console.log('💾 Save result:', saveResult);
+                
+                if (!saveResult) {
+                    throw new Error('Failed to save booking data to storage');
+                }
+                
+                // Verify data was saved
+                const savedData = window.bookingSystem.dataManager.loadBookingData();
+                if (!savedData) {
+                    throw new Error('Booking data was not saved properly');
+                }
+                console.log('✓ Data verified in storage');
+            } else {
+                throw new Error('dataManager not available');
             }
 
             // Prepare client info

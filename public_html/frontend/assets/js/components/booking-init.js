@@ -3,6 +3,19 @@
  * Conectează toate componentele sistemului de rezervare
  */
 
+// Ensure logger exists globally FIRST
+if (typeof window.logger === 'undefined') {
+    window.logger = {
+        log: (...args) => console.log('[Booking]', ...args),
+        error: (...args) => console.error('[Booking]', ...args),
+        warn: (...args) => console.warn('[Booking]', ...args),
+        info: (...args) => console.info('[Booking]', ...args)
+    };
+}
+
+// Use global logger
+const logger = window.logger;
+
 class BookingSystem {
     constructor() {
         this.dataManager = null;
@@ -35,7 +48,8 @@ class BookingSystem {
 
             // Inițializează componentele
             this.dataManager = new BookingDataManager();
-            this.emailService = new EmailService();
+            // Pass dataManager to EmailService so they share the same instance
+            this.emailService = new EmailService(this.dataManager);
 
             // Inițializează form handler doar dacă există formularul
             const bookingForm = document.getElementById('bookingForm');
@@ -110,10 +124,21 @@ class BookingSystem {
 
 // Inițializează sistemul când DOM-ul este gata
 document.addEventListener('DOMContentLoaded', () => {
-    // Așteaptă puțin pentru a se încărca toate scripturile
-    setTimeout(() => {
+    // Așteptă ca toate componentele să fie încărcate
+    const checkComponents = () => {
+        if (typeof BookingDataManager === 'undefined' ||
+            typeof BookingFormHandler === 'undefined' ||
+            typeof EmailService === 'undefined') {
+            // Componente încă nu sunt încărcate, așteptă 100ms
+            setTimeout(checkComponents, 100);
+            return;
+        }
+        
+        // Toate componentele sunt disponibile, inițializează sistemul
         window.bookingSystem = new BookingSystem();
-    }, 100);
+    };
+    
+    checkComponents();
 });
 
 // Export pentru utilizare globală

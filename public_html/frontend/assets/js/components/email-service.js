@@ -3,10 +3,22 @@
  * Gestionează trimiterea emailurilor de confirmare către client și proprietar
  */
 
+// Simple logger if not defined globally
+if (typeof logger === 'undefined') {
+    window.logger = {
+        log: (...args) => console.log('[EmailService]', ...args),
+        error: (...args) => console.error('[EmailService]', ...args),
+        warn: (...args) => console.warn('[EmailService]', ...args),
+        info: (...args) => console.info('[EmailService]', ...args)
+    };
+}
+
 class EmailService {
-    constructor() {
-        this.apiEndpoint = '/frontend/api/send-booking.php';
-        this.dataManager = new BookingDataManager();
+    constructor(dataManager) {
+        // Public API endpoint for booking
+        this.apiEndpoint = '/api/booking';
+        // Use passed dataManager or create new one
+        this.dataManager = dataManager || new BookingDataManager();
         this.language = this.detectLanguage();
     }
 
@@ -120,20 +132,33 @@ class EmailService {
         // Generează număr de rezervare unic
         const bookingNumber = 'BK-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9).toUpperCase();
 
+        // Extract car details from selectedCar or fallback
+        const car = booking.selectedCar || {};
+        const carName = car.model || car.name || booking.carType || booking.carName || 'Unknown Car';
+        
+        // Extract visit details
+        const visitDetails = booking.visitDetails || {};
+        const pickupDate = visitDetails.pickupDate || booking.pickupDate || '';
+        const dropoffDate = visitDetails.dropoffDate || booking.dropoffDate || '';
+        const pickupTime = visitDetails.pickupTime || booking.pickupTime || '10:00';
+        const dropoffTime = visitDetails.dropoffTime || booking.dropoffTime || '10:00';
+        const pickupLocation = visitDetails.pickupLocation || booking.pickupLocation || 'Satu Mare';
+        const dropoffLocation = visitDetails.dropoffLocation || booking.dropoffLocation || 'Satu Mare';
+
         return {
             booking_number: bookingNumber,
             client_name: clientInfo.name || '',
             client_email: clientInfo.email || '',
             client_phone: clientInfo.phone || '',
-            car_name: booking.carType || booking.carName || '',
-            pickup_location: booking.pickup?.location || '',
-            pickup_date: booking.pickup?.date || '',
-            pickup_time: booking.pickup?.time || '',
-            dropoff_location: booking.dropoff?.location || '',
-            dropoff_date: booking.dropoff?.date || '',
-            dropoff_time: booking.dropoff?.time || '',
-            duration_days: booking.rentalDays || 0,
-            total_cost_eur: pricing.totalPriceEUR || (pricing.totalPrice / 5).toFixed(2), // Convert RON to EUR
+            car_name: carName,
+            pickup_location: pickupLocation,
+            pickup_date: pickupDate,
+            pickup_time: pickupTime,
+            dropoff_location: dropoffLocation,
+            dropoff_date: dropoffDate,
+            dropoff_time: dropoffTime,
+            duration_days: booking.totalDays || 0,
+            total_cost_eur: pricing.totalPriceEUR || (pricing.totalPrice / 5).toFixed(2),
             total_cost_ron: pricing.totalPrice || 0,
             status: 'Pending',
             payment_status: 'Pending',
