@@ -9,7 +9,7 @@ require_once __DIR__ . '/config.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-echo "VEIRONAUTO Price Synchronization Script\n";
+echo "Veiron Auto Price Synchronization Script\n";
 echo "========================================\n\n";
 
 try {

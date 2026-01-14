@@ -13,10 +13,13 @@ if (typeof logger === 'undefined') {
     };
 }
 
+// reCAPTCHA site key
+var RECAPTCHA_SITE_KEY = '6LfQIEosAAAAADOI8cbCjqCX6HIHEsnP_qukVSx9';
+
 class EmailService {
     constructor(dataManager) {
         // Public API endpoint for booking
-        this.apiEndpoint = '/api/booking';
+        this.apiEndpoint = '/api/public/booking';
         // Use passed dataManager or create new one
         this.dataManager = dataManager || new BookingDataManager();
         this.language = this.detectLanguage();
@@ -98,6 +101,8 @@ class EmailService {
         try {
             // Transform datele în formatul așteptat de PHP API
             const flatData = this.transformBookingDataForAPI(bookingData);
+            const recaptchaToken = await this.getRecaptchaToken('booking_form');
+            flatData.recaptcha_token = recaptchaToken;
 
             const response = await fetch(this.apiEndpoint, {
                 method: 'POST',
@@ -118,6 +123,23 @@ class EmailService {
         } catch (error) {
             logger.error('Error sending booking to server:', error);
             throw error;
+        }
+    }
+
+    async getRecaptchaToken(action) {
+        if (typeof grecaptcha === 'undefined') {
+            logger.warn('reCAPTCHA not loaded; sending without token');
+            return null;
+        }
+
+        try {
+            if (typeof grecaptcha.ready === 'function') {
+                await new Promise((resolve) => grecaptcha.ready(resolve));
+            }
+            return await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: action });
+        } catch (error) {
+            logger.warn('reCAPTCHA error:', error);
+            return null;
         }
     }
 
@@ -176,11 +198,11 @@ class EmailService {
         
         return `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                <h2 style="color: #ff4500;">Confirmare Rezervare VEIRONAUTO</h2>
+                <h2 style="color: #ff4500;">Confirmare Rezervare Veiron Auto</h2>
                 
                 <p>Stimate ${clientInfo.name},</p>
                 
-                <p>Vă mulțumim pentru rezervarea făcută la VEIRONAUTO!</p>
+                <p>Vă mulțumim pentru rezervarea făcută la Veiron Auto!</p>
                 
                 <h3>Detaliile rezervării:</h3>
                 <ul>
@@ -206,7 +228,7 @@ class EmailService {
                     <li>Telefon: +40 XXX XXX XXX</li>
                 </ul>
                 
-                <p>Cu stimă,<br>Echipa VEIRONAUTO</p>
+                <p>Cu stimă,<br>Echipa Veiron Auto</p>
             </div>
         `;
     }
@@ -221,9 +243,9 @@ class EmailService {
         
         return `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                <h2 style="color: #ff4500;">Nouă Rezervare - VEIRONAUTO</h2>
+                <h2 style="color: #ff4500;">Nouă Rezervare - Veiron Auto</h2>
                 
-                <p>O nouă rezervare a fost făcută pe platforma VEIRONAUTO.</p>
+                <p>O nouă rezervare a fost făcută pe platforma Veiron Auto.</p>
                 
                 <h3>Informații client:</h3>
                 <ul>

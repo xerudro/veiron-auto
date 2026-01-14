@@ -1,6 +1,6 @@
 <?php
 /**
- * Database Connection Class for VEIRONAUTO
+ * Database Connection Class for Veiron Auto
  * Handles PDO connection and common database operations
  */
 

@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="assets/css/common/footer-ro.css">
     <!-- External Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfQIEosAAAAADOI8cbCjqCX6HIHEsnP_qukVSx9"></script>
     <style>
       .contact-container {
         display: flex;
@@ -104,9 +106,9 @@
                             <label for="newsletter">Sunt de acord să primesc oferte și informații de la VEIRON AUTO</label>
                         </div>
                         <div class="form-group recaptcha-group">
-                            <input type="checkbox" id="not-robot" name="not-robot" required>
-                            <label for="not-robot">Nu sunt robot</label>
-                            <div class="recaptcha-dummy">reCAPTCHA dummy</div>
+                            <div class="recaptcha-badge-info">
+                                <i class="fas fa-shield-alt"></i> Protejat de reCAPTCHA
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary">TRIMITE MESAJ</button>
                     </form>

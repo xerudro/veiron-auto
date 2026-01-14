@@ -1,6 +1,6 @@
 <?php
 /**
- * Database Migration Script for VEIRONAUTO
+ * Database Migration Script for Veiron Auto
  * This script initializes the database with the complete schema
  */
 
@@ -10,7 +10,7 @@ require_once __DIR__ . '/config.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-echo "VEIRONAUTO Database Migration Script\n";
+echo "Veiron Auto Database Migration Script\n";
 echo "===================================\n\n";
 
 try {
@@ -119,7 +119,7 @@ try {
     if ($settingsCount == 0) {
         echo "Inserting default system settings...\n";
         $pdo->exec("INSERT INTO system_settings (setting_key, setting_value, setting_type, description, created_at, updated_at) VALUES
-                   ('site_name', 'VEIRONAUTO', 'string', 'Site name', NOW(), NOW()),
+                   ('site_name', 'Veiron Auto', 'string', 'Site name', NOW(), NOW()),
                    ('site_email', 'contact@veironauto.ro', 'string', 'Contact email', NOW(), NOW()),
                    ('currency_primary', 'EUR', 'string', 'Primary currency', NOW(), NOW()),
                    ('currency_secondary', 'RON', 'string', 'Secondary currency', NOW(), NOW()),

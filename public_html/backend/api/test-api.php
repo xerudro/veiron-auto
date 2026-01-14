@@ -4,7 +4,7 @@
  * Tests the core framework without HTTP server
  */
 
-echo "=== VEIRONAUTO API Test ===\n\n";
+echo "=== Veiron Auto API Test ===\n\n";
 
 // Simulate HTTP request environment
 $_SERVER['REQUEST_METHOD'] = 'GET';

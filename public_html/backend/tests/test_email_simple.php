@@ -1,10 +1,10 @@
 <?php
 /**
- * Simple Email Test for VEIRONAUTO
+ * Simple Email Test for Veiron Auto
  * Tests the email configuration with mail.veironauto.com
  */
 
-echo "=== VEIRONAUTO Email Test ===\n\n";
+echo "=== Veiron Auto Email Test ===\n\n";
 
 // Load PHPMailer
 require_once __DIR__ . '/vendor/phpmailer/phpmailer/src/PHPMailer.php';
@@ -52,20 +52,20 @@ try {
 
     // Recipients
     $mail->setFrom(FROM_EMAIL, FROM_NAME);
-    $mail->addAddress(ADMIN_EMAIL, 'VEIRONAUTO Admin');
+    $mail->addAddress(ADMIN_EMAIL, 'Veiron Auto Admin');
 
     // Content
     $mail->isHTML(true);
     $mail->CharSet = 'UTF-8';
-    $mail->Subject = 'Test Email from VEIRONAUTO System';
+    $mail->Subject = 'Test Email from Veiron Auto System';
     $mail->Body = '<html><body>
         <h2>🚗 Test Email</h2>
-        <p>This is a test email from the VEIRONAUTO car rental system.</p>
+        <p>This is a test email from the Veiron Auto car rental system.</p>
         <p><strong>Server:</strong> ' . SMTP_HOST . '</p>
         <p><strong>Time:</strong> ' . date('Y-m-d H:i:s') . '</p>
         <p>If you received this email, your email system is working correctly! ✅</p>
         </body></html>';
-    $mail->AltBody = 'This is a test email from VEIRONAUTO. If you received this, your email system is working correctly!';
+    $mail->AltBody = 'This is a test email from Veiron Auto. If you received this, your email system is working correctly!';
 
     // Send email
     $mail->send();

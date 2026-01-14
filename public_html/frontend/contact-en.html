@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/frontend/">
-    <title>Contact VEIRONAUTO - Car Rental</title>
-    <meta name="description" content="Contact VEIRON AUTO for fast and secure car rentals. Fill in the contact form or use the contact and company details for collaboration.">
+    <title>Contact - Veiron Auto Satu Mare</title>
+    <meta name="description" content="Contact Veiron Auto for fast and secure car rentals in Satu Mare. Fill in the contact form or use the contact details for collaboration.">
     <!-- Global Variables & Common Styles -->
     <link rel="stylesheet" href="assets/css/common/variables.css">
     <!-- Page Specific Styles -->
@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="assets/css/common/footer-ro.css">
     <!-- External Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfQIEosAAAAADOI8cbCjqCX6HIHEsnP_qukVSx9"></script>
     
     <style>
       .contact-container {
@@ -106,9 +108,9 @@
                             <label for="newsletter">I agree to receive offers and information from VEIRON AUTO</label>
                         </div>
                         <div class="form-group recaptcha-group">
-                            <input type="checkbox" id="not-robot" name="not-robot" required>
-                            <label for="not-robot">I'm not a robot</label>
-                            <div class="recaptcha-dummy">reCAPTCHA dummy</div>
+                            <div class="recaptcha-badge-info">
+                                <i class="fas fa-shield-alt"></i> Protected by reCAPTCHA
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
                     </form>

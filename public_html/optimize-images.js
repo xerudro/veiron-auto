@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * VEIRONAUTO - PNG Image Optimization Script
+ * Veiron Auto - PNG Image Optimization Script
  * Uses TinyPNG API for high-quality image compression
  *
  * Reduces image sizes by 60-80% with minimal quality loss
@@ -124,7 +124,7 @@ function formatBytes(bytes) {
 
 // Main function
 async function main() {
-    log('\n=== VEIRONAUTO Image Optimization ===\n', 'cyan');
+    log('\n=== Veiron Auto Image Optimization ===\n', 'cyan');
 
     // Check if images directory exists
     if (!fs.existsSync(IMAGES_PATH)) {

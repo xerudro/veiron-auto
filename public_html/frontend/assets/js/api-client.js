@@ -1,5 +1,5 @@
 /**
- * VEIRONAUTO API Client
+ * Veiron Auto API Client
  * Optional backend integration layer
  *
  * Usage:
@@ -264,7 +264,7 @@ async function initVeironautoAPI() {
             const isAvailable = await api.isAvailable();
 
             if (isAvailable) {
-                console.log(`✅ VEIRONAUTO API connected: ${url}`);
+                console.log(`✅ Veiron Auto API connected: ${url}`);
                 window.veironautoAPI = api;
                 window.API_ENABLED = true;
                 return api;
@@ -275,7 +275,7 @@ async function initVeironautoAPI() {
         }
     }
 
-    console.log('ℹ️ VEIRONAUTO API not available - using static data mode');
+    console.log('ℹ️ Veiron Auto API not available - using static data mode');
     window.API_ENABLED = false;
     return null;
 }

@@ -54,11 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
       valid = false
       messages.push('You must accept the privacy policy to submit the form.')
     }
-    var notRobot = form.querySelector('#not-robot')
-    if (!notRobot.checked) {
-      valid = false
-      messages.push('Please confirm you are not a robot.')
-    }
     if (!valid) {
       e.preventDefault()
       errorBox.innerHTML = messages.join('<br>')
@@ -71,6 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
+  // reCAPTCHA site key
+  var RECAPTCHA_SITE_KEY = '6LfQIEosAAAAADOI8cbCjqCX6HIHEsnP_qukVSx9'
+
   // Function to submit form via AJAX
   async function submitContactForm(form, errorBox) {
     var submitBtn = form.querySelector('button[type="submit"]')
@@ -81,13 +79,26 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.disabled = true
       submitBtn.textContent = 'Sending...'
 
+      // Get reCAPTCHA token
+      var recaptchaToken = null
+      if (typeof grecaptcha !== 'undefined') {
+        try {
+          recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'contact_form'})
+          console.log('🔒 reCAPTCHA token obtained')
+        } catch (recaptchaError) {
+          console.warn('⚠️ reCAPTCHA error:', recaptchaError)
+        }
+      }
+
       // Collect form data
       var formData = {
         name: form.querySelector('#first-name').value.trim() + ' ' + form.querySelector('#last-name').value.trim(),
         email: form.querySelector('#email').value.trim(),
         phone: form.querySelector('#phone').value.trim(),
         subject: form.querySelector('#subject') ? form.querySelector('#subject').value.trim() : '',
-        message: form.querySelector('#notes').value.trim()
+        message: form.querySelector('#notes').value.trim(),
+        recaptcha_token: recaptchaToken,
+        language: 'en'
       }
 
       // Send data to API

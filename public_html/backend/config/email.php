@@ -1,6 +1,6 @@
 <?php
 /**
- * Email Configuration for VEIRONAUTO
+ * Email Configuration for Veiron Auto
  * Loads email/SMTP credentials from .env file
  */
 
@@ -17,12 +17,12 @@ define('SMTP_ENCRYPTION', DotEnv::get('SMTP_ENCRYPTION', 'ssl'));
 
 // Email Settings (from .env)
 define('FROM_EMAIL', DotEnv::get('SMTP_FROM_EMAIL'));
-define('FROM_NAME', DotEnv::get('SMTP_FROM_NAME', 'VEIRONAUTO Car Rental'));
+define('FROM_NAME', DotEnv::get('SMTP_FROM_NAME', 'Veiron Auto Car Rental'));
 define('ADMIN_EMAIL', DotEnv::get('ADMIN_EMAIL'));
 
 // Email Templates
-define('BOOKING_NOTIFICATION_SUBJECT', 'New Booking Notification - VEIRONAUTO');
-define('BOOKING_CONFIRMATION_SUBJECT', 'Booking Confirmation - VEIRONAUTO');
+define('BOOKING_NOTIFICATION_SUBJECT', 'New Booking Notification - Veiron Auto');
+define('BOOKING_CONFIRMATION_SUBJECT', 'Booking Confirmation - Veiron Auto');
 
 // Debug Settings (0 = off, 1 = client, 2 = server, 3 = detailed)
 define('SMTP_DEBUG', DotEnv::get('SMTP_DEBUG', 0));

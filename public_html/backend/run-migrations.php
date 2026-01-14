@@ -23,7 +23,7 @@ h1 { color: #4ec9b0; }
 pre { background: #2d2d30; padding: 10px; border-left: 3px solid #4ec9b0; overflow-x: auto; }
 </style></head><body>";
 
-echo "<h1>🚀 VEIRONAUTO Database Migrations</h1>\n";
+echo "<h1>🚀 Veiron Auto Database Migrations</h1>\n";
 echo "<pre>\n";
 
 try {

@@ -54,11 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
       valid = false
       messages.push('Trebuie să accepți politica de confidențialitate pentru a trimite formularul.')
     }
-    var notRobot = form.querySelector('#not-robot')
-    if (!notRobot.checked) {
-      valid = false
-      messages.push('Te rugăm să confirmi că nu ești robot.')
-    }
     if (!valid) {
       e.preventDefault()
       errorBox.innerHTML = messages.join('<br>')
@@ -71,6 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
+  // reCAPTCHA site key
+  var RECAPTCHA_SITE_KEY = '6LfQIEosAAAAADOI8cbCjqCX6HIHEsnP_qukVSx9'
+
   // Funcție pentru trimiterea formularului prin AJAX
   async function submitContactForm(form, errorBox) {
     var submitBtn = form.querySelector('button[type="submit"]')
@@ -81,13 +79,26 @@ document.addEventListener('DOMContentLoaded', function () {
       submitBtn.disabled = true
       submitBtn.textContent = 'Se trimite...'
 
+      // Get reCAPTCHA token
+      var recaptchaToken = null
+      if (typeof grecaptcha !== 'undefined') {
+        try {
+          recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'contact_form'})
+          console.log('🔒 reCAPTCHA token obtained')
+        } catch (recaptchaError) {
+          console.warn('⚠️ reCAPTCHA error:', recaptchaError)
+        }
+      }
+
       // Colectează datele din formular
       var formData = {
         name: form.querySelector('#nume').value.trim() + ' ' + form.querySelector('#prenume').value.trim(),
         email: form.querySelector('#email').value.trim(),
         phone: form.querySelector('#telefon').value.trim(),
         subject: form.querySelector('#subiect') ? form.querySelector('#subiect').value.trim() : '',
-        message: form.querySelector('#observatii').value.trim()
+        message: form.querySelector('#observatii').value.trim(),
+        recaptcha_token: recaptchaToken,
+        language: 'ro'
       }
 
       // Trimite datele către API

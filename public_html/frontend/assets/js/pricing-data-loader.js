@@ -2,7 +2,7 @@
  * Car Pricing Data Loader
  * Utility functions for loading and processing car pricing data from Excel
  * 
- * @author VEIRONAUTO Development Team
+ * @author Veiron Auto Development Team
  * @version 1.0.0
  */
 

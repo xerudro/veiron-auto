@@ -2,7 +2,7 @@
  * Price Migration Script
  * Updates existing car pricing data with values from Excel
  * 
- * @author VEIRONAUTO Development Team
+ * @author Veiron Auto Development Team
  * @version 1.0.0
  */
 

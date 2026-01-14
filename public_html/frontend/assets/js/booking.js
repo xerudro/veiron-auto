@@ -1,4 +1,4 @@
-// Booking system for VEIRONAUTO - Romanian version
+// Booking system for Veiron Auto - Romanian version
 
 // Placeholder image (inline SVG to avoid 404 warnings)
 const PLACEHOLDER_IMAGE = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2224%22 fill=%22%23999%22%3EImagine indisponibil%C4%83%3C/text%3E%3C/svg%3E';

@@ -1,4 +1,4 @@
-// Booking system for VEIRONAUTO - English version
+// Booking system for Veiron Auto - English version
 
 // Car data with pricing tiers
 const carData = [

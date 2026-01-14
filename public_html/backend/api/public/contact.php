@@ -47,6 +47,7 @@ try {
     // Load dependencies
     require_once __DIR__ . '/../../libs/Database.php';
     require_once __DIR__ . '/../../libs/EmailService.php';
+    require_once __DIR__ . '/../../libs/ReCaptcha.php';
 
     // Get POST data
     $rawData = file_get_contents('php://input');
@@ -57,6 +58,24 @@ try {
     if (!$data) {
         throw new Exception('Invalid JSON data: ' . json_last_error_msg());
     }
+
+    // Validate reCAPTCHA token
+    $recaptchaToken = isset($data['recaptcha_token']) ? $data['recaptcha_token'] : null;
+    $recaptcha = new ReCaptcha();
+    $recaptchaResult = $recaptcha->verify($recaptchaToken, 'contact_form');
+
+    if (!$recaptchaResult['success']) {
+        error_log('[Contact API] reCAPTCHA failed: ' . $recaptchaResult['error']);
+        http_response_code(403);
+        echo json_encode([
+            'success' => false,
+            'message' => 'Verificarea reCAPTCHA a eșuat. Vă rugăm să reîncărcați pagina și să încercați din nou.',
+            'error' => 'recaptcha_failed'
+        ], JSON_UNESCAPED_UNICODE);
+        exit();
+    }
+
+    error_log('[Contact API] reCAPTCHA passed with score: ' . $recaptchaResult['score']);
 
     // Validate required fields
     $required = ['name', 'email', 'message'];

@@ -1,6 +1,6 @@
 <?php
 /**
- * Email Service Class for VEIRONAUTO
+ * Email Service Class for Veiron Auto
  * Handles sending emails using PHPMailer
  */
 
@@ -64,7 +64,7 @@ class EmailService {
             $this->resetMailer();
 
             // Add recipient
-            $this->mailer->addAddress(ADMIN_EMAIL, 'VEIRONAUTO Admin');
+            $this->mailer->addAddress(ADMIN_EMAIL, 'Veiron Auto Admin');
 
             // Email content
             $this->mailer->isHTML(true);
@@ -130,7 +130,7 @@ class EmailService {
             $this->resetMailer();
 
             // Add recipient (admin)
-            $this->mailer->addAddress(ADMIN_EMAIL, 'VEIRONAUTO Admin');
+            $this->mailer->addAddress(ADMIN_EMAIL, 'Veiron Auto Admin');
 
             // Set reply-to as the sender's email
             if (!empty($contactData['email'])) {
@@ -139,7 +139,7 @@ class EmailService {
 
             // Email content
             $this->mailer->isHTML(true);
-            $this->mailer->Subject = 'New Contact Form Message - VEIRONAUTO';
+            $this->mailer->Subject = 'New Contact Form Message - Veiron Auto';
             $this->mailer->Body = $this->generateContactMessageHTML($contactData);
             $this->mailer->AltBody = $this->generateContactMessageText($contactData);
 
@@ -197,7 +197,7 @@ class EmailService {
             <div class='container'>
                 <div class='header'>
                     <h1>🚗 New Booking Notification</h1>
-                    <p>VEIRONAUTO Car Rental System</p>
+                    <p>Veiron Auto Car Rental System</p>
                 </div>
                 <div class='content'>
                     <h2>A new booking has been created!</h2>
@@ -219,7 +219,7 @@ class EmailService {
                     <p>Please review and confirm this booking in the admin panel.</p>
                 </div>
                 <div class='footer'>
-                    <p>This is an automated notification from VEIRONAUTO Car Rental System</p>
+                    <p>This is an automated notification from Veiron Auto Car Rental System</p>
                     <p>Generated on " . date('Y-m-d H:i:s') . "</p>
                 </div>
             </div>
@@ -234,7 +234,7 @@ class EmailService {
      */
     private function generateBookingNotificationText($data) {
         return "
-VEIRONAUTO - New Booking Notification
+Veiron Auto - New Booking Notification
 
 A new booking has been created!
 
@@ -252,7 +252,7 @@ Booking Details:
 
 Please review and confirm this booking in the admin panel.
 
-This is an automated notification from VEIRONAUTO Car Rental System
+This is an automated notification from Veiron Auto Car Rental System
 Generated on " . date('Y-m-d H:i:s');
     }
 
@@ -279,7 +279,7 @@ Generated on " . date('Y-m-d H:i:s');
             <div class='container'>
                 <div class='header'>
                     <h1>✅ Booking Confirmed!</h1>
-                    <p>VEIRONAUTO Car Rental</p>
+                    <p>Veiron Auto Car Rental</p>
                 </div>
                 <div class='content'>
                     <h2>Dear {$data['client_name']},</h2>
@@ -303,10 +303,10 @@ Generated on " . date('Y-m-d H:i:s');
                         <p><strong>Address:</strong> Satu Mare, Romania</p>
                     </div>
                     <p>If you have any questions, please don't hesitate to contact us.</p>
-                    <p>Thank you for choosing VEIRONAUTO!</p>
+                    <p>Thank you for choosing Veiron Auto!</p>
                 </div>
                 <div class='footer'>
-                    <p>This is an automated confirmation from VEIRONAUTO Car Rental System</p>
+                    <p>This is an automated confirmation from Veiron Auto Car Rental System</p>
                     <p>Generated on " . date('Y-m-d H:i:s') . "</p>
                 </div>
             </div>
@@ -321,7 +321,7 @@ Generated on " . date('Y-m-d H:i:s');
      */
     private function generateBookingConfirmationText($data) {
         return "
-VEIRONAUTO - Booking Confirmation
+Veiron Auto - Booking Confirmation
 
 Dear {$data['client_name']},
 
@@ -343,9 +343,9 @@ Contact Information:
 
 If you have any questions, please don't hesitate to contact us.
 
-Thank you for choosing VEIRONAUTO!
+Thank you for choosing Veiron Auto!
 
-This is an automated confirmation from VEIRONAUTO Car Rental System
+This is an automated confirmation from Veiron Auto Car Rental System
 Generated on " . date('Y-m-d H:i:s');
     }
 
@@ -375,7 +375,7 @@ Generated on " . date('Y-m-d H:i:s');
             <div class='container'>
                 <div class='header'>
                     <h1>📧 New Contact Message</h1>
-                    <p>VEIRONAUTO Car Rental</p>
+                    <p>Veiron Auto Car Rental</p>
                 </div>
                 <div class='content'>
                     <h2>You have received a new contact message!</h2>
@@ -395,7 +395,7 @@ Generated on " . date('Y-m-d H:i:s');
                     <p>Please respond to this inquiry as soon as possible.</p>
                 </div>
                 <div class='footer'>
-                    <p>This is an automated notification from VEIRONAUTO Contact Form</p>
+                    <p>This is an automated notification from Veiron Auto Contact Form</p>
                     <p>Generated on " . date('Y-m-d H:i:s') . "</p>
                 </div>
             </div>
@@ -413,7 +413,7 @@ Generated on " . date('Y-m-d H:i:s');
         $subject = !empty($data['subject']) ? $data['subject'] : 'No subject';
 
         return "
-VEIRONAUTO - New Contact Message
+Veiron Auto - New Contact Message
 
 You have received a new contact message!
 
@@ -428,7 +428,7 @@ Message:
 
 Please respond to this inquiry as soon as possible.
 
-This is an automated notification from VEIRONAUTO Contact Form
+This is an automated notification from Veiron Auto Contact Form
 Generated on " . date('Y-m-d H:i:s');
     }
 }

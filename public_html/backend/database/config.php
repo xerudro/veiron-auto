@@ -1,6 +1,6 @@
 <?php
 /**
- * Database Configuration for VEIRONAUTO
+ * Database Configuration for Veiron Auto
  * Loads database credentials from .env file
  */
 

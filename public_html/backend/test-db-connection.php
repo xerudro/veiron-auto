@@ -18,7 +18,7 @@ $config = [
     'charset' => 'utf8mb4'
 ];
 
-echo "=== VEIRONAUTO Database Connection Test ===\n\n";
+echo "=== Veiron Auto Database Connection Test ===\n\n";
 
 // Check if .env file exists
 echo "1. Checking .env file...\n";

@@ -4,7 +4,7 @@
  * Simulează o rezervare completă și trimite email-uri
  */
 
-echo "=== VEIRONAUTO - Test Booking Notification ===\n\n";
+echo "=== Veiron Auto - Test Booking Notification ===\n\n";
 
 require_once __DIR__ . '/services/BookingNotificationService.php';
 
