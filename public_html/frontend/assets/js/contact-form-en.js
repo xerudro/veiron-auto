@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
     var gdpr = form.querySelector('#gdpr')
-    if (!gdpr.checked) {
+    if (!gdpr || !gdpr.checked) {
       valid = false
       messages.push('You must accept the privacy policy to submit the form.')
     }
@@ -83,11 +83,16 @@ document.addEventListener('DOMContentLoaded', function () {
       var recaptchaToken = null
       if (typeof grecaptcha !== 'undefined') {
         try {
+          if (typeof grecaptcha.ready === 'function') {
+            await new Promise(function (resolve) { grecaptcha.ready(resolve) })
+          }
           recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'contact_form'})
-          console.log('🔒 reCAPTCHA token obtained')
         } catch (recaptchaError) {
-          console.warn('⚠️ reCAPTCHA error:', recaptchaError)
+          console.warn('reCAPTCHA error:', recaptchaError)
         }
+      }
+      if (!recaptchaToken) {
+        throw new Error('reCAPTCHA validation failed. Please reload the page.')
       }
 
       // Collect form data
@@ -152,3 +157,5 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 }) 
+
+

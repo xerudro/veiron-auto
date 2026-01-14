@@ -10,9 +10,9 @@
 
 class VeironautoAPI {
     /**
-     * @param {string} baseUrl - Backend API URL (e.g., '../backend/api/v1' or 'https://api.veironauto.com/v1')
+     * @param {string} baseUrl - Backend API URL (e.g., '/api/public' or 'https://api.veironauto.com/api/public')
      */
-    constructor(baseUrl = '/backend/api/v1') {
+    constructor(baseUrl = '/api/public') {
         this.baseUrl = baseUrl;
         this.token = localStorage.getItem('veironauto_auth_token');
     }
@@ -252,10 +252,9 @@ class VeironautoAPI {
 async function initVeironautoAPI() {
     // Try to detect backend location
     const possibleBackendUrls = [
-        '/backend/api/v1',              // Same domain, /backend folder
-        '../backend/api/v1',            // Relative path
-        'https://api.veironauto.com/v1', // Separate API domain (example)
-        '/api/v1'                       // Root level API
+        '/api/public',                  // Same domain, public API
+        '../api/public',                // Relative path
+        'https://api.veironauto.com/api/public' // Separate API domain (example)
     ];
 
     for (const url of possibleBackendUrls) {
@@ -286,7 +285,7 @@ async function initVeironautoAPI() {
 
 /*
 // Example 1: Manual initialization
-const api = new VeironautoAPI('/backend/api/v1');
+const api = new VeironautoAPI('/api/public');
 
 // Get all cars
 api.getCars().then(response => {

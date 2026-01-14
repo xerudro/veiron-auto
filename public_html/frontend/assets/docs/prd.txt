@@ -515,28 +515,28 @@ Highlighted in yellow in client data:
 ### 10.1 Core API Endpoints
 
 **Car Management**
-- `GET /api/cars` - Retrieve all available cars with filters
-- `GET /api/cars/{id}` - Get specific car details
-- `POST /api/cars` - Add new car (Admin only)
-- `PUT /api/cars/{id}` - Update car information (Admin only)
-- `DELETE /api/cars/{id}` - Remove car (Admin only)
-- `GET /api/cars/pricing/{id}` - Calculate pricing for specific duration
+- `GET /api/public/cars` - Retrieve all available cars with filters
+- `GET /api/public/cars/{id}` - Get specific car details
+- `POST /api/public/cars` - Add new car (Admin only)
+- `PUT /api/public/cars/{id}` - Update car information (Admin only)
+- `DELETE /api/public/cars/{id}` - Remove car (Admin only)
+- `GET /api/public/cars/pricing/{id}` - Calculate pricing for specific duration
 
 **Booking Management**
-- `POST /api/bookings` - Create new booking
-- `GET /api/bookings/{id}` - Get booking details
-- `PUT /api/bookings/{id}` - Update booking status (Admin only)
-- `GET /api/bookings` - List all bookings (Admin only)
+- `POST /api/public/bookings` - Create new booking
+- `GET /api/public/bookings/{id}` - Get booking details
+- `PUT /api/public/bookings/{id}` - Update booking status (Admin only)
+- `GET /api/public/bookings` - List all bookings (Admin only)
 
 **Availability & Pricing**
-- `POST /api/availability` - Check car availability for dates
-- `POST /api/pricing` - Calculate booking price with services
-- `GET /api/services` - Get additional services list
-- `GET /api/warranty-plans` - Get warranty plan options
+- `POST /api/public/availability` - Check car availability for dates
+- `POST /api/public/pricing` - Calculate booking price with services
+- `GET /api/public/services` - Get additional services list
+- `GET /api/public/warranty-plans` - Get warranty plan options
 
 **Contact & Communication**
-- `POST /api/contact` - Send contact form message
-- `POST /api/newsletter` - Newsletter subscription
+- `POST /api/public/contact` - Send contact form message
+- `POST /api/public/newsletter` - Newsletter subscription
 
 ### 10.2 Request/Response Examples
 

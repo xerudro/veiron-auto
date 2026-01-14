@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
     var gdpr = form.querySelector('#gdpr')
-    if (!gdpr.checked) {
+    if (!gdpr || !gdpr.checked) {
       valid = false
       messages.push('Trebuie să accepți politica de confidențialitate pentru a trimite formularul.')
     }
@@ -83,11 +83,16 @@ document.addEventListener('DOMContentLoaded', function () {
       var recaptchaToken = null
       if (typeof grecaptcha !== 'undefined') {
         try {
+          if (typeof grecaptcha.ready === 'function') {
+            await new Promise(function (resolve) { grecaptcha.ready(resolve) })
+          }
           recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'contact_form'})
-          console.log('🔒 reCAPTCHA token obtained')
         } catch (recaptchaError) {
-          console.warn('⚠️ reCAPTCHA error:', recaptchaError)
+          console.warn('reCAPTCHA error:', recaptchaError)
         }
+      }
+      if (!recaptchaToken) {
+        throw new Error('Verificarea reCAPTCHA a esuat. Reincarca pagina si incearca din nou.')
       }
 
       // Colectează datele din formular
@@ -152,3 +157,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 }) 
+
+
+
