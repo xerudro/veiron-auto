@@ -18,6 +18,8 @@ DirectoryIndex frontend/index.html
     # Public API endpoints - Backend
     RewriteRule ^api/booking/?$ backend/api/public/booking.php [QSA,L]
     RewriteRule ^api/contact/?$ backend/api/public/contact.php [QSA,L]
+    RewriteRule ^api/public/booking\.php$ backend/api/public/booking.php [QSA,L]
+    RewriteRule ^api/public/contact\.php$ backend/api/public/contact.php [QSA,L]
 
     # Language routing - friendly URLs
     RewriteRule ^en/?$ frontend/index-en.html [L]

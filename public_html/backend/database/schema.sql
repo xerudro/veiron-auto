@@ -7,11 +7,11 @@
 -- DATABASE CREATION
 -- =====================================================
 
-CREATE DATABASE IF NOT EXISTS veironau1_newsite
+CREATE DATABASE IF NOT EXISTS veironau1_to
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 
-USE veironau1_newsite;
+USE veironau1_to;
 
 -- =====================================================
 -- SYSTEM SETTINGS TABLE

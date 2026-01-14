@@ -2,7 +2,7 @@
 -- Created: 2026-01-13
 -- Description: Table for storing contact form submissions
 
-USE veironau1_newsite;
+USE veironau1_to;
 
 -- =====================================================
 -- CONTACT MESSAGES TABLE

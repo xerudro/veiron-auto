@@ -348,5 +348,88 @@ Thank you for choosing VEIRONAUTO!
 This is an automated confirmation from VEIRONAUTO Car Rental System
 Generated on " . date('Y-m-d H:i:s');
     }
+
+    /**
+     * Generate HTML contact message for admin
+     */
+    private function generateContactMessageHTML($data) {
+        $phone = !empty($data['phone']) ? $data['phone'] : 'Not provided';
+        $subject = !empty($data['subject']) ? $data['subject'] : 'No subject';
+
+        $html = "
+        <html>
+        <head>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+                .container { max-width: 600px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+                .header { background-color: #17a2b8; color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
+                .content { padding: 20px; }
+                .contact-details { background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin: 15px 0; }
+                .contact-details table { width: 100%; border-collapse: collapse; }
+                .contact-details th, .contact-details td { padding: 8px; text-align: left; border-bottom: 1px solid #dee2e6; }
+                .message-box { background-color: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 15px 0; }
+                .footer { text-align: center; color: #666; font-size: 12px; margin-top: 20px; }
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>
+                    <h1>📧 New Contact Message</h1>
+                    <p>VEIRONAUTO Car Rental</p>
+                </div>
+                <div class='content'>
+                    <h2>You have received a new contact message!</h2>
+                    <div class='contact-details'>
+                        <h3>Contact Information:</h3>
+                        <table>
+                            <tr><th>Name:</th><td>{$data['name']}</td></tr>
+                            <tr><th>Email:</th><td><a href='mailto:{$data['email']}'>{$data['email']}</a></td></tr>
+                            <tr><th>Phone:</th><td>{$phone}</td></tr>
+                            <tr><th>Subject:</th><td>{$subject}</td></tr>
+                        </table>
+                    </div>
+                    <div class='message-box'>
+                        <h3>Message:</h3>
+                        <p>" . nl2br(htmlspecialchars($data['message'])) . "</p>
+                    </div>
+                    <p>Please respond to this inquiry as soon as possible.</p>
+                </div>
+                <div class='footer'>
+                    <p>This is an automated notification from VEIRONAUTO Contact Form</p>
+                    <p>Generated on " . date('Y-m-d H:i:s') . "</p>
+                </div>
+            </div>
+        </body>
+        </html>";
+
+        return $html;
+    }
+
+    /**
+     * Generate text contact message for admin
+     */
+    private function generateContactMessageText($data) {
+        $phone = !empty($data['phone']) ? $data['phone'] : 'Not provided';
+        $subject = !empty($data['subject']) ? $data['subject'] : 'No subject';
+
+        return "
+VEIRONAUTO - New Contact Message
+
+You have received a new contact message!
+
+Contact Information:
+- Name: {$data['name']}
+- Email: {$data['email']}
+- Phone: {$phone}
+- Subject: {$subject}
+
+Message:
+{$data['message']}
+
+Please respond to this inquiry as soon as possible.
+
+This is an automated notification from VEIRONAUTO Contact Form
+Generated on " . date('Y-m-d H:i:s');
+    }
 }
 ?>

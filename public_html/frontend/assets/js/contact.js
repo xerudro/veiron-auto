@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Trimite datele către API
       console.log('📧 Sending contact message...', formData)
-      var response = await fetch('/api/contact', {
+      var response = await fetch('/api/public/contact.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
