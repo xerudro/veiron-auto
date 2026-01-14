@@ -856,6 +856,38 @@ let bookingState = {
 // DOM elements
 let elements = {};
 
+let bookingErrorBox = null;
+
+function initBookingErrorBox() {
+    const bookingContainer = document.querySelector('.booking-container');
+    if (!bookingContainer) return;
+
+    bookingErrorBox = document.createElement('div');
+    bookingErrorBox.className = 'form-error-box booking-error-box';
+    bookingErrorBox.style.display = 'none';
+    bookingErrorBox.style.color = '#ff4500';
+    bookingErrorBox.style.fontWeight = '600';
+    bookingErrorBox.style.marginBottom = '0.7rem';
+    bookingContainer.insertBefore(bookingErrorBox, bookingContainer.firstChild);
+}
+
+function showBookingError(message) {
+    if (!bookingErrorBox) return;
+    bookingErrorBox.style.display = 'block';
+    bookingErrorBox.style.color = '#ff4500';
+    bookingErrorBox.innerHTML = message;
+
+    if (typeof bookingErrorBox.scrollIntoView === 'function') {
+        bookingErrorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+function clearBookingError() {
+    if (!bookingErrorBox) return;
+    bookingErrorBox.style.display = 'none';
+    bookingErrorBox.innerHTML = '';
+}
+
 // QUICK BOOKING SUPPORT
 let quickBookingMode = false
 let quickCarId = null
@@ -895,6 +927,7 @@ function selectCarByQuickBooking(carId) {
 // Initialize booking system
 document.addEventListener('DOMContentLoaded', function() {
     initializeElements();
+    initBookingErrorBox();
     initializeDateInputs();
     renderCarGrid();
     setupEventListeners();
@@ -1398,6 +1431,7 @@ function prevStep() {
 
 // Validate current step
 function validateCurrentStep() {
+    clearBookingError();
     switch (bookingState.currentStep) {
         case 1:
             const pickupLocation = document.getElementById('pickup-location')?.value;
@@ -1406,12 +1440,12 @@ function validateCurrentStep() {
             const dropoffDate = document.getElementById('dropoff-date')?.value;
             
             if (!pickupLocation || !dropoffLocation || !pickupDate || !dropoffDate) {
-                alert('Please fill in all visit details.');
+                showBookingError('Please fill in all visit details.');
                 return false;
             }
             
             if (new Date(pickupDate) >= new Date(dropoffDate)) {
-                alert('Drop-off date must be after pickup date.');
+                showBookingError('Drop-off date must be after pickup date.');
                 return false;
             }
             
@@ -1419,7 +1453,7 @@ function validateCurrentStep() {
             
         case 2:
             if (!bookingState.selectedCar) {
-                alert('Please select a car.');
+                showBookingError('Please select a car.');
                 return false;
             }
             return true;
@@ -1437,12 +1471,12 @@ function validateCurrentStep() {
             const privacyPolicy = document.getElementById('privacy-policy')?.checked;
             
             if (!firstName || !lastName || !email || !phone || !birthDate || !licenseNumber) {
-                alert('Please fill in all required fields.');
+                showBookingError('Please fill in all required fields.');
                 return false;
             }
             
             if (!privacyPolicy) {
-                alert('Please accept the privacy policy.');
+                showBookingError('Please accept the privacy policy.');
                 return false;
             }
             
@@ -1706,7 +1740,7 @@ async function completeBooking() {
 
         } catch (error) {
             console.error('Error submitting booking:', error);
-            alert('An error occurred while submitting your booking: ' + error.message + '. Please contact us directly.');
+            showBookingError('An error occurred while submitting your booking: ' + error.message + '. Please contact us directly.');
         }
     }
 }

@@ -472,21 +472,18 @@
                     <div class="reservation-dates" id="reservation-dates"></div>
                     <div class="reservation-total" id="reservation-total"></div>
                 </div>
-                <div class="reservation-actions">
+                <div class="reservation-actions right-actions">
+                    <button class="btn btn-primary next-step-btn" onclick="nextStep()" disabled>NEXT STEP</button>
                     <button class="expand-btn" id="expand-btn" onclick="toggleReservationDetails()">
                         <i class="fas fa-chevron-up"></i>
                     </button>
                 </div>
             </div>
-            
             <div class="reservation-details" id="reservation-details">
                 <div class="details-content">
                     <h4>Booking Details</h4>
                     <div class="booking-breakdown" id="booking-breakdown">
                         <!-- Breakdown will be populated dynamically -->
-                    </div>
-                    <div class="details-actions">
-                        <button class="btn btn-primary next-step-btn expanded-next-btn" onclick="nextStep()" disabled>NEXT STEP</button>
                     </div>
                 </div>
             </div>
@@ -531,7 +528,7 @@
     <!-- Booking Components (load in order) -->
     <script src="assets/js/components/booking-data-manager.js"></script>
     <script src="assets/js/components/booking-form-handler.js"></script>
-    <script src="assets/js/components/email-service.js"></script>
+    <script src="assets/js/components/email-service.js?v=20260117"></script>
     <script src="assets/js/components/booking-init.js"></script>
 
     <!-- Main Booking Script -->
@@ -539,3 +536,7 @@
     <script src="assets/js/app.js"></script>
 </body>
 </html>
+
+
+
+

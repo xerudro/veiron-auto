@@ -141,9 +141,46 @@ try {
             error_log('[Booking API] New client created: ' . $clientId);
         }
 
-        // Step 2: Find car by name (simplified lookup)
-        // For now, we'll store car_name as text. Later we can add proper car matching.
-        $carId = null; // Will be null until we implement proper car management
+        // Step 2: Resolve car ID (required by database constraint)
+        $carId = null;
+
+        if (!empty($data['car_id'])) {
+            $carIdCandidate = intval($data['car_id']);
+            if ($carIdCandidate > 0) {
+                $car = $db->queryOne(
+                    "SELECT id FROM cars WHERE id = ? LIMIT 1",
+                    [$carIdCandidate]
+                );
+                if ($car) {
+                    $carId = intval($car['id']);
+                } else {
+                    error_log('[Booking API] car_id not found: ' . $carIdCandidate);
+                }
+            }
+        }
+
+        if (!$carId && !empty($data['car_name'])) {
+            $car = $db->queryOne(
+                "SELECT id FROM cars WHERE name = ? LIMIT 1",
+                [$data['car_name']]
+            );
+            if ($car) {
+                $carId = intval($car['id']);
+            } else {
+                error_log('[Booking API] car_name not found: ' . $data['car_name']);
+            }
+        }
+
+        if (!$carId) {
+            $db->rollback();
+            http_response_code(400);
+            echo json_encode([
+                'success' => false,
+                'message' => 'Car not found for booking request.',
+                'error' => 'car_not_found'
+            ], JSON_UNESCAPED_UNICODE);
+            exit();
+        }
 
         // Step 3: Save booking
         error_log('[Booking API] Saving booking: ' . $data['booking_number']);
@@ -158,7 +195,7 @@ try {
             [
                 $data['booking_number'],
                 $clientId,
-                $carId, // NULL for now
+                $carId,
                 $data['pickup_location'],
                 $data['dropoff_location'],
                 $data['pickup_date'],

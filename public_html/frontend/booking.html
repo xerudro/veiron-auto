@@ -473,24 +473,23 @@
             <div class="reservation-content">
                 <div class="reservation-info">
                     <div class="selected-car-info" id="selected-car-info">
-                        <span class="no-selection">SelecteazÄƒ o maÈ™inÄƒ pentru a continua</span>
+                        <span class="no-selection">SelecteazŽŸ o maETinŽŸ pentru a continua</span>
                     </div>
                     <div class="reservation-dates" id="reservation-dates"></div>
                     <div class="reservation-total" id="reservation-total"></div>
                 </div>
-                <button class="expand-btn" id="expand-btn" onclick="toggleReservationDetails()">
-                    <i class="fas fa-chevron-up"></i>
-                </button>
+                <div class="reservation-actions right-actions">
+                    <button class="btn btn-primary next-step-btn" onclick="nextStep()" disabled>URMŽ,TORUL PAS</button>
+                    <button class="expand-btn" id="expand-btn" onclick="toggleReservationDetails()">
+                        <i class="fas fa-chevron-up"></i>
+                    </button>
+                </div>
             </div>
-            
             <div class="reservation-details" id="reservation-details">
                 <div class="details-content">
                     <h4>Detalii Rezervare</h4>
                     <div class="booking-breakdown" id="booking-breakdown">
                         <!-- Breakdown will be populated dynamically -->
-                    </div>
-                    <div class="details-actions">
-                        <button class="btn btn-primary next-step-btn" onclick="nextStep()" disabled>URMÄ‚TORUL PAS</button>
                     </div>
                 </div>
             </div>
@@ -535,10 +534,14 @@
     <!-- Booking Components (load in order) -->
     <script src="assets/js/components/booking-data-manager.js"></script>
     <script src="assets/js/components/booking-form-handler.js"></script>
-    <script src="assets/js/components/email-service.js"></script>
+    <script src="assets/js/components/email-service.js?v=20260117"></script>
     <script src="assets/js/components/booking-init.js"></script>
 
     <!-- Main Booking Script -->
     <script src="assets/js/booking.js"></script>
 </body>
 </html>
+
+
+
+

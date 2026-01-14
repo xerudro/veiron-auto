@@ -19,7 +19,7 @@ var RECAPTCHA_SITE_KEY = '6LfQIEosAAAAADOI8cbCjqCX6HIHEsnP_qukVSx9';
 class EmailService {
     constructor(dataManager) {
         // Public API endpoint for booking
-        this.apiEndpoint = '/api/public/booking';
+        this.apiEndpoint = '/api/public/booking.php';
         // Use passed dataManager or create new one
         this.dataManager = dataManager || new BookingDataManager();
         this.language = this.detectLanguage();
@@ -102,6 +102,11 @@ class EmailService {
             // Transform datele în formatul așteptat de PHP API
             const flatData = this.transformBookingDataForAPI(bookingData);
             const recaptchaToken = await this.getRecaptchaToken('booking_form');
+            if (!recaptchaToken) {
+                throw new Error(this.language === 'en'
+                    ? 'reCAPTCHA validation failed. Please reload the page.'
+                    : 'Verificarea reCAPTCHA a esuat. Reincarca pagina si incearca din nou.');
+            }
             flatData.recaptcha_token = recaptchaToken;
 
             const response = await fetch(this.apiEndpoint, {
@@ -152,11 +157,14 @@ class EmailService {
         const { clientInfo, booking, pricing } = bookingData;
 
         // Generează număr de rezervare unic
-        const bookingNumber = 'BK-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+        const bookingNumber = 'BK' +
+            Date.now().toString(36).toUpperCase() +
+            Math.random().toString(36).slice(2, 6).toUpperCase();
 
         // Extract car details from selectedCar or fallback
         const car = booking.selectedCar || {};
         const carName = car.model || car.name || booking.carType || booking.carName || 'Unknown Car';
+        const carId = car.id || booking.carId || booking.car_id || null;
         
         // Extract visit details
         const visitDetails = booking.visitDetails || {};
@@ -172,6 +180,7 @@ class EmailService {
             client_name: clientInfo.name || '',
             client_email: clientInfo.email || '',
             client_phone: clientInfo.phone || '',
+            car_id: carId,
             car_name: carName,
             pickup_location: pickupLocation,
             pickup_date: pickupDate,

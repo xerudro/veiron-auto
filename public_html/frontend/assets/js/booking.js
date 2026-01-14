@@ -859,9 +859,42 @@ let bookingState = {
 // DOM elements
 let elements = {};
 
+let bookingErrorBox = null;
+
+function initBookingErrorBox() {
+    const bookingContainer = document.querySelector('.booking-container');
+    if (!bookingContainer) return;
+
+    bookingErrorBox = document.createElement('div');
+    bookingErrorBox.className = 'form-error-box booking-error-box';
+    bookingErrorBox.style.display = 'none';
+    bookingErrorBox.style.color = '#ff4500';
+    bookingErrorBox.style.fontWeight = '600';
+    bookingErrorBox.style.marginBottom = '0.7rem';
+    bookingContainer.insertBefore(bookingErrorBox, bookingContainer.firstChild);
+}
+
+function showBookingError(message) {
+    if (!bookingErrorBox) return;
+    bookingErrorBox.style.display = 'block';
+    bookingErrorBox.style.color = '#ff4500';
+    bookingErrorBox.innerHTML = message;
+
+    if (typeof bookingErrorBox.scrollIntoView === 'function') {
+        bookingErrorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+function clearBookingError() {
+    if (!bookingErrorBox) return;
+    bookingErrorBox.style.display = 'none';
+    bookingErrorBox.innerHTML = '';
+}
+
 // Initialize booking system
 document.addEventListener('DOMContentLoaded', function() {
     initializeElements();
+    initBookingErrorBox();
     initializeDateInputs();
     renderCarGrid();
     setupEventListeners();
@@ -1387,6 +1420,7 @@ function prevStep() {
 
 // Validate current step
 function validateCurrentStep() {
+    clearBookingError();
     switch (bookingState.currentStep) {
         case 1:
             const pickupLocation = document.getElementById('pickup-location')?.value;
@@ -1395,12 +1429,12 @@ function validateCurrentStep() {
             const dropoffDate = document.getElementById('dropoff-date')?.value;
             
             if (!pickupLocation || !dropoffLocation || !pickupDate || !dropoffDate) {
-                alert('Vă rugăm să completați toate detaliile vizitei.');
+                showBookingError('Vă rugăm să completați toate detaliile vizitei.');
                 return false;
             }
             
             if (new Date(pickupDate) >= new Date(dropoffDate)) {
-                alert('Data returnării trebuie să fie după data ridicării.');
+                showBookingError('Data returnării trebuie să fie după data ridicării.');
                 return false;
             }
             
@@ -1408,7 +1442,7 @@ function validateCurrentStep() {
             
         case 2:
             if (!bookingState.selectedCar) {
-                alert('Vă rugăm să selectați o mașină.');
+                showBookingError('Vă rugăm să selectați o mașină.');
                 return false;
             }
             return true;
@@ -1426,12 +1460,12 @@ function validateCurrentStep() {
             const privacyPolicy = document.getElementById('privacy-policy')?.checked;
             
             if (!firstName || !lastName || !email || !phone || !birthDate || !licenseNumber) {
-                alert('Vă rugăm să completați toate câmpurile obligatorii.');
+                showBookingError('Vă rugăm să completați toate câmpurile obligatorii.');
                 return false;
             }
             
             if (!privacyPolicy) {
-                alert('Vă rugăm să acceptați politica de confidențialitate.');
+                showBookingError('Vă rugăm să acceptați politica de confidențialitate.');
                 return false;
             }
             
@@ -1687,7 +1721,7 @@ async function completeBooking() {
 
         } catch (error) {
             console.error('Error submitting booking:', error);
-            alert('A apărut o eroare la trimiterea rezervării: ' + error.message + '. Vă rugăm să ne contactați direct.');
+            showBookingError('A apărut o eroare la trimiterea rezervării: ' + error.message + '. Vă rugăm să ne contactați direct.');
         }
     }
 }
@@ -1804,4 +1838,5 @@ function resetPriceFilter() {
 
     renderCarGrid();
 }
+
 
