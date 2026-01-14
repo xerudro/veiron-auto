@@ -1688,10 +1688,11 @@ async function completeBooking() {
             };
 
             // Prepare pricing info
-            const total = calculateTotal();
+            const total = calculateTotal(); // Returns EUR
+            const exchangeRate = 5.07; // EUR to RON exchange rate
             const pricingInfo = {
-                totalPrice: total, // in RON
-                totalPriceEUR: (total / 5.07).toFixed(2)
+                totalPrice: Math.round(total * exchangeRate), // Convert EUR to RON
+                totalPriceEUR: total.toFixed(2) // Already in EUR
             };
 
             // Show loading message

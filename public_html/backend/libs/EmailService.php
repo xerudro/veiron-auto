@@ -298,9 +298,10 @@ Generated on " . date('Y-m-d H:i:s');
                     </div>
                     <div class='contact-info'>
                         <h3>Contact Information:</h3>
-                        <p><strong>Phone:</strong> +40 123 456 789</p>
-                        <p><strong>Email:</strong> contact@veironauto.ro</p>
-                        <p><strong>Address:</strong> Satu Mare, Romania</p>
+                        <p><strong>Phone:</strong> +40 755 622 858</p>
+                        <p><strong>Email:</strong> veironauto@gmail.com</p>
+                        <p><strong>Address:</strong> B-dul Traian nr.12, Satu Mare, România</p>
+                        <p><strong>Address:</strong> Sat Botiz, Str. Sirul Mare, nr.110, Satu Mare, România</p>
                     </div>
                     <p>If you have any questions, please don't hesitate to contact us.</p>
                     <p>Thank you for choosing Veiron Auto!</p>
@@ -337,9 +338,10 @@ Booking Details:
 - Status: {$data['status']}
 
 Contact Information:
-- Phone: +40 123 456 789
-- Email: contact@veironauto.ro
-- Address: Satu Mare, Romania
+- Phone: +40 755 622 858
+- Email: veironauto@gmail.com
+- Address: B-dul Traian nr.12, Satu Mare, România
+- Address: Sat Botiz, Str. Sirul Mare, nr.110, Satu Mare, România
 
 If you have any questions, please don't hesitate to contact us.
 
